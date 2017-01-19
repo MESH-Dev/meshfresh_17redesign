@@ -62,10 +62,59 @@ header {
 		}
 
 		&#social{
-			float:right;
+			// float:right;
+			// margin:-7px 0 0 0; 
+			// position:absolute; 
+			// right:10px;
+
+			ul{
+				// float: right;
+				margin: 0;
+				list-style: none;
+
+				li{
+					display:inline-block;
+					height:23px;
+					width:19px;
+					text-decoration:none;
+					text-indent:-9999px;
+					float:left;
+					padding:0 1px 0 0;
+
+					&.facebook a{
+						background-position:0 0;
+					}
+
+					&.tumblr a{
+						background-position:-22px 0;
+					}
+
+					&.twitter a{
+						background-position:-64px 0;
+					}
+
+					&.google a{
+						background-position:-85px 0;
+					}
+
+
+					a{
+						background:url(assets/img/socialIcons.png) 0 0 no-repeat;
+						height:100%;
+						width:100%;
+						display:block;
+					}
+				}
+			}
+		}
+	}
+}
+
+#social{
+			//float:right;
 			margin:-7px 0 0 0; 
-			position:absolute; 
-			right:10px;
+			// position:absolute; 
+			//right:10px;
 
 			ul{
 				float: right;
@@ -99,17 +148,34 @@ header {
 
 
 					a{
-						background:url(../img/socialIcons.png) 0 0 no-repeat;
+						background:url(assets/img/socialIcons.png) 0 0 no-repeat;
 						height:100%;
 						width:100%;
 						display:block;
 					}
 				}
 			}
-		}
-	}
+
 }
 
+.gateway-nav{
+	//position:absolute;
+	// top:0;
+	// right:0;
+	text-align:right;
+
+	nav,
+	.say-hello{
+		display:inline-block;
+
+	}
+
+	.say-hello{
+		background-color:black;
+		color:white;
+		margin:-10px 10px 0 10px;
+	}
+}
 #menuTrigger{
 	cursor:pointer;
 }
@@ -246,7 +312,7 @@ header {
 							padding:0 1px 0 0;
 
 							a{
-								background:url(../img/socialIcons.png) 0 0 no-repeat;
+								background:url(assets/img/socialIcons.png) 0 0 no-repeat;
 								height:100%;
 								width:100%;
 								display:block;

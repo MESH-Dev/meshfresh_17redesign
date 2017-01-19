@@ -69,27 +69,7 @@ get_header(); ?>
 		 			// }
 					?>
 		 <div class="work-block columns-4"><!-- columns-4 -->
-		 	
-		 	<div class="work-container <?php echo $position; ?>">
-
-		 		<?php 
-
-		 		//var_dump(get_the_post_thumbnail());
-
-		 		if ($tile_image_url != '') { ?>
-		 			<img src="<?php echo $tile_image_url; ?>" >
-		 		<?php }else{ ?>
-
-		 		<?php $rand_img = mt_rand(1, 2); 
-		 			if($rand_img ==1 ){
-	 			?>
-		 			<img class="work-img" src="http://placehold.it/700x805"><!-- if(get_the_post_thumbnail() !== '' ){ }else{echo $tile_image_url; } -->
-	 			<?php }else{ ?>
-	 				<img class="work-img" src="http://placehold.it/700x402">
-	 			<?php } ?>
-	 			<?php } ?>
-
-	 			<div class="hover">
+		 	<div class="hover">
 	 				<div class="content">
 		 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> (<?php echo $wk_ctr; ?>)</a></h2>
 		 			<span class="industries tags"> 
@@ -113,6 +93,26 @@ get_header(); ?>
 	 					<!-- </ul> -->
  					</div><!-- end content -->
 	 			</div><!-- end hover -->
+		 	<div class="work-container <?php echo $position; ?>">
+
+		 		<?php 
+
+		 		//var_dump(get_the_post_thumbnail());
+
+		 		if ($tile_image_url != '') { ?>
+		 			<img src="<?php echo $tile_image_url; ?>" >
+		 		<?php }else{ ?>
+
+		 		<?php $rand_img = mt_rand(1, 2); 
+		 			if($rand_img ==1 ){
+	 			?>
+		 			<img class="work-img" src="http://placehold.it/700x805"><!-- if(get_the_post_thumbnail() !== '' ){ }else{echo $tile_image_url; } -->
+	 			<?php }else{ ?>
+	 				<img class="work-img" src="http://placehold.it/700x402">
+	 			<?php } ?>
+	 			<?php } ?>
+
+	 			
 	 		</div><!-- end work-container -->
 		</div><!-- end work-block -->
 	<?php } } wp_reset_query(); ?>

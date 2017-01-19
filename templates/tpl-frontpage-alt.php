@@ -29,13 +29,21 @@ get_header('new');  ?>
     </div>
 
 	    <div class="badge badge-left">
-	    	<h3>MESH Charleston</h3>
-	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+	    	<div class="wrap">
+	    		<div class="content">
+			    	<h3>MESH Charleston</h3>
+			    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+		    	</div>
+	    	</div>
 	    </div>
 
 	    <div class="badge badge-right">
-	    	<h3>MESH Brooklyn</h3>
-	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+	    	<div class="wrap">
+	    		<div class="content">
+			    	<h3>MESH Brooklyn</h3>
+			    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+		    	</div>
+	    	</div>
 	    </div>
 
 	    <svg>
@@ -51,7 +59,7 @@ get_header('new');  ?>
 
 	<div class="container home">
 
-		<div class="featured-projects projects" id="macy">
+		<!--<div class="featured-projects projects" id="macy">
 			<?php $args = array(
 				'post_type'      => 'work',
 				//'meta_key'       => 'featured',
@@ -101,7 +109,7 @@ get_header('new');  ?>
 					</div>
 				</div>
 			<?php } } wp_reset_query(); ?>
-		</div>
+		</div>-->
 				<!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
 		<div class="projects row">
 			<div class="columns-4">
@@ -120,15 +128,15 @@ get_header('new');  ?>
 				?>
 
 				<div class="project-box">
-					<div class="project-container <?php echo $position; ?>">
-						<a href="<?php echo $project_link; ?>">
-							<div class="hover">
+					<div class="hover">
 								<div class="content">
-								<?php echo $project_hover; ?>
+								<a href="<?php echo $project_link; ?>"><?php echo $project_hover; ?></a>
 								</div>
 							</div>
+					<div class="project-container <?php echo $position; ?>">
+						
 							<img src="<?php echo $project_img_url;  ?>">
-						</a>
+						
 					</div>
 				</div>
 				<?php endwhile; endif; ?>
@@ -149,15 +157,16 @@ get_header('new');  ?>
 					?>
 
 					<div class="project-box">
-						<div class="project-container <?php echo $position; ?>">
-							<a href="<?php echo $project_link; ?>">
-								<div class="hover">
+						<div class="hover">
 									<div class="content">
-										<?php echo $project_hover; ?>
+										<a href="<?php echo $project_link; ?>"><?php echo $project_hover; ?></a>
 									</div>
 								</div>
+						<div class="project-container <?php echo $position; ?>">
+							
+								
 								<img src="<?php echo $project_img_url;  ?>">
-							</a>
+							
 						</div>
 					</div>
 					<?php endwhile; endif; ?>
@@ -178,15 +187,16 @@ get_header('new');  ?>
 					?>
 
 					<div class="project-box">
-						<div class="project-container <?php echo $position; ?>">
-							<a href="<?php echo $project_link; ?>">
-								<div class="hover">
+						<div class="hover">
 									<div class="content">
-									<?php echo $project_hover; ?>
+									<a href="<?php echo $project_link; ?>"><?php echo $project_hover; ?></a>
 									</div>
 								</div>
+						<div class="project-container <?php echo $position; ?>">
+							
+								
 								<img src="<?php echo $project_img_url;  ?>">
-							</a>
+							
 						</div>
 					</div>
 					<?php endwhile; endif; ?>
@@ -198,7 +208,10 @@ get_header('new');  ?>
 		<div class="page-callout">
 			<?php 
 				$callout = get_field('callout_content');
+				$divider = get_field('divider_line');
 			?>
+
+			<p class="divider-line" aria-hidden="true"><?php echo $divider; ?></p>
 
 			<h3><?php echo $callout; ?></h3>
 

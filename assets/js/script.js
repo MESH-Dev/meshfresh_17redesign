@@ -97,9 +97,6 @@ jQuery(document).ready(function($){
 	});
 
 
-
-
-
 	$('.home-title').hover(function(){
 		$(this).find('.emoticon').text(';)');
 	},function(){
@@ -124,13 +121,13 @@ jQuery(document).ready(function($){
 
         // moving right 
         if (e.pageX < mX) {
-            $('.badge-left').stop();//.fadeOut('250');
-            $('.badge-right').stop();//.fadeOut('250');
+            $('.badge-left').stop().fadeOut('250');
+            $('.badge-right').stop().fadeIn('250');
 
         // moving left
         } else {
-            $('.badge-left').stop();//.fadeOut('250');
-            $('.badge-right').stop();//.fadeOut('250');
+            $('.badge-left').stop().fadeIn('250');
+            $('.badge-right').stop().fadeOut('250');
         }
 
         // set new mX after doing test above
@@ -309,20 +306,20 @@ jQuery(document).ready(function($){
 //$(".work-grid").justifiedGallery();
 
 Macy.init({
-            container: '#macy',
-            trueOrder: true,
-            waitForImages: true,
-            margin: 40,
-            columns: 3,
-            breakAt: {
-                //1200: ,
-                950: 2,
-                520: 1,
-                //400: 1
-            },
-            function(){
-				$('.macy .work-block').removeClass('columns-4');
-			}
-        });
+    container: '#macy',
+    trueOrder: true,
+    waitForImages: true,
+    margin: 15,
+    columns: 3,
+    breakAt: {
+        //1200: ,
+        950: 2,
+        520: 1,
+        //400: 1
+    },
+    function(){
+		$('.macy .work-block').removeClass('columns-4');
+	}
+});
 
 });

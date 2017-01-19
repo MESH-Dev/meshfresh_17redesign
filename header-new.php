@@ -42,6 +42,12 @@
 				'depth'           => 0,
 				'walker'          => ''
 			); wp_nav_menu( $defaults ); ?>
+		
+	</div>
+	<div class="gateway-nav">
+		<div class="say-hello">
+			Say Hello
+		</div>
 		<?php $defaults = array(
 				'theme_location'  => 'social-nav',
 				'menu'            => 'social-nav',
@@ -94,8 +100,32 @@
 <div id="siteWrap">
 <header <?php if (is_page_template('templates/tpl-frontpage-alt.php')){ echo 'class="new"';} //remove this when page is live?> >
 	<div class="container">
+		<div class="gateway-nav">
+					<div class="say-hello">
+						Say Hello
+					</div>
+					<?php $defaults = array(
+							'theme_location'  => 'social-nav',
+							'menu'            => 'social-nav',
+							'container'       => 'nav',
+							'container_class' => '',
+							'container_id'    => 'social',
+							'menu_class'      => 'menu',
+							'menu_id'         => '',
+							'echo'            => true,
+							'fallback_cb'     => 'wp_page_menu',
+							'before'          => '',
+							'after'           => '',
+							'link_before'     => '<span class="sr-only">',
+							'link_after'      => '</span>',
+							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'depth'           => 0,
+							'walker'          => ''
+						); wp_nav_menu( $defaults ); ?>
+				</div>
 		<div class="columns-12"><!-- gutter cf -->
 			<div class="row">
+				
 				<div id="logo">
 					<a href="<?php echo bloginfo('url'); ?>"><img src="<?php echo header_image(); ?>" /></a>
 				</div>
@@ -117,27 +147,11 @@
 						'depth'           => 0,
 						'walker'          => ''
 					); wp_nav_menu( $defaults ); ?>
-				<?php $defaults = array(
-						'theme_location'  => 'social-nav',
-						'menu'            => 'social-nav',
-						'container'       => 'nav',
-						'container_class' => '',
-						'container_id'    => 'social',
-						'menu_class'      => 'menu',
-						'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'wp_page_menu',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						'depth'           => 0,
-						'walker'          => ''
-					); wp_nav_menu( $defaults ); ?>
 				<div id="menuTrigger" class="mobile">
 					Menu
 				</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>
