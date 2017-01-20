@@ -1337,9 +1337,10 @@ footer.site-footer{
 	}
 }
 
-//Landing grid infobar
+//Landing grid individual projects/people
+
 #infobar{
-    z-index: 1;
+    z-index: 3;
     cursor: pointer;
     position: fixed;
     border: 0px;
@@ -1351,6 +1352,7 @@ footer.site-footer{
     left: 96%;
     top:0;
 }
+
 #gallery_cover{
     background-color: #fff;
     width: 100vw;
@@ -1361,33 +1363,43 @@ footer.site-footer{
     visibility: hidden;
     z-index:1;
 }
-#detail_copy{
+
+.detail_copy{
     position: absolute;
     visibility: hidden;
     top: 0px;
-    left: -10px;
+    left: 96%;
     width: 100%;
     height: 100%;
     padding: 90px 60px;
     max-width: 400px;
+
+    // @media($bp-smaller-than-tablet){
+    // 	position:relative;
+    // 	height:auto;
+    // }
+
+    h3{
+    	font-family: 'Memphis LT W01 Medium', sans-serif;
+	    font-size: 24px;
+	    color: #fff;
+	    line-height: 42px;
+    }
+
+    p{
+	    color: #fff;
+	    font-family: 'Raleway', sans-serif;
+	    line-height: 20px;
+	    font-size: 14px;
+	    margin: 50px 0px;
+	}
 }
-#detail_copy h3{
-    font-family: 'Memphis LT W01 Medium', sans-serif;
-    font-size: 24px;
-    color: #fff;
-    line-height: 42px;
-}
-#detail_copy p{
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    line-height: 20px;
-    font-size: 14px;
-    margin: 50px 0px;
-}
+
 .underline{
     padding-bottom: 2px;
     border-bottom: 2px solid #fff;
 }
+
 #explore_text{
     color: #fff;
     font-family: "Memphis LT W01 Light";
@@ -1395,6 +1407,7 @@ footer.site-footer{
     writing-mode: vertical-rl;
     margin-top: 40px;
 }
+
 #detail_exit{
     z-index: 1;
     font-size: 42px;
@@ -1406,16 +1419,7 @@ footer.site-footer{
     left: 30px;
     cursor: pointer;
 }
-#detail_scrollarea i{
-    z-index: 1;
-    color: #fff;
-    font-size: 48px;
-    font-weight: 100;
-    position: fixed;
-    bottom: 40px;
-    right: 50px;
-    cursor: pointer;
-}
+ 
 #detail_scrollarea{
     visibility: hidden;
     position: fixed;
@@ -1425,13 +1429,27 @@ footer.site-footer{
     overflow-y: scroll;
     top:0;
     z-index:2;
+
+    i{
+	    z-index: 1;
+	    color: #fff;
+	    font-size: 48px;
+	    font-weight: 100;
+	    position: fixed;
+	    bottom: 40px;
+	    right: 50px;
+	    cursor: pointer;
+	}
+
+	img{
+	    display: block;
+	    width: 100%;
+	    margin: 0px;
+	    padding: 0px;
+	}
+
 }
-#detail_scrollarea img{
-    display: block;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
+
 .detail_nav{
     display: -webkit-flex;
     display: -moz-flex;
@@ -1443,27 +1461,72 @@ footer.site-footer{
     bottom: 0;
     visibility: hidden;
 }
+
 .detail_switch{
     width: 50%;
     height: 50px;
     text-align: center;
     cursor: pointer;
+
+    i{
+	    color: #fff;
+	    font-size: 52px;
+	}
+
+	p{
+	    color: #fff;
+	    font-family: 'Raleway', sans-serif;
+	    font-size: 1.6em;
+	    line-height:3;
+	    margin:0;
+	    padding:0;
+	}
 }
-.detail_switch i{
-    color: #fff;
-    font-size: 52px;
-}
+
 #prev_proj{
     background-color: rgba(255, 255, 255, 0.3);
 }
 #next_proj{
     background-color: rgba(255, 255, 255, 0.4);
 }
-.detail_switch p{
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
+
+//------------------------------
+
+#copy_1{
+    position: absolute;
+    visibility: hidden;
+    top: 0px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    padding: 90px 60px;
+    max-width: 400px;
 }
+
+#copy_2{
+    position: absolute;
+    visibility: hidden;
+    top: 0px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    padding: 90px 60px;
+    max-width: 400px;
+}
+
+#copy_3{
+    position: absolute;
+    visibility: hidden;
+    top: 0px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    padding: 90px 60px;
+    max-width: 400px;
+}
+
+
+
 
 //Accessibility
 .sr-only{

@@ -72,7 +72,7 @@ get_header(); ?>
 		 <div class="work-block columns-4" ><!-- columns-4 -->
 		 	<div class="hover" onclick="infoOpen()">
 	 				<div class="content">
-		 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> (<?php echo $wk_ctr; ?>)</a></h2>
+		 				<h2><a href="<?php //the_permalink(); ?>"><?php the_title(); ?> (<?php echo $wk_ctr; ?>)</a></h2>
 		 			<span class="industries tags"> 
 		 				<?php echo rtrim($output_industry, $separator); ?>
 		 			</span>
@@ -124,35 +124,51 @@ get_header(); ?>
 
 <!-- <section class="josh"> -->
 	<div id="infobar" onclick="infoOpen()">
-    <p id="explore_text">Explore the Projects</p>
-    <i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
-    <div id="detail_copy">
-        <h3><span class="underline">Childrens Museum of New York</span></h3>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-    </div>
-    <div class="detail_nav">
-        <div id="prev_proj" class="detail_switch" onclick="prevScroll()">
-<!--                    <p>Prev</p>-->
-        </div>
-        <div id="next_proj" class="detail_switch" onclick="nextScroll()">
-<!--                    <p>Next</p>-->
-        </div>
-    </div>
+		<p id="explore_text">Explore the Projects</p>
+		<i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
+		<div class="detail_copy" id="copy_1">
+			<h3><span class="underline">Children’s Museum of the Arts New York</span></h3>
+			<p>The Children’s Museum of New York has one of the most amazing new spaces for kids in the city, and a handful of impressive RISD grads as teachers — and they needed a website to match. We redesigned their site to reflect the playful but clean aesthetic of the museum, while keeping in mind the need for flexibility of daily in-house updates to detail all of their offered classes to parents and children alike. We redeveloped the site with these two audiences in mind, and the project remains an ongoing evolution as we continue to improve the site with new features.</p>
+		</div>
+		<div class="detail_copy" id="copy_2">
+			<h3><span class="underline">Mission Savvy</span></h3>
+			<p>MESH has worked with this entrepreneur from her beginning, overhauling her site, her branding, her promotional collateral online and in print, and her Kickstarter campaign, the Vegan Pop-Up in Appalachia Organic To-Go Kickstarter series. Every time she reinvents Mission Savvy, we are there to support with strategy and visuals. The brand was designed to feel personal and handmade down to its very font–the hand-illustrated Vegan Alphabet inspired by the fruits and vegetables served daily in her Cafe, her food truck, and her food lab. The Vegan Alphabet was also featured in the 2013 Print Magazine Regional Design Annual.</p>
+		</div>
+		<div class="detail_copy" id="copy_3">
+			<h3><span class="underline">J.Q. Dickinson Saltworks</span></h3>
+			<p>We partnered with the founders of J. Q. Dickinson Salt-works from their inception, working through a naming, branding, communication strategy, and sales strategy of their new, organic, and locally produced salt product. The entire project was inspired by their 200 year old family farm, both in storytelling and in design. The packaging was inspired by the original glass jar and tin lid packaging used by the family decads ago, and the typography was inspired by the grids of the original order forms found in the old farm store attic.</p>
+		</div>
+		<div class="detail_nav">
+			<div id="prev_proj" class="detail_switch" onclick="prevScroll()">
+				<p>Prev</p>
+			</div>
+			<div id="next_proj" class="detail_switch" onclick="nextScroll()">
+				<p>Next</p>
+			</div>
+		</div>
 	</div>
 
+
 	<div id="detail_scrollarea">
-	    <i id="fullscreen" class="material-icons">fullscreen</i>
-	    <a name="proj1"></a>
-	    <img id="img1" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/01/VesselBrooklyn_Web_Mockup-1.jpg">
-	    <img id="img2" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/08/ETarch_Web_MockupFINAL.jpg">
-	    <img id="img3" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/01/CSIS_Web_Mockup.jpg">
-	    <img id="img4" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/08/tamarack_Web_MockupFINAL.jpg">
-	    <a name="proj2"></a>
-	    <img id="img5" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/04/nomad01_1600.jpg">
-	    <img id="img6" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy2_1600.jpg">
-	    <img id="img7" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy1_1600.jpg">
-	    <img id="img8" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy3_1600.jpg">
-	</div>
+    <i id="fullscreen" class="material-icons">fullscreen</i>
+    <div>
+    </div>
+    <div>
+        <a name="proj1"></a>
+        <img id="img1" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/CMANY01_1600.jpg">
+        <img id="img2" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/09/CMANY_MockUp2.jpg">
+    </div>
+    <div>
+        <img id="img3" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy3_1600.jpg">
+        <img id="img4" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy2_1600.jpg">
+        <img id="img5" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy1_1600.jpg">
+    </div>
+    <div>
+        <a name="proj2"></a>
+        <img id="img6" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/04/salt02_1600.jpg">
+        <img id="img7" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/04/salt01_1600.jpg">
+    </div>
+</div>
 
 
 <script>
