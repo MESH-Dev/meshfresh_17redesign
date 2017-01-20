@@ -72,7 +72,11 @@ get_header(); ?>
 		 <div class="work-block columns-4" ><!-- columns-4 -->
 		 	<div class="hover" onclick="infoOpen()">
 	 				<div class="content">
-		 				<h2><a href="<?php //the_permalink(); ?>"><?php the_title(); ?> (<?php echo $wk_ctr; ?>)</a></h2>
+		 				<h2>
+		 					<!-- <a href="<?php //the_permalink(); ?>"> -->
+		 					<?php the_title(); ?> (<?php echo $wk_ctr; ?>)
+		 					<!-- </a> -->
+		 				</h2>
 		 			<span class="industries tags"> 
 		 				<?php echo rtrim($output_industry, $separator); ?>
 		 			</span>

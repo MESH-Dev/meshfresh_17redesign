@@ -981,12 +981,18 @@ a.cta{
 		font-family:'Memphis';
 
 		h2{
+
+			//
+			color:white;
+			border-bottom:2px solid white;
+			cursor:pointer;
+
 			a{
 				//font-size:3.6em;
 				line-height:1.25;
 				//text-decoration:underline;
-				color:white;
-				border-bottom:2px solid white;
+				// color:white;
+				// border-bottom:2px solid white;
 
 				&:hover,
 				&:active,
