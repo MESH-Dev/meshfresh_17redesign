@@ -2910,6 +2910,10 @@ a.cta:hover, a.cta:active, a.cta:focus {
   padding: 20px 0;
   font-family: 'Memphis';
 }
+/* line 983, sass/modules/_layout.scss */
+.work-block .hover h2 {
+  cursor: pointer;
+}
 /* line 990, sass/modules/_layout.scss */
 .work-block .hover h2 a,
 .work-block .hover h2 span {
