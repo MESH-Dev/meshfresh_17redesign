@@ -57,11 +57,11 @@
       var adjustContainer = function(offset) {
         //var topOffset = offset.cw-150;
         //console.log(dP);
-        console.log(offset)
-        console.log("Offset CW = "+offset.cw);
-        console.log('Offset H = '+offset.h);
-        console.log('Offset cwBottom' + offset.cwBottom );
-        console.log('Offset cwTop' + offset.cwTop );
+        // console.log(offset)
+        // console.log("Offset CW = "+offset.cw);
+        // console.log('Offset H = '+offset.h);
+        // console.log('Offset cwBottom' + offset.cwBottom );
+        // console.log('Offset cwTop' + offset.cwTop );
 
  
 

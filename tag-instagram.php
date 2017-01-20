@@ -2,7 +2,7 @@
 $term_id = get_query_var('tag_id'); ?>
 
 <section id="blogroll">
-	<div class="container-main">
+	<div class="container">
 		<div id="contentPrimary">
 			<?php get_sidebar('blog'); ?>
 		</div>

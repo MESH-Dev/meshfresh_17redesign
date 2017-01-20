@@ -4,6 +4,7 @@
 get_header(); ?>
 
 <section id=""><!-- page-content -->
+	<div id="gallery_cover"></div>
 	<div class="work-grid" id="macy"><!-- container -->
 		<!-- <div class="row"> -->
 	<?php
@@ -68,8 +69,8 @@ get_header(); ?>
 		 			// 	$position = 'center';
 		 			// }
 					?>
-		 <div class="work-block columns-4"><!-- columns-4 -->
-		 	<div class="hover">
+		 <div class="work-block columns-4" ><!-- columns-4 -->
+		 	<div class="hover" onclick="infoOpen()">
 	 				<div class="content">
 		 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> (<?php echo $wk_ctr; ?>)</a></h2>
 		 			<span class="industries tags"> 
@@ -121,4 +122,41 @@ get_header(); ?>
 </div><!-- end work-grid -->
 </section>
 
+<!-- <section class="josh"> -->
+	<div id="infobar" onclick="infoOpen()">
+    <p id="explore_text">Explore the Projects</p>
+    <i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
+    <div id="detail_copy">
+        <h3><span class="underline">Childrens Museum of New York</span></h3>
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+    </div>
+    <div class="detail_nav">
+        <div id="prev_proj" class="detail_switch" onclick="prevScroll()">
+<!--                    <p>Prev</p>-->
+        </div>
+        <div id="next_proj" class="detail_switch" onclick="nextScroll()">
+<!--                    <p>Next</p>-->
+        </div>
+    </div>
+	</div>
+
+	<div id="detail_scrollarea">
+	    <i id="fullscreen" class="material-icons">fullscreen</i>
+	    <a name="proj1"></a>
+	    <img id="img1" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/01/VesselBrooklyn_Web_Mockup-1.jpg">
+	    <img id="img2" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/08/ETarch_Web_MockupFINAL.jpg">
+	    <img id="img3" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/01/CSIS_Web_Mockup.jpg">
+	    <img id="img4" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/08/tamarack_Web_MockupFINAL.jpg">
+	    <a name="proj2"></a>
+	    <img id="img5" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/04/nomad01_1600.jpg">
+	    <img id="img6" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/03/MissionSavvy2_1600.jpg">
+	    <img id="img7" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/03/MissionSavvy1_1600.jpg">
+	    <img id="img8" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/03/MissionSavvy3_1600.jpg">
+	</div>
+
+
+<script>
+
+</script>
+<!-- </section> -->
 <?php get_footer(); ?>

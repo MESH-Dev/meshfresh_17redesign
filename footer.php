@@ -4,8 +4,10 @@
 </div><!--What is this div ending? -->
 </div>
 <footer class="site-footer">
+	<div class="wrap">
 		<p>Copyright MESH Design &amp; Development <?php echo date('Y'); ?></p>
+	</div>
 </footer>
-<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/salvattore/1.0.9/salvattore.min.js"></script> -->
+<!-- <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/fancy-scroll.js"></script> -->
 </body>
 </html>

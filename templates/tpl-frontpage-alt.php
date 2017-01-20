@@ -1,7 +1,7 @@
 <?php /* Template Name: Frontpage New */ 
 
 
-get_header('new');  ?>
+get_header();  ?>
 
 <section id="home" class="shaun">
  
@@ -123,6 +123,7 @@ get_header('new');  ?>
 					$project_img_url = $project_img['sizes']['large'];
 					//var_dump($project_img_url);
 					$project_hover=get_sub_field('pb_hover_text');
+					$project_hover_title=get_sub_field('pb_hover_statement');
 					$project_link=get_sub_field('project_link');
 					$position=get_sub_field('pb_position');
 				?>
@@ -130,7 +131,7 @@ get_header('new');  ?>
 				<div class="project-box">
 					<div class="hover">
 								<div class="content">
-								<a href="<?php echo $project_link; ?>"><?php echo $project_hover; ?></a>
+								<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?> <span><?php echo $project_hover; ?></span></a>
 								</div>
 							</div>
 					<div class="project-container <?php echo $position; ?>">
@@ -152,6 +153,7 @@ get_header('new');  ?>
 						$project_img_url = $project_img['sizes']['large'];
 						//var_dump($project_img_url);
 						$project_hover=get_sub_field('pb_hover_text');
+						$project_hover_title=get_sub_field('pb_hover_statement');
 						$project_link=get_sub_field('project_link');
 						$position=get_sub_field('pb_position');
 					?>
@@ -159,7 +161,7 @@ get_header('new');  ?>
 					<div class="project-box">
 						<div class="hover">
 									<div class="content">
-										<a href="<?php echo $project_link; ?>"><?php echo $project_hover; ?></a>
+										<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
 									</div>
 								</div>
 						<div class="project-container <?php echo $position; ?>">
@@ -182,6 +184,7 @@ get_header('new');  ?>
 						$project_img_url = $project_img['sizes']['large'];
 						//var_dump($project_img_url);
 						$project_hover=get_sub_field('pb_hover_text');
+						$project_hover_title=get_sub_field('pb_hover_statement');
 						$project_link=get_sub_field('project_link');
 						$position=get_sub_field('pb_position');
 					?>
@@ -189,7 +192,7 @@ get_header('new');  ?>
 					<div class="project-box">
 						<div class="hover">
 									<div class="content">
-									<a href="<?php echo $project_link; ?>"><?php echo $project_hover; ?></a>
+									<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
 									</div>
 								</div>
 						<div class="project-container <?php echo $position; ?>">
@@ -205,27 +208,7 @@ get_header('new');  ?>
 	</div>
 
 	<div class="container">
-		<div class="page-callout">
-			<?php 
-				$callout = get_field('callout_content');
-				$divider = get_field('divider_line');
-			?>
-
-			<p class="divider-line" aria-hidden="true"><?php echo $divider; ?></p>
-
-			<h3><?php echo $callout; ?></h3>
-
-			<?php if (have_rows('callout_cta')):
-					while(have_rows('callout_cta')):the_row();
-
-					$callout_cta_text = get_sub_field('callout_cta_text');
-					$cta_link_destination = get_sub_field('cta_link_destination');
-			?>
-
-			<a class="cta" href="<?php echo $cta_link_destination; ?>"><?php echo $callout_cta_text; ?></a>
-
-			<?php endwhile; endif; ?>
-		</div>
+		<?php get_template_part('/partials/page-callout'); ?>
 	</div>
 </section>
 

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <section id="advocates">
-	<div class="container-main">
-		<div class="gutter">
+	<div class="container">
+		<div class=""><!-- gutter -->
 			<?php $args = array(
 				        	  'post_type' 	   => 'advocate',
 				        	  'posts_per_page' => -1

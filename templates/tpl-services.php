@@ -2,8 +2,8 @@
 get_header(); ?>
 
 <section id="services">
-	<div class="container-main">
-		<div class="gutter">
+	<div class="container">
+		<div class=""><!-- gutter -->
 			<div id="services-intro">
 				<?php the_field('intro'); ?>
 			</div>

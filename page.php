@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 
-<section id="page-content">
+<section id="page-content" class="text">
 	<div class="container">
+
+		<?php get_template_part('/partials/page-callout'); ?>
+
 		<div class="the-content row">
 			<div class="columns-6">
 				<?php 
@@ -85,7 +88,7 @@
 							?>
 							<div class="quote">
 								<p class="quote-content"><?php echo get_field('message', $post->ID); ?></p>
-								<p class="quote-attr"><?php echo get_field('advocate', $post->ID); ?></p>
+								<p class="quote-attr">&mdash; <?php echo get_field('advocate', $post->ID); ?></p>
 							</div>
 							<?php } } wp_reset_postdata(); //End the query ?>
 				</div> 

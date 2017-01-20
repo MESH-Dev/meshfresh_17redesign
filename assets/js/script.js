@@ -56,30 +56,32 @@ jQuery(document).ready(function($){
 	}, 400);
 
 	//Say Hello
-	$('li.sayhello').click(function(e){
-		e.preventDefault();
-		$('#sayHello').toggleClass('active');
-	});
-	$('#sayHello').hover(function(e){
-		if($timer){
-			clearTimeout($timer);
-		}
-	},function(e){
-		$timer = setTimeout(function(){
-			$('#sayHello').removeClass('active');
-		}, 250);
-	});
+	// $('li.sayhello').click(function(e){
+	// 	e.preventDefault();
+	// 	$('#sayHello').toggleClass('active');
+	// });
+	// $('#sayHello').hover(function(e){
+	// 	if($timer){
+	// 		clearTimeout($timer);
+	// 	}
+	// },function(e){
+	// 	$timer = setTimeout(function(){
+	// 		$('#sayHello').removeClass('active');
+	// 	}, 250);
+	// });
 
 	//Mobile
-	$('#menuTrigger').click(function(ev){
-		$('#siteWrap').addClass('active');
-		$('#mobileMenu').addClass('active');
-		$('body').addClass('noscroll');
-		$('#siteWrap').width($('#siteWrap').width);
-		document.ontouchmove = function(event){
-			event.preventDefault();
-		}
-	});
+	// $('#menuTrigger').click(function(ev){
+	// 	$('#siteWrap').addClass('active');
+	// 	$('#mobileMenu').addClass('active');
+	// 	$('body').addClass('noscroll');
+	// 	$('#siteWrap').width($('#siteWrap').width);
+	// 	document.ontouchmove = function(event){
+	// 		event.preventDefault();
+	// 	}
+	// });
+
+
 	$(document).hammer({swipe_velocity:0.3}).on('dragleft dragright swipeleft swiperight',function(ev){
 		ev.gesture.preventDefault();
 		if(ev.type == 'dragleft' || ev.type == 'dragright' || ev.type == 'swiperight') {return;}
@@ -153,157 +155,40 @@ jQuery(document).ready(function($){
    
 // });
 
+var sh_ctr = 0;
 
+$('.say-hello').click(function(){
+sh_ctr ++
 
-// $(".typed-content").typed({
-// 		strings: ["brands,", "websites,", "print works,", "digital media,", "objects,", "and other fun stuff"],
-//         //strings: ["First sentence.", "Second sentence."],
-//         typeSpeed: 0,
-//         contentType: 'html',
-//         backspace: function(curString, curStrPos){
+	if(sh_ctr == 1){
+		$('#sayHello').slideDown(200);
+	}else{
+		$('#sayHello').slideUp(200);
+		sh_ctr = 0;
+	}
+	
+});
 
-// 	    setTimeout(function() {
+//Sidr funcitonality
+$('.sidr-trigger').sidr({
+      name: 'sidr-main',
+      source: '.sidr-nav, #sayHello .row',
+      renaming: false,
+      side: 'left',
+      displace: false,
+  //     onOpen:function(){
+  //     	$('.sidr ul.menu li a').click(function(){
+		// 	$('.sidr ul li').removeClass('clicked')
+		// 	$(this).parent().addClass('clicked');
+		// })
+  //     }
+  });
 
-// 	            // check string array position
-// 	            // on the first string, only delete one word
-// 	            // the stopNum actually represents the amount of chars to
-// 	            // keep in the current string. In my case it's 3.
-// 	            if (self.arrayPos == 1){
-// 	                self.stopNum = 3;
-// 	            }
-// 	            //every other time, delete the whole typed string
-// 	            else{
-// 	                self.stopNum = 0;
-// 	            }
-//         //stringsElement: $('#typed_string')
-//       });
-
-
-// $(".start").typed({
-//             strings: ["MESH is your full service"],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 999, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: 1, // number of loops, false = infinite
-//             cursorChar: "",
-//             callback: function(){ } // call function after typing is done
-//         });
-
-// setTimeout(function(){
-// $(".design").typed({
-//             strings: ["design", "communication design"],
-//             typeSpeed: 30, // typing speed
-//             startDelay: 100,
-//             backDelay: 999, // pause before backspacing
-//             loop: true, // loop on or off (true or false)
-//             loopCount: 1, // number of loops, false = infinite
-//             cursorChar: "",
-//             callback: function(){ } // call function after typing is done
-//         });
-//    }, 2000);
-
-// setTimeout(function(){
-// $(".make").typed({
-//             strings: ["studio. We make"],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 999, // pause before backspacing
-//             loop: true, // loop on or off (true or false)
-//             loopCount: 1, // number of loops, false = infinite
-//             cursorChar: "",
-//             callback: function(){ } // call function after typing is done
-//         });
-//  }, 6000);
-// setTimeout(function(){
-//         $(".typed-content-0").typed({
-//             strings: ["brands,"],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 750, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: false, // number of loops, false = infinite
-//             cursorChar: "",
-//             callback: function(){ } // call function after typing is done
-//         });
-//     }, 8000);
-
-// setTimeout(function(){
-//         //$(".typed-content-1").css("display", "inherit");
-//         $(".typed-content-1").typed({
-//             strings: ["websites,"],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 750, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: false, // number of loops, false = infinite
-//             cursorChar: "",
-//             callback: function(){ } // call function after typing is done
-//         });
-//     }, 10000);
-
-// setTimeout(function(){
-//         //$(".typed-content-2").css("display", "inherit");
-//         $(".typed-content-2").typed({
-//             strings: ["print works,"],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 750, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: false, // number of loops, false = infinite
-//             cursorChar: "",
-//             callback: function(){ } // call function after typing is done
-//         });
-//     }, 12000);
-
-// setTimeout(function(){
-//         //$("typed-content-3").css("display", "inherit");
-//         $(".typed-content-3").typed({
-//             strings: [" digital media,"],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 750, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: false,
-//             cursorChar: "", // number of loops, false = infinite
-//             callback: function(){ } // call function after typing is done
-//         });
-//     }, 14000);
-
-// setTimeout(function(){
-//         //$(".element4").css("display", "inherit");
-//         $(".typed-content-4").typed({
-//             strings: [" objects,"],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 750, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: false,
-//             cursorChar: "", // number of loops, false = infinite
-//             callback: function(){ } // call function after typing is done
-//         });
-//     }, 16000);
-
-// setTimeout(function(){
-//         //$(".element4").css("display", "inherit");
-//         $(".typed-content-5").typed({
-//             strings: [" and other fun stuff "],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 750, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: false,
-//             cursorChar: "", // number of loops, false = infinite
-//             callback: function(){ } // call function after typing is done
-//         });
-//     }, 18000);
-
-// setTimeout(function(){
-//         //$(".element4").css("display", "inherit");
-//         $(".end").typed({
-//             strings: [" to share your good ideas. "],
-//             typeSpeed: 30, // typing speed
-//             backDelay: 750, // pause before backspacing
-//             loop: false, // loop on or off (true or false)
-//             loopCount: false,
-//             cursorChar: "", // number of loops, false = infinite
-//             callback: function(){ } // call function after typing is done
-//         });
-//     }, 20000);
-
-//$(".work-grid").justifiedGallery();
+ $('.sidr-close').click(
+    function(){
+      $.sidr('close', 'sidr-main');
+       //console.log("Sidr should be closed");
+    });
 
 Macy.init({
     container: '#macy',

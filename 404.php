@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <section id="approach" class="fo-oh-fo">
-	<div class="container-main">
-		<div class="gutter cf">
+	<div class="container">
+		<div class=""><!-- gutter cf -->
 			<div id="approach-intro">
 				404!<br>
 				Something went horribly wrong!
