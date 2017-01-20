@@ -74,7 +74,7 @@ get_header(); ?>
 	 				<div class="content">
 		 				<h2>
 		 					<!-- <a href="<?php //the_permalink(); ?>"> -->
-		 					<?php the_title(); ?> (<?php echo $wk_ctr; ?>)
+		 					<span><?php the_title(); ?> (<?php echo $wk_ctr; ?>)</span>
 		 					<!-- </a> -->
 		 				</h2>
 		 			<span class="industries tags"> 
