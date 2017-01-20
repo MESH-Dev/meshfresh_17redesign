@@ -143,15 +143,15 @@ get_header(); ?>
 	<div id="detail_scrollarea">
 	    <i id="fullscreen" class="material-icons">fullscreen</i>
 	    <a name="proj1"></a>
-	    <img id="img1" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/01/VesselBrooklyn_Web_Mockup-1.jpg">
-	    <img id="img2" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/08/ETarch_Web_MockupFINAL.jpg">
-	    <img id="img3" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/01/CSIS_Web_Mockup.jpg">
-	    <img id="img4" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2016/08/tamarack_Web_MockupFINAL.jpg">
+	    <img id="img1" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/01/VesselBrooklyn_Web_Mockup-1.jpg">
+	    <img id="img2" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/08/ETarch_Web_MockupFINAL.jpg">
+	    <img id="img3" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/01/CSIS_Web_Mockup.jpg">
+	    <img id="img4" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2016/08/tamarack_Web_MockupFINAL.jpg">
 	    <a name="proj2"></a>
-	    <img id="img5" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/04/nomad01_1600.jpg">
-	    <img id="img6" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/03/MissionSavvy2_1600.jpg">
-	    <img id="img7" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/03/MissionSavvy1_1600.jpg">
-	    <img id="img8" alt="placeholder" src="http://meshfresh.com/wp-content/uploads/2014/03/MissionSavvy3_1600.jpg">
+	    <img id="img5" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/04/nomad01_1600.jpg">
+	    <img id="img6" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy2_1600.jpg">
+	    <img id="img7" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy1_1600.jpg">
+	    <img id="img8" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy3_1600.jpg">
 	</div>
 
 

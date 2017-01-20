@@ -119,19 +119,25 @@ jQuery(document).ready(function($){
 
 
     var mX = 0;
+    var wWidth = $(window).width();
+
+    //Resize?
+
     $('body').mousemove(function(e) {
 
         // moving right 
-        if (e.pageX < mX) {
-            $('.badge-left').stop().fadeOut('250');
-            $('.badge-right').stop().fadeIn('250');
 
-        // moving left
-        } else {
-            $('.badge-left').stop().fadeIn('250');
-            $('.badge-right').stop().fadeOut('250');
-        }
+        if(wWidth > 550){
+	        if (e.pageX < mX) {
+	            $('.badge-left').stop().fadeOut('250');
+	            $('.badge-right').stop().fadeIn('250');
 
+	        // moving left
+	        } else {
+	            $('.badge-left').stop().fadeIn('250');
+	            $('.badge-right').stop().fadeOut('250');
+	        }
+    	}
         // set new mX after doing test above
         mX = e.pageX;
 
