@@ -6,6 +6,9 @@ header {
 	#logo{
 		float:left; 
 		width:15%;/*new*/
+		svg{
+			max-width: 136px;
+		}
 	}
 
 	nav{
