@@ -383,8 +383,8 @@ section#blogroll{margin: 42px 0 0;float: left;width: 100%;}
 
 			.post-tumblr-wrap,.post-wp-feature,.post-instagram-feature,.post-tumblr-feature{margin:0 0 10px;}
 				#blogroll.single .post-tumblr-wrap,#blogroll.single .post-wp-feature,#blogroll.single .post-instagram-feature,#blogroll.single .post-tumblr-feature{margin:0 0 6px;}
-				.readmore,.followus{font:12px/15px 'MemphisLTW01-BoldItalic';margin:0 0 19px;}
-					.followus a{color:#000;}
+				//.readmore,.followus{font:12px/15px 'MemphisLTW01-BoldItalic';margin:0 0 19px;}
+					//.followus a{color:#000;}
 			.single-post-date,.post-instagram-date,.post-tumblr-date,.post-wp-date{font-size:10px;}
 			.readmore {margin: 0 0 19px 0;display: block;}
 
@@ -1031,6 +1031,7 @@ a.cta{
 			}
 
 			.followus{
+				margin:.5em 0;
 				a{
 					font-size:1.6em;
 					color:white;
@@ -1280,6 +1281,36 @@ footer.site-footer{
 		// margin-right:10px;
 		text-decoration:underline;
 		padding:10px 0;
+	}
+}
+
+//Blog (or Blogroll)
+
+.blogroll-grid{
+	.sidebar{
+		color:$white;
+		//padding:0 1em;
+		.content{
+			background:$yellow;
+			padding:1em;
+			h2{
+				margin:0;
+				margin-bottom:.5em;
+				span{
+					border-bottom: 2px solid $blue;
+				}
+				
+			}
+
+			ul{
+				li{
+					list-style-type:none;
+					a{
+
+					}
+				}
+			}
+		}
 	}
 }
 

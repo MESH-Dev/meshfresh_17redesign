@@ -1,8 +1,8 @@
 <div id="rssUrl">
 	<a href="<?php bloginfo('rss2_url'); ?>">RSS</a>
 </div>
-<div class="gutter cf">
-	<h2>What We're Reading</h2>
+<div class="content"><!-- gutter cf -->
+	<h2><span>What We're Reading</span></h2>
 	<ul id="reading-list">
 		<?php $lists = get_field('reading',103);
 		foreach($lists as $list){ ?>

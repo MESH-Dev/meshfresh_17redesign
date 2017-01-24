@@ -5,7 +5,7 @@ get_header(); ?>
 
 <section id="blogroll">
 	<div class="blogroll-grid"><!-- container -->
-		<div class=" columns-2"><!-- contentPrimary -->
+		<div class="sidebar columns-2"><!-- contentPrimary -->
 			<?php get_sidebar('blog'); ?>
 		</div>
 		<div class="columns-10 blogroll-grid" id="macy"><!-- id=contentSecondary  -->
