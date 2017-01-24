@@ -82,7 +82,7 @@ header.new{
 	//width:100%;
 	//height:92px;
 	background:$blue; 
-	color:white;
+	color:$white;
 	position:relative;
 	padding:1em 0;
 	display:none;
@@ -110,7 +110,7 @@ header.new{
 	}
 
 	a{
-		color:white;
+		color:$white;
 
 		&:active,
 		&:focus,
@@ -146,7 +146,7 @@ header.new{
 /* =========
 	Home
 ============ */
-body.home{background:white;background-size:cover;}
+body.home{background:$white;background-size:cover;}
 section#home{}
 section#home .container-main{/*height:1136px;*/}
 	section#home .container-main .gutter {padding:19px 162px 0 239px; }
@@ -646,13 +646,13 @@ section#blogroll{margin: 42px 0 0;float: left;width: 100%;}
     h3{
     	font-size:1.8em;
     	font-family:$gothic;
-    	color:black;
+    	color:$white;
     	margin:0;
     }
 
     span{
     	font-size:1.4em;
-    	color:black;
+    	color:$white;
     }
 }
 // .badge:before, .badge:after {
@@ -681,16 +681,16 @@ section#blogroll{margin: 42px 0 0;float: left;width: 100%;}
 
 .badge-left{
 	position: absolute;
-	display:none;
-	z-index: 1000;
+	//display:none;
+	z-index: 20;
 	top: 60vh;
 	left: 10vw;
 }
 
 .badge-right{
 	position: absolute;
-	display:none;
-	z-index: 1000;
+	//display:none;
+	z-index: 20;
 	top: 10vh;
 	right: 10vh;
 }
@@ -754,6 +754,8 @@ a.cta{
     text-decoration:none;
     text-transform:uppercase;
     color:$blue;
+    font-family:$gothic;
+    font-weight:bold;
     &:hover,
     &:active,
     &:focus{
@@ -771,7 +773,7 @@ a.cta{
 
 	.divider-line{
 		font-size:2em;
-		color:black;
+		color:$black;
 		margin:2em 0;
 		font-family:$memphis-medium;
 	}
@@ -839,7 +841,7 @@ a.cta{
 	    	text-decoration:none;
 
 	    	span{
-	    		color:black;
+	    		color:$black;
 	    	}
 	    	//border-bottom:2px solid $blue;
 
@@ -871,8 +873,8 @@ a.cta{
 	    		border-bottom:2px solid $blue;
 
 		    	span{
-		    		color:black;
-		    		border-bottom:2px solid black
+		    		color:$black;
+		    		border-bottom:2px solid $black
 		    	}
 	    	}
       	}
@@ -960,7 +962,8 @@ a.cta{
 	max-width:90%;
 }
 
-.work-block{
+.work-block,
+.blog-entry{
 	margin-bottom:4em;
 	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
@@ -970,7 +973,7 @@ a.cta{
 	.hover{
 		display:none;
 		background-color:$blue_rgba;
-		color:white;
+		color:$white;
 		position:absolute;
 		top:0;
 		bottom:0;
@@ -983,8 +986,8 @@ a.cta{
 		h2{
 
 			//
-			// color:white;
-			// border-bottom:2px solid white;
+			// color:$white;
+			// border-bottom:2px solid $white;
 			 cursor:pointer;
 
 			a,
@@ -992,8 +995,8 @@ a.cta{
 				//font-size:3.6em;
 				line-height:1.25;
 				//text-decoration:underline;
-				 color:white;
-				 border-bottom:2px solid white;
+				 color:$white;
+				 border-bottom:2px solid $white;
 
 				&:hover,
 				&:active,
@@ -1011,7 +1014,7 @@ a.cta{
 			.tags{
 				font-family:'Gothic';
 				a{
-					color:white;
+					color:$white;
 					font-size:1.4em;
 					text-decoration:none;
 
@@ -1021,6 +1024,30 @@ a.cta{
 						text-decoration:underline;
 					}
 				}
+			}
+
+			.post-instagram-content{
+				font-size:1.6em;
+			}
+
+			.followus{
+				a{
+					font-size:1.6em;
+					color:white;
+					text-decoration:underline;
+
+					&:hover,
+					&:focus,
+					&:active{
+						color:white;
+						text-decoration:none;
+					}
+				}
+				
+			}
+
+			.post-instagram-date{
+				font-size:1.6em;
 			}
 
 			footer{
@@ -1035,7 +1062,7 @@ a.cta{
 						padding:0;
 						list-style-type: none;
 						a{
-							color:white;
+							color:$white;
 							text-decoration:none;
 							font-size:1.4em;
 							font-family:'Gothic';
@@ -1097,7 +1124,7 @@ a.cta{
 	.tags{
 		font-family:'Gothic';
 		a{
-			color:white;
+			color:$white;
 			font-size:1.4em;
 			text-decoration:none;
 
@@ -1112,10 +1139,10 @@ a.cta{
 
 .tags{
 		font-family:'Gothic';
-		color:white;
+		color:$white;
 		text-transform:uppercase;
 		a{
-			color:white;
+			color:$white;
 			font-size:1.4em;
 			text-decoration:none;
 
@@ -1133,7 +1160,7 @@ a.cta{
 		height:100%;
 		top:0;
 		position:fixed;
-		color:white;
+		color:$white;
 		background-color:$blue;
 		padding:4em 2em;
 
@@ -1164,12 +1191,12 @@ a.cta{
 
 		h1,
 		p{
-			color:white;
+			color:$white;
 		}
 
 		h1{
 			span{
-				border-bottom:2px solid white;
+				border-bottom:2px solid $white;
 			}
 		}
 
@@ -1216,11 +1243,20 @@ a.cta{
 	    font-size:2.8em;
 	    padding:0;
 	    padding-top:.5em;
+	    font-weight:normal;
 	}
 
 	.quote-attr{
 		font-family:$raleway;
 		font-weight:400;
+	}
+
+	.slide{
+		margin-left:2px;
+	}
+
+	button{
+		display:none !important;
 	}
 }
 
@@ -1255,7 +1291,7 @@ footer.site-footer{
 
 .sidr{
 
-	background:white;
+	background:$white;
 	// border-top:10px solid $blue;
 	// border-bottom:10px solid $blue;
 	box-shadow: 2px 0px 6px rgba(0, 0, 0, 0.4);
@@ -1267,8 +1303,8 @@ footer.site-footer{
 	.sidr-close{
 		display:inline;
 		//float:right;
-		background:black;
-		color:white;
+		background:$black;
+		color:$white;
 	    padding: 7px 14px;
 		text-transform:uppercase;
 		cursor:pointer;
@@ -1292,11 +1328,11 @@ footer.site-footer{
 
 			.title{
 			font-size:2em;
-			color:black;
+			color:$black;
 			font-family:$memphis-medium;
 			line-height:1.25;
 			margin:1.5em 0;
-			border-bottom:2px solid black;
+			border-bottom:2px solid $black;
 			width:70%;
 		}
 
@@ -1327,7 +1363,7 @@ footer.site-footer{
 			a{
 				font-size:2em;
 				border-bottom:2px solid transparent;
-				color:black;
+				color:$black;
 				font-family:$memphis-medium;
 				line-height:1.25;
 

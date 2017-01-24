@@ -9,6 +9,8 @@ $gothic: 'Gothic';
 
 $blue : #0000f8;
 $blue_rgba: rgba(0,0,230,.9);
+$black: #000000;
+$white: #ffffff;
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
@@ -50,16 +52,44 @@ p {
     width:8em;
     line-height: 1.5;
     border-bottom:2px solid $blue;
+    margin:0;
+    padding:0;
+    margin-bottom:20px;
   }
 
-  a,a.cta{
-    text-align:center;
+  a{
     border-bottom:1px solid $blue;
-    font-size:1.6em;
+    //font-size:1.6em;
+    //font-family:$gothic;
+    font-weight:bold;
+    //text-transform:uppercase;
+    text-decoration:underline;
+    color:$blue;
     &:hover,
     &:active,
     &:focus{
-      border-bottom:1px solid transparent;
+      //border-bottom:1px solid transparent;
+      text-decoration:none;
+      color:$blue;
+    }
+  }
+
+  .cta{
+    a{
+      text-align:center;
+      border-bottom:1px solid $blue;
+      //font-size:1.6em;
+      font-family:$gothic;
+      font-weight:bold;
+      text-transform:uppercase;
+      text-decoration:none;
+      color:$blue;
+      &:hover,
+      &:active,
+      &:focus{
+        border-bottom:1px solid transparent;
+        text-decoration:none;
+      }
     }
   }
   .callout{
@@ -70,11 +100,40 @@ p {
   .text-callout{
     margin-bottom:15em;
   }
+
+  .large-text{
+    font-size:2em;
+    font-family:$memphis-medium;
+    color:$blue;
+  }
+
+  p{
+    font-family:$raleway;
+    font-weight:bold;
+    font-size:1.6em;
+
+    a{
+      font-family:$gothic;
+      font-weight:bold;
+      border-bottom:1px solid $blue;
+      color:$blue;
+      &:hover,
+      &:active,
+      &:focus{
+        border-bottom:1px solid transparent;
+      }
+    }
+  }
+
+  blockquote{
+    padding:0;
+    margin:0;
+    font-weight:normal;
+    p{
+      font-family: $memphis-light-italic;
+      font-size:2.8em;
+      font-weight:normal;
+    }
+  }
 }
 
-blockquote{
-  font-family: $memphis-light-italic;
-  font-size:2em;
-  padding:0;
-  margin:0;
-}

@@ -18,8 +18,29 @@ get_header();  ?>
  
 <div class="background-full" style="background-image:url('<?php echo $left_img_url; ?>')">
 	<div class="twenty20 twentytwenty-container">
-			<img class="compare" src="<?php echo $right_img_url; ?>" />
-		    <img src="<?php echo $left_img_url; ?>" />
+
+			<div class="twentytwenty-before-container">
+				<div class="badge badge-left">
+			    	<div class="wrap">
+			    		<div class="content">
+					    	<h3>MESH Charleston</h3>
+					    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+				    	</div>
+			    	</div>
+		    	</div>
+				<img class="compare" src="<?php echo $right_img_url; ?>" />
+			</div>
+			<div class="twentytwenty-after-container">
+				<div class="badge badge-right">
+			    	<div class="wrap">
+			    		<div class="content">
+					    	<h3>MESH Brooklyn</h3>
+					    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+				    	</div>
+			    	</div>
+		   		</div>
+			    <img src="<?php echo $left_img_url; ?>" />
+			</div>
 	   	<div class="content">
 		    <div class="home_greeting" aria-hidden="true">
    				<h1>
@@ -28,23 +49,9 @@ get_header();  ?>
 		    </div>
     </div>
 
-	    <div class="badge badge-left">
-	    	<div class="wrap">
-	    		<div class="content">
-			    	<h3>MESH Charleston</h3>
-			    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-		    	</div>
-	    	</div>
-	    </div>
+	    
 
-	    <div class="badge badge-right">
-	    	<div class="wrap">
-	    		<div class="content">
-			    	<h3>MESH Brooklyn</h3>
-			    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-		    	</div>
-	    	</div>
-	    </div>
+	    
 
 	    <svg>
 		    <line x1="-2000" y1="0" x2="-22200" y2="100%"  />  

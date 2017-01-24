@@ -127,19 +127,19 @@ jQuery(document).ready(function($){
 
         // moving right 
 
-        if(wWidth > 550){
-	        if (e.pageX < mX) {
-	            $('.badge-left').stop().fadeOut('250');
-	            $('.badge-right').stop().fadeIn('250');
+     //    if(wWidth > 550){
+	    //     if (e.pageX < mX) {
+	    //         $('.badge-left').stop().fadeOut('250');
+	    //         $('.badge-right').stop().fadeIn('250');
 
-	        // moving left
-	        } else {
-	            $('.badge-left').stop().fadeIn('250');
-	            $('.badge-right').stop().fadeOut('250');
-	        }
-    	}
-        // set new mX after doing test above
-        mX = e.pageX;
+	    //     // moving left
+	    //     } else {
+	    //         $('.badge-left').stop().fadeIn('250');
+	    //         $('.badge-right').stop().fadeOut('250');
+	    //     }
+    	// }
+     //    // set new mX after doing test above
+     //    mX = e.pageX;
 
     });
 
@@ -195,6 +195,15 @@ $('.sidr-trigger').sidr({
       $.sidr('close', 'sidr-main');
        //console.log("Sidr should be closed");
     });
+
+
+ //Slick slider for quotes
+ var $slider = $(".slider").slick({
+    autoplay: true,
+    autoplaySpeed:7000,
+    pauseOnFocus:true,
+    pauseOnHover:true,
+})			
 
 Macy.init({
     container: '#macy',

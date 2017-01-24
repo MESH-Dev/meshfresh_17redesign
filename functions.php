@@ -6,16 +6,54 @@
 	include('functions/start.php');
 	include('functions/cpt.php');
 	include('functions/clean.php');
-	
-	// Add Thumbnail Theme Support
-	add_theme_support('post-thumbnails');
-	add_image_size('background-fullscreen', 1800, 1200, true);
-	add_image_size('short-banner', 1800, 800, true);
-	add_image_size('large', 700, '', true); // Large Thumbnail
-	add_image_size('medium', 250, '', true); // Medium Thumbnail
-	add_image_size('small', 120, '', true); // Small Thumbnail
-	add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
+
+	//Stop autop courtesy https://davidwalsh.name/disable-autop
+
+	remove_filter('the_content', 'wpautop');
+
+	// Callback function to insert 'styleselect' into the $buttons array
+	function my_mce_buttons_2( $buttons ) {
+		array_unshift( $buttons, 'styleselect' );
+		return $buttons;
+	}
+	// Register our callback to the appropriate filter
+	add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
+
+	// Callback function to filter the MCE settings
+function my_mce_before_init_insert_formats( $init_array ) {  
+	// Define the style_formats array
+	$style_formats = array(  
+		// Each array child is a format with it's own settings
+		array(  
+			'title' => '.large-text',  
+			'block' => 'div',  
+			'classes' => 'large-text',
+			'wrapper' => true,
+			
+		),  
+		array(  
+			'title' => '.cta',  
+			'block' => 'div',  
+			'classes' => 'cta',
+			//'selector' => 'a',
+			'wrapper' => true,
+		),
+		// array(  
+		// 	'title' => '.ltr⇢',  
+		// 	'block' => 'blockquote',  
+		// 	'classes' => 'ltr',
+		// 	'wrapper' => true,
+		// ),
+	);  
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );  
+	
+	return $init_array;  
+  
+} 
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );  
 
 	//Readmore excerpts
 	function filter_function_name( $excerpt ) {
@@ -24,11 +62,11 @@
 	add_filter( 'get_the_excerpt', 'filter_function_name' );
 
 	//Functions file can't seem to find this function...
-	// function getInstagram(){
-	// 	$json = file_get_contents('https://api.instagram.com/v1/users/1167443738/media/recent?access_token=1167443738.d346c1d.1213de64f26e485e8ffe33eab03e1905');
-	// 	$obj = json_decode($json);
-	// 	return $obj->data;
-	// }
+	function getInstagram(){
+		$json = file_get_contents('https://api.instagram.com/v1/users/1167443738/media/recent?access_token=1167443738.d346c1d.1213de64f26e485e8ffe33eab03e1905');
+		$obj = json_decode($json);
+		return $obj->data;
+	}
 
 	//Get all Posts for Blogroll
 		/* =============
@@ -123,17 +161,7 @@
 	  return $values[$index];
 	}
 
-	//Enqueue scripts and styles
-	function MESH_scripts() {
-		wp_enqueue_style( 'MESH-style', get_stylesheet_uri() );
-		wp_enqueue_style('MESH-twentystyle',get_stylesheet_directory_uri().'/assets/css/twentytwenty.css');
-		wp_enqueue_script('MESH-masonry',get_stylesheet_directory_uri().'/assets/js/masonry.pkgd.min.js',array('jquery'));
-		wp_enqueue_script('hammer',get_stylesheet_directory_uri().'/assets/js/jquery.hammer-full.js',array('jquery'));
-		wp_enqueue_script('MESH-script',get_stylesheet_directory_uri().'/assets/js/script.js',array('jquery'));
-		wp_enqueue_script('MESH-event-move',get_stylesheet_directory_uri().'/assets/js/jquery.event.move.js',array('jquery'));
-		wp_enqueue_script('MESH-compare',get_stylesheet_directory_uri().'/assets/js/jquery.twentytwenty.js',array('jquery'));
-	}
-	add_action('wp_enqueue_scripts','MESH_scripts');
+	
 
 
 	//Theme Supports
