@@ -1374,12 +1374,13 @@ footer.site-footer{
 .detail_copy{
     position: absolute;
     visibility: hidden;
-    top: 0px;
+    top: 180px;
     left: 96%;
     width: 100%;
     height: 100%;
     padding: 90px 60px;
-    max-width: 400px;
+    max-width: 800px;
+    margin: 0 auto;
 
     // @media($bp-smaller-than-tablet){
     // 	position:relative;
@@ -1398,7 +1399,7 @@ footer.site-footer{
 	    font-family: 'Raleway', sans-serif;
 	    line-height: 20px;
 	    font-size: 14px;
-	    margin: 50px 0px;
+	    margin-top: 50px;
 	}
 }
 
@@ -1416,15 +1417,19 @@ footer.site-footer{
 }
 
 #detail_exit{
-    z-index: 1;
+    z-index: 3;
     font-size: 42px;
     font-weight: 100;
     color: #fff;
     visibility: hidden;
     position: absolute;
-    top: 25px;
-    left: 30px;
+    top: 200px;
+    left: 60px;
     cursor: pointer;
+ //    transition: all 0.2s ease-in-out;
+	// &:hover{
+	// 	left: 56px;
+	// }    
 }
  
 #detail_scrollarea{
@@ -1458,31 +1463,17 @@ footer.site-footer{
 }
 
 .detail_nav{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -o-flex;
-    display: -ms-flex;
-    display: flex;
     position: absolute;
-    width: 100%;
-    bottom: 0;
+    width: 90%;
+    bottom: 20px;
+    left: 60px;
     visibility: hidden;
     i{
-
-    }
-}
-
-.detail_switch{
-    width: 50%;
-    height: 50px;
-    text-align: center;
-    cursor: pointer;
-
-    i{
 	    color: #fff;
-	    font-size: 52px;
+	    font-size: 42px;
+	    text-align: left;
+	    letter-spacing: 10px;
 	}
-
 	p{
 	    color: #fff;
 	    font-family: 'Raleway', sans-serif;
@@ -1493,39 +1484,71 @@ footer.site-footer{
 	}
 }
 
+.detail_switch{
+	padding: 14px 0;
+	&:hover span {
+	  visibility: visible;
+	  opacity: 0.8;
+	  left: 0;
+	  top: 0;
+	  margin-top: -15px;
+	  margin-left: 15px;
+	  z-index: 999;
+	}
+	svg{
+		width: 22px;
+	}
+	span {
+	  position: absolute;
+	  width:140px;
+	  color: #FFFFFF;
+	  background: #000000;
+	  height: 30px;
+	  line-height: 30px;
+	  text-align: center;
+	  visibility: hidden;
+	  border-radius: 6px;
+	}
+	span:after {
+	  content: '';
+	  position: absolute;
+	  top: 50%;
+	  right: 100%;
+	  margin-top: -8px;
+	  width: 0; height: 0;
+	  border-right: 8px solid #000000;
+	  border-top: 8px solid transparent;
+	  border-bottom: 8px solid transparent;
+	}
+}
+
 //------------------------------
 
 #copy_1{
     position: absolute;
     visibility: hidden;
-    top: 0px;
     left: -10px;
     width: 100%;
     height: 100%;
     padding: 90px 60px;
-    max-width: 400px;
 }
 
 #copy_2{
     position: absolute;
     visibility: hidden;
-    top: 0px;
     left: -10px;
     width: 100%;
     height: 100%;
     padding: 90px 60px;
-    max-width: 400px;
 }
 
 #copy_3{
     position: absolute;
     visibility: hidden;
-    top: 0px;
     left: -10px;
     width: 100%;
     height: 100%;
     padding: 90px 60px;
-    max-width: 400px;
 }
 
 
