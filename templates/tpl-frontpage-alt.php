@@ -160,7 +160,7 @@ get_header();  ?>
 						$project_img_position=get_sub_field('pb_position');	
 						$project_img = get_sub_field('project_image');
 						//var_dump($project_img);
-						$project_img_url = $project_img['sizes']['large'];
+						$project_img_url = $project_img['url'];
 						//var_dump($project_img_url);
 						$project_hover=get_sub_field('pb_hover_text');
 						$project_hover_title=get_sub_field('pb_hover_statement');
