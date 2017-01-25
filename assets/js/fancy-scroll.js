@@ -77,7 +77,7 @@ var project_3_trigger = new ScrollMagic.Scene({
 
 
 //Scroll Button definition
-project_scroll.add("start")
+project_next.add("start")
     .paused(true)
     .to("#detail_scrollarea", 1, {scrollTo:"#img3", ease:Power2.easeInOut})//Redefine for dynamic selectors, ex."scroll to first image of '.next_proj' from '.active_proj'"
     .add("end");

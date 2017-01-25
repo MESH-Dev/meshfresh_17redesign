@@ -173,22 +173,44 @@ get_header(); ?>
 		<i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
 		<div class="detail_copy" id="copy_1">
 			<h3><span class="underline">Children’s Museum of the Arts New York</span></h3>
-			<p>The Children’s Museum of New York has one of the most amazing new spaces for kids in the city, and a handful of impressive RISD grads as teachers — and they needed a website to match. We redesigned their site to reflect the playful but clean aesthetic of the museum, while keeping in mind the need for flexibility of daily in-house updates to detail all of their offered classes to parents and children alike. We redeveloped the site with these two audiences in mind, and the project remains an ongoing evolution as we continue to improve the site with new features.</p>
+			<p>The Children’s Museum of New York has one of the most amazing new spaces for kids in the city, and a handful of impressive RISD grads as teachers — and they needed a website to match. We redesigned their site to reflect the playful but clean aesthetic of the museum, while keeping in mind</p>
 		</div>
 		<div class="detail_copy" id="copy_2">
 			<h3><span class="underline">Mission Savvy</span></h3>
-			<p>MESH has worked with this entrepreneur from her beginning, overhauling her site, her branding, her promotional collateral online and in print, and her Kickstarter campaign, the Vegan Pop-Up in Appalachia Organic To-Go Kickstarter series. Every time she reinvents Mission Savvy, we are there to support with strategy and visuals. The brand was designed to feel personal and handmade down to its very font–the hand-illustrated Vegan Alphabet inspired by the fruits and vegetables served daily in her Cafe, her food truck, and her food lab. The Vegan Alphabet was also featured in the 2013 Print Magazine Regional Design Annual.</p>
+			<p>MESH has worked with this entrepreneur from her beginning, overhauling her site, her branding, her promotional collateral online and in print, and her Kickstarter campaign, the Vegan Pop-Up in Appalachia Organic To-Go Kickstarter series. Every time she reinvents Mission Savvy, we are there to support with strategy and visuals. The brand was designed to feel personal and handmade down to its</p>
 		</div>
 		<div class="detail_copy" id="copy_3">
 			<h3><span class="underline">J.Q. Dickinson Saltworks</span></h3>
-			<p>We partnered with the founders of J. Q. Dickinson Salt-works from their inception, working through a naming, branding, communication strategy, and sales strategy of their new, organic, and locally produced salt product. The entire project was inspired by their 200 year old family farm, both in storytelling and in design. The packaging was inspired by the original glass jar and tin lid packaging used by the family decads ago, and the typography was inspired by the grids of the original order forms found in the old farm store attic.</p>
+			<p>We partnered with the founders of J. Q. Dickinson Salt-works from their inception, working through a naming, branding, communication strategy, and sales strategy of their new, organic, and locally produced salt product. The entire project was inspired by their 200 year old family farm, both in</p>
 		</div>
 		<div class="detail_nav">
 			<div id="prev_proj" class="detail_switch" onclick="prevScroll()">
-				<p>Prev</p>
+				<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
+				  <defs>
+				    <style>
+				      .cls-1 {
+				        fill: #fff;
+				      }
+				    </style>
+				  </defs>
+				  <title>uparrow</title>
+				  <path class="cls-1" d="M4.93,33.67,21,17.64l16.07,16L42,28.74l-21-21-21,21Z" transform="translate(0 -7.74)"/>
+				</svg>
+				<span class="tooltip">Previous Project</span>
 			</div>
 			<div id="next_proj" class="detail_switch" onclick="nextScroll()">
-				<p>Next</p>
+				<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
+				  <defs>
+				    <style>
+				      .cls-1 {
+				        fill: #fff;
+				      }
+				    </style>
+				  </defs>
+				  <title>downarrow</title>
+				  <path class="cls-1" d="M37.07,7.74,21,23.77,4.93,7.74,0,12.67l21,21,21-21Z" transform="translate(0 -7.74)"/>
+				</svg>
+				<span class="'tooltip">Next Project</span>
 			</div>
 		</div>
 	</div>

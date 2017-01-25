@@ -6,6 +6,10 @@ header {
 	#logo{
 		float:left; 
 		width:15%;/*new*/
+		svg{
+			max-height: 100px;
+			display: inline-block;
+		}
 	}
 
 	nav{
