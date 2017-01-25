@@ -7,7 +7,8 @@ header {
 		float:left; 
 		width:15%;/*new*/
 		svg{
-			max-width: 136px;
+			max-height: 120px;
+			display: inline-block;
 		}
 	}
 
@@ -29,6 +30,7 @@ header {
 					height:100%;
 					vertical-align: middle;
 					margin-top:10%;
+					margin-left:2em;
 					//margin: 0 104px 9px 0px;
 
 					// &.nomargin{
@@ -180,8 +182,8 @@ header {
 	}
 
 	.say-hello{
-		background-color:black;
-		color:white;
+		background-color:$black;
+		color:$white;
 		font-weight:bold;
 		//margin-top:10px;
 		padding:2px 4px;
