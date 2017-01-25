@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="advocates">
+<section id="advocates" class="has-emoticon">
 	<div class="container">
 		<div class=""><!-- gutter -->
 			<?php $args = array(

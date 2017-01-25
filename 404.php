@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="approach" class="fo-oh-fo">
+<section id="approach" class="fo-oh-fo has-emoticon">
 	<div class="container">
 		<div class=""><!-- gutter cf -->
 			<div id="approach-intro">

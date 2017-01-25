@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="blogroll" class="single">
+<section id="blogroll" class="single has-emoticon">
 	<div class="container-main">
 		<div id="contentPrimary">
 			<?php get_sidebar('blog'); ?>

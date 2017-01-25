@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-<section id=""><!-- page-content -->
+<section id="" class="has-emoticon"><!-- page-content -->
 	<div class="work-grid in-column"><!-- container -->
 		<div class="row">
 	<?php

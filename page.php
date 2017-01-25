@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="page-content" class="text">
+<section id="" class="text has-emoticon"><!-- page-content -->
 	<div class="container">
 
 		<?php get_template_part('/partials/page-callout'); ?>
@@ -79,18 +79,21 @@
 									//'meta_compare'   => '!=',
 									//'order' => 'ASC',
 									'orderby' => 'rand', //Order by random so that a new quote is rendered each load
-									'posts_per_page' => 1 // -1 for all posts, we only want one, tho
+									'posts_per_page' => 4 // -1 for all posts, we only want one, tho
 								);
 								$query = new WP_Query($args);
-									if ( $query->have_posts() ) { 
+									if ( $query->have_posts() ) { ?>
+									<div class="quote slider">
+									<?php
 						
 										while ( $query->have_posts() ) { $query->the_post(); 
 							?>
-							<div class="quote">
+							
+								<div class="slide">
 								<p class="quote-content"><?php echo get_field('message', $post->ID); ?></p>
 								<p class="quote-attr">&mdash; <?php echo get_field('advocate', $post->ID); ?></p>
 							</div>
-							<?php } } wp_reset_postdata(); //End the query ?>
+							<?php } } wp_reset_postdata(); //End the query ?></div>
 				</div> 
 				<?php 	} //End $show_quote_field check ?>
 

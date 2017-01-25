@@ -18,6 +18,16 @@
 	<!-- Raleway font -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
 
+	<!-- Bugherd -->
+	<script type='text/javascript'>
+	(function (d, t) {
+	  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+	  bh.type = 'text/javascript';
+	  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=ycsonruxkwu2a38exism0a';
+	  s.parentNode.insertBefore(bh, s);
+	  })(document, 'script');
+	</script>
+
 	<?php wp_head(); ?>
 </head>
 <body <?php echo body_class(); ?>>

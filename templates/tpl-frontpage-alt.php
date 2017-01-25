@@ -3,7 +3,7 @@
 
 get_header();  ?>
 
-<section id="home" class="shaun">
+<section id="home" class="has-emoticon">
  
 
 	<?php 
@@ -18,8 +18,29 @@ get_header();  ?>
  
 <div class="background-full" style="background-image:url('<?php echo $left_img_url; ?>')">
 	<div class="twenty20 twentytwenty-container">
-			<img class="compare" src="<?php echo $right_img_url; ?>" />
-		    <img src="<?php echo $left_img_url; ?>" />
+
+			<div class="twentytwenty-before-container">
+				<div class="badge badge-left">
+			    	<div class="wrap">
+			    		<div class="content">
+					    	<h3>MESH Charleston</h3>
+					    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+				    	</div>
+			    	</div>
+		    	</div>
+				<img class="compare" src="<?php echo $right_img_url; ?>" />
+			</div>
+			<div class="twentytwenty-after-container">
+				<div class="badge badge-right">
+			    	<div class="wrap">
+			    		<div class="content">
+					    	<h3>MESH Brooklyn</h3>
+					    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+				    	</div>
+			    	</div>
+		   		</div>
+			    <img src="<?php echo $left_img_url; ?>" />
+			</div>
 	   	<div class="content">
 		    <div class="home_greeting" aria-hidden="true">
    				<h1>
@@ -28,23 +49,9 @@ get_header();  ?>
 		    </div>
     </div>
 
-	    <div class="badge badge-left">
-	    	<div class="wrap">
-	    		<div class="content">
-			    	<h3>MESH Charleston</h3>
-			    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-		    	</div>
-	    	</div>
-	    </div>
+	    
 
-	    <div class="badge badge-right">
-	    	<div class="wrap">
-	    		<div class="content">
-			    	<h3>MESH Brooklyn</h3>
-			    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-		    	</div>
-	    	</div>
-	    </div>
+	    
 
 	    <svg>
 		    <line x1="-2000" y1="0" x2="-22200" y2="100%"  />  
@@ -126,6 +133,7 @@ get_header();  ?>
 					$project_hover_title=get_sub_field('pb_hover_statement');
 					$project_link=get_sub_field('project_link');
 					$position=get_sub_field('pb_position');
+					$award = get_sub_field('award-winning');
 				?>
 
 				<div class="project-box">
@@ -135,7 +143,9 @@ get_header();  ?>
 								</div>
 							</div>
 					<div class="project-container <?php echo $position; ?>">
-						
+							<?php if ($award != ''){ ?>
+							<div class="award-winning"></div>
+							<?php }?>
 							<img src="<?php echo $project_img_url;  ?>">
 						
 					</div>

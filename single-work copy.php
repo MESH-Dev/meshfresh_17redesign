@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="works-filter" class="cf">
+<section id="works-filter" class="has-emoticon">
 	<div class="container"><!-- -main cf -->
 		<div class=""><!-- gutter cf -->
 			<a id="complete-works" href="<?php echo get_permalink(51); ?>">&laquo; Case Studies</a>

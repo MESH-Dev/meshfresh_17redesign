@@ -52,7 +52,7 @@
 
 ?>
 
-<section>
+<section class="has-emoticon">
 	<div class="title-bar">
 		<div class="view-all">
 			<p>View all projects</p>
