@@ -3,7 +3,9 @@
 var detailView = new TimelineMax(),
     project_2_transition = new TimelineMax(),
     project_3_transition = new TimelineMax(),
-    project_scroll = new TimelineMax();
+    project_scroll = new TimelineMax(),
+    fullscreen_open = new TimelineMax(),
+    fullscreen_close = new TimelineMax();
 var scrollarea = new ScrollMagic.Controller({
     container: "#detail_scrollarea"
 });
@@ -20,7 +22,7 @@ detailView.paused(true)
     .to("#detail_scrollarea", 0.4, {autoAlpha:1})
     .to("#detail_exit", 0.25, {autoAlpha:1, delay:0.6}, "closed")
     .to(".detail_nav", 0.25, {autoAlpha:1, delay:0.65}, "closed")
-    .to("#copy_1", 0.25, {css:{left:"0px", autoAlpha:1}, delay:0.7}, "closed")
+    .to("#copy_1", 0.25, {css:{left:"0px", autoAlpha:1}, delay:0.7}, "closed")//make this #current_copy (copy in view)
     .to("#infobar", 0.1, {css:{cursor:"default"}}, "closed")
     .add("open");
 //Detail View Expand definition
@@ -77,22 +79,51 @@ var project_3_trigger = new ScrollMagic.Scene({
 
 
 //Scroll Button definition
-project_next.add("start")
-    .paused(true)
-    .to("#detail_scrollarea", 1, {scrollTo:"#img3", ease:Power2.easeInOut})//Redefine for dynamic selectors, ex."scroll to first image of '.next_proj' from '.active_proj'"
-    .add("end");
+// project_next.add("start")
+//     .paused(true)
+//     .to("#detail_scrollarea", 1, {scrollTo:"#img3", ease:Power2.easeInOut})//Redefine for dynamic selectors, ex."scroll to first image of '.next_proj' from '.active_proj'"
+//     .add("end");
 //Scroll Button definition
 
 
 //Scroll Button function calls
-function nextScroll(){
-    project_scroll.play();
-}
+// function nextScroll(){
+//     project_scroll.play();
+// }
 
-function prevScroll(){
-    project_scroll.reverse();
-}
+// function prevScroll(){
+//     project_scroll.reverse();
+// }
 //Scroll Button function calls
 
+//Fullscreen Definition
+fullscreen_open.add("start")
+    .paused(true)
+    .to("#detail_scrollarea", 0.4, {css:{width:"97%"}}, "start")
+    .to("#infobar", 0.4, {css:{left:"auto", right:"97%"}}, "start")
+    .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
+    .to("#fullscreen_exit", 0.4, {css:{autoAlpha:1}}, "start")
+    .to("#copy_1", 0.4, {css:{autoAlpha:0}}, "start")//make this #current_copy
+    .to("#fs_title1", 0.4, {css:{autoAlpha:1}})
+    .add("end");
+
+fullscreen_close.add("start")
+    .paused(true)
+    .to("#detail_scrollarea", 0.4, {css:{width:"67%"}}, "start")
+    .to("#infobar", 0.4, {css:{right:"auto", left:"0px"}}, "start")
+    .to("#fullscreen_exit", 0.4, {css:{autoAlpha:0}}, "start")
+    .to("#fullscreen", 0.4, {css:{autoAlpha:1}}, "start")
+    .add("end");
+//Fullscreen Definition
+
+//Fullscreen Trigger Definitions
+function fullScreenTrigger(){
+    fullscreen_open.play()
+}
+
+function fullScreenExitTrigger(){
+    fullscreen_open.reverse()
+}
+//Fullscreen Trigger
 //});
 //=================================

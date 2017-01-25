@@ -170,6 +170,7 @@ get_header(); ?>
 <!-- <section class="josh"> -->
 	<div id="infobar" onclick="infoOpen()">
 		<p id="explore_text">Explore the Projects</p>
+		<p id="fs_title1">Children's Museum of the Arts New York</p>
 		<i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
 		<div class="detail_copy" id="copy_1">
 			<h3><span class="underline">Children’s Museum of the Arts New York</span></h3>
@@ -210,14 +211,15 @@ get_header(); ?>
 				  <title>downarrow</title>
 				  <path class="cls-1" d="M37.07,7.74,21,23.77,4.93,7.74,0,12.67l21,21,21-21Z" transform="translate(0 -7.74)"/>
 				</svg>
-				<span class="'tooltip">Next Project</span>
+				<span class="tooltip">Next Project</span>
 			</div>
 		</div>
 	</div>
 
 
 	<div id="detail_scrollarea">
-    <i id="fullscreen" class="material-icons">fullscreen</i>
+    <i id="fullscreen" class="material-icons" onclick="fullScreenTrigger()">fullscreen</i>
+    <i id="fullscreen_exit" class="material-icons" onclick="fullScreenExitTrigger()">fullscreen_exit</i>
     <div>
     </div>
     <div>

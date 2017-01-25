@@ -82,17 +82,17 @@ header.new{
 	//width:100%;
 	//height:92px;
 	background:$blue; 
-	color:$white;
+	color:white;
 	position:relative;
 	padding:1em 0;
 	display:none;
 	height:100px;
 	//margin:-92px 0 0;
-	// transition:0.2s all;
-	// -webkit-transition:0.2s all;
-	// -moz-transition:0.2s all;
-	// -ms-transition:0.2s all;
-	// -o-transition:0.2s all;
+	transition:0.2s all;
+	-webkit-transition:0.2s all;
+	-moz-transition:0.2s all;
+	-ms-transition:0.2s all;
+	-o-transition:0.2s all;
 	font-size:1.6em;
 
 	font-family:$memphis-medium;
@@ -110,7 +110,7 @@ header.new{
 	}
 
 	a{
-		color:$white;
+		color:white;
 
 		&:active,
 		&:focus,
@@ -146,7 +146,7 @@ header.new{
 /* =========
 	Home
 ============ */
-body.home{background:$white;background-size:cover;}
+body.home{background:white;background-size:cover;}
 section#home{}
 section#home .container-main{/*height:1136px;*/}
 	section#home .container-main .gutter {padding:19px 162px 0 239px; }
@@ -383,8 +383,8 @@ section#blogroll{margin: 42px 0 0;float: left;width: 100%;}
 
 			.post-tumblr-wrap,.post-wp-feature,.post-instagram-feature,.post-tumblr-feature{margin:0 0 10px;}
 				#blogroll.single .post-tumblr-wrap,#blogroll.single .post-wp-feature,#blogroll.single .post-instagram-feature,#blogroll.single .post-tumblr-feature{margin:0 0 6px;}
-				//.readmore,.followus{font:12px/15px 'MemphisLTW01-BoldItalic';margin:0 0 19px;}
-					//.followus a{color:#000;}
+				.readmore,.followus{font:12px/15px 'MemphisLTW01-BoldItalic';margin:0 0 19px;}
+					.followus a{color:#000;}
 			.single-post-date,.post-instagram-date,.post-tumblr-date,.post-wp-date{font-size:10px;}
 			.readmore {margin: 0 0 19px 0;display: block;}
 
@@ -398,7 +398,7 @@ section#blogroll{margin: 42px 0 0;float: left;width: 100%;}
 				.post-tumblr-wrap iframe{max-width:100%;}
 
 			.post-wp-tags,.single-post-tags{}
-				//.post-wp-tags a,.single-post-tags a{background: #fedf00;color: #000;margin: 5px 4px 0 0;padding: 0px 6px;text-transform: uppercase;font-size: 10px;float: left;}
+				.post-wp-tags a,.single-post-tags a{background: #fedf00;color: #000;margin: 5px 4px 0 0;padding: 0px 6px;text-transform: uppercase;font-size: 10px;float: left;}
 
 
 	section#blogroll #contentPrimary {float: left;width: 220px;background:#fedf00;position:relative;}
@@ -646,13 +646,13 @@ section#blogroll{margin: 42px 0 0;float: left;width: 100%;}
     h3{
     	font-size:1.8em;
     	font-family:$gothic;
-    	color:$white;
+    	color:black;
     	margin:0;
     }
 
     span{
     	font-size:1.4em;
-    	color:$white;
+    	color:black;
     }
 }
 // .badge:before, .badge:after {
@@ -681,17 +681,17 @@ section#blogroll{margin: 42px 0 0;float: left;width: 100%;}
 
 .badge-left{
 	position: absolute;
-	//display:none;
-	z-index: 20;
+	display:none;
+	z-index: 1000;
 	top: 60vh;
 	left: 10vw;
 }
 
 .badge-right{
 	position: absolute;
-	//display:none;
-	z-index: 20;
-	top: 60vh;
+	display:none;
+	z-index: 1000;
+	top: 10vh;
 	right: 10vh;
 }
 
@@ -754,8 +754,6 @@ a.cta{
     text-decoration:none;
     text-transform:uppercase;
     color:$blue;
-    font-family:$gothic;
-    font-weight:bold;
     &:hover,
     &:active,
     &:focus{
@@ -773,7 +771,7 @@ a.cta{
 
 	.divider-line{
 		font-size:2em;
-		color:$black;
+		color:black;
 		margin:2em 0;
 		font-family:$memphis-medium;
 	}
@@ -799,14 +797,6 @@ a.cta{
 
 }
 
-
-.has-emoticon{
-	background-repeat:no-repeat;
-	background:url(assets/img/emoticon1.png) 0 50% no-repeat,
-	url(assets/img/emoticon2.png) 10px 80% no-repeat,
-	url(assets/img/emoticon3.png) 75% 80% no-repeat,
-	url(assets/img/emoticon4.png) 75% 80% no-repeat,
-}
 //Homepage grid
 
 .flex-grid{
@@ -849,7 +839,7 @@ a.cta{
 	    	text-decoration:none;
 
 	    	span{
-	    		color:$black;
+	    		color:black;
 	    	}
 	    	//border-bottom:2px solid $blue;
 
@@ -881,8 +871,8 @@ a.cta{
 	    		border-bottom:2px solid $blue;
 
 		    	span{
-		    		color:$black;
-		    		border-bottom:2px solid $black
+		    		color:black;
+		    		border-bottom:2px solid black
 		    	}
 	    	}
       	}
@@ -970,8 +960,7 @@ a.cta{
 	max-width:90%;
 }
 
-.work-block,
-.blog-entry{
+.work-block{
 	margin-bottom:4em;
 	-webkit-column-break-inside: avoid;
 	page-break-inside: avoid;
@@ -981,7 +970,7 @@ a.cta{
 	.hover{
 		display:none;
 		background-color:$blue_rgba;
-		color:$white;
+		color:white;
 		position:absolute;
 		top:0;
 		bottom:0;
@@ -994,8 +983,8 @@ a.cta{
 		h2{
 
 			//
-			// color:$white;
-			// border-bottom:2px solid $white;
+			// color:white;
+			// border-bottom:2px solid white;
 			 cursor:pointer;
 
 			a,
@@ -1003,8 +992,8 @@ a.cta{
 				//font-size:3.6em;
 				line-height:1.25;
 				//text-decoration:underline;
-				 color:$white;
-				 border-bottom:2px solid $white;
+				 color:white;
+				 border-bottom:2px solid white;
 
 				&:hover,
 				&:active,
@@ -1022,7 +1011,7 @@ a.cta{
 			.tags{
 				font-family:'Gothic';
 				a{
-					color:$white;
+					color:white;
 					font-size:1.4em;
 					text-decoration:none;
 
@@ -1034,68 +1023,19 @@ a.cta{
 				}
 			}
 
-			
-			.post-instagram-content{
-				font-size:1.6em;
-			}
-
-			.followus{
-				margin:.5em 0;
-				a{
-					font-size:1.6em;
-					color:white;
-					text-decoration:underline;
-
-					&:hover,
-					&:focus,
-					&:active{
-						color:white;
-						text-decoration:none;
-					}
-				}
-				
-			}
-
-			.post-instagram-date{
-				font-size:1.6em;
-			}
-
-			.post-wp-tags,
-			.single-post-tags{
-
-				margin:.5em 0;
-				a{
-					background:$white;
-					color:$black;
-					padding:4px 5px;
-					margin:.5em 0;
-					//text-decoration:underline;
-
-					&:hover,
-					&:focus,
-					&:active{
-						background:$black;
-						color:$white;
-						padding:4px 5px;
-					}
-
-				}
-			}
-
 			footer{
 				position:absolute;
 				bottom:0;
 				width:100%;
 
-				.mediums{
-					float:left;
+				ul{
+					
 					li{
 						margin:0;
 						padding:0;
 						list-style-type: none;
-
 						a{
-							color:$white;
+							color:white;
 							text-decoration:none;
 							font-size:1.4em;
 							font-family:'Gothic';
@@ -1104,26 +1044,6 @@ a.cta{
 							&:active,
 							&:focus{
 								text-decoration: underline;
-							}
-						}
-					}
-				}
-
-				.social-share{
-					float:right;
-					ul{
-						padding:0;
-						margin:0;
-						li{
-							display:inline-block;
-							list-style-type: none;
-							margin-left:5px;
-							a{
-								&:hover,
-								&:focus,
-								&:active{
-									opacity:.7;
-								}
 							}
 						}
 					}
@@ -1177,7 +1097,7 @@ a.cta{
 	.tags{
 		font-family:'Gothic';
 		a{
-			color:$white;
+			color:white;
 			font-size:1.4em;
 			text-decoration:none;
 
@@ -1192,10 +1112,10 @@ a.cta{
 
 .tags{
 		font-family:'Gothic';
-		color:$white;
+		color:white;
 		text-transform:uppercase;
 		a{
-			color:$white;
+			color:white;
 			font-size:1.4em;
 			text-decoration:none;
 
@@ -1213,7 +1133,7 @@ a.cta{
 		height:100%;
 		top:0;
 		position:fixed;
-		color:$white;
+		color:white;
 		background-color:$blue;
 		padding:4em 2em;
 
@@ -1244,12 +1164,12 @@ a.cta{
 
 		h1,
 		p{
-			color:$white;
+			color:white;
 		}
 
 		h1{
 			span{
-				border-bottom:2px solid $white;
+				border-bottom:2px solid white;
 			}
 		}
 
@@ -1296,20 +1216,11 @@ a.cta{
 	    font-size:2.8em;
 	    padding:0;
 	    padding-top:.5em;
-	    font-weight:normal;
 	}
 
 	.quote-attr{
 		font-family:$raleway;
 		font-weight:400;
-	}
-
-	.slide{
-		margin-left:2px;
-	}
-
-	button{
-		display:none !important;
 	}
 }
 
@@ -1336,49 +1247,6 @@ footer.site-footer{
 	}
 }
 
-//Blog (or Blogroll)
-
-.blogroll-grid{
-	.sidebar{
-		color:$white;
-		//padding:0 1em;
-		.content{
-			background:$yellow;
-			padding:1em;
-
-			.sidebar-title{
-				font-size:2.2em;
-			}
-
-			h2{
-				margin:0;
-				margin-bottom:.5em;
-				span{
-					border-bottom: 2px solid $blue;
-				}
-				
-			}
-
-			ul{
-				li{
-					list-style-type:none;
-					margin:0;
-					padding:0;
-					margin-bottom:2px;
-					a{
-
-						&:hover,
-						&:active,
-						&:focus{
-							text-decoration:underline;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
 //Sidr
 
 .sidr-close{
@@ -1387,7 +1255,7 @@ footer.site-footer{
 
 .sidr{
 
-	background:$white;
+	background:white;
 	// border-top:10px solid $blue;
 	// border-bottom:10px solid $blue;
 	box-shadow: 2px 0px 6px rgba(0, 0, 0, 0.4);
@@ -1399,8 +1267,8 @@ footer.site-footer{
 	.sidr-close{
 		display:inline;
 		//float:right;
-		background:$black;
-		color:$white;
+		background:black;
+		color:white;
 	    padding: 7px 14px;
 		text-transform:uppercase;
 		cursor:pointer;
@@ -1424,11 +1292,11 @@ footer.site-footer{
 
 			.title{
 			font-size:2em;
-			color:$black;
+			color:black;
 			font-family:$memphis-medium;
 			line-height:1.25;
 			margin:1.5em 0;
-			border-bottom:2px solid $black;
+			border-bottom:2px solid black;
 			width:70%;
 		}
 
@@ -1459,7 +1327,7 @@ footer.site-footer{
 			a{
 				font-size:2em;
 				border-bottom:2px solid transparent;
-				color:$black;
+				color:black;
 				font-family:$memphis-medium;
 				line-height:1.25;
 
@@ -1548,6 +1416,17 @@ footer.site-footer{
     margin-top: 40px;
 }
 
+#fs_title1{
+    color: #fff;
+    font-family: "Memphis LT W01 Light";
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    visibility: hidden;
+}
+
 #detail_exit{
     z-index: 3;
     font-size: 42px;
@@ -1574,7 +1453,7 @@ footer.site-footer{
     right: 0;
     z-index:2;
 
-    i{
+    #fullscreen{
 	    z-index: 1;
 	    color: #fff;
 	    font-size: 48px;
@@ -1584,6 +1463,17 @@ footer.site-footer{
 	    right: 50px;
 	    cursor: pointer;
 	}
+    #fullscreen_exit{
+		z-index: 1;
+		color: #fff;
+		font-size: 48px;
+		font-weight: 100;
+		position: fixed;
+		bottom: 40px;
+		right: 50px;
+		cursor: pointer;
+		visibility: hidden;	
+    }
 
 	img{
 	    display: block;
@@ -1618,28 +1508,30 @@ footer.site-footer{
 
 .detail_switch{
 	padding: 14px 0;
+	position: relative;
 	&:hover span {
-	  visibility: visible;
-	  opacity: 0.8;
-	  left: 0;
-	  top: 0;
-	  margin-top: -15px;
-	  margin-left: 15px;
-	  z-index: 999;
+		opacity: 0.8;
+		z-index: 999;
+		left: 10%;
 	}
 	svg{
 		width: 22px;
 	}
 	span {
-	  position: absolute;
-	  width:140px;
-	  color: #FFFFFF;
-	  background: #000000;
-	  height: 30px;
-	  line-height: 30px;
-	  text-align: center;
-	  visibility: hidden;
-	  border-radius: 6px;
+		font-family: 'Gothic';
+		font-size: 14px;
+		position: absolute;
+		left: 12%;
+		top: 5px;
+		width:140px;
+		color: #FFFFFF;
+		background: #000000;
+		height: 30px;
+		line-height: 28px;
+		text-align: center;
+		opacity: 0;
+		border-radius: 6px;
+		transition: all 0.25s ease-in-out;
 	}
 	span:after {
 	  content: '';
