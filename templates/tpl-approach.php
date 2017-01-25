@@ -1,8 +1,8 @@
  <?php /* Template Name: Approach */
 get_header(); ?>
 
-<section id="approach">
-	<div class="container-main">
+<section id="approach" class="has-emoticon">
+	<div class="container">
 		<div class="gutter cf">
 			<div id="approach-intro">
 				<?php the_field('intro'); ?>

@@ -1,7 +1,7 @@
  <?php /* Template Name: Services */
 get_header(); ?>
 
-<section id="services">
+<section id="services" class="has-emoticon">
 	<div class="container">
 		<div class=""><!-- gutter -->
 			<div id="services-intro">

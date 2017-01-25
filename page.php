@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="" class="text"><!-- page-content -->
+<section id="" class="text has-emoticon"><!-- page-content -->
 	<div class="container">
 
 		<?php get_template_part('/partials/page-callout'); ?>

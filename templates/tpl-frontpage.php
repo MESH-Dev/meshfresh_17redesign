@@ -1,6 +1,6 @@
 <?php /* Template Name: Frontpage */ get_header();  ?>
 
-<section id="home" class="shaun">
+<section id="home" class="has-emoticon">
 	<div class="site-title">
 		<h1 class="home-title"><a href="<?php echo bloginfo('url'); ?>/work">Hi <span class="emoticon">:)</span> MESH is your full service communication design studio. We make brands, websites, print works, digital media, objects, and other fun stuff to share your good ideas <span class="link-indicator">&raquo;</span></h1>
 	<div>	

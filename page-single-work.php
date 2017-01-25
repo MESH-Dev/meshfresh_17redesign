@@ -2,26 +2,6 @@
 
 <?php get_header(); ?>
 
-<!-- <section id="works-filter" class="cf">
-	<div class="container-main cf">
-		<div class="gutter cf">
-			<a id="complete-works" href="<?php echo get_permalink(51); ?>">&laquo; Case Studies</a>
-			<ul id="filters">
-			<?php
-				$categories = get_terms('medium',array(
-				 	'orderby'    => 'id',
-				 	'hide_empty' => 0
-				 ));
-				 foreach($categories as $cat){
-				 	//echo "<li data-filter='".$cat->slug."'>".$cat->name."</li>";
-				 }
-			?>
-			</ul>
-			<a id="other-works" href="<?php echo get_post_type_archive_link('work'); ?>">More Projects &raquo;</a>
-		</div>
-	</div>
-</section> -->
-
 <?php 
 
 	$mediums = get_the_terms($post->ID, 'medium');
@@ -54,7 +34,7 @@
 
 ?>
 
-<section>
+<section class="has-emoticon">
 	<div class="title-bar">
 		<div class="view-all">
 			<p>View all projects</p>

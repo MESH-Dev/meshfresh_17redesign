@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-<section id=""><!-- page-content -->
+<section id="" class="has-emoticon"><!-- page-content -->
 	<div id="gallery_cover"></div>
 	<div class="work-grid" id="macy"><!-- container -->
 		<!-- <div class="row"> -->
@@ -41,6 +41,10 @@ get_header(); ?>
 		 			$separator = ', ';
 		 			$output_industry = '';
 		 			$output_medium = '';
+		 			$bg_color=get_field('proj_bg_color');
+		 			//var_dump($bg_color);
+
+
 
 		 			if(!empty($industries)){
 		 				foreach ($industries as $industry){
@@ -68,9 +72,21 @@ get_header(); ?>
 		 			// }else{
 		 			// 	$position = 'center';
 		 			// }
-					?>
+					
+				// Convert hexdec color string to rgb(a) string 
+				// Courtesy https://support.advancedcustomfields.com/forums/topic/color-picker-values/#post-37335
+
+				
+
+				/* Here's a usage example how to use this function for dynamicaly created CSS */
+				$setColor =  get_field('proj_bg_color', $post->ID);
+				$color = $setColor;
+				$rgb = hex2rgba($color);
+				$rgba = hex2rgba($color, 0.9);
+			
+				?>
 		 <div class="work-block columns-4" ><!-- columns-4 -->
-		 	<div class="hover" onclick="infoOpen()">
+		 	<div class="hover" onclick="infoOpen()" <?php if($bg_color){ echo 'style="background-color:'. $rgba .'"'; }?> >
 	 				<div class="content">
 		 				<h2>
 		 					<!-- <a href="<?php //the_permalink(); ?>"> -->
@@ -92,8 +108,33 @@ get_header(); ?>
  								?>
  							</ul>
 	 						<?php 
+	 							//We can bring this in again if we decide to create the individual pages to show this
 	 							//echo get_the_term_list($post->ID,'medium','<ul><li>',',</li><li>', '</li></ul>') 
 	 						?>
+
+	 						<div class="social-share">
+	 							<ul>
+	 								<li class="fb-share"><span class="sr-only">Share this project on facebook</span>
+	 									<a href="https://www.facebook.com/sharer/sharer.php?u=mesh.com">
+	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/facebook-share.png">
+ 										</a>
+ 									</li>
+ 									<!--<li class="insta-share"><span class="sr-only">Share this project on instagram</span>
+	 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram-share.png">
+ 									</li>-->
+ 									<li class="pin-share"><span class="sr-only">Share this project on Pintrest</span>
+	 									<a href="https://pinterest.com/pin/create/button/?url=http;//asdasd/asd.jpg&media=Image%20name&description=desc">
+	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pintrest-share.png">
+ 										</a>
+ 									</li>
+ 									<li class="tw-share"><span class="sr-only">Share this project on Twitter</span>
+	 									<a href="https://twitter.com/home?status=asfsadfv%20mesh.com">
+	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter-share.png">
+ 										</a>
+ 									</li>
+								</ul>
+							</div>
+
  						</footer>
 	 					<!-- </ul> -->
  					</div><!-- end content -->

@@ -3,7 +3,7 @@
 
 get_header();  ?>
 
-<section id="home" class="shaun">
+<section id="home" class="has-emoticon">
  
 
 	<?php 
@@ -133,6 +133,7 @@ get_header();  ?>
 					$project_hover_title=get_sub_field('pb_hover_statement');
 					$project_link=get_sub_field('project_link');
 					$position=get_sub_field('pb_position');
+					$award = get_sub_field('award-winning');
 				?>
 
 				<div class="project-box">
@@ -142,7 +143,9 @@ get_header();  ?>
 								</div>
 							</div>
 					<div class="project-container <?php echo $position; ?>">
-						
+							<?php if ($award != ''){ ?>
+							<div class="award-winning"></div>
+							<?php }?>
 							<img src="<?php echo $project_img_url;  ?>">
 						
 					</div>

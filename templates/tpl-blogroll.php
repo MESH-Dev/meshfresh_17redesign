@@ -3,7 +3,7 @@
 get_header(); ?>
 
 
-<section id="blogroll">
+<section id="blogroll" class="has-emoticon">
 	<div class="blogroll-grid"><!-- container -->
 		<div class="sidebar columns-2"><!-- contentPrimary -->
 			<?php get_sidebar('blog'); ?>
@@ -121,7 +121,7 @@ get_header(); ?>
 												Published on <?php echo date('M d, Y', $post->unix_timestamp); ?>
 											</div>
 											<div class="post-wp-tags">
-													<a href="<?php echo get_tag_link(12); ?>">Instagram</a>
+													<a href="<?php echo $post->link;//get_tag_link(12); ?>">Instagram</a>
 											</div>
 										</div>
 									</div>

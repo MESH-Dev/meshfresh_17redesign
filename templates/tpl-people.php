@@ -1,7 +1,31 @@
  <?php /* Template Name: People */ get_header(); ?>
 
-<section id="people">
-	<div class="container-main">
+<section id="people" class="has-emoticon">
+	<div class="container">
+
+		<?php
+		$args = array(
+					'post_type'      => 'people',
+					//'meta_key'       => 'featured',
+					//'meta_value'     => true,
+					//'meta_compare'   => '!=',
+					'order' => 'ASC',
+					'order_by' => 'date',
+					'posts_per_page' => -1,
+					// 'tax_query' => array(
+					// 	array(
+					// 		'taxonomy' => 'display_state',
+					// 		'field'    => 'slug',
+					// 		'terms'    => 'archive',
+					// 		'operator' => 'NOT IN'
+					// 	),
+					// ),
+				);
+				$query = new WP_Query($args);
+				if ( $query->have_posts() ) { 
+					$wk_ctr=0;
+					while ( $query->have_posts() ) { $query->the_post(); ?>
+
 		<div class="gutter">
 		<div id="contentPrimary">
 			<?php

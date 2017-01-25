@@ -2,7 +2,7 @@
 	<a href="<?php bloginfo('rss2_url'); ?>">RSS</a>
 </div>
 <div class="content"><!-- gutter cf -->
-	<h2><span>What We're Reading</span></h2>
+	<h2 class="sidebar-title"><span>What We're Reading</span></h2>
 	<ul id="reading-list">
 		<?php $lists = get_field('reading',103);
 		foreach($lists as $list){ ?>
