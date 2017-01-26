@@ -1493,9 +1493,11 @@ footer.site-footer{
     font-family: "Memphis LT W01 Light";
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 0px;
     position: absolute;
-    bottom: 20px;
-    right: 5px;
+    bottom: 30%;
+    right: 10px;
     visibility: hidden;
 }
 
@@ -1553,6 +1555,34 @@ footer.site-footer{
 	    margin: 0px;
 	    padding: 0px;
 	}
+	span {
+		font-family: 'Gothic';
+		font-size: 14px;
+		line-height: 32px;
+		position: fixed;
+		bottom: 48px;
+		right: 110px;
+		width:140px;
+		color: #fff;
+		background: rgba(0,0,0,0.8);
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		visibility: hidden;
+		border-radius: 6px;
+	}
+
+	span:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 100%;
+		margin-top: -8px;
+		width: 0; height: 0;
+		border-left: 8px solid rgba(0,0,0,0.8);
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+	}
 
 }
 
@@ -1581,29 +1611,24 @@ footer.site-footer{
 .detail_switch{
 	padding: 14px 0;
 	position: relative;
-	&:hover span {
-		opacity: 0.8;
-		z-index: 999;
-		left: 10%;
-	}
 	svg{
-		width: 22px;
+		width: 24px;
+		cursor: pointer;
 	}
 	span {
 		font-family: 'Gothic';
 		font-size: 14px;
 		position: absolute;
-		left: 12%;
+		left: 50px;
 		top: 5px;
 		width:140px;
-		color: #FFFFFF;
-		background: #000000;
+		color: #fff;
+		background: rgba(0,0,0,0.8);
 		height: 30px;
-		line-height: 28px;
+		line-height: 32px;
 		text-align: center;
-		opacity: 0;
+		visibility: hidden;
 		border-radius: 6px;
-		transition: all 0.25s ease-in-out;
 	}
 	span:after {
 	  content: '';
@@ -1612,7 +1637,7 @@ footer.site-footer{
 	  right: 100%;
 	  margin-top: -8px;
 	  width: 0; height: 0;
-	  border-right: 8px solid #000000;
+	  border-right: 8px solid rgba(0,0,0,0.8);
 	  border-top: 8px solid transparent;
 	  border-bottom: 8px solid transparent;
 	}

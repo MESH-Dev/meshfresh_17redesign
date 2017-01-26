@@ -187,7 +187,7 @@ get_header(); ?>
 		</div>
 		<div class="detail_nav">
 			<div id="prev_proj" class="detail_switch" onclick="prevScroll()">
-				<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
+				<svg id="prev_arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
 				  <defs>
 				    <style>
 				      .cls-1 {
@@ -195,13 +195,12 @@ get_header(); ?>
 				      }
 				    </style>
 				  </defs>
-				  <title>uparrow</title>
 				  <path class="cls-1" d="M4.93,33.67,21,17.64l16.07,16L42,28.74l-21-21-21,21Z" transform="translate(0 -7.74)"/>
 				</svg>
-				<span class="tooltip">Previous Project</span>
+				<span id="prev_tip" class="tooltip">Previous Project</span>
 			</div>
-			<div id="next_proj" class="detail_switch" onclick="nextScroll()">
-				<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
+			<div id="next_proj" class="detail_switch">
+				<svg id="next_arrow" onclick="nextScroll()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
 				  <defs>
 				    <style>
 				      .cls-1 {
@@ -209,10 +208,9 @@ get_header(); ?>
 				      }
 				    </style>
 				  </defs>
-				  <title>downarrow</title>
 				  <path class="cls-1" d="M37.07,7.74,21,23.77,4.93,7.74,0,12.67l21,21,21-21Z" transform="translate(0 -7.74)"/>
 				</svg>
-				<span class="tooltip">Next Project</span>
+				<span id="next_tip" class="tooltip">Next Project</span>
 			</div>
 		</div>
 	</div>
@@ -221,6 +219,7 @@ get_header(); ?>
 	<div id="detail_scrollarea">
     <i id="fullscreen" class="material-icons" onclick="fullScreenTrigger()">fullscreen</i>
     <i id="fullscreen_exit" class="material-icons" onclick="fullScreenExitTrigger()">fullscreen_exit</i>
+    <span id="fs_tip" class="tooltip">Expand the Images</span>
     <div>
     </div>
     <div>

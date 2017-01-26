@@ -5,7 +5,10 @@ var detailView = new TimelineMax(),
     project_3_transition = new TimelineMax(),
     project_scroll = new TimelineMax(),
     fullscreen_open = new TimelineMax(),
-    fullscreen_close = new TimelineMax();
+    fullscreen_close = new TimelineMax(),
+    tooltip_next = new TimelineMax,
+    tooltip_prev = new TimelineMax,
+    tooltip_fs = new TimelineMax;
 var scrollarea = new ScrollMagic.Controller({
     container: "#detail_scrollarea"
 });
@@ -104,7 +107,7 @@ fullscreen_open.add("start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#fullscreen_exit", 0.4, {css:{autoAlpha:1}}, "start")
     .to("#copy_1", 0.4, {css:{autoAlpha:0}}, "start")//make this #current_copy
-    .to("#fs_title1", 0.4, {css:{autoAlpha:1}})
+    .to("#fs_title1", 0.4, {css:{autoAlpha:1}}, "start")
     .add("end");
 
 fullscreen_close.add("start")
@@ -125,5 +128,55 @@ function fullScreenExitTrigger(){
     fullscreen_open.reverse()
 }
 //Fullscreen Trigger
+
+//Tooltip Show/Hide Definitions
+tooltip_fs.add("start")
+    .paused(true)
+    .to("#fs_tip", 0.3, {css:{autoAlpha:1, right:"100px"}, ease:Power2.easeInOut}, "start")
+    .add("end");
+
+tooltip_next.add("start")
+    .paused(true)
+    .to("#next_tip", 0.3, {css:{autoAlpha:1, left:"40px"}, ease:Power2.easeInOut}, "start")
+    .add("end");
+
+tooltip_prev.add("start")
+    .paused(true)
+    .to("#prev_tip", 0.3, {css:{autoAlpha:1, left:"40px"}, ease:Power2.easeInOut}, "start")
+    .add("end");
+//Tooltip Show/Hide Definitions
+
+//Tooltip Trigger Definitions
+var fs_tip_trigger = document.getElementById('fullscreen'),
+    fs_close_tip_trigger = document.getElementById('fullscreen_exit'),
+    next_tip_trigger = document.getElementById('next_arrow'),
+    prev_tip_trigger = document.getElementById('prev_arrow');
+
+fs_tip_trigger.onmouseover = showTooltipLeft;
+fs_tip_trigger.onmouseout = hideTooltipLeft;
+next_tip_trigger.onmouseover = showTooltipNext;
+next_tip_trigger.onmouseout = hideTooltipNext;
+prev_tip_trigger.onmouseover = showTooltipPrev;
+prev_tip_trigger.onmouseout = hideTooltipPrev;
+
+function showTooltipLeft(){
+    tooltip_fs.play()
+}
+function hideTooltipLeft(){
+    tooltip_fs.reverse()
+}
+function showTooltipNext(){
+    tooltip_next.play()
+}
+function hideTooltipNext(){
+    tooltip_next.reverse()
+}
+function showTooltipPrev(){
+    tooltip_prev.play()
+}
+function hideTooltipPrev(){
+    tooltip_prev.reverse()
+}
+//Tooltip Trigger Definitions
 //});
 //=================================
