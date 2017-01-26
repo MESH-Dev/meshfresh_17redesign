@@ -1023,19 +1023,67 @@ a.cta{
 				}
 			}
 
+			.post-instagram-content{
+				font-size:1.6em;
+			}
+
+			.followus{
+				margin:.5em 0;
+				a{
+					font-size:1.6em;
+					color:white;
+					text-decoration:underline;
+
+					&:hover,
+					&:focus,
+					&:active{
+						color:white;
+						text-decoration:none;
+					}
+				}
+				
+			}
+
+			.post-instagram-date{
+				font-size:1.6em;
+			}
+
+			.post-wp-tags,
+			.single-post-tags{
+
+				margin:.5em 0;
+				a{
+					background:$white;
+					color:$black;
+					padding:4px 5px;
+					margin:.5em 0;
+					//text-decoration:underline;
+
+					&:hover,
+					&:focus,
+					&:active{
+						background:$black;
+						color:$white;
+						padding:4px 5px;
+					}
+
+				}
+			}
+
 			footer{
 				position:absolute;
 				bottom:0;
 				width:100%;
 
-				ul{
-					
+				.mediums{
+					float:left;
 					li{
 						margin:0;
 						padding:0;
 						list-style-type: none;
+
 						a{
-							color:white;
+							color:$white;
 							text-decoration:none;
 							font-size:1.4em;
 							font-family:'Gothic';
@@ -1044,6 +1092,26 @@ a.cta{
 							&:active,
 							&:focus{
 								text-decoration: underline;
+							}
+						}
+					}
+				}
+
+				.social-share{
+					float:right;
+					ul{
+						padding:0;
+						margin:0;
+						li{
+							display:inline-block;
+							list-style-type: none;
+							margin-left:5px;
+							a{
+								&:hover,
+								&:focus,
+								&:active{
+									opacity:.7;
+								}
 							}
 						}
 					}
