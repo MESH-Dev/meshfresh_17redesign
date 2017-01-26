@@ -220,6 +220,7 @@ get_header(); ?>
     <i id="fullscreen" class="material-icons" onclick="fullScreenTrigger()">fullscreen</i>
     <i id="fullscreen_exit" class="material-icons" onclick="fullScreenExitTrigger()">fullscreen_exit</i>
     <span id="fs_tip" class="tooltip">Expand the Images</span>
+    <span id="fs_close_tip" class="tooltip">Close Fullscreen</span>
     <div>
     </div>
     <div>

@@ -6,9 +6,10 @@ var detailView = new TimelineMax(),
     project_scroll = new TimelineMax(),
     fullscreen_open = new TimelineMax(),
     fullscreen_close = new TimelineMax(),
-    tooltip_next = new TimelineMax,
-    tooltip_prev = new TimelineMax,
-    tooltip_fs = new TimelineMax;
+    tooltip_next = new TimelineMax(),
+    tooltip_prev = new TimelineMax(),
+    tooltip_close = new TimelineMax(),
+    tooltip_fs = new TimelineMax();
 var scrollarea = new ScrollMagic.Controller({
     container: "#detail_scrollarea"
 });
@@ -135,6 +136,11 @@ tooltip_fs.add("start")
     .to("#fs_tip", 0.3, {css:{autoAlpha:1, right:"100px"}, ease:Power2.easeInOut}, "start")
     .add("end");
 
+tooltip_close.add("start")
+    .paused(true)
+    .to("#fs_close_tip", 0.3, {css:{autoAlpha:1, right:"100px"}, ease:Power2.easeInOut}, "start")
+    .add("end");
+
 tooltip_next.add("start")
     .paused(true)
     .to("#next_tip", 0.3, {css:{autoAlpha:1, left:"40px"}, ease:Power2.easeInOut}, "start")
@@ -154,6 +160,8 @@ var fs_tip_trigger = document.getElementById('fullscreen'),
 
 fs_tip_trigger.onmouseover = showTooltipLeft;
 fs_tip_trigger.onmouseout = hideTooltipLeft;
+fs_close_tip_trigger.onmouseover = showTooltipClose;
+fs_close_tip_trigger.onmouseout = hideTooltipClose;
 next_tip_trigger.onmouseover = showTooltipNext;
 next_tip_trigger.onmouseout = hideTooltipNext;
 prev_tip_trigger.onmouseover = showTooltipPrev;
@@ -176,6 +184,12 @@ function showTooltipPrev(){
 }
 function hideTooltipPrev(){
     tooltip_prev.reverse()
+}
+function showTooltipClose(){
+    tooltip_close.play()
+}
+function hideTooltipClose(){
+    tooltip_close.reverse()
 }
 //Tooltip Trigger Definitions
 //});
