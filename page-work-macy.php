@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-<section id="" class="has-emoticon"><!-- page-content -->
+<section id="grid" class="has-emoticon"><!-- page-content -->
 	<div id="gallery_cover"></div>
 	<div class="work-grid" id="macy"><!-- container -->
 		<!-- <div class="row"> -->
@@ -32,7 +32,8 @@ get_header(); ?>
 
 					$wk_ctr++;
 					$tile_image = get_field('featured_cover', $post->ID);
-					$tile_image_url = $tile_image['sizes']['large'];
+					//var_dump($tile_image);
+					$tile_image_url = $tile_image['url'];
 					$industries = get_the_terms($post->ID, 'Industry');
 					//var_dump($industries);
 		 			$mediums = get_the_terms($post->ID, 'medium');
@@ -123,12 +124,12 @@ get_header(); ?>
 	 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram-share.png">
  									</li>-->
  									<li class="pin-share"><span class="sr-only">Share this project on Pintrest</span>
-	 									<a href="https://pinterest.com/pin/create/button/?url=http;//asdasd/asd.jpg&media=Image%20name&description=desc">
+	 									<a href="https://pinterest.com/pin/create/button/?url=http://<?php echo bloginfo('url');?>/<?php echo $tile_image_url; ?>&amp;media=<?php echo $tile_image_url; //image name?>&amp;description=<?php echo the_title(); ?>">
 	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pintrest-share.png">
  										</a>
  									</li>
  									<li class="tw-share"><span class="sr-only">Share this project on Twitter</span>
-	 									<a href="https://twitter.com/home?status=asfsadfv%20mesh.com">
+	 									<a href="https://twitter.com/home?status=<?php echo the_title(); ?><?php echo bloginfo('url');?>">
 	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter-share.png">
  										</a>
  									</li>

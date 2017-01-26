@@ -87,7 +87,7 @@
 	</div>
 </div> 
 <div id="siteWrap">
-<header <?php if (is_page_template('templates/tpl-frontpage-alt.php' || is_page_template('page-work-macy.php'))){ echo 'class="new"';} //remove this when page is live?> >
+<header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php')){ echo 'class="new"';} //remove this when page is live?> >
 	<div class="container">
 		<div class="gateway-nav">
 					<div class="say-hello">
