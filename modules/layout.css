@@ -1,0 +1,12 @@
+/* line 1, ../sass/modules/layout.scss */
+.flex-grid {
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+/* line 7, ../sass/modules/layout.scss */
+.flex-grid .project-box {
+  width: 33.33333%;
+  margin-bottom: 2%;
+}

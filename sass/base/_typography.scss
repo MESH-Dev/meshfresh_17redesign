@@ -1,0 +1,140 @@
+// Typography
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$memphis-medium: 'Memphis LT W01 Medium';
+$memphis-bold-italic: 'MemphisLTW01-BoldItalic';
+$memphis-light-italic: 'MemphisLTW01-LightItali';
+$raleway: 'Raleway', sans-serif;
+$gothic: 'Gothic';
+
+$blue : #0000f8;
+$blue_rgba: rgba(0,0,230,.9);
+$black: #000000;
+$white: #ffffff;
+$yellow:#fedf00;
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2em;
+  font-weight: 300;
+  color:$blue;
+  font-family:$memphis-medium;
+}
+
+h1 { font-size: 3.6em; line-height: 1.2;  letter-spacing: -.1rem;  }
+h2 { font-size: 2.8em; line-height: 1.25; letter-spacing: -.1rem;  }
+h3 { font-size: 3.0em; line-height: 1.3;  letter-spacing: -.1rem;  }
+h4 { font-size: 2.4em; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8em; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5em; line-height: 1.6;  letter-spacing: 0;       }
+
+ 
+@media($bp-smaller-than-tablet) {
+  h1 { font-size: 3em; }
+  h2 { font-size: 2.8em; }
+  h3 { font-size: 2em; }
+  h4 { font-size: 1.8em; }
+  h5 { font-size: 1.5em; }
+  h6 { font-size: 1em; }
+}
+
+p {
+  font-size: 1.4em; 
+  //font-size:1.4em; 
+  line-height: 1.428; 
+  margin-top: 0;
+  margin-bottom: 1.8rem;
+  color:$blue;
+}
+
+
+.the-content{
+  h1,h2,h3,h4,h5,h6{
+    width:8em;
+    line-height: 1.5;
+    border-bottom:2px solid $blue;
+    margin:0;
+    padding:0;
+    margin-bottom:20px;
+  }
+
+  a{
+    border-bottom:1px solid $blue;
+    //font-size:1.6em;
+    //font-family:$gothic;
+    font-weight:bold;
+    //text-transform:uppercase;
+    text-decoration:underline;
+    color:$blue;
+    &:hover,
+    &:active,
+    &:focus{
+      //border-bottom:1px solid transparent;
+      text-decoration:none;
+      color:$blue;
+    }
+  }
+
+  .cta{
+    a{
+      text-align:center;
+      border-bottom:1px solid $blue;
+      //font-size:1.6em;
+      font-family:$gothic;
+      font-weight:bold;
+      text-transform:uppercase;
+      text-decoration:none;
+      color:$blue;
+      &:hover,
+      &:active,
+      &:focus{
+        border-bottom:1px solid transparent;
+        text-decoration:none;
+      }
+    }
+  }
+  .callout{
+    font-family: $memphis-light-italic;
+    font-size:2.8em;
+    padding:0;
+  }
+  .text-callout{
+    margin-bottom:15em;
+  }
+
+  .large-text{
+    font-size:2em;
+    font-family:$memphis-medium;
+    color:$blue;
+  }
+
+  p{
+    font-family:$raleway;
+    font-weight:bold;
+    font-size:1.6em;
+
+    a{
+      font-family:$gothic;
+      font-weight:bold;
+      border-bottom:1px solid $blue;
+      color:$blue;
+      &:hover,
+      &:active,
+      &:focus{
+        border-bottom:1px solid transparent;
+      }
+    }
+  }
+
+  blockquote{
+    padding:0;
+    margin:0;
+    font-weight:normal;
+    p{
+      font-family: $memphis-light-italic;
+      font-size:2.8em;
+      font-weight:normal;
+    }
+  }
+}
+

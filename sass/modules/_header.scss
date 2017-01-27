@@ -1,0 +1,362 @@
+header {
+	.gutter {
+		padding:19px 162px 0 239px;
+	}
+
+	#logo{
+		float:left; 
+		width:15%;/*new*/
+		svg{
+			max-height: 100px;
+			display: inline-block;
+		}
+	}
+
+	nav{
+		&#mainNav{
+			float:right; 
+			//width:70%;
+
+			ul{
+				list-style: none;
+				//margin: 18px 0px 0px 77px;
+				//width:622px;
+
+				li {
+					//float: left;
+					//width: 138px;
+					display:inline-block;
+					margin-left:10px;
+					height:100%;
+					vertical-align: middle;
+					margin-top:10%;
+					margin-left:2em;
+					//margin: 0 104px 9px 0px;
+
+					// &.nomargin{
+					// 	margin:0 0 9px;
+					// }
+
+					&.current-menu-item,
+					&:hover,
+					&:active,
+					&:focus{
+						a{
+							//background:#000;
+							color:blue;
+							//text-decoration:underline;
+							border-bottom:2px solid blue;
+
+						}
+					}
+
+					a{	
+						display: block;
+						//width:132px;
+						//border-bottom: 4px solid #000;
+						//height:20px;
+						font:28px/1.25 'Memphis LT W01 Medium';
+						color:#000;
+						text-decoration:none;
+						border-bottom:2px solid transparent;
+						//padding:4px 0px 0px 6px;
+					}
+				}
+			}
+
+		}
+
+		&#social{
+			// float:right;
+			// margin:-7px 0 0 0; 
+			// position:absolute; 
+			// right:10px;
+
+			ul{
+				// float: right;
+				margin: 0;
+				list-style: none;
+
+				li{
+					display:inline-block;
+					height:23px;
+					width:19px;
+					text-decoration:none;
+					text-indent:-9999px;
+					float:left;
+					padding:0 1px 0 0;
+
+					@media($bp-smaller-than-tablet){
+						margin-left:5px;
+					}
+
+					&.facebook a{
+						background-position:0 0;
+					}
+
+					&.tumblr a{
+						background-position:-22px 0;
+					}
+
+					&.twitter a{
+						background-position:-64px 0;
+					}
+
+					&.google a{
+						background-position:-85px 0;
+					}
+
+
+					a{
+						background:url(assets/img/socialIcons.png) 0 0 no-repeat;
+						height:100%;
+						width:100%;
+						display:block;
+					}
+				}
+			}
+		}
+	}
+}
+
+#social{
+			//float:right;
+			//margin:-7px 0 0 0; 
+			// position:absolute; 
+			//right:10px;
+
+			ul{
+				float: right;
+				margin: 0;
+				list-style: none;
+
+				li{
+					display:block;
+					height:23px;
+					width:19px;
+					text-decoration:none;
+					text-indent:-9999px;
+					float:left;
+					padding:0 1px 0 0;
+
+					&.facebook a{
+						background-position:0 0;
+					}
+
+					&.tumblr a{
+						background-position:-22px 0;
+					}
+
+					&.twitter a{
+						background-position:-64px 0;
+					}
+
+					&.google a{
+						background-position:-85px 0;
+					}
+
+
+					a{
+						background:url(assets/img/socialIcons.png) 0 0 no-repeat;
+						height:100%;
+						width:100%;
+						display:block;
+					}
+				}
+			}
+
+}
+
+.gateway-nav{
+	//position:absolute;
+	// top:0;
+	// right:0;
+	text-align:right;
+	margin-top:5px;
+
+	
+
+	nav{
+		display:inline;
+
+	}
+
+	.say-hello{
+		background-color:$black;
+		color:$white;
+		font-weight:bold;
+		//margin-top:10px;
+		padding:2px 4px;
+		text-transform:uppercase;
+		font-size:1.2em;
+		display:inline-block;
+		margin:0 10px 0 0;
+		cursor:pointer;
+
+		@media($bp-smaller-than-tablet){
+			display:none;
+		}
+	}
+}
+#menuTrigger{
+	cursor:pointer;
+}
+
+#mobileMenu.active{
+	position:fixed;
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	display:block;
+}
+
+#siteWrap{
+	transition:all .2s ease-in-out;
+}
+	
+#siteWrap.active{
+	position:fixed;
+	-webkit-transform: translateX(60%);
+	-moz-transform: translateX(60%);
+	transform: translateX(60%);
+	-ms-transform: translateX(60%);
+	-o-transform: translateX(60%);
+	width:100%;
+	float:left;
+}
+
+//header nav#mainNav ul li.current-menu-item a, header nav#mainNav ul li:hover a{background:#000;color:#fff;}
+@media($bp-smaller-than-tablet){
+/* Header */
+	header{
+		margin:20px;
+	}
+		header .gutter{padding:20px;}
+		header #logo {float: left;height: 100px;width: 100px;}
+		header #mainNav, {display:none;}
+
+		header #social{}
+
+
+		#menuTrigger{
+			float:right;
+			margin:30px 0 0 0;
+			padding:7px 14px;
+			color:#fff;
+			background:#000;
+			border-radius:2px;
+			text-transform:uppercase;
+			font-weight:bold;
+			display:block;
+
+			&:hover,
+			&:active,
+			&:focus{
+				background:blue;
+			}
+		}
+
+
+
+		#mobileMenu {
+
+			.close{
+				color:#fff;
+				background:#fff;
+				border-radius:2px;
+				text-transform:uppercase;
+				font-weight:bold;
+				display:inline;
+
+				&:hover,
+				&:active,
+				&:focus{
+					background:$blue;
+				}
+
+			}
+			nav {
+				&#mainNav{
+					float:left;
+
+					ul{
+						list-style: none;
+						margin: 18px 0px 0px 77px;
+						width:100%;
+
+						li{
+							float: left;
+							width: 138px;
+							margin: 0 104px 9px 0px;
+
+							a{
+								display: block;
+								//width:132px;
+								//border-bottom: 4px solid #000;
+								//height:20px;
+								font:16px/16px 'Memphis LT W01 Medium';
+								color:#000;
+								text-decoration:none;
+								//padding:4px 0px 0px 6px;
+							}
+
+							&.current-menu-item,
+							&:hover,
+							&:active,
+							&:focus{
+								a{
+									border-bottom:2px solid $blue;
+									color:$blue;
+								}
+							}
+						}
+					}
+				}
+
+				&#social{
+					float: left;
+					margin:10px 0 0 0;
+					width: 100%;
+
+					ul{
+						float:none;
+						margin:0 auto;
+						list-style: none;
+						width:125px;
+
+						li{
+							display:block;
+							height:23px;
+							width:19px;
+							text-decoration:none;
+							text-indent:-9999px;
+							float:left;
+							padding:0 1px 0 0;
+
+							a{
+								background:url(assets/img/socialIcons.png) 0 0 no-repeat;
+								height:100%;
+								width:100%;
+								display:block;
+							}
+
+							&.facebook a{background-position:0 0;}
+							&.tumblr a{background-position:-22px 0;}
+							&.instagram a{background-position:-43px 0;}
+							&.twitter a{background-position:-64px 0;}
+							&.google a{background-position:-85px 0;}
+						}
+					}
+				}
+			}
+		}
+		 
+			//#mobileMenu nav#mainNav ul li.nomargin{margin:0 0 9px;)
+			//#mobileMenu nav#mainNav ul {list-style: none;margin:0;width:100%;}
+			// #mobileMenu nav#mainNav ul li {float: left;width:100%;margin:0;}
+			// 	#mobileMenu nav#mainNav ul li.nomargin{margin:0;}
+			// #mobileMenu nav#mainNav ul li a{padding: 4px 6px;width: auto;}
+
+}
