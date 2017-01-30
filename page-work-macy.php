@@ -55,10 +55,18 @@ get_header(); ?>
 		 				}
 		 			}
 
+		 			$cnt_m = 0;
 		 			if(!empty($mediums)){
 		 				foreach ($mediums as $medium){
 		 					//var_dump($industry->name);
+		 					$m_count = (count($mediums));
+		 					$cnt_m++;
+		 					if($m_count > $cnt_m){
 		 					$output_medium .= '<li>' . $medium->name . $separator . '</li>';
+		 				
+		 					}else{
+		 						$output_medium .= '<li>' . $medium->name . '</li>';
+		 					}
 		 					//var_dump(rtrim($output_medium, $separator));
 		 					//var_dump($output_industry);
 		 				}

@@ -181,7 +181,7 @@ add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 				$returnNum = count($allposts);
 			}
 			//The "15" below should use $returnNum, this variable isn't being passed, so it's been manually limited to 30
-			return array_slice($allposts,0,30);
+			return array_slice($allposts,0,$returnNum);
 	}
 
 	//Cycle

@@ -133,7 +133,7 @@ get_header();  ?>
 					$project_hover_title=get_sub_field('pb_hover_statement');
 					$project_link=get_sub_field('project_link');
 					$position=get_sub_field('pb_position');
-					$award = get_sub_field('award-winning');
+					$award = get_sub_field('award_winning');
 				?>
 
 				<div class="project-box">
@@ -142,11 +142,16 @@ get_header();  ?>
 								<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?> <span><?php echo $project_hover; ?></span></a>
 								</div>
 							</div>
-					<div class="project-container <?php echo $position; ?>">
-							<?php if ($award != ''){ ?>
-							<div class="award-winning"></div>
-							<?php }?>
-							<img src="<?php echo $project_img_url;  ?>">
+					<div class="project-container <?php echo $position; ?> <?php echo $award; ?>">
+							
+							<div class="project-img">
+								<?php if ($award == true){ ?>
+								<div class="award-winning">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/award-winning.png">
+								</div>
+								<?php }?>
+								<img src="<?php echo $project_img_url;  ?>">
+							</div>
 						
 					</div>
 				</div>

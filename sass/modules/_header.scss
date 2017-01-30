@@ -147,6 +147,10 @@ header {
 						background-position:-22px 0;
 					}
 
+					&.instagram a{
+						background-position:-43px 0;
+					}
+
 					&.twitter a{
 						background-position:-64px 0;
 					}
@@ -184,6 +188,7 @@ header {
 	.say-hello{
 		background-color:$black;
 		color:$white;
+		font-family:$gothic;
 		font-weight:bold;
 		//margin-top:10px;
 		padding:2px 4px;

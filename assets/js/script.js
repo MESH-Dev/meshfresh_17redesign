@@ -218,8 +218,21 @@ Macy.init({
         //400: 1
     },
     function(){
-		$('.macy .work-block').removeClass('columns-4');
+		$('#macy .work-block').removeClass('columns-4');
+		alert('Macy Running');
 	}
+
+	// Macy.onImageLoad(function () {
+	// 	$('#macy .work-block').removeClass('columns-4');
+	// 	alert('Macy Running');
+	// }
+});
+
+Macy.onImageLoad(function () {
+	$('#macy .work-block').removeClass('columns-4');
+	$('#macy.blogroll-grid .blog-entry').removeClass('columns-4');
+  // console.log('Every time an image loads I get fired');
+  // Macy.recalculate();
 });
 
 });
