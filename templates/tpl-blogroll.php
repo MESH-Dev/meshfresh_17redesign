@@ -4,7 +4,7 @@ get_header(); ?>
 
 
 <section id="blogroll" class="has-emoticon">
-	<div class="blogroll-grid row"><!-- container -->
+	<div class="blogroll-grid"><!-- container -->
 		<div class="sidebar columns-2"><!-- contentPrimary -->
 			<?php get_sidebar('blog'); ?>
 		</div>
@@ -36,21 +36,13 @@ get_header(); ?>
 										<div class="content">
 											<div class="post-wp-feature">
 												<?php if($titlePos == 'overlay'){ ?>
-													<h2 class="blog-entry-title">
-														<a href="<?php the_permalink(); ?>">
-															<?php the_title(); ?>
-														</a>
-													</h2>
+													<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 												<?php } ?>
 												<?php the_post_thumbnail('full'); ?>
 											</div>
 											<div class="post-wp-content">
 												<?php if($titlePos == 'below'){ ?>
-													<h2 class="blog-entry-title">
-														<a href="<?php the_permalink(); ?>">
-															<?php the_title(); ?>
-														</a>
-													</h2>
+													<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 												<?php } ?>
 												<?php echo get_the_excerpt(); ?>
 											</div>
@@ -59,12 +51,9 @@ get_header(); ?>
 											</div>
 											<div class="post-wp-tags">
 												<?php $tags = get_the_tags();
-													if($tags != ''){
-														foreach($tags as $tag){
-															echo "<a href='".get_tag_link($tag)."'>".$tag->name."</a>";
-														} 
-													}
-													?>
+													foreach($tags as $tag){
+														echo "<a href='".get_tag_link($tag)."'>".$tag->name."</a>";
+													} ?>
 											</div>
 										</div><!-- end hover content -->
 									</div><!-- end hover -->
@@ -74,7 +63,7 @@ get_header(); ?>
 									}elseif($post->post_source == 'tumblr'){ 
 
 								?>
-									<!-- <div class="blog-entry blogroll-box columns-4"> -->
+									<div class="blogroll-box columns-4">
 									<img class="social-badge" src="<?php bloginfo('template_directory'); ?>/assets/img/tumblrIcon.png" />
 									<div class="hover">
 										<div class="content">
@@ -98,13 +87,13 @@ get_header(); ?>
 											</div>
 										<?php }?>
 											<div class="followus">
-												<a href="http://meshfresh.tumblr.com/" >Follow us on Tumblr</a>
+												<a href="http://meshfresh.tumblr.com/">Follow us on Tumblr</a>
 											</div>
 											<div class="post-instagram-date">
 												Published on <?php echo date('M d, Y', $post->unix_timestamp); ?>
 											</div>
 											<div class="post-wp-tags">
-												<a href="<?php echo get_tag_link(11); ?>" target="_blank">Tumblr</a>
+												<a href="<?php echo get_tag_link(11); ?>">Tumblr</a>
 											</div>
 										</div><!-- end hover content -->
 									</div><!-- end hover -->
@@ -113,11 +102,10 @@ get_header(); ?>
 									//Finally...Is the post from the MESH Instagram feed?  Then let's do this...
 									}elseif($post->post_source == 'instagram'){ 
 										?>
-									<!-- <div class="blog-entry blogroll-box columns-4"> -->
 									<img class="social-badge" src="<?php bloginfo('template_directory'); ?>/assets/img/instagramIcon.png" />
 									
 									<div class="post-instagram-feature">
-										<a href="<?php echo $post->link; ?>" target="_blank">
+										<a href="<?php echo $post->link; ?>">
 											<img src="<?php echo $post->images->standard_resolution->url; ?>" />
 										</a>
 									</div>
@@ -133,11 +121,10 @@ get_header(); ?>
 												Published on <?php echo date('M d, Y', $post->unix_timestamp); ?>
 											</div>
 											<div class="post-wp-tags">
-													<a href="<?php echo $post->link;//get_tag_link(12); ?>" target="_blank">Instagram</a>
+													<a href="<?php echo $post->link;//get_tag_link(12); ?>">Instagram</a>
 											</div>
 										</div>
 									</div>
-									<!-- </div> -->
 								<?php } ?>
 							</div>
 						</div>

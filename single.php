@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
 <section id="blogroll" class="single has-emoticon">
-	<div class="blogroll-single"><!-- container -->
-		<div class="columns-2" id=""><!-- contentPrimary -->
+	<div class="container-main">
+		<div id="contentPrimary">
 			<?php get_sidebar('blog'); ?>
 
 		</div>
-		<div class="columns-8" id=""><!-- contentSecondary -->
-			<div class=""><!-- gutter cf -->
+		<div id="contentSecondary">
+			<div class="gutter cf">
 				<?php if(have_posts()){while(have_posts()){the_post(); ?>
 					<div class="single-post-feature">
 						<?php the_post_thumbnail('full'); ?>
@@ -28,8 +28,8 @@
 				<?php } } ?>
 			</div>
 		</div>
-		<div class="columns-2" id=""><!-- contentTertiary -->
-			<div class=""><!-- gutter -->
+		<div id="contentTertiary">
+			<div class="gutter">
 				<h2>Recent Posts</h2>
 				<?php $posts = blogrollPosts('all','',3);
 					foreach($posts as $post){

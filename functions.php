@@ -181,7 +181,7 @@ add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 				$returnNum = count($allposts);
 			}
 			//The "15" below should use $returnNum, this variable isn't being passed, so it's been manually limited to 30
-			return array_slice($allposts,0,$returnNum);
+			return array_slice($allposts,0,30);
 	}
 
 	//Cycle
@@ -267,5 +267,177 @@ add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 		'social-nav'   => 'Social Menu'
 	));
 
+/*PROJECTS PAGE AJAX FUNCTIONS--------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------	
+--------------------------------------------------------------------------------------------------------------
+*/
 
+//Add ajax functionality to pages, all not just in admin
+add_action('wp_head','pluginname_ajaxurl');
+function pluginname_ajaxurl() {
+    ?>
+    <script type="text/javascript">
+    var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+    </script>
+    <?php
+}
+
+
+add_action('wp_ajax_load_project', 'load_project');  
+add_action('wp_ajax_nopriv_load_project', 'load_project');  //_nopriv_ allows access for both signed in users, and not
+
+function load_project(){
+
+	 
+	$to_load = $_POST['to_load'];
+	$single_id = $_POST['single_id'];
+ 
+
+	$args = array(
+		'post_type' => 'work',
+		'posts_per_page' => -1,
+		'status' => 'publish',
+		
+		'order' => 'ASC',
+		'orderby' => 'date',
+		
+	);
+	$query = new WP_Query( $args );
+
+	//get array of all ids
+	$all_ids = wp_list_pluck( $query->posts, 'ID' );
+
+	$current_pos = array_search($single_id, $all_ids);
+
+
+	$loop = false;
+
+	if($current_pos == count($all_ids) - 1)
+		$loop = true;
+
+
+ 	
+ 	$next_arr = array();
+ 	$prev_arr = array();
+
+ 	//for loading of initial project
+ 	if($to_load == 'single'){
+
+ 		//get current position of single ID
+ 		$current_pos = array_search($single_id, $all_ids);
+
+ 		//get position of next id (loading in first two on load.)
+ 		$next_post_id = $all_ids[$current_pos+1];
+
+ 		//get info and images for each and save in array. 
+		$this_arr = get_output_string($single_id,true);
+		$second_arr = get_output_string($next_post_id,false);
+
+
+		$next_arr[0] =  $this_arr[0] . $second_arr[0];
+		$next_arr[1] = $this_arr[1] . $second_arr[1] ;
+ 
+ 	}
+ 	else{
+		if($loop)
+ 			$next_post_id = $all_ids[0];
+ 		else
+			$next_post_id = $all_ids[$current_pos + 1];
+
+		$next_arr = get_output_string($next_post_id,false);
+ 
+ 
+ 	}
+
+	
+
+
+	// $return_arr = array_merge($next_arr,$prev_arr);
+ 
+ 	echo json_encode($next_arr);
+ 
+	die();
+
+}
+
+function get_output_string($post_id,$single){
+    
+
+	$post = get_post($post_id ); 
+	$slug = $post->post_name;
+	$post_id = $post->ID;
+
+	$active_class = '';
+	if($single){$active_class = 'active-project';}
+
+
+	//get images for project
+	if(have_rows('showcase_images', $post_id)): 
+
+		$image_str = '<div id="'.$slug.'-panels" class="project-wrap '.$active_class .'" data-id="'.$post_id.'">';
+		while(have_rows('showcase_images', $post_id)) : the_row();
+			$image=get_sub_field('image', $post_id);
+ 
+			$image_url=$image['sizes']['background-fullscreen'];
+			 
+			$image_str .= "<img id='image-$image[id]' src='$image_url'>";
+		endwhile; 
+		$image_str .="</div>";
+
+		//echo $image_str;
+
+	endif; 
+
+	//Get content/metadata
+	$mediums = get_the_terms($post_id, 'medium');
+	$industries = get_the_terms($post_id, 'Industry');
+ 
+	$separator = ', ';
+	$output_industry = '';
+	$output_medium = '';
+
+	$intro_info = get_field('intro_info',$post_id);
+
+	$project_content = get_field('featured_statement',$post_id);
+
+	if(!empty($industries)){
+		foreach ($industries as $industry){
+			//var_dump($industry->name);
+			$output_industry .= $industry->name . $separator;
+			//var_dump($output_industry);
+		}
+	}
+
+	if(!empty($mediums)){
+		foreach ($mediums as $medium){
+			//var_dump($industry->name);
+			$output_medium .= '<li>' . $medium->name . $separator . '</li>';
+			//var_dump(rtrim($output_medium, $separator));
+			//var_dump($output_industry);
+		}
+	} 
+
+	$title = get_the_title($post_id);
+
+
+	$text_str .= '<div id="'. $slug . '" class="detail_copy '.$active_class .'" style=" ">';
+	$text_str .= '	<h3><span class="underline">'.$title.'</span></h3>';
+	$text_str .= '	<span class="industries tags">'.rtrim($output_industry, $separator).'</span>';
+	$text_str .= '	<p> '.$intro_info.'</p>';
+	$text_str .= '	<footer>';
+	$text_str .= '		<ul class="medium tags">'.$output_medium;
+	$text_str .= '		</ul>';
+	$text_str .= '	</footer>';
+	$text_str .= '</div>';
+
+	//combine into array for return
+	$return_arr[0] = $image_str;
+	$return_arr[1] = $text_str;
+
+	return $return_arr;
+
+
+
+
+}
 	

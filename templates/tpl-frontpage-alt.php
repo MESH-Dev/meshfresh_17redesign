@@ -3,7 +3,7 @@
 
 get_header();  ?>
 
-<section id="home">
+<section id="home" class="has-emoticon">
  
 
 	<?php 
@@ -63,66 +63,130 @@ get_header();  ?>
 	<!-- <div class="site-title">
 		<h1 class="home-title"><a href="<?php echo bloginfo('url'); ?>/work">Hi <span class="emoticon">:)</span> MESH is your full service communication design studio. We make brands, websites, print works, digital media, objects, and other fun stuff to share your good ideas <span class="link-indicator">&raquo;</span></h1>
 	<div>	 -->
-	<div class="has-emoticons">
-		<div class="container home">
 
-			<!--<div class="featured-projects projects" id="macy">
-				<?php $args = array(
-					'post_type'      => 'work',
-					//'meta_key'       => 'featured',
-					//'meta_value'     => true,
-					//'meta_compare'   => '=',
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'display_state',
-							'field'    => 'slug',
-							'terms'    => 'featured',
-						),
+	<div class="container home">
+
+		<!--<div class="featured-projects projects" id="macy">
+			<?php $args = array(
+				'post_type'      => 'work',
+				//'meta_key'       => 'featured',
+				//'meta_value'     => true,
+				//'meta_compare'   => '=',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'display_state',
+						'field'    => 'slug',
+						'terms'    => 'featured',
 					),
-					'posts_per_page' => -1,
-					'orderby' => 'date'
-					);
-						$query = new WP_Query($args);
-						if ( $query->have_posts() ) {
-							$pj_ctr=0;
-							while ( $query->have_posts() ) { $query->the_post(); 
-							
-							$pj_ctr++;
-							$rand = mt_rand(1, 3);
-							$positon;
-							$img;
+				),
+				'posts_per_page' => -1,
+				'orderby' => 'date'
+				);
+					$query = new WP_Query($args);
+					if ( $query->have_posts() ) {
+						$pj_ctr=0;
+						while ( $query->have_posts() ) { $query->the_post(); 
+						
+						$pj_ctr++;
+						$rand = mt_rand(1, 3);
+						$positon;
+						$img;
 
-				 			if($rand == 1){
-				 				$position = 'left';
-				 				$img = '<img class="work-img" src="http://placehold.it/700x805">';
-				 			}elseif ($rand == 2){
-				 				$position = 'right';
-				 				$img = '<img class="work-img" src="http://placehold.it/700x402">';
-				 			}else{
-				 				$position = 'center';
-				 				$img = '<img class="work-img" src="http://placehold.it/700x600">';
-				 			}
+			 			if($rand == 1){
+			 				$position = 'left';
+			 				$img = '<img class="work-img" src="http://placehold.it/700x805">';
+			 			}elseif ($rand == 2){
+			 				$position = 'right';
+			 				$img = '<img class="work-img" src="http://placehold.it/700x402">';
+			 			}else{
+			 				$position = 'center';
+			 				$img = '<img class="work-img" src="http://placehold.it/700x600">';
+			 			}
+			?>
+			<div class="project-box columns-4">
+					<div class="project-container <?php echo $position; ?>">
+						<a href="<?php echo the_permalink(); ?>">
+							<div class="hover">
+								<div class="content">
+								<?php echo the_title(); ?> (<?php echo $pj_ctr; ?>)
+								</div>
+							</div>
+							<?php echo $img;  ?>
+						</a>
+					</div>
+				</div>
+			<?php } } wp_reset_query(); ?>
+		</div>-->
+				<!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<div class="projects row">
+			<div class="columns-4">
+				<?php 
+					if (have_rows('project_container_column_1')):
+						while (have_rows('project_container_column_1')):the_row();
+
+					$project_img_position=get_sub_field('pb_position');	
+					$project_img = get_sub_field('project_image');
+					//var_dump($project_img);
+					$project_img_url = $project_img['sizes']['large'];
+					//var_dump($project_img_url);
+					$project_hover=get_sub_field('pb_hover_text');
+					$project_hover_title=get_sub_field('pb_hover_statement');
+					$project_link=get_sub_field('project_link');
+					$position=get_sub_field('pb_position');
+					$award = get_sub_field('award-winning');
 				?>
-				<div class="project-box columns-4">
-						<div class="project-container <?php echo $position; ?>">
-							<a href="<?php echo the_permalink(); ?>">
-								<div class="hover">
+
+				<div class="project-box">
+					<div class="hover">
+								<div class="content">
+								<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?> <span><?php echo $project_hover; ?></span></a>
+								</div>
+							</div>
+					<div class="project-container <?php echo $position; ?>">
+							<?php if ($award != ''){ ?>
+							<div class="award-winning"></div>
+							<?php }?>
+							<img src="<?php echo $project_img_url;  ?>">
+						
+					</div>
+				</div>
+				<?php endwhile; endif; ?>
+			</div>
+			<div class="columns-4">
+					<?php 
+						if (have_rows('project_container_column_2')):
+							while (have_rows('project_container_column_2')):the_row();
+
+						$project_img_position=get_sub_field('pb_position');	
+						$project_img = get_sub_field('project_image');
+						//var_dump($project_img);
+						$project_img_url = $project_img['url'];
+						//var_dump($project_img_url);
+						$project_hover=get_sub_field('pb_hover_text');
+						$project_hover_title=get_sub_field('pb_hover_statement');
+						$project_link=get_sub_field('project_link');
+						$position=get_sub_field('pb_position');
+					?>
+
+					<div class="project-box">
+						<div class="hover">
 									<div class="content">
-									<?php echo the_title(); ?> (<?php echo $pj_ctr; ?>)
+										<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
 									</div>
 								</div>
-								<?php echo $img;  ?>
-							</a>
+						<div class="project-container <?php echo $position; ?>">
+							
+								
+								<img src="<?php echo $project_img_url;  ?>">
+							
 						</div>
 					</div>
-				<?php } } wp_reset_query(); ?>
-			</div>-->
-					<!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
-			<div class="projects row">
-				<div class="columns-4">
+					<?php endwhile; endif; ?>
+			</div>
+			<div class="columns-4">
 					<?php 
-						if (have_rows('project_container_column_1')):
-							while (have_rows('project_container_column_1')):the_row();
+						if (have_rows('project_container_column_3')):
+							while (have_rows('project_container_column_3')):the_row();
 
 						$project_img_position=get_sub_field('pb_position');	
 						$project_img = get_sub_field('project_image');
@@ -133,101 +197,29 @@ get_header();  ?>
 						$project_hover_title=get_sub_field('pb_hover_statement');
 						$project_link=get_sub_field('project_link');
 						$position=get_sub_field('pb_position');
-						$award = get_sub_field('award_winning');
 					?>
 
 					<div class="project-box">
 						<div class="hover">
 									<div class="content">
-									<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?> <span><?php echo $project_hover; ?></span></a>
+									<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
 									</div>
 								</div>
-						<div class="project-container <?php echo $position; ?> <?php echo $award; ?>">
+						<div class="project-container <?php echo $position; ?>">
+							
 								
-								<div class="project-img">
-									<?php if ($award == true){ ?>
-									<div class="award-winning">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/award-winning.png">
-									</div>
-									<?php }?>
-									<img src="<?php echo $project_img_url;  ?>">
-								</div>
+								<img src="<?php echo $project_img_url;  ?>">
 							
 						</div>
 					</div>
 					<?php endwhile; endif; ?>
-				</div>
-				<div class="columns-4">
-						<?php 
-							if (have_rows('project_container_column_2')):
-								while (have_rows('project_container_column_2')):the_row();
-
-							$project_img_position=get_sub_field('pb_position');	
-							$project_img = get_sub_field('project_image');
-							//var_dump($project_img);
-							$project_img_url = $project_img['url'];
-							//var_dump($project_img_url);
-							$project_hover=get_sub_field('pb_hover_text');
-							$project_hover_title=get_sub_field('pb_hover_statement');
-							$project_link=get_sub_field('project_link');
-							$position=get_sub_field('pb_position');
-						?>
-
-						<div class="project-box">
-							<div class="hover">
-										<div class="content">
-											<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
-										</div>
-									</div>
-							<div class="project-container <?php echo $position; ?>">
-								
-									
-									<img src="<?php echo $project_img_url;  ?>">
-								
-							</div>
-						</div>
-						<?php endwhile; endif; ?>
-				</div>
-				<div class="columns-4">
-						<?php 
-							if (have_rows('project_container_column_3')):
-								while (have_rows('project_container_column_3')):the_row();
-
-							$project_img_position=get_sub_field('pb_position');	
-							$project_img = get_sub_field('project_image');
-							//var_dump($project_img);
-							$project_img_url = $project_img['sizes']['large'];
-							//var_dump($project_img_url);
-							$project_hover=get_sub_field('pb_hover_text');
-							$project_hover_title=get_sub_field('pb_hover_statement');
-							$project_link=get_sub_field('project_link');
-							$position=get_sub_field('pb_position');
-						?>
-
-						<div class="project-box">
-							<div class="hover">
-										<div class="content">
-										<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
-										</div>
-									</div>
-							<div class="project-container <?php echo $position; ?>">
-								
-									
-									<img src="<?php echo $project_img_url;  ?>">
-								
-							</div>
-						</div>
-						<?php endwhile; endif; ?>
-				</div>
 			</div>
-			<?php get_template_part('/partials/emoticons'); ?>
-		</div><!-- end container.home  -->
-	</div> <!-- end has-emoticons -->
+		</div>
+	</div>
+
 	<div class="container">
 		<?php get_template_part('/partials/page-callout'); ?>
 	</div>
-
-	
 </section>
 
 <?php get_footer(); ?>
