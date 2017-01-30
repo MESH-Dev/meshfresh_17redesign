@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-<section id="grid" class="has-emoticon"><!-- page-content -->
+<section id="grid" class="has-emoticons"><!-- page-content -->
 	<div id="gallery_cover"></div>
 	<div class="work-grid" id="macy"><!-- container -->
 		<!-- <div class="row"> -->
@@ -55,6 +55,7 @@ get_header(); ?>
 		 				}
 		 			}
 
+		 			//Let's start a count for those $m
 		 			$cnt_m = 0;
 		 			if(!empty($mediums)){
 		 				foreach ($mediums as $medium){
@@ -174,6 +175,7 @@ get_header(); ?>
 	
 	<!-- </div> -->
 </div><!-- end work-grid -->
+<?php get_template_part('/partials/emoticons'); ?>
 </section>
 
 <!-- <section class="josh"> -->
