@@ -230,7 +230,7 @@ Macy.init({
 
 Macy.onImageLoad(function () {
 	$('#macy .work-block').removeClass('columns-4');
-	$('#macy.blogroll-grid .blog-entry').removeClass('columns-4');
+	$('#macy.blogroll-grid .blog-entry').addClass('macy-box');
   // console.log('Every time an image loads I get fired');
   // Macy.recalculate();
 });

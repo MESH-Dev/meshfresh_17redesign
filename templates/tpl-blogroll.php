@@ -4,7 +4,7 @@ get_header(); ?>
 
 
 <section id="blogroll" class="has-emoticon">
-	<div class="blogroll-grid"><!-- container -->
+	<div class="blogroll-grid row"><!-- container -->
 		<div class="sidebar columns-2"><!-- contentPrimary -->
 			<?php get_sidebar('blog'); ?>
 		</div>
@@ -59,9 +59,12 @@ get_header(); ?>
 											</div>
 											<div class="post-wp-tags">
 												<?php $tags = get_the_tags();
-													foreach($tags as $tag){
-														echo "<a href='".get_tag_link($tag)."'>".$tag->name."</a>";
-													} ?>
+													if($tags != ''){
+														foreach($tags as $tag){
+															echo "<a href='".get_tag_link($tag)."'>".$tag->name."</a>";
+														} 
+													}
+													?>
 											</div>
 										</div><!-- end hover content -->
 									</div><!-- end hover -->
