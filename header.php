@@ -113,6 +113,7 @@
 						); wp_nav_menu( $defaults ); ?>
 				
 				</div>
+		<div class="row">
 		<div class="columns-12"><!-- gutter cf -->
 					<div id="logo">
 						<a href="<?php echo bloginfo('url'); ?>">
@@ -156,5 +157,6 @@
 				</div>
 				
 			</div>
+		</div>
 	</div>
 </header>

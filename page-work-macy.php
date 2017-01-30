@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-<section id="grid" class="has-emoticon"><!-- page-content -->
+<section id="grid" class="has-emoticons"><!-- page-content -->
 	<div id="gallery_cover"></div>
 	<div class="work-grid" id="macy"><!-- container -->
 		<!-- <div class="row"> -->
@@ -55,10 +55,19 @@ get_header(); ?>
 		 				}
 		 			}
 
+		 			//Let's start a count for those $m
+		 			$cnt_m = 0;
 		 			if(!empty($mediums)){
 		 				foreach ($mediums as $medium){
 		 					//var_dump($industry->name);
+		 					$m_count = (count($mediums));
+		 					$cnt_m++;
+		 					if($m_count > $cnt_m){
 		 					$output_medium .= '<li>' . $medium->name . $separator . '</li>';
+		 				
+		 					}else{
+		 						$output_medium .= '<li>' . $medium->name . '</li>';
+		 					}
 		 					//var_dump(rtrim($output_medium, $separator));
 		 					//var_dump($output_industry);
 		 				}
@@ -166,6 +175,7 @@ get_header(); ?>
 	
 	<!-- </div> -->
 </div><!-- end work-grid -->
+<?php get_template_part('/partials/emoticons'); ?>
 </section>
 
 <!-- <section class="josh"> -->
