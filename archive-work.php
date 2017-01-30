@@ -1,4 +1,4 @@
-<?php /* Template Name: Work Archive - Macy */
+<?php 
 
 
 get_header(); ?>

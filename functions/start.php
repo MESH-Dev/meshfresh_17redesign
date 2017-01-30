@@ -11,7 +11,7 @@ function loadup_scripts() {
     //Styles
     //wp_enqueue_style( 'MESH-style', get_stylesheet_uri() );
     //fonts.googleapis.com/icon?family=Material+Icons
-     wp_enqueue_style('MESH-style',get_stylesheet_directory_uri().'/sass.css');
+     wp_enqueue_style('MESH-style',get_stylesheet_directory_uri().'/sass.css',null,null);
     wp_enqueue_style('MESH-twentystyle',get_stylesheet_directory_uri().'/assets/css/twentytwenty.css');
     wp_enqueue_style('MESH-sidrstyle',get_stylesheet_directory_uri().'/assets/css/jquery.sidr.bare.css');
     wp_enqueue_style('MESH-slickstyle','//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
@@ -37,7 +37,7 @@ function loadup_scripts() {
     wp_enqueue_script('MESH-sidr',get_stylesheet_directory_uri().'/assets/js/jquery.sidr.min.js',array('jquery'));
     //https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js
     wp_enqueue_script('MESH-slick','//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',array('jquery'));
-    wp_enqueue_script('MESH-script',get_stylesheet_directory_uri().'/assets/js/script.js',array('jquery'));
+    wp_enqueue_script('MESH-script',get_stylesheet_directory_uri().'/assets/js/script.js',array('jquery'), null, true);
      
     }
 add_action( 'wp_enqueue_scripts', 'loadup_scripts' );

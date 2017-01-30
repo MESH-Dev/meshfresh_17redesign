@@ -51,7 +51,8 @@ img{
 header{
 	width:100%;
 	//border-top:14px solid #000;\
-	/*position:absolute;*/
+    position:absolute; 
+ 
 	margin:0 0 4.5em 0;
 	z-index: 500;
 
@@ -1257,7 +1258,7 @@ a.cta{
 	}
 
 .work-panels{
-	margin-left:30%;
+	// margin-left:30%;
 
 	.work-single{
 		height:100vh;
@@ -1295,6 +1296,7 @@ a.cta{
 footer.site-footer{
 	border-bottom:10px solid $blue;
 	margin-top:5em;
+	clear: both;
 
 	.wrap{
 		width:95%;
@@ -1427,9 +1429,11 @@ footer.site-footer{
     height: 100vh;
     width: 33%;
     min-width: 350px;
-    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.3);
+    //box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.3);
     left: 96%;
     top:0;
+    //margin-left: -40px;
+
 }
 
 #gallery_cover{
@@ -1443,11 +1447,13 @@ footer.site-footer{
     z-index:1;
 }
 
+
+
 .detail_copy{
     position: absolute;
     visibility: hidden;
     top: 180px;
-    left: 96%;
+    //left: 96%;
     width: 100%;
     height: 100%;
     padding: 90px 60px;
@@ -1474,6 +1480,12 @@ footer.site-footer{
 	    margin-top: 50px;
 	}
 }
+
+.active-project{
+	visibility: visible;
+}
+
+
 
 .underline{
     padding-bottom: 2px;
@@ -1508,7 +1520,7 @@ footer.site-footer{
     color: #fff;
     visibility: hidden;
     position: absolute;
-    top: 200px;
+    top: 210px;
     left: 60px;
     cursor: pointer;
  //    transition: all 0.2s ease-in-out;
@@ -1569,7 +1581,8 @@ footer.site-footer{
 		line-height: 30px;
 		text-align: center;
 		visibility: hidden;
-		border-radius: 6px;
+		text-transform: uppercase;
+		 
 	}
 
 	span:after {
@@ -1619,6 +1632,7 @@ footer.site-footer{
 		font-family: 'Gothic';
 		font-size: 14px;
 		position: absolute;
+		text-transform: uppercase;
 		left: 50px;
 		top: 5px;
 		width:140px;
@@ -1628,7 +1642,7 @@ footer.site-footer{
 		line-height: 32px;
 		text-align: center;
 		visibility: hidden;
-		border-radius: 6px;
+ 
 	}
 	span:after {
 	  content: '';

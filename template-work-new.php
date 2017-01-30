@@ -1,7 +1,14 @@
-<?php /* Template Name: Work Archive - Macy */
+<?php /* Template Name: Work Archive NEW */
 
 
-get_header(); ?>
+get_header();
+ 
+
+
+
+?>
+
+
 
 <section id="grid" class="has-emoticon"><!-- page-content -->
 	<div id="gallery_cover"></div>
@@ -13,7 +20,7 @@ get_header(); ?>
 					//'meta_key'       => 'featured',
 					//'meta_value'     => true,
 					//'meta_compare'   => '!=',
-					'order' => 'ASC',
+					'order' => 'DESC',
 					'order_by' => 'date',
 					'posts_per_page' => -1,
 					'tax_query' => array(
@@ -84,14 +91,15 @@ get_header(); ?>
 				$color = $setColor;
 				$rgb = hex2rgba($color);
 				$rgba = hex2rgba($color, 0.9);
+				$slug = get_post_field( 'post_name', $post->ID);
 			
 				?>
-		 <div class="work-block columns-4" ><!-- columns-4 -->
-		 	<div class="hover" onclick="infoOpen()" <?php if($bg_color){ echo 'style="background-color:'. $rgba .'"'; }?> >
+		 <div class="work-block columns-4" data-id="<?php echo $slug;?> " data-color="<?php echo $color;?>"><!-- columns-4 -->
+		 	<div class="hover"  <?php if($bg_color){ echo 'style="background-color:'. $rgba .'"'; }?> >
 	 				<div class="content">
 		 				<h2>
 		 					<!-- <a href="<?php //the_permalink(); ?>"> -->
-		 					<span><?php the_title(); ?> (<?php echo $wk_ctr; ?>)</span>
+		 					<span><?php the_title(); ?> </span>
 		 					<!-- </a> -->
 		 				</h2>
 		 			<span class="industries tags"> 
@@ -162,29 +170,107 @@ get_header(); ?>
 	 			
 	 		</div><!-- end work-container -->
 		</div><!-- end work-block -->
-	<?php } } wp_reset_query(); ?>
+	<?php } } wp_reset_query(); wp_reset_postdata();?>
 	
 	<!-- </div> -->
 </div><!-- end work-grid -->
 </section>
 
+
+
 <!-- <section class="josh"> -->
 	<div id="infobar" onclick="infoOpen()">
+
 		<p id="explore_text">Explore the Projects</p>
-		<p id="fs_title1">Children's Museum of the Arts New York</p>
+		
 		<i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
-		<div class="detail_copy" id="copy_1">
-			<h3><span class="underline">Children’s Museum of the Arts New York</span></h3>
-			<p>The Children’s Museum of New York has one of the most amazing new spaces for kids in the city, and a handful of impressive RISD grads as teachers — and they needed a website to match. We redesigned their site to reflect the playful but clean aesthetic of the museum, while keeping in mind</p>
+ 
+		<div id="sidebar-content" class=" ">
+
+			<!-- PROJECT CONTENT  DYNAMICALLY ADDED HERE -->
+
+						<?php 
+						$args_two = array(
+							'post_type' => 'work',
+							'posts_per_page' => -1,
+							'status' => 'publish',
+							
+							'order' => 'DESC',
+							'orderby' => 'date',
+							
+						);
+ 
+
+			$query_two = new WP_Query($args_two );
+			while ( $query_two->have_posts() ) { $query_two->the_post(); 
+				
+				$post_id = get_the_ID();
+				$slug = get_post_field( 'post_name', $post_id );
+
+				//$active_class = '';
+				//if($single){$active_class = 'active-project';}
+
+
+				
+
+				//Get content/metadata
+				$mediums = get_the_terms($post_id, 'medium');
+				$industries = get_the_terms($post_id, 'Industry');
+			 
+				$separator = ', ';
+				$output_industry = '';
+				$output_medium = '';
+
+				$intro_info = get_field('intro_info',$post_id);
+
+				$project_content = get_field('featured_statement',$post_id);
+
+				if(!empty($industries)){
+					foreach ($industries as $industry){
+ 
+						$output_industry .= $industry->name . $separator;
+ 
+					}
+				}
+
+				if(!empty($mediums)){
+					foreach ($mediums as $medium){
+ 
+						$output_medium .= '<li>' . $medium->name . $separator . '</li>';
+ 
+					}
+				} 
+
+				$title = get_the_title($post_id);
+				$text_str = '';
+
+
+				$text_str .= '<div id="'. $slug . '" class="detail_copy '.$active_class .'" style=" ">';
+				$text_str .= '	<h3><span class="underline">'.$title.'</span></h3>';
+				$text_str .= '	<span class="industries tags">'.rtrim($output_industry, $separator).'</span>';
+				$text_str .= '	<p> '.$intro_info.'</p>';
+				$text_str .= '	<footer>';
+				$text_str .= '		<ul class="medium tags">'.$output_medium;
+				$text_str .= '		</ul>';
+				$text_str .= '	</footer>';
+				$text_str .= '</div>';
+
+				echo $text_str;
+
+
+
+			}
+
+			?>
+
+
+
+
+
+
+	
 		</div>
-		<div class="detail_copy" id="copy_2">
-			<h3><span class="underline">Mission Savvy</span></h3>
-			<p>MESH has worked with this entrepreneur from her beginning, overhauling her site, her branding, her promotional collateral online and in print, and her Kickstarter campaign, the Vegan Pop-Up in Appalachia Organic To-Go Kickstarter series. Every time she reinvents Mission Savvy, we are there to support with strategy and visuals. The brand was designed to feel personal and handmade down to its</p>
-		</div>
-		<div class="detail_copy" id="copy_3">
-			<h3><span class="underline">J.Q. Dickinson Saltworks</span></h3>
-			<p>We partnered with the founders of J. Q. Dickinson Salt-works from their inception, working through a naming, branding, communication strategy, and sales strategy of their new, organic, and locally produced salt product. The entire project was inspired by their 200 year old family farm, both in</p>
-		</div>
+ 
 		<div class="detail_nav">
 			<div id="prev_proj" class="detail_switch" onclick="prevScroll()">
 				<svg id="prev_arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
@@ -217,32 +303,54 @@ get_header(); ?>
 
 
 	<div id="detail_scrollarea">
-    <i id="fullscreen" class="material-icons" onclick="fullScreenTrigger()">fullscreen</i>
-    <i id="fullscreen_exit" class="material-icons" onclick="fullScreenExitTrigger()">fullscreen_exit</i>
-    <span id="fs_tip" class="tooltip">Expand the Images</span>
-    <span id="fs_close_tip" class="tooltip">Close Fullscreen</span>
-    <div>
-    </div>
-    <div>
-        <a name="proj1"></a>
-        <img id="img1" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/CMANY01_1600.jpg">
-        <img id="img2" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/09/CMANY_MockUp2.jpg">
-    </div>
-    <div>
-        <img id="img3" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy3_1600.jpg">
-        <img id="img4" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy2_1600.jpg">
-        <img id="img5" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/03/MissionSavvy1_1600.jpg">
-    </div>
-    <div>
-        <a name="proj2"></a>
-        <img id="img6" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/04/salt02_1600.jpg">
-        <img id="img7" alt="placeholder" src="<?php echo bloginfo('url'); ?>/wp-content/uploads/2014/04/salt01_1600.jpg">
-    </div>
-</div>
+	    <i id="fullscreen" class="material-icons" onclick="fullScreenTrigger()">fullscreen</i>
+	    <i id="fullscreen_exit" class="material-icons" onclick="fullScreenExitTrigger()">fullscreen_exit</i>
+	    <span id="fs_tip" class="tooltip">Expand the Images</span>
+	    <span id="fs_close_tip" class="tooltip">Close Fullscreen</span>
+
+	    <div>
+	    </div>
+
+		<div id="project-panels" class="work-panels">
+			<!-- PROJECTS DYNAMICALLY ADDED HERE -->
+			<?php 
+			$query_two = new WP_Query($args_two );
+			while ( $query_two->have_posts() ) { $query_two->the_post(); 
+
+				$post_id = get_the_ID();
+				$slug = get_post_field( 'post_name', $post_id );
+
+				$image_str = '';
+
+				//get images for project
+				if(have_rows('showcase_images', $post_id)): 
+
+					$image_str = '<div id="'.$slug.'-panels" class="project-wrap '.$active_class .'" data-id="'.$post_id.'">';
+					while(have_rows('showcase_images', $post_id)) : the_row();
+						$image=get_sub_field('image', $post_id);
+			 
+						$image_url=$image['sizes']['background-fullscreen'];
+						 
+						$image_str .= "<img id='image-$image[id]' src='$image_url'>";
+					endwhile; 
+					$image_str .="</div>";
+
+					echo $image_str;
+
+				endif; 
 
 
-<script>
 
-</script>
+
+
+
+			}
+			?>
+		
+		</div>	
+ 
+	</div>
+
+ 
 <!-- </section> -->
 <?php get_footer(); ?>
