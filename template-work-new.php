@@ -191,12 +191,21 @@ get_header();
 
 						<?php 
 						$args_two = array(
-							'post_type' => 'work',
-							'posts_per_page' => -1,
-							'status' => 'publish',
-							
+							'post_type'      => 'work',
+							//'meta_key'       => 'featured',
+							//'meta_value'     => true,
+							//'meta_compare'   => '!=',
 							'order' => 'DESC',
-							'orderby' => 'date',
+							'order_by' => 'date',
+							'posts_per_page' => -1,
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'display_state',
+									'field'    => 'slug',
+									'terms'    => 'archive',
+									'operator' => 'NOT IN'
+								),
+							),
 							
 						);
  
@@ -260,7 +269,7 @@ get_header();
 
 
 			}
-
+			wp_reset_query(); wp_reset_postdata();
 			?>
 
 
@@ -331,7 +340,7 @@ get_header();
 			 
 						$image_url=$image['sizes']['background-fullscreen'];
 						 
-						$image_str .= "<img id='image-$image[id]' src='$image_url'>";
+						$image_str .= "<img id='image-$image[id]' src='http://localhost/mesh_redesign/wp-content/themes/mesh_redesign/assets/img/blank.png' data-src='$image_url'>";
 					endwhile; 
 					$image_str .="</div>";
 
@@ -344,7 +353,7 @@ get_header();
 
 
 
-			}
+			}wp_reset_query(); wp_reset_postdata();
 			?>
 		
 		</div>	

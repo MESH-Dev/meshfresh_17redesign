@@ -17,6 +17,7 @@
         retina = window.devicePixelRatio > 1,
         attrib = retina? "data-src-retina" : "data-src",
         images = this,
+        $w = $('#detail_scrollarea'),
         loaded;
 
     this.one("unveil", function() {
@@ -55,8 +56,9 @@
 
 })(window.jQuery || window.Zepto);
 
-
 jQuery(document).ready(function($){
+
+	$("#project-panels img").unveil();
  
 	//Work Filter
 	$('ul#filters li').click(function(){
@@ -296,11 +298,26 @@ $(document).on('click', '#load-next', function () {
 
 $(document).on('click', '.work-block', function () {
 	var project_id = $(this).attr('data-id');
+	project_id  = project_id.trim();
 	var project_color = $(this).attr('data-color');
+	var photos_id = '#'+project_id+'-panels';
+	console.log(photos_id);
+
+	var offset_y = $(photos_id).offset().top;
+	console.log(offset_y);
+
+
+
+	$('#detail_scrollarea').animate({
+              scrollTop: offset_y
+            }, 1000);
 
 	var pid = '#'+project_id;
 
+	$('.detail_copy').removeClass('active-project');
 	$(pid).addClass('active-project');
+
+
 
 	//$('#project-panels').html('');
 	//$('#sidebar-content').html('');
@@ -422,29 +439,29 @@ function ajax_load_projects(to_load, single_id){
 } //End Ajax_load_project Function
 
 
-$('#detail_scrollarea').on("scroll", function (e) {
-	e.preventDefault();
+// $('#detail_scrollarea').on("scroll", function (e) {
+// 	e.preventDefault();
  
-	var last_id = $('#project-panels:last-child').children('.project-wrap').last().attr('data-id');
+// 	var last_id = $('#project-panels:last-child').children('.project-wrap').last().attr('data-id');
 	
 
 	
-	//ajax_load_projects('next',last_id);
+// 	//ajax_load_projects('next',last_id);
 
-	var scroll = $('#detail_scrollarea').scrollTop();
-	var div_height = $('#project-panels').height();
-	var window_height = $(window).height();
+// 	var scroll = $('#detail_scrollarea').scrollTop();
+// 	var div_height = $('#project-panels').height();
+// 	var window_height = $(window).height();
 
-	console.log(scroll);
-	console.log("/// "+ div_height);
+// 	console.log(scroll);
+// 	console.log("/// "+ div_height);
 
 
 
-	if ((scroll + window_height)  >= div_height - 300) {
-		ajax_load_projects('next',last_id);
-		console.log("loaded: project after: " + last_id );
-   }
-});
+// 	if ((scroll + window_height)  >= div_height - 300) {
+// 		//ajax_load_projects('next',last_id);
+// 		console.log("loaded: project after: " + last_id );
+//    }
+// });
 
 
 
