@@ -9,7 +9,7 @@
 	</div>
 
 	
-</footer>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/fancy-scroll.js"></script>
-</body>
+</footer><!-- 
+ <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/fancy-scroll.js"></script>
+ --></body>
 </html>
