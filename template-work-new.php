@@ -184,6 +184,7 @@ get_header();
 		<p id="explore_text">Explore the Projects</p>
 		
 		<i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
+		<span id="back_tip" class="tooltip">View All Projects</span>
  
 		<div id="sidebar-content" class=" ">
 
@@ -245,10 +246,12 @@ get_header();
 				if(!empty($mediums)){
 					foreach ($mediums as $medium){
  
-						$output_medium .= '<li>' . $medium->name . $separator . '</li>';
+						$output_medium .=  $medium->name . $separator;
  
 					}
-				} 
+				}
+
+				$output_medium = rtrim($output_medium,','); 
 
 				$title = get_the_title($post_id);
 				$text_str = '';

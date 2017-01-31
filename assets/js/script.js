@@ -57,6 +57,8 @@
 })(window.jQuery || window.Zepto);
 
 jQuery(document).ready(function($){
+
+	$("#project-panels img").unveil(200);
  
 	//Work Filter
 	$('ul#filters li').click(function(){
@@ -494,6 +496,7 @@ var detailView = new TimelineMax(),
     tooltip_next = new TimelineMax(),
     tooltip_prev = new TimelineMax(),
     tooltip_close = new TimelineMax(),
+    tooltip_back = new TimelineMax(),
     tooltip_fs = new TimelineMax();
 
 
@@ -644,13 +647,19 @@ tooltip_prev.add("start")
     .paused(true)
     .to("#prev_tip", 0.3, {css:{autoAlpha:1, left:"40px"}, ease:Power2.easeInOut}, "start")
     .add("end");
+
+tooltip_back.add("start")
+    .paused(true)
+    .to("#back_tip", 0.3, {css:{autoAlpha:1, left:"110px"}, ease:Power2.easeInOut}, "start")
+    .add("end");
 //Tooltip Show/Hide Definitions
 
 //Tooltip Trigger Definitions
 var fs_tip_trigger = document.getElementById('fullscreen'),
     fs_close_tip_trigger = document.getElementById('fullscreen_exit'),
     next_tip_trigger = document.getElementById('next_arrow'),
-    prev_tip_trigger = document.getElementById('prev_arrow');
+    prev_tip_trigger = document.getElementById('prev_arrow'),
+    back_tip_trigger = document.getElementById('detail_exit');
 
 fs_tip_trigger.onmouseover = showTooltipLeft;
 fs_tip_trigger.onmouseout = hideTooltipLeft;
@@ -660,6 +669,9 @@ next_tip_trigger.onmouseover = showTooltipNext;
 next_tip_trigger.onmouseout = hideTooltipNext;
 prev_tip_trigger.onmouseover = showTooltipPrev;
 prev_tip_trigger.onmouseout = hideTooltipPrev;
+
+back_tip_trigger.onmouseover = showTooltipBack;
+back_tip_trigger.onmouseout = hideTooltipBack;
 
 function showTooltipLeft(){
     tooltip_fs.play()
@@ -685,12 +697,13 @@ function showTooltipClose(){
 function hideTooltipClose(){
     tooltip_close.reverse()
 }
+function showTooltipBack(){
+    tooltip_back.play()
+}
+function hideTooltipBack(){
+    tooltip_back.reverse()
+}
 //Tooltip Trigger Definitions
 //});
 //=================================
  
-
-
-
-
-});
