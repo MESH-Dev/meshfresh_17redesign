@@ -64,7 +64,7 @@ p {
     //font-family:$gothic;
     font-weight:bold;
     //text-transform:uppercase;
-    text-decoration:underline;
+    // text-decoration:underline;
     color:$blue;
     &:hover,
     &:active,
@@ -76,6 +76,10 @@ p {
   }
 
   .cta{
+    p{
+      margin:0;
+      padding:0;
+    }
     a{
       text-align:center;
       border-bottom:1px solid $blue;
@@ -116,12 +120,12 @@ p {
     a{
       font-family:$gothic;
       font-weight:bold;
-      border-bottom:1px solid $blue;
+      border-bottom:2px solid $blue;
       color:$blue;
       &:hover,
       &:active,
       &:focus{
-        border-bottom:1px solid transparent;
+        border-bottom:2px solid transparent;
       }
     }
   }

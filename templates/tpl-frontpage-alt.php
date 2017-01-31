@@ -70,7 +70,7 @@ get_header();  ?>
 		<h1 class="home-title"><a href="<?php echo bloginfo('url'); ?>/work">Hi <span class="emoticon">:)</span> MESH is your full service communication design studio. We make brands, websites, print works, digital media, objects, and other fun stuff to share your good ideas <span class="link-indicator">&raquo;</span></h1>
 	<div>	 -->
 	<div class="has-emoticons">
-		<div class="container home">
+		<div class=" home">
 
 			<!--<div class="featured-projects projects" id="macy">
 				<?php $args = array(

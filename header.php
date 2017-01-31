@@ -77,8 +77,9 @@
 				</div>
 				<div class="columns-4 loc">
 					<div class=""><!-- gutter -->
-						Inquiries, please email:<br>
-						<strong><a href="mailto:hello@meshfresh.com">hello@meshfresh.com</a></strong>
+						304.45.6374<br>
+						<strong><a href="mailto:hello@meshfresh.com">hello@meshfresh.com</a></strong><br>
+						<a href="<?php echo bloginfo('url'); ?>/say-hello">Get involved with MESH</a>
 					</div>
 				</div>
 			</div>
