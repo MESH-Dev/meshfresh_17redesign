@@ -20,7 +20,9 @@ get_header();  ?>
 	<div class="twenty20 twentytwenty-container">
 
 			<div class="twentytwenty-before-container">
-				<div class="badge badge-left">
+				
+		    	<div class="img-container-first" style="background-image: url('<?php echo $right_img_url; ?>'); ">
+		    		<div class="badge badge-left">
 			    	<div class="wrap">
 			    		<div class="content">
 					    	<h3>MESH Charleston</h3>
@@ -28,10 +30,13 @@ get_header();  ?>
 				    	</div>
 			    	</div>
 		    	</div>
-				<img class="compare" src="<?php echo $right_img_url; ?>" />
+		    	</div>
+				<!-- <img class="compare" src="<?php echo $right_img_url; ?>" /> -->
 			</div>
 			<div class="twentytwenty-after-container">
-				<div class="badge badge-right">
+				
+		   		<div class="img-container-second" style="background-image: url('<?php echo $left_img_url; ?>');">
+		   			<div class="badge badge-right">
 			    	<div class="wrap">
 			    		<div class="content">
 					    	<h3>MESH Brooklyn</h3>
@@ -39,7 +44,8 @@ get_header();  ?>
 				    	</div>
 			    	</div>
 		   		</div>
-			    <img src="<?php echo $left_img_url; ?>" />
+		    	</div>
+			    <!-- <img src="<?php echo $left_img_url; ?>" /> -->
 			</div>
 	   	<div class="content">
 		    <div class="home_greeting" aria-hidden="true">

@@ -276,11 +276,11 @@ Macy.init({
         950: 2,
         520: 1,
         //400: 1
-    },
-    function(){
-		$('#macy .work-block').removeClass('columns-4');
-		alert('Macy Running');
-	}
+    }
+ //    function(){
+	// 	$('#macy .work-block').removeClass('columns-4');
+	// 	alert('Macy Running');
+	// }
 
 	// Macy.onImageLoad(function () {
 	// 	$('#macy .work-block').removeClass('columns-4');
@@ -291,6 +291,7 @@ Macy.init({
 Macy.onImageLoad(function () {
 	$('#macy .work-block').removeClass('columns-4');
 	$('#macy.blogroll-grid .blog-entry').addClass('macy-box');
+	$('#macy.people-grid .people-entry').addClass('macy-box');
   // console.log('Every time an image loads I get fired');
   // Macy.recalculate();
 });
