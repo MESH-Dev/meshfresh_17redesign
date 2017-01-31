@@ -696,21 +696,20 @@ section#home .container-main{/*height:1136px;*/}
 //          transform: rotate(60deg);
 // }
 
-// .badge-left{
-// 	position: absolute;
-// 	//display:none;
-// 	z-index: 1000;
-// 	top: 60vh;
-// 	left: 10vw;
-// }
-
-.badge-right,
 .badge-left{
 	position: absolute;
 	//display:none;
 	z-index: 1000;
-	bottom:5%;
-	left: 10%;
+	top:120px;
+	left: 75%;
+}
+
+.badge-right{
+	position: absolute;
+	//display:none;
+	z-index: 1000;
+	bottom: 10%;
+	left: 15%;
 }
 
 @media only screen and (max-width: 560px) {
@@ -721,7 +720,7 @@ section#home .container-main{/*height:1136px;*/}
 	.badge{
 		display:none;
 	}
-	
+
 	.twentytwenty-container img,
 	.twenty20 svg{
 		display: none !important;
