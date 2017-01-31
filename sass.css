@@ -3110,10 +3110,6 @@ a.cta:hover, a.cta:active, a.cta:focus {
   text-transform: uppercase;
 }
 
-/* line 1273, sass/modules/_layout.scss */
-.work-panels {
-  margin-left: 30%;
-}
 /* line 1276, sass/modules/_layout.scss */
 .work-panels .work-single {
   height: 100vh;
@@ -3416,7 +3412,7 @@ footer.site-footer p {
   top: 0;
 }
 
-/* line 1599, sass/modules/_layout.scss */
+
 #gallery_cover {
   background-color: #fff;
   width: 100vw;
@@ -3428,7 +3424,7 @@ footer.site-footer p {
   z-index: 1;
 }
 
-/* line 1610, sass/modules/_layout.scss */
+
 .detail_copy {
   position: absolute;
   visibility: hidden;
@@ -3439,29 +3435,59 @@ footer.site-footer p {
   max-width: 800px;
   margin: 0 auto;
 }
-/* line 1626, sass/modules/_layout.scss */
+
 .detail_copy h3 {
   font-family: 'Memphis LT W01 Medium', sans-serif;
   font-size: 24px;
   color: #fff;
   line-height: 42px;
 }
-/* line 1633, sass/modules/_layout.scss */
+
 .detail_copy p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
   line-height: 20px;
   font-size: 14px;
-  margin-top: 50px;
 }
 
-/* line 1642, sass/modules/_layout.scss */
+
+/* line 1639, sass/modules/_layout.scss */
+span#back_tip {
+  font-family: 'Gothic';
+  font-size: 14px;
+  position: absolute;
+  text-transform: uppercase;
+  left: 150px;
+  top: 218px;
+  width: 140px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  height: 30px;
+  line-height: 32px;
+  text-align: center;
+  visibility: hidden;
+}
+/* line 1655, sass/modules/_layout.scss */
+span#back_tip:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -8px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid rgba(0, 0, 0, 0.8);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
 .underline {
   padding-bottom: 2px;
   border-bottom: 2px solid #fff;
 }
 
-/* line 1647, sass/modules/_layout.scss */
+
+
 #explore_text {
   color: #fff;
   font-family: "Memphis LT W01 Light";
@@ -3470,7 +3496,7 @@ footer.site-footer p {
   margin-top: 40px;
 }
 
-/* line 1655, sass/modules/_layout.scss */
+
 #fs_title1 {
   color: #fff;
   font-family: "Memphis LT W01 Light";
@@ -3484,7 +3510,7 @@ footer.site-footer p {
   visibility: hidden;
 }
 
-/* line 1668, sass/modules/_layout.scss */
+
 #detail_exit {
   z-index: 3;
   font-size: 42px;
@@ -3497,7 +3523,7 @@ footer.site-footer p {
   cursor: pointer;
 }
 
-/* line 1684, sass/modules/_layout.scss */
+
 #detail_scrollarea {
   visibility: hidden;
   position: fixed;
@@ -3508,7 +3534,7 @@ footer.site-footer p {
   right: 0;
   z-index: 2;
 }
-/* line 1694, sass/modules/_layout.scss */
+
 #detail_scrollarea #fullscreen {
   z-index: 1;
   color: #fff;
@@ -3519,7 +3545,7 @@ footer.site-footer p {
   right: 50px;
   cursor: pointer;
 }
-/* line 1704, sass/modules/_layout.scss */
+
 #detail_scrollarea #fullscreen_exit {
   z-index: 1;
   color: #fff;
@@ -3531,14 +3557,14 @@ footer.site-footer p {
   cursor: pointer;
   visibility: hidden;
 }
-/* line 1716, sass/modules/_layout.scss */
+
 #detail_scrollarea img {
   display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 1722, sass/modules/_layout.scss */
+
 #detail_scrollarea span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3555,7 +3581,7 @@ footer.site-footer p {
   visibility: hidden;
   text-transform: uppercase;
 }
-/* line 1740, sass/modules/_layout.scss */
+
 #detail_scrollarea span:after {
   content: '';
   position: absolute;
@@ -3569,22 +3595,22 @@ footer.site-footer p {
   border-bottom: 8px solid transparent;
 }
 
-/* line 1753, sass/modules/_layout.scss */
+
 .detail_nav {
   position: absolute;
   width: 90%;
   bottom: 20px;
-  left: 60px;
+  left: 80%;
   visibility: hidden;
 }
-/* line 1759, sass/modules/_layout.scss */
+
 .detail_nav i {
   color: #fff;
   font-size: 42px;
   text-align: left;
   letter-spacing: 10px;
 }
-/* line 1765, sass/modules/_layout.scss */
+
 .detail_nav p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3594,17 +3620,17 @@ footer.site-footer p {
   padding: 0;
 }
 
-/* line 1775, sass/modules/_layout.scss */
+
 .detail_switch {
   padding: 14px 0;
   position: relative;
 }
-/* line 1778, sass/modules/_layout.scss */
+
 .detail_switch svg {
   width: 24px;
   cursor: pointer;
 }
-/* line 1782, sass/modules/_layout.scss */
+
 .detail_switch span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3620,7 +3646,7 @@ footer.site-footer p {
   text-align: center;
   visibility: hidden;
 }
-/* line 1798, sass/modules/_layout.scss */
+
 .detail_switch span:after {
   content: '';
   position: absolute;
@@ -3634,37 +3660,12 @@ footer.site-footer p {
   border-bottom: 8px solid transparent;
 }
 
-/* line 1813, sass/modules/_layout.scss */
-#copy_1 {
-  position: absolute;
-  visibility: hidden;
-  left: -10px;
-  width: 100%;
-  height: 100%;
-  padding: 90px 60px;
+
+/* line 1841, sass/modules/_layout.scss */
+.active-project {
+  visibility: visible;
 }
 
-/* line 1822, sass/modules/_layout.scss */
-#copy_2 {
-  position: absolute;
-  visibility: hidden;
-  left: -10px;
-  width: 100%;
-  height: 100%;
-  padding: 90px 60px;
-}
-
-/* line 1831, sass/modules/_layout.scss */
-#copy_3 {
-  position: absolute;
-  visibility: hidden;
-  left: -10px;
-  width: 100%;
-  height: 100%;
-  padding: 90px 60px;
-}
-
-/* line 1844, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
