@@ -706,4 +706,3 @@ function hideTooltipBack(){
 //Tooltip Trigger Definitions
 //});
 //=================================
- 
