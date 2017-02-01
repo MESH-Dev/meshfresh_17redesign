@@ -74,46 +74,46 @@ jQuery(document).ready(function($){
 	});
 
 	//Masonry
-	setTimeout(function(){
-		//Blogroll
-		$blogMasn = $('#posts-masn').masonry({
-			//columnWidth: 460,
-			itemSelector: '.blog-entry',
-			gutter: 20
-		});
+	// setTimeout(function(){
+	// 	//Blogroll
+	// 	$blogMasn = $('#posts-masn').masonry({
+	// 		//columnWidth: 460,
+	// 		itemSelector: '.blog-entry',
+	// 		gutter: 20
+	// 	});
 
-		//Advocate
-		$advMasn = $('#adv-mason').masonry({
-			//columnWidth: 226,
-			itemSelector: '.adv-entry',
-			gutter: 10
-		});
+	// 	//Advocate
+	// 	$advMasn = $('#adv-mason').masonry({
+	// 		//columnWidth: 226,
+	// 		itemSelector: '.adv-entry',
+	// 		gutter: 10
+	// 	});
 
-		// $wknewMasn = $('.work-grid').masonry({
-		// 	//columnWidth: 226,
-		// 	itemSelector: '.work-block',
-		// 	columnWidth: '.columns-4',
-  // 			percentPosition: true,
-		// 	gutter: '.column-gutter',
-		// });
+	// 	// $wknewMasn = $('.work-grid').masonry({
+	// 	// 	//columnWidth: 226,
+	// 	// 	itemSelector: '.work-block',
+	// 	// 	columnWidth: '.columns-4',
+ //  // 			percentPosition: true,
+	// 	// 	gutter: '.column-gutter',
+	// 	// });
 
-		//People
-		$peopleMasn = $('#people-masn').masonry({
-			//columnWidth: 460,
-			itemSelector: '.people-entry',
-			gutter: 18
-		});
-		$('.people-entry').click(function(e){
-			if($(this).hasClass('active')){
-				$('.people-entry').removeClass('active');
-				$peopleMasn.masonry();
-			}else{
-				$('.people-entry').removeClass('active');
-				$(this).addClass('active');
-				$peopleMasn.masonry();
-			}
-		});
-	}, 400);
+	// 	//People
+	// 	$peopleMasn = $('#people-masn').masonry({
+	// 		//columnWidth: 460,
+	// 		itemSelector: '.people-entry',
+	// 		gutter: 18
+	// 	});
+	// 	$('.people-entry').click(function(e){
+	// 		if($(this).hasClass('active')){
+	// 			$('.people-entry').removeClass('active');
+	// 			$peopleMasn.masonry();
+	// 		}else{
+	// 			$('.people-entry').removeClass('active');
+	// 			$(this).addClass('active');
+	// 			$peopleMasn.masonry();
+	// 		}
+	// 	});
+	// }, 400);
 
 	//Say Hello
 	// $('li.sayhello').click(function(e){
@@ -183,25 +183,25 @@ jQuery(document).ready(function($){
 
     //Resize?
 
-    $('body').mousemove(function(e) {
+    // $('body').mousemove(function(e) {
 
-        // moving right 
+    //     // moving right 
 
-     //    if(wWidth > 550){
-	    //     if (e.pageX < mX) {
-	    //         $('.badge-left').stop().fadeOut('250');
-	    //         $('.badge-right').stop().fadeIn('250');
+    //  //    if(wWidth > 550){
+	   //  //     if (e.pageX < mX) {
+	   //  //         $('.badge-left').stop().fadeOut('250');
+	   //  //         $('.badge-right').stop().fadeIn('250');
 
-	    //     // moving left
-	    //     } else {
-	    //         $('.badge-left').stop().fadeIn('250');
-	    //         $('.badge-right').stop().fadeOut('250');
-	    //     }
-    	// }
-     //    // set new mX after doing test above
-     //    mX = e.pageX;
+	   //  //     // moving left
+	   //  //     } else {
+	   //  //         $('.badge-left').stop().fadeIn('250');
+	   //  //         $('.badge-right').stop().fadeOut('250');
+	   //  //     }
+    // 	// }
+    //  //    // set new mX after doing test above
+    //  //    mX = e.pageX;
 
-    });
+    // });
 
 
 // $(document).mousemove(function (e) {
@@ -268,7 +268,7 @@ $('.sidr-trigger').sidr({
 Macy.init({
     container: '#macy',
     trueOrder: true,
-    waitForImages: true,
+    waitForImages: false,
     margin: 15,
     columns: 3,
     breakAt: {
