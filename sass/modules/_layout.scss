@@ -1387,14 +1387,14 @@ a.cta{
 
 //Text Pages
 .quote{
-	margin-top:4em;
+	margin-top:9em;
 
-	&:before{
-		content:"";
-		width:23em;
-		border-bottom:2px solid $blue;
-		position:absolute;
-	}
+	// &:before{
+	// 	content:"";
+	// 	width:23em;
+	// 	border-bottom:2px solid $blue;
+	// 	position:absolute;
+	// }
 
 	.quote-content{
 		font-family: $memphis-light-italic;
@@ -1410,8 +1410,8 @@ a.cta{
 
 	.slick-prev,
 	.slick-next{
-		display:none;
-		visibility:hidden;
+	    position: absolute;
+		left: -9999px;
 	}
 }
 

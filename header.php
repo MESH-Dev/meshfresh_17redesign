@@ -91,7 +91,7 @@
 <header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php')){ echo 'class="new"';} //remove this when page is live?> >
 	<div class="container">
 		<div class="gateway-nav">
-					<div class="say-hello">
+					<div class="say-hello <?php if(is_page(2622) || is_page('say-hello2') || is_page('say-hello')){ echo "active"; } ?>">
 						Say Hello
 					</div>
 						<?php $defaults = array(

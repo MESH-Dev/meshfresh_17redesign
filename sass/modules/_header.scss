@@ -205,6 +205,10 @@ header {
 			background-color:$blue;
 		}
 
+		&.active{
+			background-color:$blue;
+		}
+
 		@media($bp-smaller-than-tablet){
 			display:none;
 		}

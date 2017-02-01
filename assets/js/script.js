@@ -260,7 +260,7 @@ $('.sidr-trigger').sidr({
  //Slick slider for quotes
  var $slider = $(".slider").slick({
     autoplay: true,
-    autoplaySpeed:7000,
+    autoplaySpeed:3000,
     pauseOnFocus:true,
     pauseOnHover:true,
 })			
