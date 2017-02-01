@@ -296,6 +296,44 @@ Macy.onImageLoad(function () {
   // Macy.recalculate();
 });
 
+//Potential header functionality on grid landing pages
+$(function(){
+    var lastScrollTop = 0, delta = 5;
+    $(window).scroll(function(event){
+
+       var st = $(this).scrollTop();
+       var page_top = $('.fullwidth').offset().top;
+	    var fullwidth_top = $('.fullwidth').scrollTop();
+	    var window_top = $(window).scrollTop();
+       
+       if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+       
+		if(window_top > page_top-50) {
+			$('.nav-wrap').css({
+				'position':'fixed'
+			});
+
+			if (st > lastScrollTop ){
+			   // downscroll code
+			   //console.log('scroll down');
+			   //console.log(lastScrollTop + " " + st);
+			   $('.nav-bg').stop().slideUp(50);
+			} else {
+			  // upscroll code
+			  //console.log('scroll up');
+			  $('.nav-bg').slideDown(50);
+			}
+		}else{
+			$('.nav-wrap').css({
+				"position":'absolute'
+			});
+			$('.nav-bg').stop().slideUp(0);
+		}	
+       lastScrollTop = st;
+    });
+});
+
 /*PROJECTS PAGE AJAX FUNCTIONS--------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------	
 --------------------------------------------------------------------------------------------------------------
@@ -318,7 +356,8 @@ $(document).on('click', '.work-block', function () {
 	var offset_y = $(photos_id).offset().top;
 	console.log(offset_y);
 
-
+	//Add fixed positioning class="fixed" to header when a project is clicked
+	$('header').removeClass('absolute').addClass('fixed');
 
 	$('#detail_scrollarea').animate({
               scrollTop: offset_y
@@ -531,6 +570,7 @@ function infoOpen(){
 function infoClose(event){
     event.stopPropagation();
     detailView.reverse();
+    $('header').removeClass('fixed').addClass('absolute');
 }
 //Detail View Expand function calls
 

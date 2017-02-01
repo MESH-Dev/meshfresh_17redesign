@@ -33,7 +33,7 @@
 		</div>
 		<div class="columns-2" id=""><!-- contentTertiary -->
 			<div class="recent-posts"><!-- gutter -->
-				<h2>Recent Posts</h2>
+				<h2><span>Recent Posts</span></h2>
 				<?php $posts = blogrollPosts('all','',3);
 					foreach($posts as $post){
 					if($post->post_source == 'wordpress'){

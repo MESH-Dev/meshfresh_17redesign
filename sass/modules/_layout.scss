@@ -69,6 +69,20 @@ header.new{
 	position:absolute;
 }
 
+header.fixed{
+	position:fixed;
+}
+
+.fixed{
+	position:fixed;
+	top:0;
+}
+
+.absolute{
+	position:absolute;
+	// top:0;
+}
+
 .single-work header{
 	position:fixed;
 	top:0;
@@ -1103,6 +1117,9 @@ a.cta{
 			// color:white;
 			// border-bottom:2px solid white;
 			 cursor:pointer;
+			 margin:0;
+			 padding:0;
+			 margin-bottom:.5em;
 
 			a,
 			span{
@@ -1555,6 +1572,8 @@ footer.site-footer{
 	h2{
 		margin-bottom:.5em;
 		font-size:2.2em;
+		border-bottom:2px solid $blue;
+		width:75%;
 	}
 }
 
