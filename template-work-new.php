@@ -149,7 +149,12 @@ get_header();
  					</div><!-- end content -->
 	 			</div><!-- end hover -->
 		 	<div class="work-container <?php echo $position; ?>">
-
+		 		<div class="work-img">
+		 		<?php if ($award == true){ ?>
+						<div class="award-winning">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/award-winning.png">
+						</div>
+						<?php }?>
 		 		<?php 
 
 		 		//var_dump(get_the_post_thumbnail());
@@ -167,7 +172,7 @@ get_header();
 	 			<?php } ?>
 	 			<?php } ?>
 
-	 			
+	 			</div>
 	 		</div><!-- end work-container -->
 		</div><!-- end work-block -->
 	<?php } } wp_reset_query(); wp_reset_postdata();?>
