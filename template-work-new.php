@@ -52,6 +52,8 @@ get_header();
 		 			$bg_color=get_field('proj_bg_color');
 		 			//var_dump($bg_color);
 
+		 			$award = get_field('award_winning', $post->ID);
+
 
 
 		 			if(!empty($industries)){
@@ -148,7 +150,7 @@ get_header();
 	 					<!-- </ul> -->
  					</div><!-- end content -->
 	 			</div><!-- end hover -->
-		 	<div class="work-container <?php echo $position; ?>">
+		 	<div class="work-container <?php echo $position; ?> <?php echo $award; ?>">
 		 		<div class="work-img">
 		 		<?php if ($award == true){ ?>
 						<div class="award-winning">
