@@ -84,13 +84,14 @@
 								$query = new WP_Query($args);
 									if ( $query->have_posts() ) { ?>
 									<div class="quote slider">
+										<h2>Client Thoughts</h2>
 									<?php
 						
 										while ( $query->have_posts() ) { $query->the_post(); 
 							?>
 							
 								<div class="slide">
-								<p class="quote-content"><?php echo get_field('message', $post->ID); ?></p>
+								<p class="quote-content">"<?php echo get_field('message', $post->ID); ?>"</p>
 								<p class="quote-attr">&mdash; <?php echo get_field('advocate', $post->ID); ?></p>
 							</div>
 							<?php } } wp_reset_postdata(); //End the query ?></div>

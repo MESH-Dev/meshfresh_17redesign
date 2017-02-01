@@ -343,7 +343,7 @@ get_header();
 			 
 						$image_url=$image['sizes']['background-fullscreen'];
 						 
-						$image_str .= "<img id='image-$image[id]' src='http://localhost/mesh_redesign/wp-content/themes/mesh_redesign/assets/img/blank.png' data-src='$image_url'>";
+						$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
 					endwhile; 
 					$image_str .="</div>";
 

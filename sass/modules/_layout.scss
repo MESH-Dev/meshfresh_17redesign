@@ -931,20 +931,29 @@ a.cta{
 
 	    }
 
-	    .project-img{
-	    	//position:relative;
+	    // .project-img{
+	    // 	//position:relative;
 
-	    	.award-winning{
-	    		width:100px;
-	    		position:absolute;
-	    		top:0;
-	    		left:0;
-	    		//z-index: -1;
-	    	}
-	    }
+	    // 	.award-winning{
+	    // 		width:100px;
+	    // 		position:absolute;
+	    // 		top:0;
+	    // 		left:0;
+	    // 		//z-index: -1;
+	    // 	}
+	    // }
     	
     }
     
+}
+
+//Styling for the award-winning badge
+.award-winning{
+	width:100px;
+	position:absolute;
+	top:0;
+	left:0;
+	//z-index: -1;
 }
 
 .in-column{
@@ -1397,6 +1406,12 @@ a.cta{
 	.quote-attr{
 		font-family:$raleway;
 		font-weight:400;
+	}
+
+	.slick-prev,
+	.slick-next{
+		display:none;
+		visibility:hidden;
 	}
 }
 
