@@ -22,7 +22,7 @@ function loadup_scripts() {
 
     //Scripts
     //wp_enqueue_script('MESH-salvattore','//cdnjs.cloudflare.com/ajax/libs/salvattore/1.0.9/salvattore.min.js',array('jquery'));
-    wp_enqueue_script('MESH-masonry',get_stylesheet_directory_uri().'/assets/js/masonry.pkgd.min.js',array('jquery'));
+    //wp_enqueue_script('MESH-masonry',get_stylesheet_directory_uri().'/assets/js/masonry.pkgd.min.js',array('jquery'));
     wp_enqueue_script('hammer',get_stylesheet_directory_uri().'/assets/js/jquery.hammer-full.js',array('jquery'));
     wp_enqueue_script('MESH-macy',get_stylesheet_directory_uri().'/assets/js/macy.min.js',array('jquery'));
     

@@ -2,12 +2,12 @@
 
 <section id="blogroll" class="single has-emoticon">
 	<div class="blogroll-single"><!-- container -->
-		<div class="columns-2" id=""><!-- contentPrimary -->
+		<div class="sidebar columns-2" id=""><!-- contentPrimary -->
 			<?php get_sidebar('blog'); ?>
 
 		</div>
 		<div class="columns-8" id=""><!-- contentSecondary -->
-			<div class=""><!-- gutter cf -->
+			<div class="the-content"><!-- gutter cf -->
 				<?php if(have_posts()){while(have_posts()){the_post(); ?>
 					<div class="single-post-feature">
 						<?php the_post_thumbnail('full'); ?>
@@ -16,21 +16,24 @@
 						<h2><?php the_title(); ?></h2>
 						<?php the_content(); ?>
 					</div>
-					<div class="single-post-date">
+					<!-- <div class="single-post-date">
 						Published on <?php the_time('M d, Y'); ?>
-					</div>
+					</div> -->
 					<div class="single-post-tags">
 						<?php $tags = get_the_tags();
+						if($tags != ""){
 							foreach($tags as $tag){
 								echo "<a href='".get_tag_link($tag)."'>".$tag->name."</a>";
-							} ?>
+							} 
+						}	
+						?>
 					</div>
 				<?php } } ?>
 			</div>
 		</div>
 		<div class="columns-2" id=""><!-- contentTertiary -->
-			<div class=""><!-- gutter -->
-				<h2>Recent Posts</h2>
+			<div class="recent-posts"><!-- gutter -->
+				<h2><span>Recent Posts</span></h2>
 				<?php $posts = blogrollPosts('all','',3);
 					foreach($posts as $post){
 					if($post->post_source == 'wordpress'){
@@ -42,7 +45,9 @@
 					} ?>
 					<div class="blog-entry <?php echo $class; ?>">
 						<div class="gutter">
-							<?php if($post->post_source == 'wordpress'){
+							<?php 
+								//Is the post from Wordpress?  Do this...
+								if($post->post_source == 'wordpress'){
 								setup_postdata($post);
 								$titlePos = get_field('title_position'); ?>
 								<div class="post-wp-feature">
@@ -57,16 +62,19 @@
 									<?php } ?>
 									<?php echo get_the_excerpt(); ?>
 								</div>
-								<div class="post-wp-date">
+								<!-- <div class="post-wp-date">
 									Published on <?php the_time('M d, Y'); ?>
-								</div>
+								</div> -->
 								<div class="post-wp-tags">
 									<?php $tags = get_the_tags();
 										foreach($tags as $tag){
 											echo "<a href='".get_tag_link($tag)."'>".$tag->name."</a>";
 										} ?>
 								</div>
-							<?php }elseif($post->post_source == 'tumblr'){ ?>
+							<?php 
+							//is the post from tumblr? Do this...
+
+							}elseif($post->post_source == 'tumblr'){ ?>
 								<img class="social-badge" src="<?php bloginfo('template_directory'); ?>/assets/img/tumblrIcon.png" />
 								<?php if($post->type == 'photo'){ ?>
 									<div class="post-tumblr-feature">
@@ -95,7 +103,10 @@
 								<div class="post-wp-tags">
 									<a href="<?php echo get_tag_link(11); ?>">Tumblr</a>
 								</div>
-							<?php }elseif($post->post_source == 'instagram'){ ?>
+							<?php 
+								//is the post from instagram?  do this...
+
+								}elseif($post->post_source == 'instagram'){ ?>
 								<img class="social-badge" src="<?php bloginfo('template_directory'); ?>/assets/img/instagramIcon.png" />
 								<div class="post-instagram-feature">
 									<a href="<?php echo $post->link; ?>">

@@ -52,6 +52,8 @@ get_header();
 		 			$bg_color=get_field('proj_bg_color');
 		 			//var_dump($bg_color);
 
+		 			$award = get_field('award_winning', $post->ID);
+
 
 
 		 			if(!empty($industries)){
@@ -64,10 +66,20 @@ get_header();
 		 			$output_industry = rtrim($output_industry,', '); 
 
 
+		 			//Let's start a count for those $m
+		 			$cnt_m = 0;
 		 			if(!empty($mediums)){
 		 				foreach ($mediums as $medium){
 		 					//var_dump($industry->name);
-		 					$output_medium .= '' . $medium->name . $separator;
+
+		 					$m_count = (count($mediums));
+		 					$cnt_m++;
+		 					if($m_count > $cnt_m){
+		 					$output_medium .= '<li>' . $medium->name . $separator . '</li>';
+		 				
+		 					}else{
+		 						$output_medium .= '<li>' . $medium->name . '</li>';
+
 		 					//var_dump(rtrim($output_medium, $separator));
 		 					//var_dump($output_industry);
 		 				}
@@ -151,8 +163,13 @@ get_header();
 	 					<!-- </ul> -->
  					</div><!-- end content -->
 	 			</div><!-- end hover -->
-		 	<div class="work-container <?php echo $position; ?>">
-
+		 	<div class="work-container <?php echo $position; ?> <?php echo $award; ?>">
+		 		<div class="work-img">
+		 		<?php if ($award == true){ ?>
+						<div class="award-winning">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/award-winning.png">
+						</div>
+						<?php }?>
 		 		<?php 
 
 		 		//var_dump(get_the_post_thumbnail());
@@ -170,7 +187,7 @@ get_header();
 	 			<?php } ?>
 	 			<?php } ?>
 
-	 			
+	 			</div>
 	 		</div><!-- end work-container -->
 		</div><!-- end work-block -->
 	<?php } } wp_reset_query(); wp_reset_postdata();?>
@@ -349,7 +366,8 @@ get_header();
 			 
 						$image_url=$image['sizes']['background-fullscreen'];
 						 
-						$image_str .= "<img id='image-$image[id]' data-src='http://localhost/mesh_redesign/wp-content/themes/mesh_redesign/assets/img/blank.png' src='$image_url'>";
+						$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
+
 					endwhile; 
 					$image_str .="</div>";
 

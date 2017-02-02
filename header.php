@@ -77,8 +77,9 @@
 				</div>
 				<div class="columns-4 loc">
 					<div class=""><!-- gutter -->
-						Inquiries, please email:<br>
-						<strong><a href="mailto:hello@meshfresh.com">hello@meshfresh.com</a></strong>
+						304.45.6374<br>
+						<strong><a href="mailto:hello@meshfresh.com">hello@meshfresh.com</a></strong><br>
+						<a href="<?php echo bloginfo('url'); ?>/say-hello">Get involved with MESH</a>
 					</div>
 				</div>
 			</div>
@@ -87,10 +88,10 @@
 	</div>
 </div> 
 <div id="siteWrap">
-<header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php')){ echo 'class="new"';} //remove this when page is live?> >
+<header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php')){ echo 'class="new"';} elseif (is_page_template('template-work-new.php')){ echo 'class="absolute"';} //remove this when page is live?> >
 	<div class="container">
 		<div class="gateway-nav">
-					<div class="say-hello">
+					<div class="say-hello <?php if(is_page(2622) || is_page('say-hello2') || is_page('say-hello')){ echo "active"; } ?>">
 						Say Hello
 					</div>
 						<?php $defaults = array(

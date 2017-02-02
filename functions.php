@@ -10,7 +10,7 @@
 
 	//Stop autop courtesy https://davidwalsh.name/disable-autop
 
-	remove_filter('the_content', 'wpautop');
+	//remove_filter('the_content', 'wpautop');
 
 	// Convert hexdec color string to rgb(a) string 
 	// Courtesy https://support.advancedcustomfields.com/forums/topic/color-picker-values/#post-37335

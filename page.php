@@ -83,17 +83,19 @@
 								);
 								$query = new WP_Query($args);
 									if ( $query->have_posts() ) { ?>
-									<div class="quote slider">
+									<div class="quote">
+										<h2>Client Thoughts</h2>
+										 <div class="slider">
 									<?php
 						
 										while ( $query->have_posts() ) { $query->the_post(); 
 							?>
 							
 								<div class="slide">
-								<p class="quote-content"><?php echo get_field('message', $post->ID); ?></p>
+								<p class="quote-content">&rdquo;<?php echo get_field('message', $post->ID); ?>&ldquo;</p>
 								<p class="quote-attr">&mdash; <?php echo get_field('advocate', $post->ID); ?></p>
 							</div>
-							<?php } } wp_reset_postdata(); //End the query ?></div>
+							<?php } } wp_reset_postdata(); //End the query ?></div></div>
 				</div> 
 				<?php 	} //End $show_quote_field check ?>
 

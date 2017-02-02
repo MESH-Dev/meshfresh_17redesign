@@ -175,7 +175,7 @@ get_header(); ?>
 	
 	<!-- </div> -->
 </div><!-- end work-grid -->
-<?php get_template_part('/partials/emoticons'); ?>
+<?php //get_template_part('/partials/emoticons'); ?>
 </section>
 
 <!-- <section class="josh"> -->

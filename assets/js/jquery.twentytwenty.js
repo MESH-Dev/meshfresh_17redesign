@@ -13,8 +13,10 @@
       
       container.wrap("<div class='twentytwenty-wrapper twentytwenty-" + sliderOrientation + "'></div>");
       container.append("<div class='twentytwenty-overlay'></div>");
-      var beforeImg = container.find("img:first");
-      var afterImg = container.find("img:last");
+      //var beforeImg = container.find("img:first");
+      var beforeImg = container.find('.img-container-first');
+      //var afterImg = container.find("img:last");
+      var afterImg = container.find(".img-container-second");
       container.append("<div class='twentytwenty-handle'></div>");
       var slider = container.find(".twentytwenty-handle");
       slider.append("<span class='twentytwenty-" + beforeDirection + "-arrow'></span>");

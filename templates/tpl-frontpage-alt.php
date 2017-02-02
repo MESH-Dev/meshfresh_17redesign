@@ -20,7 +20,9 @@ get_header();  ?>
 	<div class="twenty20 twentytwenty-container">
 
 			<div class="twentytwenty-before-container">
-				<div class="badge badge-left">
+				
+		    	<div class="img-container-first" style="background-image: url('<?php echo $right_img_url; ?>'); ">
+		    		<div class="badge badge-left">
 			    	<div class="wrap">
 			    		<div class="content">
 					    	<h3>MESH Charleston</h3>
@@ -28,10 +30,13 @@ get_header();  ?>
 				    	</div>
 			    	</div>
 		    	</div>
-				<img class="compare" src="<?php echo $right_img_url; ?>" />
+		    	</div>
+				<!-- <img class="compare" src="<?php echo $right_img_url; ?>" /> -->
 			</div>
 			<div class="twentytwenty-after-container">
-				<div class="badge badge-right">
+				
+		   		<div class="img-container-second" style="background-image: url('<?php echo $left_img_url; ?>');">
+		   			<div class="badge badge-right">
 			    	<div class="wrap">
 			    		<div class="content">
 					    	<h3>MESH Brooklyn</h3>
@@ -39,7 +44,8 @@ get_header();  ?>
 				    	</div>
 			    	</div>
 		   		</div>
-			    <img src="<?php echo $left_img_url; ?>" />
+		    	</div>
+			    <!-- <img src="<?php echo $left_img_url; ?>" /> -->
 			</div>
 	   	<div class="content">
 		    <div class="home_greeting" aria-hidden="true">
@@ -64,7 +70,7 @@ get_header();  ?>
 		<h1 class="home-title"><a href="<?php echo bloginfo('url'); ?>/work">Hi <span class="emoticon">:)</span> MESH is your full service communication design studio. We make brands, websites, print works, digital media, objects, and other fun stuff to share your good ideas <span class="link-indicator">&raquo;</span></h1>
 	<div>	 -->
 	<div class="has-emoticons">
-		<div class="container home">
+		<div class=" home">
 
 			<!--<div class="featured-projects projects" id="macy">
 				<?php $args = array(
@@ -139,7 +145,7 @@ get_header();  ?>
 					<div class="project-box">
 						<div class="hover">
 									<div class="content">
-									<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?> <span><?php echo $project_hover; ?></span></a>
+									<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?><br><span><?php echo $project_hover; ?></span></a>
 									</div>
 								</div>
 						<div class="project-container <?php echo $position; ?> <?php echo $award; ?>">
@@ -177,7 +183,7 @@ get_header();  ?>
 						<div class="project-box">
 							<div class="hover">
 										<div class="content">
-											<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
+											<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?><br><span><?php echo $project_hover; ?></span></a>
 										</div>
 									</div>
 							<div class="project-container <?php echo $position; ?>">
@@ -216,7 +222,7 @@ get_header();  ?>
 						<div class="project-box">
 							<div class="hover">
 										<div class="content">
-										<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
+										<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?><br><span><?php echo $project_hover; ?></span></a>
 										</div>
 									</div>
 							<div class="project-container <?php echo $position; ?>">

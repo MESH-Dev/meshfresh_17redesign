@@ -75,46 +75,46 @@ jQuery(document).ready(function($){
 	});
 
 	//Masonry
-	setTimeout(function(){
-		//Blogroll
-		$blogMasn = $('#posts-masn').masonry({
-			//columnWidth: 460,
-			itemSelector: '.blog-entry',
-			gutter: 20
-		});
+	// setTimeout(function(){
+	// 	//Blogroll
+	// 	$blogMasn = $('#posts-masn').masonry({
+	// 		//columnWidth: 460,
+	// 		itemSelector: '.blog-entry',
+	// 		gutter: 20
+	// 	});
 
-		//Advocate
-		$advMasn = $('#adv-mason').masonry({
-			//columnWidth: 226,
-			itemSelector: '.adv-entry',
-			gutter: 10
-		});
+	// 	//Advocate
+	// 	$advMasn = $('#adv-mason').masonry({
+	// 		//columnWidth: 226,
+	// 		itemSelector: '.adv-entry',
+	// 		gutter: 10
+	// 	});
 
-		// $wknewMasn = $('.work-grid').masonry({
-		// 	//columnWidth: 226,
-		// 	itemSelector: '.work-block',
-		// 	columnWidth: '.columns-4',
-  // 			percentPosition: true,
-		// 	gutter: '.column-gutter',
-		// });
+	// 	// $wknewMasn = $('.work-grid').masonry({
+	// 	// 	//columnWidth: 226,
+	// 	// 	itemSelector: '.work-block',
+	// 	// 	columnWidth: '.columns-4',
+ //  // 			percentPosition: true,
+	// 	// 	gutter: '.column-gutter',
+	// 	// });
 
-		//People
-		$peopleMasn = $('#people-masn').masonry({
-			//columnWidth: 460,
-			itemSelector: '.people-entry',
-			gutter: 18
-		});
-		$('.people-entry').click(function(e){
-			if($(this).hasClass('active')){
-				$('.people-entry').removeClass('active');
-				$peopleMasn.masonry();
-			}else{
-				$('.people-entry').removeClass('active');
-				$(this).addClass('active');
-				$peopleMasn.masonry();
-			}
-		});
-	}, 400);
+	// 	//People
+	// 	$peopleMasn = $('#people-masn').masonry({
+	// 		//columnWidth: 460,
+	// 		itemSelector: '.people-entry',
+	// 		gutter: 18
+	// 	});
+	// 	$('.people-entry').click(function(e){
+	// 		if($(this).hasClass('active')){
+	// 			$('.people-entry').removeClass('active');
+	// 			$peopleMasn.masonry();
+	// 		}else{
+	// 			$('.people-entry').removeClass('active');
+	// 			$(this).addClass('active');
+	// 			$peopleMasn.masonry();
+	// 		}
+	// 	});
+	// }, 400);
 
 	//Say Hello
 	// $('li.sayhello').click(function(e){
@@ -184,25 +184,25 @@ jQuery(document).ready(function($){
 
     //Resize?
 
-    $('body').mousemove(function(e) {
+    // $('body').mousemove(function(e) {
 
-        // moving right 
+    //     // moving right 
 
-     //    if(wWidth > 550){
-	    //     if (e.pageX < mX) {
-	    //         $('.badge-left').stop().fadeOut('250');
-	    //         $('.badge-right').stop().fadeIn('250');
+    //  //    if(wWidth > 550){
+	   //  //     if (e.pageX < mX) {
+	   //  //         $('.badge-left').stop().fadeOut('250');
+	   //  //         $('.badge-right').stop().fadeIn('250');
 
-	    //     // moving left
-	    //     } else {
-	    //         $('.badge-left').stop().fadeIn('250');
-	    //         $('.badge-right').stop().fadeOut('250');
-	    //     }
-    	// }
-     //    // set new mX after doing test above
-     //    mX = e.pageX;
+	   //  //     // moving left
+	   //  //     } else {
+	   //  //         $('.badge-left').stop().fadeIn('250');
+	   //  //         $('.badge-right').stop().fadeOut('250');
+	   //  //     }
+    // 	// }
+    //  //    // set new mX after doing test above
+    //  //    mX = e.pageX;
 
-    });
+    // });
 
 
 // $(document).mousemove(function (e) {
@@ -261,7 +261,7 @@ $('.sidr-trigger').sidr({
  //Slick slider for quotes
  var $slider = $(".slider").slick({
     autoplay: true,
-    autoplaySpeed:7000,
+    autoplaySpeed:3000,
     pauseOnFocus:true,
     pauseOnHover:true,
 })			
@@ -269,7 +269,7 @@ $('.sidr-trigger').sidr({
 Macy.init({
     container: '#macy',
     trueOrder: true,
-    waitForImages: true,
+    waitForImages: false,
     margin: 15,
     columns: 3,
     breakAt: {
@@ -277,11 +277,11 @@ Macy.init({
         950: 2,
         520: 1,
         //400: 1
-    },
-    function(){
-		$('#macy .work-block').removeClass('columns-4');
-		alert('Macy Running');
-	}
+    }
+ //    function(){
+	// 	$('#macy .work-block').removeClass('columns-4');
+	// 	alert('Macy Running');
+	// }
 
 	// Macy.onImageLoad(function () {
 	// 	$('#macy .work-block').removeClass('columns-4');
@@ -292,8 +292,47 @@ Macy.init({
 Macy.onImageLoad(function () {
 	$('#macy .work-block').removeClass('columns-4');
 	$('#macy.blogroll-grid .blog-entry').addClass('macy-box');
+	$('#macy.people-grid .people-entry').addClass('macy-box');
   // console.log('Every time an image loads I get fired');
   // Macy.recalculate();
+});
+
+//Potential header functionality on grid landing pages
+$(function(){
+    var lastScrollTop = 0, delta = 5;
+    $(window).scroll(function(event){
+
+       var st = $(this).scrollTop();
+       var page_top = $('.fullwidth').offset().top;
+	    var fullwidth_top = $('.fullwidth').scrollTop();
+	    var window_top = $(window).scrollTop();
+       
+       if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+       
+		if(window_top > page_top-50) {
+			$('.nav-wrap').css({
+				'position':'fixed'
+			});
+
+			if (st > lastScrollTop ){
+			   // downscroll code
+			   //console.log('scroll down');
+			   //console.log(lastScrollTop + " " + st);
+			   $('.nav-bg').stop().slideUp(50);
+			} else {
+			  // upscroll code
+			  //console.log('scroll up');
+			  $('.nav-bg').slideDown(50);
+			}
+		}else{
+			$('.nav-wrap').css({
+				"position":'absolute'
+			});
+			$('.nav-bg').stop().slideUp(0);
+		}	
+       lastScrollTop = st;
+    });
 });
 
 /*PROJECTS PAGE AJAX FUNCTIONS--------------------------------------------------------
@@ -339,8 +378,8 @@ $(document).on('click', '.work-block', function () {
 	project_id  = project_id.trim();
 	var project_color = $(this).attr('data-color');
 	var photos_id = '#'+project_id+'-panels';
-	
 	var proj_id = $(this).attr('data-post-id');
+
 
 	$('.project-wrap').each(function() {
 
@@ -355,6 +394,8 @@ $(document).on('click', '.work-block', function () {
 			else{
  
 				$(this).insertAfter($('.project-wrap').last());
+
+
 
 			}
 	});
@@ -561,6 +602,7 @@ function infoOpen(){
 function infoClose(event){
     event.stopPropagation();
     detailView.reverse();
+    $('header').removeClass('fixed').addClass('absolute');
 }
 //Detail View Expand function calls
 
