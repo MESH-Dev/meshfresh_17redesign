@@ -63,12 +63,15 @@ get_header();
 		 					//var_dump($output_industry);
 		 				}
 		 			}
+		 			$output_industry = rtrim($output_industry,', '); 
+
 
 		 			//Let's start a count for those $m
 		 			$cnt_m = 0;
 		 			if(!empty($mediums)){
 		 				foreach ($mediums as $medium){
 		 					//var_dump($industry->name);
+
 		 					$m_count = (count($mediums));
 		 					$cnt_m++;
 		 					if($m_count > $cnt_m){
@@ -76,11 +79,12 @@ get_header();
 		 				
 		 					}else{
 		 						$output_medium .= '<li>' . $medium->name . '</li>';
-		 					}
+
 		 					//var_dump(rtrim($output_medium, $separator));
 		 					//var_dump($output_industry);
 		 				}
 		 			}
+		 			$output_medium = rtrim($output_medium,', '); 
 
 		 			$rand = mt_rand(1, 3);
 
@@ -105,7 +109,7 @@ get_header();
 				$slug = get_post_field( 'post_name', $post->ID);
 			
 				?>
-		 <div class="work-block columns-4" data-id="<?php echo $slug;?> " data-color="<?php echo $color;?>"><!-- columns-4 -->
+		 <div class="work-block columns-4" data-id="<?php echo $slug;?>" data-post-id="<?php echo $post->ID;?>" data-color="<?php echo $color;?>"><!-- columns-4 -->
 		 	<div class="hover"  <?php if($bg_color){ echo 'style="background-color:'. $rgba .'"'; }?> >
 	 				<div class="content">
 		 				<h2>
@@ -232,6 +236,7 @@ get_header();
 				
 				$post_id = get_the_ID();
 				$slug = get_post_field( 'post_name', $post_id );
+				$bg_color=get_field('proj_bg_color');
 
 				//$active_class = '';
 				//if($single){$active_class = 'active-project';}
@@ -259,6 +264,8 @@ get_header();
 					}
 				}
 
+				$output_industry = rtrim($output_industry,', '); 
+
 				if(!empty($mediums)){
 					foreach ($mediums as $medium){
  
@@ -267,13 +274,13 @@ get_header();
 					}
 				}
 
-				$output_medium = rtrim($output_medium,','); 
+				$output_medium = rtrim($output_medium,', '); 
 
 				$title = get_the_title($post_id);
 				$text_str = '';
 
 
-				$text_str .= '<div id="'. $slug . '" class="detail_copy '.$active_class .'" style=" ">';
+				$text_str .= '<div id="'. $slug . '" class="detail_copy '.$active_class .'" data-color="'.$bg_color.'">';
 				$text_str .= '	<h3><span class="underline">'.$title.'</span></h3>';
 				$text_str .= '	<span class="industries tags">'.rtrim($output_industry, $separator).'</span>';
 				$text_str .= '	<p> '.$intro_info.'</p>';
@@ -300,7 +307,7 @@ get_header();
 		</div>
  
 		<div class="detail_nav">
-			<div id="prev_proj" class="detail_switch" onclick="prevScroll()">
+			<div id="prev_proj" class="detail_switch">
 				<svg id="prev_arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
 				  <defs>
 				    <style>
@@ -314,7 +321,7 @@ get_header();
 				<span id="prev_tip" class="tooltip">Previous Project</span>
 			</div>
 			<div id="next_proj" class="detail_switch">
-				<svg id="next_arrow" onclick="nextScroll()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
+				<svg id="next_arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">
 				  <defs>
 				    <style>
 				      .cls-1 {
@@ -351,7 +358,7 @@ get_header();
 				$image_str = '';
 
 				//get images for project
-				if(have_rows('showcase_images', $post_id)): 
+				//if(have_rows('showcase_images', $post_id)): 
 
 					$image_str = '<div id="'.$slug.'-panels" class="project-wrap '.$active_class .'" data-id="'.$post_id.'">';
 					while(have_rows('showcase_images', $post_id)) : the_row();
@@ -360,12 +367,13 @@ get_header();
 						$image_url=$image['sizes']['background-fullscreen'];
 						 
 						$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
+
 					endwhile; 
 					$image_str .="</div>";
 
 					echo $image_str;
 
-				endif; 
+				//endif; 
 
 
 
