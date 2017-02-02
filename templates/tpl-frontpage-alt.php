@@ -145,7 +145,7 @@ get_header();  ?>
 					<div class="project-box">
 						<div class="hover">
 									<div class="content">
-									<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?> <span><?php echo $project_hover; ?></span></a>
+									<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title; ?><br><span><?php echo $project_hover; ?></span></a>
 									</div>
 								</div>
 						<div class="project-container <?php echo $position; ?> <?php echo $award; ?>">
@@ -183,7 +183,7 @@ get_header();  ?>
 						<div class="project-box">
 							<div class="hover">
 										<div class="content">
-											<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
+											<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?><br><span><?php echo $project_hover; ?></span></a>
 										</div>
 									</div>
 							<div class="project-container <?php echo $position; ?>">
@@ -222,7 +222,7 @@ get_header();  ?>
 						<div class="project-box">
 							<div class="hover">
 										<div class="content">
-										<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?> <span><?php echo $project_hover; ?></span></a>
+										<a href="<?php echo $project_link; ?>"><?php echo $project_hover_title ?><br><span><?php echo $project_hover; ?></span></a>
 										</div>
 									</div>
 							<div class="project-container <?php echo $position; ?>">
