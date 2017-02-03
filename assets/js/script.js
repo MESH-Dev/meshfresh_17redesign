@@ -1,60 +1,3 @@
-/**
- * jQuery Unveil
- * A very lightweight jQuery plugin to lazy load images
- * http://luis-almeida.github.com/unveil
- *
- * Licensed under the MIT license.
- * Copyright 2013 Luís Almeida
- * https://github.com/luis-almeida
- */
-
-;(function($) {
-
-  $.fn.unveil = function(threshold, callback) {
-
-    var $w = $(window),
-        th = threshold || 0,
-        retina = window.devicePixelRatio > 1,
-        attrib = retina? "data-src-retina" : "data-src",
-        images = this,
-        $w = $('#detail_scrollarea'),
-        loaded;
-
-    this.one("unveil", function() {
-      var source = this.getAttribute(attrib);
-      source = source || this.getAttribute("data-src");
-      if (source) {
-        this.setAttribute("src", source);
-        if (typeof callback === "function") callback.call(this);
-      }
-    });
-
-    function unveil() {
-      var inview = images.filter(function() {
-        var $e = $(this);
-        if ($e.is(":hidden")) return;
-
-        var wt = $w.scrollTop(),
-            wb = wt + $w.height(),
-            et = $e.offset().top,
-            eb = et + $e.height();
-
-        return eb >= wt - th && et <= wb + th;
-      });
-
-      loaded = inview.trigger("unveil");
-      images = images.not(loaded);
-    }
-
-    $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
-
-    unveil();
-
-    return this;
-
-  };
-
-})(window.jQuery || window.Zepto);
 
 jQuery(document).ready(function($){
 
@@ -73,75 +16,7 @@ jQuery(document).ready(function($){
 			}
 		});
 	});
-
-	//Masonry
-	// setTimeout(function(){
-	// 	//Blogroll
-	// 	$blogMasn = $('#posts-masn').masonry({
-	// 		//columnWidth: 460,
-	// 		itemSelector: '.blog-entry',
-	// 		gutter: 20
-	// 	});
-
-	// 	//Advocate
-	// 	$advMasn = $('#adv-mason').masonry({
-	// 		//columnWidth: 226,
-	// 		itemSelector: '.adv-entry',
-	// 		gutter: 10
-	// 	});
-
-	// 	// $wknewMasn = $('.work-grid').masonry({
-	// 	// 	//columnWidth: 226,
-	// 	// 	itemSelector: '.work-block',
-	// 	// 	columnWidth: '.columns-4',
- //  // 			percentPosition: true,
-	// 	// 	gutter: '.column-gutter',
-	// 	// });
-
-	// 	//People
-	// 	$peopleMasn = $('#people-masn').masonry({
-	// 		//columnWidth: 460,
-	// 		itemSelector: '.people-entry',
-	// 		gutter: 18
-	// 	});
-	// 	$('.people-entry').click(function(e){
-	// 		if($(this).hasClass('active')){
-	// 			$('.people-entry').removeClass('active');
-	// 			$peopleMasn.masonry();
-	// 		}else{
-	// 			$('.people-entry').removeClass('active');
-	// 			$(this).addClass('active');
-	// 			$peopleMasn.masonry();
-	// 		}
-	// 	});
-	// }, 400);
-
-	//Say Hello
-	// $('li.sayhello').click(function(e){
-	// 	e.preventDefault();
-	// 	$('#sayHello').toggleClass('active');
-	// });
-	// $('#sayHello').hover(function(e){
-	// 	if($timer){
-	// 		clearTimeout($timer);
-	// 	}
-	// },function(e){
-	// 	$timer = setTimeout(function(){
-	// 		$('#sayHello').removeClass('active');
-	// 	}, 250);
-	// });
-
-	//Mobile
-	// $('#menuTrigger').click(function(ev){
-	// 	$('#siteWrap').addClass('active');
-	// 	$('#mobileMenu').addClass('active');
-	// 	$('body').addClass('noscroll');
-	// 	$('#siteWrap').width($('#siteWrap').width);
-	// 	document.ontouchmove = function(event){
-	// 		event.preventDefault();
-	// 	}
-	// });
-
+ 
 
 	$(document).hammer({swipe_velocity:0.3}).on('dragleft dragright swipeleft swiperight',function(ev){
 		ev.gesture.preventDefault();
@@ -181,46 +56,7 @@ jQuery(document).ready(function($){
 
     var mX = 0;
     var wWidth = $(window).width();
-
-    //Resize?
-
-    // $('body').mousemove(function(e) {
-
-    //     // moving right 
-
-    //  //    if(wWidth > 550){
-	   //  //     if (e.pageX < mX) {
-	   //  //         $('.badge-left').stop().fadeOut('250');
-	   //  //         $('.badge-right').stop().fadeIn('250');
-
-	   //  //     // moving left
-	   //  //     } else {
-	   //  //         $('.badge-left').stop().fadeIn('250');
-	   //  //         $('.badge-right').stop().fadeOut('250');
-	   //  //     }
-    // 	// }
-    //  //    // set new mX after doing test above
-    //  //    mX = e.pageX;
-
-    // });
-
-
-// $(document).mousemove(function (e) {
-//         handler.offset({ top: e.pageY, left: e.pageX });
-//     }).click(function () {
-//         $(this).unbind("mousemove");
-//     });
-
-
-
-// $(document).mousemove(function(e) {
-//     handler.offset({
-//         left: e.pageX,
-//         top: e.pageY + 20
-
-//     });
-   
-// });
+ 
 
 var sh_ctr = 0;
 
@@ -339,13 +175,6 @@ $(function(){
 --------------------------------------------------------------------------------------------------------------	
 --------------------------------------------------------------------------------------------------------------
 */
-
-// $("#project-panels img").css('opacity',0);
-// $("#project-panels img").unveil(100, function() {
-// 	$(this).load(function() {
-// 		this.style.opacity = 1;
-// 	});
-// });
  
 
 $(document).on('click', '#load-next', function () {
@@ -356,20 +185,57 @@ $(document).on('click', '#load-next', function () {
 var controller = new ScrollMagic.Controller({
     container: "#detail_scrollarea"
 });
+
+controller.scrollTo(function (newpos) {
+	TweenMax.to("#detail_scrollarea", 0.5, {scrollTo: {y: newpos}});
+});
  
 var active_project = '';
 
-$(document).on('click', '#next_proj', function () {
-
-	 
+//NEXT PROJECT BUTTON
+$(document).on('click', '#next_proj', function (e) {
 	var next_id = $('.active-project').next('.detail_copy').attr('id');
-	console.log(next_id);
-	 
 	next_id = '#' + next_id + '-panels';
+	if ($(next_id).length > 0) {
+			e.preventDefault();
 
-	console.log($(next_id).offset().top);
+			// trigger scroll
+			controller.scrollTo(next_id);
 
-	$('#detail_scrollarea').animate({ scrollTop: $(next_id).offset().top }, "slow");
+				// if supported by the browser we can even update the URL.
+			if (window.history && window.history.pushState) {
+				history.pushState("", document.title, next_id);
+			}
+		}
+});
+
+//PREV PROJECT BUTTON
+$(document).on('click', '#prev_proj', function (e) {
+	var prev_id = $('.active-project').prev('.detail_copy').attr('id');
+	prev_copy = '#' + prev_id;
+	prev_id = '#' + prev_id + '-panels';
+	if ($(prev_id).length > 0) {
+		e.preventDefault();
+
+		// trigger scroll
+		controller.scrollTo(prev_id);
+
+			// if supported by the browser we can even update the URL.
+		if (window.history && window.history.pushState) {
+			history.pushState("", document.title, prev_id);
+		}
+	}
+ 
+
+});
+
+$(document).on('click', 'p#explore_text', function () {
+	$('.detail_copy').removeClass('active-project');
+	$('#sidebar-content .detail_copy:first-child').addClass('active-project');
+	var project_color = $('#sidebar-content .detail_copy:first-child').attr('data-color');
+
+	$('#infobar').css('background-color',project_color);
+	infoOpen();
 });
 
  
@@ -380,30 +246,21 @@ $(document).on('click', '.work-block', function () {
 	var photos_id = '#'+project_id+'-panels';
 	var proj_id = $(this).attr('data-post-id');
 
-
+	//loop through project images, put clicked on div at top, move other to bottom
 	$('.project-wrap').each(function() {
-
 			var div_id = $(this).attr('data-id'); 
 			if(div_id ==  proj_id){
-				$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
-				// $(this).children().trigger("unveil");
-				// $(this).next().children().trigger("unveil");
-				// $(this).next().next().children().trigger("unveil");
+				//$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
 				return false;
 			}
 			else{
- 
 				$(this).insertAfter($('.project-wrap').last());
-
-
-
 			}
 	});
 
 	var pid = '#'+project_id;
 
-	$('.detail_copy').removeClass('active-project');
-	$(pid).addClass('active-project');
+
  
 	$('#infobar').css('background-color',project_color);
  
@@ -421,30 +278,26 @@ $(document).on('click', '.work-block', function () {
 		var project_color = text_elem.attr('data-color');
 
 		new ScrollMagic.Scene({
-			triggerHook: "onEnter",
-			reverse: true,
 			triggerElement: elem,
 			duration: 450,
 			offset: 400
 		}).addTo(controller)
-		.on("enter", function (e) {
+		.on("enter leave", function (e) {
 			$('.detail_copy').removeClass("active-project");
 			text_elem.addClass("active-project");
 			$('#infobar').css('background-color',project_color);
 			active_project = refElement;
 		});
 	});
+
+	$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
+	$('.detail_copy').removeClass('active-project');
+	$(pid).addClass('active-project');
+
+
 });
 
-
-
-
-$(document).on('click', '#load-prev', function () {
-	ajax_load_projects('prev','');
-});
-
-
-var loaded = [];
+ 
 
 
 
@@ -602,68 +455,11 @@ function infoOpen(){
 function infoClose(event){
     event.stopPropagation();
     detailView.reverse();
-    $('header').removeClass('fixed').addClass('absolute');
+    //$('header').removeClass('fixed').addClass('absolute');
 }
 //Detail View Expand function calls
 
-
-//Project Transition definitions: defines GSAP actions transitioning between projects
-// project_2_transition.add("start")
-//     .to("#infobar", 1, {backgroundColor:"#CC8B86"}) //Once dynamic selectors are finalized, make this a single function that chooses from an array of colors based on project?
-//     .to("#copy_1", 1, {css:{left:"20px", autoAlpha:0}}, "start")
-//     .to("#copy_2", 1, {css:{left:"0px", autoAlpha:1}})
-//     .add("end");
-
-// project_3_transition.add("start")
-//     .to("#infobar", 1, {backgroundColor:"#7C2B2D"})
-//     .to("#copy_2", 1, {css:{left:"20px", autoAlpha:0}}, "start")
-//     .to("#copy_3", 1, {css:{left:"0px", autoAlpha:1}})
-//     .add("end");
-//Project Transition definitions
-
-
-//Project Trigger definitions: defines scroll triggers for project transitions
-// var project_2_trigger = new ScrollMagic.Scene({
-//     triggerHook: "onEnter",
-//     reverse: true,
-//     triggerElement: '#img3',
-//     duration: 450,
-//     offset: 140
-// })
-//     .setTween(project_2_transition)
-//     .addTo(scrollarea);
-
-// var project_3_trigger = new ScrollMagic.Scene({
-//     triggerHook: "onEnter",
-//     reverse: true,
-//     triggerElement: '#img6',
-//     duration: 450,
-//     offset: 140
-// })
-//     .setTween(project_3_transition)
-//     .addTo(scrollarea);
-//Project Trigger definitions
-
-
-//Scroll Button definition
-// project_next.add("start")
-//     .paused(true)
-//     .to("#detail_scrollarea", 1, {scrollTo:"#img3", ease:Power2.easeInOut})//Redefine for dynamic selectors, ex."scroll to first image of '.next_proj' from '.active_proj'"
-//     .add("end");
-//Scroll Button definition
-
-
-//Scroll Button function calls
-// function nextScroll(){
-//     project_scroll.play();
-// }
-
-// function prevScroll(){
-//     project_scroll.reverse();
-// }
-//Scroll Button function calls
-
-
+ 
 
 
 //Fullscreen Definition ------
@@ -723,7 +519,7 @@ tooltip_prev.add("start")
 
 tooltip_back.add("start")
     .paused(true)
-    .to("#back_tip", 0.3, {css:{autoAlpha:1, left:"110px"}, ease:Power2.easeInOut}, "start")
+    .to("#back_tip", 0.3, {css:{autoAlpha:1, left:"130px"}, ease:Power2.easeInOut}, "start")
     .add("end");
 //Tooltip Show/Hide Definitions
 

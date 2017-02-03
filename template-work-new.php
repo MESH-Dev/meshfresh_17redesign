@@ -190,7 +190,7 @@ get_header();
 	 			</div>
 	 		</div><!-- end work-container -->
 		</div><!-- end work-block -->
-	<?php } } wp_reset_query(); wp_reset_postdata();?>
+	<?php } } }wp_reset_query(); wp_reset_postdata();?>
 	
 	<!-- </div> -->
 </div><!-- end work-grid -->
@@ -199,7 +199,7 @@ get_header();
 
 
 <!-- <section class="josh"> -->
-	<div id="infobar" onclick="infoOpen()">
+	<div id="infobar" >
 
 		<p id="explore_text">Explore the Projects</p>
 		
@@ -366,7 +366,9 @@ get_header();
 			 
 						$image_url=$image['sizes']['background-fullscreen'];
 						 
-						$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
+						//$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
+
+						$image_str .= "<img id='image-$image[id]' src='$image_url'>";
 
 					endwhile; 
 					$image_str .="</div>";
@@ -380,13 +382,12 @@ get_header();
 
 
 
-			}wp_reset_query(); wp_reset_postdata();
+			} wp_reset_query(); wp_reset_postdata();
 			?>
 		
 		</div>	
  
 	</div>
 
- 
 <!-- </section> -->
 <?php get_footer(); ?>

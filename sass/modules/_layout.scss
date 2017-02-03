@@ -1776,9 +1776,9 @@ footer.site-footer{
     width: 33%;
     min-width: 350px;
     //box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.3);
-    left: 96%;
+    left: 100%;
     top:0;
-    //margin-left: -40px;
+    margin-left: -40px;
 
 
 }
@@ -1801,7 +1801,7 @@ footer.site-footer{
     //left: 96%;
     width: 100%;
     height: 100%;
-    padding: 90px 60px;
+    padding: 90px 90px;
     max-width: 800px;
     margin: 0 auto;
 
@@ -1815,6 +1815,7 @@ footer.site-footer{
 	    font-size: 24px;
 	    color: #fff;
 	    line-height: 42px;
+	    margin-bottom: 10px;
     }
 
     p{
@@ -1822,6 +1823,7 @@ footer.site-footer{
 	    font-family: 'Raleway', sans-serif;
 	    line-height: 20px;
 	    font-size: 14px;
+	    margin-bottom: 12px;
  
 	}
 }
@@ -1831,7 +1833,7 @@ span#back_tip {
 		font-size: 14px;
 		position: absolute;
 		text-transform: uppercase;
-		left: 150px;
+		left: 170px;
 		top: 218px;
 		width:140px;
 		color: #fff;
@@ -1866,6 +1868,7 @@ span#back_tip {
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
     margin-top: 40px;
+    height: 100vh;
 }
 
 #fs_title1{
@@ -1889,7 +1892,7 @@ span#back_tip {
     visibility: hidden;
     position: absolute;
     top: 210px;
-    left: 60px;
+    left: 80px;
     cursor: pointer;
  //    transition: all 0.2s ease-in-out;
 	// &:hover{
@@ -1900,7 +1903,7 @@ span#back_tip {
 #detail_scrollarea{
     visibility: hidden;
     position: fixed;
-    width: 67vw;
+    width: 71vw;
     height: 100vh;
     overflow-y: scroll;
     top:0;
@@ -1909,7 +1912,7 @@ span#back_tip {
 
     #fullscreen{
 	    z-index: 1;
-	    color: #fff;
+	    color: #000;
 	    font-size: 48px;
 	    font-weight: 100;
 	    position: fixed;
@@ -1919,7 +1922,7 @@ span#back_tip {
 	}
     #fullscreen_exit{
 		z-index: 1;
-		color: #fff;
+		color: #000;
 		font-size: 48px;
 		font-weight: 100;
 		position: fixed;

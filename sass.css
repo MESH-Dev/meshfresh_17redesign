@@ -3305,8 +3305,9 @@ footer.site-footer p {
   height: 100vh;
   width: 33%;
   min-width: 350px;
-  left: 96%;
+  left: 100%;
   top: 0;
+  margin-left: -40px;
 }
 
 /* line 1786, sass/modules/_layout.scss */
@@ -3328,7 +3329,7 @@ footer.site-footer p {
   top: 180px;
   width: 100%;
   height: 100%;
-  padding: 90px 60px;
+  padding: 90px 90px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -3338,22 +3339,24 @@ footer.site-footer p {
   font-size: 24px;
   color: #fff;
   line-height: 42px;
+  margin-bottom: 10px;
 }
-/* line 1820, sass/modules/_layout.scss */
+/* line 1821, sass/modules/_layout.scss */
 .detail_copy p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
   line-height: 20px;
   font-size: 14px;
+  margin-bottom: 12px;
 }
 
-/* line 1829, sass/modules/_layout.scss */
+/* line 1831, sass/modules/_layout.scss */
 span#back_tip {
   font-family: 'Gothic';
   font-size: 14px;
   position: absolute;
   text-transform: uppercase;
-  left: 150px;
+  left: 170px;
   top: 218px;
   width: 140px;
   color: #fff;
@@ -3363,7 +3366,7 @@ span#back_tip {
   text-align: center;
   visibility: hidden;
 }
-/* line 1845, sass/modules/_layout.scss */
+/* line 1847, sass/modules/_layout.scss */
 span#back_tip:after {
   content: '';
   position: absolute;
@@ -3377,22 +3380,23 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 1858, sass/modules/_layout.scss */
+/* line 1860, sass/modules/_layout.scss */
 .underline {
   padding-bottom: 2px;
   border-bottom: 2px solid #fff;
 }
 
-/* line 1863, sass/modules/_layout.scss */
+/* line 1865, sass/modules/_layout.scss */
 #explore_text {
   color: #fff;
   font-family: "Memphis LT W01 Light";
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
   margin-top: 40px;
+  height: 100vh;
 }
 
-/* line 1871, sass/modules/_layout.scss */
+/* line 1874, sass/modules/_layout.scss */
 #fs_title1 {
   color: #fff;
   font-family: "Memphis LT W01 Light";
@@ -3406,7 +3410,7 @@ span#back_tip:after {
   visibility: hidden;
 }
 
-/* line 1884, sass/modules/_layout.scss */
+/* line 1887, sass/modules/_layout.scss */
 #detail_exit {
   z-index: 3;
   font-size: 42px;
@@ -3415,25 +3419,25 @@ span#back_tip:after {
   visibility: hidden;
   position: absolute;
   top: 210px;
-  left: 60px;
+  left: 80px;
   cursor: pointer;
 }
 
-/* line 1900, sass/modules/_layout.scss */
+/* line 1903, sass/modules/_layout.scss */
 #detail_scrollarea {
   visibility: hidden;
   position: fixed;
-  width: 67vw;
+  width: 71vw;
   height: 100vh;
   overflow-y: scroll;
   top: 0;
   right: 0;
   z-index: 2;
 }
-/* line 1910, sass/modules/_layout.scss */
+/* line 1913, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen {
   z-index: 1;
-  color: #fff;
+  color: #000;
   font-size: 48px;
   font-weight: 100;
   position: fixed;
@@ -3441,10 +3445,10 @@ span#back_tip:after {
   right: 50px;
   cursor: pointer;
 }
-/* line 1920, sass/modules/_layout.scss */
+/* line 1923, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen_exit {
   z-index: 1;
-  color: #fff;
+  color: #000;
   font-size: 48px;
   font-weight: 100;
   position: fixed;
@@ -3453,14 +3457,14 @@ span#back_tip:after {
   cursor: pointer;
   visibility: hidden;
 }
-/* line 1932, sass/modules/_layout.scss */
+/* line 1935, sass/modules/_layout.scss */
 #detail_scrollarea img {
   display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 1938, sass/modules/_layout.scss */
+/* line 1941, sass/modules/_layout.scss */
 #detail_scrollarea span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3477,7 +3481,7 @@ span#back_tip:after {
   visibility: hidden;
   text-transform: uppercase;
 }
-/* line 1956, sass/modules/_layout.scss */
+/* line 1959, sass/modules/_layout.scss */
 #detail_scrollarea span:after {
   content: '';
   position: absolute;
@@ -3491,7 +3495,7 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 1969, sass/modules/_layout.scss */
+/* line 1972, sass/modules/_layout.scss */
 .detail_nav {
   position: absolute;
   width: 90%;
@@ -3499,14 +3503,14 @@ span#back_tip:after {
   left: 80%;
   visibility: hidden;
 }
-/* line 1975, sass/modules/_layout.scss */
+/* line 1978, sass/modules/_layout.scss */
 .detail_nav i {
   color: #fff;
   font-size: 42px;
   text-align: left;
   letter-spacing: 10px;
 }
-/* line 1981, sass/modules/_layout.scss */
+/* line 1984, sass/modules/_layout.scss */
 .detail_nav p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3516,17 +3520,17 @@ span#back_tip:after {
   padding: 0;
 }
 
-/* line 1991, sass/modules/_layout.scss */
+/* line 1994, sass/modules/_layout.scss */
 .detail_switch {
   padding: 14px 0;
   position: relative;
 }
-/* line 1994, sass/modules/_layout.scss */
+/* line 1997, sass/modules/_layout.scss */
 .detail_switch svg {
   width: 24px;
   cursor: pointer;
 }
-/* line 1998, sass/modules/_layout.scss */
+/* line 2001, sass/modules/_layout.scss */
 .detail_switch span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3542,7 +3546,7 @@ span#back_tip:after {
   text-align: center;
   visibility: hidden;
 }
-/* line 2014, sass/modules/_layout.scss */
+/* line 2017, sass/modules/_layout.scss */
 .detail_switch span:after {
   content: '';
   position: absolute;
@@ -3556,12 +3560,12 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 2031, sass/modules/_layout.scss */
+/* line 2034, sass/modules/_layout.scss */
 .active-project {
   visibility: visible;
 }
 
-/* line 2040, sass/modules/_layout.scss */
+/* line 2043, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
