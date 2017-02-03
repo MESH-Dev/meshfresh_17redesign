@@ -4,8 +4,6 @@
 get_header();
  
 
-
-
 ?>
 
 
@@ -17,9 +15,6 @@ get_header();
 	<?php
 		$args = array(
 					'post_type'      => 'work',
-					//'meta_key'       => 'featured',
-					//'meta_value'     => true,
-					//'meta_compare'   => '!=',
 					'order' => 'DESC',
 					'order_by' => 'date',
 					'posts_per_page' => -1,
