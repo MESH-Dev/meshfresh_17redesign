@@ -235,6 +235,7 @@ $(document).on('click', 'p#explore_text', function () {
 	var project_color = $('#sidebar-content .detail_copy:first-child').attr('data-color');
 
 	$('#infobar').css('background-color',project_color);
+	$('#infobar').addClass("open");
 	infoOpen();
 });
 
@@ -245,6 +246,12 @@ $(document).on('click', '.work-block', function () {
 	var project_color = $(this).attr('data-color');
 	var photos_id = '#'+project_id+'-panels';
 	var proj_id = $(this).attr('data-post-id');
+
+	var title = $(this).find('span').html();
+ 
+	$('.detail-side-title p').html(title);
+
+	$('#infobar').addClass("open");
 
 	//loop through project images, put clicked on div at top, move other to bottom
 	$('.project-wrap').each(function() {
@@ -267,6 +274,7 @@ $(document).on('click', '.work-block', function () {
 	//ajax_load_projects('single',project_id);
 	infoOpen();
 
+
 	$('.project-wrap').each(function () {
  
 		var current = $(this);
@@ -283,10 +291,18 @@ $(document).on('click', '.work-block', function () {
 			offset: 400
 		}).addTo(controller)
 		.on("enter leave", function (e) {
+
 			$('.detail_copy').removeClass("active-project");
 			text_elem.addClass("active-project");
 			$('#infobar').css('background-color',project_color);
 			active_project = refElement;
+
+			var new_title = $(text_elem).find('span').html();
+			//console.log(new_title + "ll");
+			$('.detail-side-title p').html(new_title);
+
+
+
 		});
 	});
 
@@ -401,12 +417,51 @@ function ajax_load_projects(to_load, single_id){
 
  
 
+$('.detail-side-title').click(function(e) {
+	e.preventDefault();
+	fullScreenExitTrigger();
+});
+
+$('#fullscreen_exit').click(function(e) {
+	e.preventDefault();
+	fullScreenExitTrigger();
+});
+
+$('#fullscreen').click(function(e) {
+	e.preventDefault();
+	fullScreenTrigger();
+});
+
+$('#detail_exit').click(function(e) {
+	e.preventDefault();
+	infoClose(event);
+	$('#infobar').removeClass("open");
+});
+
+
+
+
+
+
+
+
+
+//Fullscreen Trigger Definitions
+function fullScreenTrigger(){
+    fullscreen_open.play();
+	$('.detail-side-title p' ).fadeIn();
+}
+
+function fullScreenExitTrigger(){
+    fullscreen_open.reverse();
+    $('.detail-side-title p' ).fadeOut();
+}
+	//Fullscreen Trigger
+
 
 
 
  
-
-
 }); //end jquery doc ready
 
 
@@ -482,15 +537,8 @@ fullscreen_close.add("start")
     .add("end");
 //Fullscreen Definition
 
-//Fullscreen Trigger Definitions
-function fullScreenTrigger(){
-    fullscreen_open.play()
-}
 
-function fullScreenExitTrigger(){
-    fullscreen_open.reverse()
-}
-//Fullscreen Trigger
+
 
 
 
@@ -575,3 +623,7 @@ function hideTooltipBack(){
 //Tooltip Trigger Definitions
 //});
 //=================================
+
+
+
+
