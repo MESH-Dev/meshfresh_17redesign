@@ -1809,7 +1809,7 @@ footer.site-footer{
     font-family: "Memphis LT W01 Light";
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
-    padding-top: 25vh;
+    padding-top: 0vh;
     height: 100vh;
     width: 40px;
 	position: absolute;
@@ -1821,10 +1821,14 @@ footer.site-footer{
 		{
 			display: block !important;
     	}	
+    	position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
     }
     &:hover{
     	cursor: pointer;
     }
+
 
 
 }
@@ -1911,8 +1915,9 @@ span#back_tip {
     font-family: "Memphis LT W01 Light";
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
-    margin-top: 40px;
+    // margin-top: 200px;
     height: 100vh;
+    margin-top: 40vh;
 }
 
 #fs_title1{
@@ -2078,8 +2083,7 @@ span#back_tip {
 }
 
 //------------------------------
-
-
+ 
 
  
 

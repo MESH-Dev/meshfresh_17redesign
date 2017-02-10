@@ -229,6 +229,21 @@ $(document).on('click', '#prev_proj', function (e) {
 
 });
 
+
+
+
+/*
+*   TOOOO DOOOOO::::
+*   FIX CLICK ON SIDEBAR ON MOBILE TO EXIT
+*   FIX LANDING EXPLORE CLICK (SHOW TEXT AND SIDETITLE OF FIRST PROJ)
+*	DIRECT LINK URL OPEN
+*	IMAGE LOAD TIME
+*
+*
+*
+*/
+
+
 $(document).on('click', 'p#explore_text', function () {
 	$('.detail_copy').removeClass('active-project');
 	$('#sidebar-content .detail_copy:first-child').addClass('active-project');
@@ -236,8 +251,16 @@ $(document).on('click', 'p#explore_text', function () {
 
 	$('#infobar').css('background-color',project_color);
 	$('#infobar').addClass("open");
+	$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
+	$('.detail_copy').removeClass('active-project');
+	$(pid).addClass('active-project');
 	infoOpen();
+ 
+
+
 });
+
+
 
  
 $(document).on('click', '.work-block', function () {
@@ -437,6 +460,30 @@ $('#detail_exit').click(function(e) {
 	infoClose(event);
 	$('#infobar').removeClass("open");
 });
+
+
+var windowsize = $(window).width();
+if (windowsize < 751) {
+	$('.detail-side-title').click(function(e) {
+		e.preventDefault();
+		infoClose(event);
+		$('#infobar').removeClass("open");
+	});
+  }
+
+$(window).resize(function() {
+  windowsize = $(window).width();
+  if (windowsize < 751) {
+	$('.detail-side-title').click(function(e) {
+		e.preventDefault();
+		infoClose(event);
+		$('#infobar').removeClass("open");
+	});
+  }
+});
+
+
+
 
 
 

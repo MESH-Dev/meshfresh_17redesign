@@ -3335,7 +3335,7 @@ footer.site-footer p {
   font-family: "Memphis LT W01 Light";
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
-  padding-top: 25vh;
+  padding-top: 0vh;
   height: 100vh;
   width: 40px;
   position: absolute;
@@ -3345,6 +3345,9 @@ footer.site-footer p {
 .detail-side-title p {
   color: #fff;
   display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @media (max-width: 750px) {
   /* line 1817, sass/modules/_layout.scss */
@@ -3352,12 +3355,12 @@ footer.site-footer p {
     display: block !important;
   }
 }
-/* line 1825, sass/modules/_layout.scss */
+/* line 1828, sass/modules/_layout.scss */
 .detail-side-title:hover {
   cursor: pointer;
 }
 
-/* line 1832, sass/modules/_layout.scss */
+/* line 1836, sass/modules/_layout.scss */
 .detail_copy {
   position: absolute;
   visibility: hidden;
@@ -3368,7 +3371,7 @@ footer.site-footer p {
   max-width: 800px;
   margin: 0 auto;
 }
-/* line 1848, sass/modules/_layout.scss */
+/* line 1852, sass/modules/_layout.scss */
 .detail_copy h3 {
   font-family: 'Memphis LT W01 Medium', sans-serif;
   font-size: 24px;
@@ -3376,7 +3379,7 @@ footer.site-footer p {
   line-height: 42px;
   margin-bottom: 10px;
 }
-/* line 1856, sass/modules/_layout.scss */
+/* line 1860, sass/modules/_layout.scss */
 .detail_copy p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3384,17 +3387,17 @@ footer.site-footer p {
   font-size: 14px;
   margin-bottom: 12px;
 }
-/* line 1864, sass/modules/_layout.scss */
+/* line 1868, sass/modules/_layout.scss */
 .detail_copy a {
   color: white;
   text-decoration: underline;
 }
-/* line 1867, sass/modules/_layout.scss */
+/* line 1871, sass/modules/_layout.scss */
 .detail_copy a:hover {
   text-decoration: none;
 }
 
-/* line 1875, sass/modules/_layout.scss */
+/* line 1879, sass/modules/_layout.scss */
 span#back_tip {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3410,7 +3413,7 @@ span#back_tip {
   text-align: center;
   visibility: hidden;
 }
-/* line 1891, sass/modules/_layout.scss */
+/* line 1895, sass/modules/_layout.scss */
 span#back_tip:after {
   content: '';
   position: absolute;
@@ -3424,23 +3427,23 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 1904, sass/modules/_layout.scss */
+/* line 1908, sass/modules/_layout.scss */
 .underline {
   padding-bottom: 2px;
   border-bottom: 2px solid #fff;
 }
 
-/* line 1909, sass/modules/_layout.scss */
+/* line 1913, sass/modules/_layout.scss */
 #explore_text {
   color: #fff;
   font-family: "Memphis LT W01 Light";
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
-  margin-top: 40px;
   height: 100vh;
+  margin-top: 40vh;
 }
 
-/* line 1918, sass/modules/_layout.scss */
+/* line 1923, sass/modules/_layout.scss */
 #fs_title1 {
   color: #fff;
   font-family: "Memphis LT W01 Light";
@@ -3454,7 +3457,7 @@ span#back_tip:after {
   visibility: hidden;
 }
 
-/* line 1931, sass/modules/_layout.scss */
+/* line 1936, sass/modules/_layout.scss */
 #detail_exit {
   z-index: 3;
   font-size: 42px;
@@ -3467,7 +3470,7 @@ span#back_tip:after {
   cursor: pointer;
 }
 
-/* line 1947, sass/modules/_layout.scss */
+/* line 1952, sass/modules/_layout.scss */
 #detail_scrollarea {
   visibility: hidden;
   position: fixed;
@@ -3478,7 +3481,7 @@ span#back_tip:after {
   right: 0;
   z-index: 2;
 }
-/* line 1957, sass/modules/_layout.scss */
+/* line 1962, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen {
   z-index: 1;
   color: #000;
@@ -3489,7 +3492,7 @@ span#back_tip:after {
   right: 50px;
   cursor: pointer;
 }
-/* line 1967, sass/modules/_layout.scss */
+/* line 1972, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen_exit {
   z-index: 1;
   color: #000;
@@ -3501,14 +3504,14 @@ span#back_tip:after {
   cursor: pointer;
   visibility: hidden;
 }
-/* line 1979, sass/modules/_layout.scss */
+/* line 1984, sass/modules/_layout.scss */
 #detail_scrollarea img {
   display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 1985, sass/modules/_layout.scss */
+/* line 1990, sass/modules/_layout.scss */
 #detail_scrollarea span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3525,7 +3528,7 @@ span#back_tip:after {
   visibility: hidden;
   text-transform: uppercase;
 }
-/* line 2003, sass/modules/_layout.scss */
+/* line 2008, sass/modules/_layout.scss */
 #detail_scrollarea span:after {
   content: '';
   position: absolute;
@@ -3539,13 +3542,13 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 @media (max-width: 750px) {
-  /* line 1947, sass/modules/_layout.scss */
+  /* line 1952, sass/modules/_layout.scss */
   #detail_scrollarea {
     width: 98vw;
   }
 }
 
-/* line 2022, sass/modules/_layout.scss */
+/* line 2027, sass/modules/_layout.scss */
 .detail_nav {
   position: absolute;
   width: 90%;
@@ -3553,14 +3556,14 @@ span#back_tip:after {
   left: 80%;
   visibility: hidden;
 }
-/* line 2028, sass/modules/_layout.scss */
+/* line 2033, sass/modules/_layout.scss */
 .detail_nav i {
   color: #fff;
   font-size: 42px;
   text-align: left;
   letter-spacing: 10px;
 }
-/* line 2034, sass/modules/_layout.scss */
+/* line 2039, sass/modules/_layout.scss */
 .detail_nav p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3570,17 +3573,17 @@ span#back_tip:after {
   padding: 0;
 }
 
-/* line 2044, sass/modules/_layout.scss */
+/* line 2049, sass/modules/_layout.scss */
 .detail_switch {
   padding: 14px 0;
   position: relative;
 }
-/* line 2047, sass/modules/_layout.scss */
+/* line 2052, sass/modules/_layout.scss */
 .detail_switch svg {
   width: 24px;
   cursor: pointer;
 }
-/* line 2051, sass/modules/_layout.scss */
+/* line 2056, sass/modules/_layout.scss */
 .detail_switch span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3596,7 +3599,7 @@ span#back_tip:after {
   text-align: center;
   visibility: hidden;
 }
-/* line 2067, sass/modules/_layout.scss */
+/* line 2072, sass/modules/_layout.scss */
 .detail_switch span:after {
   content: '';
   position: absolute;
@@ -3610,12 +3613,12 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 2086, sass/modules/_layout.scss */
+/* line 2090, sass/modules/_layout.scss */
 .active-project {
   visibility: visible;
 }
 
-/* line 2095, sass/modules/_layout.scss */
+/* line 2099, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;

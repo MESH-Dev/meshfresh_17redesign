@@ -198,7 +198,7 @@ get_header();
 
 		<p id="explore_text">Explore the Projects</p>
 		
-		<i id="detail_exit" class="material-icons" onclick="">keyboard_backspace</i>
+		<i id="detail_exit" class="material-icons" >keyboard_backspace</i>
 		<span id="back_tip" class="tooltip">View All Projects</span>
  
 		<div id="sidebar-content" class=" ">

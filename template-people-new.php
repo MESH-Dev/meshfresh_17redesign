@@ -75,7 +75,7 @@ get_header();
 
 		<p id="explore_text">Explore our Team</p>
 		
-		<i id="detail_exit" class="material-icons" onclick="infoClose(event)">keyboard_backspace</i>
+		<i id="detail_exit" class="material-icons" >keyboard_backspace</i>
 		<span id="back_tip" class="tooltip">View All People</span>
  
 		<div id="sidebar-content" class=" ">
@@ -119,6 +119,10 @@ get_header();
 			wp_reset_query(); wp_reset_postdata();
 			?>
 
+				<div class="detail-side-title">
+				<p>Project Title Here</p>
+			</div>
+
 
 
 
@@ -159,8 +163,8 @@ get_header();
 
 
 	<div id="detail_scrollarea">
-	    <i id="fullscreen" class="material-icons" onclick="fullScreenTrigger()">fullscreen</i>
-	    <i id="fullscreen_exit" class="material-icons" onclick="fullScreenExitTrigger()">fullscreen_exit</i>
+	    <i id="fullscreen" class="material-icons" >fullscreen</i>
+	    <i id="fullscreen_exit" class="material-icons" >fullscreen_exit</i>
 	    <span id="fs_tip" class="tooltip">Expand the Images</span>
 	    <span id="fs_close_tip" class="tooltip">Close Fullscreen</span>
 
