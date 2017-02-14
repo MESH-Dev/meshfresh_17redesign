@@ -1119,7 +1119,7 @@ a.cta{
 		height:100%;
 		padding:20px 0;
 		font-family:'Memphis';
-		z-index:2;
+		z-index:1;
 
 		h2{
 
@@ -1786,6 +1786,15 @@ footer.site-footer{
 			left: auto !important;
 	    	cursor: default !important;
 	    	right: calc(100% - 40px) !important;
+    	}
+
+    	.detail-side-title p{
+    		display: none !important;
+    		
+    		@media($bp-smaller-than-tablet)
+			{
+				display: block !important;
+	    	}
     	}	
 	}
 
@@ -1801,7 +1810,7 @@ footer.site-footer{
     bottom:0;
     position: fixed;
     visibility: hidden;
-    z-index:1;
+    z-index:2;
 }
 
 .detail-side-title{
@@ -1836,11 +1845,11 @@ footer.site-footer{
 .detail_copy{
     position: absolute;
     visibility: hidden;
-    top: 180px;
+    top: 125px;
     //left: 96%;
     width: calc(100% - 40px);
     height: 100%;
-    padding: 90px 90px;
+    padding: 90px 20px 0 90px;
     max-width: 800px;
     margin: 0 auto;
 
@@ -1882,7 +1891,7 @@ span#back_tip {
 		position: absolute;
 		text-transform: uppercase;
 		left: 170px;
-		top: 218px;
+		top: 168px;
 		width:140px;
 		color: #fff;
 		background: rgba(0,0,0,0.8);
@@ -1940,7 +1949,7 @@ span#back_tip {
     color: #fff;
     visibility: hidden;
     position: absolute;
-    top: 210px;
+    top: 160px;
     left: 80px;
     cursor: pointer;
  //    transition: all 0.2s ease-in-out;
@@ -1968,6 +1977,10 @@ span#back_tip {
 	    bottom: 40px;
 	    right: 50px;
 	    cursor: pointer;
+	    @media($bp-smaller-than-tablet)
+		{
+			visibility: hidden;	
+		}
 	}
     #fullscreen_exit{
 		z-index: 1;
@@ -1979,6 +1992,10 @@ span#back_tip {
 		right: 50px;
 		cursor: pointer;
 		visibility: hidden;	
+		@media($bp-smaller-than-tablet)
+		{
+			visibility: hidden;	
+		}
     }
 
 	img{
@@ -2027,8 +2044,8 @@ span#back_tip {
 .detail_nav{
     position: absolute;
     width: 90%;
-    bottom: 20px;
-    left: 80%;
+    bottom: 10px;
+    left: 88%;
     visibility: hidden;
     i{
 	    color: #fff;
@@ -2044,6 +2061,10 @@ span#back_tip {
 	    margin:0;
 	    padding:0;
 	}
+	@media($bp-smaller-than-tablet)
+	{
+		   display: none;
+	}	
 }
 
 .detail_switch{
