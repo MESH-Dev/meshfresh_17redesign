@@ -173,10 +173,6 @@ $(function(){
 */
  
 
-$(document).on('click', '#load-next', function () {
-	ajax_load_projects('next','');
-});
-
 // var controller = new ScrollMagic.Controller();
 var controller = new ScrollMagic.Controller({
     container: "#detail_scrollarea"
@@ -187,6 +183,8 @@ controller.scrollTo(function (newpos) {
 });
  
 var active_project = '';
+
+var windowsize = $(window).width();
 
 //NEXT PROJECT BUTTON
 $(document).on('click', '#next_proj', function (e) {
@@ -228,16 +226,7 @@ $(document).on('click', '#prev_proj', function (e) {
 
 
 
-/*
-*   TOOOO DOOOOO::::
-*   FIX CLICK ON SIDEBAR ON MOBILE TO EXIT
-*   FIX LANDING EXPLORE CLICK (SHOW TEXT AND SIDETITLE OF FIRST PROJ)
-*	DIRECT LINK URL OPEN
-*	IMAGE LOAD TIME
-*
-*
-*
-*/
+ 
 
 
 $(document).on('click', 'p#explore_text', function () {
@@ -319,6 +308,8 @@ $(document).on('click', 'p#explore_text', function () {
 
 });
 
+
+ 
  
 $(document).on('click', '.work-block', function () {
 	var project_id = $(this).attr('data-id');
@@ -350,10 +341,11 @@ $(document).on('click', '.work-block', function () {
 
  
 	$('#infobar').css('background-color',project_color);
- 
-	//ajax_load_projects('single',project_id);
+
 	infoOpen();
 
+
+ 
 
 	$('.project-wrap').each(function () {
  
@@ -394,6 +386,43 @@ $(document).on('click', '.work-block', function () {
 
 
 });
+
+
+if (windowsize < 751) {
+	$('.detail-side-title p').click(function(e) {
+		e.preventDefault();
+ 		fullScreenExitTrigger();
+	});
+
+	$(document).on('click', '.project-wrap img', function (e) {
+		e.preventDefault();
+		fullScreenTrigger();
+	});
+
+}
+
+	
+
+$('#fullscreen_exit').click(function(e) {
+	e.preventDefault();
+	fullScreenExitTrigger();
+});
+
+$('#fullscreen').click(function(e) {
+	e.preventDefault();
+	fullScreenTrigger();
+});
+
+$('#detail_exit').click(function(e) {
+	e.preventDefault();
+	infoClose(event);
+	// $('#infobar').removeClass("open");
+});
+
+
+
+
+ 
 
  
 
@@ -499,85 +528,28 @@ function ajax_load_projects(to_load, single_id){
 
  
 
-$('.detail-side-title').click(function(e) {
-	e.preventDefault();
-	fullScreenExitTrigger();
-});
-
-$('#fullscreen_exit').click(function(e) {
-	e.preventDefault();
-	fullScreenExitTrigger();
-});
-
-$('#fullscreen').click(function(e) {
-	e.preventDefault();
-	fullScreenTrigger();
-});
-
-$('#detail_exit').click(function(e) {
-	e.preventDefault();
-	infoClose(event);
-	$('#infobar').removeClass("open");
-});
 
 
-var windowsize = $(window).width();
-if (windowsize < 751) {
-	$('.detail-side-title').click(function(e) {
-		e.preventDefault();
-		//infoClose(event);
-		$('#infobar').removeClass("open");
-		fullScreenExitTrigger();
-	});
-  }
 
+ 
 
 
 $(window).resize(function() {
   windowsize = $(window).width();
   if (windowsize < 751) {
-	$('.detail-side-title').click(function(e) {
+	$('.detail-side-title p').click(function(e) {
 		e.preventDefault();
 		//infoClose(event);
-		$('#infobar').removeClass("open");
-		fullScreenExitTrigger();
+		//fullScreenExitTrigger();
 	});
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-//Fullscreen Trigger Definitions
-function fullScreenTrigger(){
-    fullscreen_open.play();
-	//$('.detail-side-title p' ).fadeIn();
-}
-
-function fullScreenExitTrigger(){
-    fullscreen_open.reverse();
-    //$('.detail-side-title p' ).fadeOut();
-}
-	//Fullscreen Trigger
-
-
-
-
- 
-}); //end jquery doc ready
-
-
+  
 
 //Variable definitions
 var detailView = new TimelineMax(),
+	mobileDetailView = new TimelineMax(),
     //project_2_transition = new TimelineMax(),
     //project_3_transition = new TimelineMax(),
     project_scroll = new TimelineMax(),
@@ -620,32 +592,44 @@ function infoOpen(){
 function infoClose(event){
     event.stopPropagation();
     detailView.reverse();
-    //$('header').removeClass('fixed').addClass('absolute');
 }
 //Detail View Expand function calls
+ 
+
  
 //Fullscreen Definition ------
 fullscreen_open.add("start")
     .paused(true)
     .to("#detail_scrollarea", 0.4, {css:{width:"98%"}}, "start")
-    .to("#infobar", 0.4, {css:{left:"auto", right:"95%"}}, "start")
+    .to("#infobar", 0.4, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#fullscreen_exit", 0.4, {css:{autoAlpha:1}}, "start")
-    //.to("#copy_1", 0.4, {css:{autoAlpha:0}}, "start")//make this #current_copy
-   //.to("#fs_title1", 0.4, {css:{autoAlpha:1}}, "start")
+    .to(".detail-side-title p", 0.4, {css:{autoAlpha:1}}, "start")
     .add("end");
 
 fullscreen_close.add("start")
     .paused(true)
     .to("#detail_scrollarea", 0.4, {css:{width:"67%"}}, "start")
-    .to("#infobar", 0.4, {css:{right:"auto", left:"0px"}}, "start")
+    .to("#infobar", 0.4, {css:{right:"auto", left:"0",marginRight:"0px"}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:1}}, "start")
     .to("#fullscreen_exit", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:1}}, "start")
+    .to(".detail-side-title p", 0.4, {css:{autoAlpha:0}}, "start")
     .add("end");
 //Fullscreen Definition
 
+//Fullscreen Trigger Definitions
+function fullScreenTrigger(){
+    fullscreen_open.play();
+	//$('.detail-side-title p' ).fadeIn();
+}
+
+function fullScreenExitTrigger(){
+    fullscreen_open.reverse();
+    //$('.detail-side-title p' ).fadeOut();
+}
+	//Fullscreen Trigger
 
 
 
@@ -733,6 +717,5 @@ function hideTooltipBack(){
 //});
 //=================================
 
-
-
+}); //end jquery doc ready
 

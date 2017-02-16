@@ -3309,23 +3309,9 @@ footer.site-footer p {
   top: 0;
   margin-left: -40px;
 }
-@media (max-width: 750px) {
-  /* line 1783, sass/modules/_layout.scss */
-  #infobar.open {
-    left: auto !important;
-    cursor: default !important;
-    right: calc(100% - 40px) !important;
-  }
-}
 /* line 1791, sass/modules/_layout.scss */
 #infobar.open .detail-side-title p {
-  display: none !important;
-}
-@media (max-width: 750px) {
-  /* line 1791, sass/modules/_layout.scss */
-  #infobar.open .detail-side-title p {
-    display: block !important;
-  }
+  opacity: 0;
 }
 
 /* line 1805, sass/modules/_layout.scss */
@@ -3354,16 +3340,9 @@ footer.site-footer p {
 /* line 1826, sass/modules/_layout.scss */
 .detail-side-title p {
   color: #fff;
-  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-}
-@media (max-width: 750px) {
-  /* line 1826, sass/modules/_layout.scss */
-  .detail-side-title p {
-    display: block !important;
-  }
 }
 /* line 1837, sass/modules/_layout.scss */
 .detail-side-title:hover {
@@ -3493,7 +3472,7 @@ span#back_tip:after {
 }
 /* line 1971, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen {
-  z-index: 1;
+  z-index: 15;
   color: #000;
   font-size: 48px;
   font-weight: 100;
@@ -3502,15 +3481,9 @@ span#back_tip:after {
   right: 50px;
   cursor: pointer;
 }
-@media (max-width: 750px) {
-  /* line 1971, sass/modules/_layout.scss */
-  #detail_scrollarea #fullscreen {
-    visibility: hidden;
-  }
-}
 /* line 1985, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen_exit {
-  z-index: 1;
+  z-index: 5;
   color: #000;
   font-size: 48px;
   font-weight: 100;
@@ -3519,12 +3492,6 @@ span#back_tip:after {
   right: 50px;
   cursor: pointer;
   visibility: hidden;
-}
-@media (max-width: 750px) {
-  /* line 1985, sass/modules/_layout.scss */
-  #detail_scrollarea #fullscreen_exit {
-    visibility: hidden;
-  }
 }
 /* line 2001, sass/modules/_layout.scss */
 #detail_scrollarea img {
@@ -3566,14 +3533,14 @@ span#back_tip:after {
 @media (max-width: 750px) {
   /* line 1961, sass/modules/_layout.scss */
   #detail_scrollarea {
-    width: 98vw;
+    width: 98vw !important;
   }
 }
 
 /* line 2044, sass/modules/_layout.scss */
 .detail_nav {
   position: absolute;
-  width: 90%;
+  width: 50px;
   bottom: 10px;
   left: 88%;
   visibility: hidden;
@@ -3593,12 +3560,6 @@ span#back_tip:after {
   line-height: 3;
   margin: 0;
   padding: 0;
-}
-@media (max-width: 750px) {
-  /* line 2044, sass/modules/_layout.scss */
-  .detail_nav {
-    display: none;
-  }
 }
 
 /* line 2070, sass/modules/_layout.scss */

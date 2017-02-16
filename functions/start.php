@@ -44,6 +44,7 @@ add_action( 'wp_enqueue_scripts', 'loadup_scripts' );
 
 // Add Thumbnail Theme Support
 add_theme_support('post-thumbnails');
+add_image_size('background-fullscreen-sq', 1800, 1800, true);
 add_image_size('background-fullscreen', 1800, 1200, true);
 add_image_size('short-banner', 1800, 800, true);
 
