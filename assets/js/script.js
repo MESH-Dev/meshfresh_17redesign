@@ -415,132 +415,24 @@ $('#fullscreen').click(function(e) {
 
 $('#detail_exit').click(function(e) {
 	e.preventDefault();
-	infoClose(event);
+	infoClose(e);
 	// $('#infobar').removeClass("open");
 });
 
 
-
-
- 
-
- 
-
-
-
-//Fucntion to load in post
-//to_load = 'next' , 'prev', 'both'
-function ajax_load_projects(to_load, single_id){
- 
-	//get current active/visible project
  
  
-	//back to beginning
-	// if(single_id == initial_proj){
-	// 	return;
-	// }
-
-	console.log("loaded = " + loaded);
-
-	console.log("location = " + loaded.indexOf(single_id));
-
-
-
-	//project has already been loaded
-	// if( single_id in loaded ){
-	// 	return;
-	// }
- 
-	var is_loading = false;
-  
-	if (is_loading == false){
-		is_loading = true;
-		//$('.loader.fadeIn(200);
-
-		var data = {
-			action: 'load_project',  //Our function from function.php
- 
-			to_load: to_load,
-			single_id: single_id,
-			dataType: 'json'
-		};
- 
-		jQuery.post(ajaxurl, data, function(response) {
-
-			if(response !== 0){
-
-				var data = JSON.parse(response);
-					//data[0] = next project images
-					//data[1] = next project text
- 
-				 
-				//$('.loader').fadeOut(1000);
-				$('#project-panels').append(data[0]);
-				$('#sidebar-content').append(data[1]);
-				//$('#project-panels').prepend(data[2]);
-				//$('#sidebar-content').prepend(data[3]);
-
-				loaded.push(single_id);
-
-				//kill controller
-				scrollarea = null;
-				scrollarea = new ScrollMagic.Controller();
-
-				var scrollarea = new ScrollMagic.Controller({
-					container: "#detail_scrollarea"
-				});
-
-				//add new projects to controller
-				$('.project-wrap').each(function () {
-					var newProject = this;
-
-					var scene = new ScrollMagic.Scene({ triggerElement: newProject, duration: 100, offset: 0 })
-						//when project is in view - 
-						.on('start', function () {
-							//console.log(this.triggerElement().id);
-							var active_id = this.triggerElement().id;
-							var active = '#' + active_id;
-
-							//console.log(active);
-
-
-							active = active.substring(0, active.length - 7);
-
-							//$('#sidebar-content .flex-content').fadeOut();
-							//$(active).fadeIn();
-
-						}).addTo(scrollarea);
-				});
-				//ajax_load_projects('next','');
- 
-
-				is_loading = false;
-			}
-			else{
-				//$('.loader').hide();
-				is_loading = false;
-			}
-		});
-
-    }
-
-} //End Ajax_load_project Function
-
- 
-
-
-
-
- 
-
-
 $(window).resize(function() {
   windowsize = $(window).width();
   if (windowsize < 751) {
 	$('.detail-side-title p').click(function(e) {
 		e.preventDefault();
-		//infoClose(event);
-		//fullScreenExitTrigger();
+ 		fullScreenExitTrigger();
+	});
+
+	$(document).on('click', '.project-wrap img', function (e) {
+		e.preventDefault();
+		fullScreenTrigger();
 	});
   }
 });
@@ -716,6 +608,30 @@ function hideTooltipBack(){
 //Tooltip Trigger Definitions
 //});
 //=================================
+
+
+var go_to = getQueryVariable('p');
+console.log(go_to);
+if(go_to != ''){
+	var go_to_str = ".work-block[data-id='"+go_to+"']";
+	$(go_to_str).trigger('click');
+}
+
+
+
+
+
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
 
 }); //end jquery doc ready
 

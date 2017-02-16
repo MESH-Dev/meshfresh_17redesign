@@ -1272,6 +1272,7 @@ a.cta{
 	&:hover,
 	&:active,
 	&:focus{
+		cursor: pointer;
 		.hover{
 			display:flex;
 		}
