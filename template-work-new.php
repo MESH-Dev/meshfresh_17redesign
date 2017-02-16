@@ -361,7 +361,7 @@ get_header();
 					while(have_rows('showcase_images', $post_id)) : the_row();
 						$image=get_sub_field('image', $post_id);
 			 
-						$image_url=$image['sizes']['background-fullscreen'];
+						$image_url=$image['sizes']['background-fullscreen-sq'];
 						 
 						//$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
 
