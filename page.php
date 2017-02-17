@@ -50,7 +50,9 @@
 
 				<?php } //end modulus check ?>
 
+				<div class="text-content">
 				<?php echo $page_container; ?>
+				</div>
 
 
 				<?php 

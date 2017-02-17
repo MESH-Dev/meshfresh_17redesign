@@ -75,6 +75,22 @@ p {
     }
   }
 
+  [class*='columns-']:last-of-type{
+    padding-right:15px;
+    @media($bp-smaller-than-tablet) {
+      padding-right:0;
+    }
+  }
+
+  .text-content{
+    p{
+      max-width:80%;
+      @media($bp-smaller-than-mobile) {
+        max-width:95%;
+      }
+    }
+  }
+
   .cta{
     margin:5em 0;
     p{
