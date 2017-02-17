@@ -75,7 +75,7 @@ p {
     }
   }
 
-  [class*='columns-']:last-of-type{
+  &.row [class*='columns-']:last-of-type{
     padding-right:15px;
     @media($bp-smaller-than-tablet) {
       padding-right:0;
@@ -99,17 +99,18 @@ p {
     }
     a{
       text-align:center;
-      border-bottom:1px solid $blue;
+      border-bottom:1px solid transparent;
       //font-size:1.6em;
       font-family:$gothic;
       font-weight:bold;
       text-transform:uppercase;
       text-decoration:none;
-      color:$blue;
+      color:black;
       &:hover,
       &:active,
       &:focus{
-        border-bottom:1px solid transparent;
+        color:$blue;
+        border-bottom:2px solid $blue;
         text-decoration:none;
       }
     }

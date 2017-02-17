@@ -6,7 +6,7 @@
 			<?php get_sidebar('blog'); ?>
 
 		</div>
-		<div class="columns-8" id=""><!-- contentSecondary -->
+		<div class="columns-6" id=""><!-- contentSecondary -->
 			<div class="the-content"><!-- gutter cf -->
 				<?php if(have_posts()){while(have_posts()){the_post(); ?>
 					<div class="single-post-feature">
@@ -31,7 +31,7 @@
 				<?php } } ?>
 			</div>
 		</div>
-		<div class="columns-2" id=""><!-- contentTertiary -->
+		<div class="columns-2 offset-by-2" id=""><!-- contentTertiary -->
 			<div class="recent-posts"><!-- gutter -->
 				<h2><span>Recent Posts</span></h2>
 				<?php $posts = blogrollPosts('all','',3);

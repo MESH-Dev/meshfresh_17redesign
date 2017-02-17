@@ -143,7 +143,7 @@ get_header();
 				  </defs>
 				  <path class="cls-1" d="M4.93,33.67,21,17.64l16.07,16L42,28.74l-21-21-21,21Z" transform="translate(0 -7.74)"/>
 				</svg>
-				<span id="prev_tip" class="tooltip">Previous Perspn</span>
+				<span id="prev_tip" class="tooltip">Previous Person</span>
 			</div>
 			<div id="next_proj" class="detail_switch">
 				<svg id="next_arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 25.93">

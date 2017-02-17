@@ -25,8 +25,7 @@ get_header();  ?>
 		    		<div class="badge badge-left">
 			    	<div class="wrap">
 			    		<div class="content">
-					    	<h3>MESH Charleston</h3>
-					    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+					    	<h3>MESH <br>Charleston</h3>
 				    	</div>
 			    	</div>
 		    	</div>
@@ -39,8 +38,7 @@ get_header();  ?>
 		   			<div class="badge badge-right">
 			    	<div class="wrap">
 			    		<div class="content">
-					    	<h3>MESH Brooklyn</h3>
-					    	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+					    	<h3>MESH<br>Brooklyn</h3>
 				    	</div>
 			    	</div>
 		   		</div>
