@@ -9,9 +9,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_directory'); ?>/assets/img/touch-icon-ipad.png" />
 	<link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('template_directory'); ?>/assets/img/touch-icon-iphone-retina.png" />
 	<link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('template_directory'); ?>/assets/img/touch-icon-ipad-retina.png" />
-
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Dosis:400,700,800" rel="stylesheet">
+ 
 
 	<!-- Memphis font -->
 	<script type="text/javascript" src="http://fast.fonts.net/jsapi/2cc1f66a-61d9-44d7-9b16-40e651bd3c09.js"></script>

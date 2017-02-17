@@ -2128,7 +2128,6 @@ section#blogroll #contentSecondary address {
 
 /* line 461, sass/modules/_layout.scss */
 .frontpage-text {
-  font-family: 'Roboto Condensed', sans-serif;
   color: #4d4845;
   text-transform: uppercase;
   position: absolute;
@@ -3448,14 +3447,23 @@ span#back_tip:after {
 /* line 1923, sass/modules/_layout.scss */
 #explore_text {
   color: #fff;
-  font-family: "Memphis LT W01 Light";
+  font-family: "Memphis LT W01 Medium";
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
   height: 100vh;
   margin-top: 40vh;
+  position: relative;
+  z-index: 1000;
+}
+/* line 1934, sass/modules/_layout.scss */
+#explore_text span {
+  font-weight: bold;
+  -webkit-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
+  font-size: 20px;
 }
 
-/* line 1933, sass/modules/_layout.scss */
+/* line 1942, sass/modules/_layout.scss */
 #fs_title1 {
   color: #fff;
   font-family: "Memphis LT W01 Light";
@@ -3469,7 +3477,7 @@ span#back_tip:after {
   visibility: hidden;
 }
 
-/* line 1946, sass/modules/_layout.scss */
+/* line 1955, sass/modules/_layout.scss */
 #detail_exit {
   z-index: 3;
   font-size: 42px;
@@ -3482,7 +3490,7 @@ span#back_tip:after {
   cursor: pointer;
 }
 
-/* line 1962, sass/modules/_layout.scss */
+/* line 1971, sass/modules/_layout.scss */
 #detail_scrollarea {
   visibility: hidden;
   position: fixed;
@@ -3493,7 +3501,7 @@ span#back_tip:after {
   right: 0;
   z-index: 2;
 }
-/* line 1972, sass/modules/_layout.scss */
+/* line 1981, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen {
   z-index: 15;
   color: #000;
@@ -3504,7 +3512,7 @@ span#back_tip:after {
   right: 50px;
   cursor: pointer;
 }
-/* line 1986, sass/modules/_layout.scss */
+/* line 1995, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen_exit {
   z-index: 5;
   color: #000;
@@ -3516,14 +3524,14 @@ span#back_tip:after {
   cursor: pointer;
   visibility: hidden;
 }
-/* line 2002, sass/modules/_layout.scss */
+/* line 2011, sass/modules/_layout.scss */
 #detail_scrollarea img {
   display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 2008, sass/modules/_layout.scss */
+/* line 2017, sass/modules/_layout.scss */
 #detail_scrollarea span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3540,7 +3548,7 @@ span#back_tip:after {
   visibility: hidden;
   text-transform: uppercase;
 }
-/* line 2026, sass/modules/_layout.scss */
+/* line 2035, sass/modules/_layout.scss */
 #detail_scrollarea span:after {
   content: '';
   position: absolute;
@@ -3554,13 +3562,13 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 @media (max-width: 750px) {
-  /* line 1962, sass/modules/_layout.scss */
+  /* line 1971, sass/modules/_layout.scss */
   #detail_scrollarea {
     width: 98vw !important;
   }
 }
 
-/* line 2045, sass/modules/_layout.scss */
+/* line 2054, sass/modules/_layout.scss */
 .detail_nav {
   position: absolute;
   width: 50px;
@@ -3568,14 +3576,14 @@ span#back_tip:after {
   left: 88%;
   visibility: hidden;
 }
-/* line 2051, sass/modules/_layout.scss */
+/* line 2060, sass/modules/_layout.scss */
 .detail_nav i {
   color: #fff;
   font-size: 42px;
   text-align: left;
   letter-spacing: 10px;
 }
-/* line 2057, sass/modules/_layout.scss */
+/* line 2066, sass/modules/_layout.scss */
 .detail_nav p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3585,17 +3593,17 @@ span#back_tip:after {
   padding: 0;
 }
 
-/* line 2071, sass/modules/_layout.scss */
+/* line 2080, sass/modules/_layout.scss */
 .detail_switch {
   padding: 14px 0;
   position: relative;
 }
-/* line 2074, sass/modules/_layout.scss */
+/* line 2083, sass/modules/_layout.scss */
 .detail_switch svg {
   width: 24px;
   cursor: pointer;
 }
-/* line 2078, sass/modules/_layout.scss */
+/* line 2087, sass/modules/_layout.scss */
 .detail_switch span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3611,7 +3619,7 @@ span#back_tip:after {
   text-align: center;
   visibility: hidden;
 }
-/* line 2094, sass/modules/_layout.scss */
+/* line 2103, sass/modules/_layout.scss */
 .detail_switch span:after {
   content: '';
   position: absolute;
@@ -3625,12 +3633,12 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 2112, sass/modules/_layout.scss */
+/* line 2121, sass/modules/_layout.scss */
 .active-project {
   visibility: visible;
 }
 
-/* line 2116, sass/modules/_layout.scss */
+/* line 2125, sass/modules/_layout.scss */
 .projects-loader {
   position: fixed;
   left: 0px;
@@ -3641,7 +3649,7 @@ span#back_tip:after {
   background: url("assets/img/ring.gif") 50% 50% no-repeat white;
 }
 
-/* line 2131, sass/modules/_layout.scss */
+/* line 2140, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;

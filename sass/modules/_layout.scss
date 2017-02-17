@@ -459,7 +459,7 @@ section#home .container-main{/*height:1136px;*/}
 .mobile{display:none;}
 
 .frontpage-text {
-	font-family: 'Roboto Condensed', sans-serif;
+	//font-family: 'Roboto Condensed', sans-serif;
 	color: #4d4845;
 	text-transform: uppercase;
 	position: absolute;
@@ -1922,12 +1922,21 @@ span#back_tip {
 
 #explore_text{
     color: #fff;
-    font-family: "Memphis LT W01 Light";
+    font-family: "Memphis LT W01 Medium";
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
     // margin-top: 200px;
     height: 100vh;
     margin-top: 40vh;
+    position: relative;
+    z-index: 1000;
+
+    span{
+		font-weight: bold; 
+		-webkit-writing-mode: horizontal-tb;
+    	writing-mode: horizontal-tb;
+    	font-size: 20px;
+    }
 }
 
 #fs_title1{
