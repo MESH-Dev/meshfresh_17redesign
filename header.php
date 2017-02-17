@@ -26,6 +26,9 @@
 	  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=ycsonruxkwu2a38exism0a';
 	  s.parentNode.insertBefore(bh, s);
 	  })(document, 'script');
+
+	 
+
 	</script>
 
 	<?php wp_head(); ?>

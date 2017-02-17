@@ -2113,6 +2113,16 @@ span#back_tip {
 	visibility: visible;
 }
 
+.projects-loader {
+	position: fixed;
+	left: 0px;
+	top: 150px;
+	width: calc(100% - 40px);
+	height: 100%;
+	z-index: 9999;
+	background: url('assets/img/page-loader.gif') 50% 50% no-repeat rgb(255,255,255);
+}
+
 
 
 

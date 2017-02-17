@@ -1,3 +1,7 @@
+jQuery(window).load(function() {
+			jQuery(".projects-loader").fadeOut("slow");
+		})
+
 jQuery(document).ready(function($){
 
 	//Work Filter
@@ -230,7 +234,7 @@ $(document).on('click', '#prev_proj', function (e) {
 
 
 $(document).on('click', 'p#explore_text', function () {
-	console.log('click');
+ 
 
 	first_proj = $('#macy .work-block:first-child');
 	var project_id = first_proj.attr('data-id');
@@ -279,7 +283,7 @@ $(document).on('click', 'p#explore_text', function () {
 		var project_color = text_elem.attr('data-color');
 
 		function updateContent(e) {
-			console.log("etype = " + e.type)
+			 
 			if (e.type == "enter") {
 				$('.detail_copy').removeClass("active-project");
 				text_elem.addClass("active-project");
@@ -307,7 +311,6 @@ $(document).on('click', 'p#explore_text', function () {
 			duration: 0,
 			offset: 100
 		})
-		.addIndicators({name: "1 (duration: 0)"})
 		.on("enter leave", updateContent)
 		.addTo(controller);
 	});
@@ -373,7 +376,7 @@ $(document).on('click', '.work-block', function () {
 		var project_color = text_elem.attr('data-color');
 
 		function updateContent(e) {
-			console.log("etype = " + e.type)
+		 
 			if (e.type == "enter") {
 				$('.detail_copy').removeClass("active-project");
 				text_elem.addClass("active-project");
@@ -401,7 +404,6 @@ $(document).on('click', '.work-block', function () {
 			duration: 0,
 			offset: 100
 		})
-		.addIndicators({name: "1 (duration: 0)"})
 		.on("enter leave", updateContent)
 		.addTo(controller);
  
