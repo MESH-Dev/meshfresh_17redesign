@@ -21,7 +21,7 @@
 		<img src="<?php //echo get_template_directory_uri(); ?>/assets/img/emoticon7.png">
 	</div> -->
 	<div class="emoticon eight">
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/emoticon8.png">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/emoticon2.png">
 	</div>
 	<div class="emoticon nine">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/emoticon9.png">

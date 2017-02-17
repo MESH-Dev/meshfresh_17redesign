@@ -647,15 +647,15 @@ section#home .container-main{/*height:1136px;*/}
  }
 
  .badge {
-    width: 180px;
-	height: 180px;
+    width: 100px;
+	height: 100px;
 	//background-color: #21e9aa;
 	padding: 10px;
     //position: relative;
     text-align: center;
     //display:none;
     background-image:url('assets/img/badge-bg.png');
-    background-size:cover;
+    background-size:contain;
     background-repeat:no-repeat;
     background-position:center center;
     display:table;
@@ -676,7 +676,7 @@ section#home .container-main{/*height:1136px;*/}
     }
 
     h3{
-    	font-size:1.8em;
+    	font-size:1.4em;
     	font-family:$gothic;
     	color:$white;
     	margin:0;
@@ -715,8 +715,8 @@ section#home .container-main{/*height:1136px;*/}
 	position: absolute;
 	//display:none;
 	z-index: 1000;
-	top:120px;
-	left: 75%;
+	top:100px;
+	left: 80%;
 }
 
 .badge-right{
@@ -784,15 +784,17 @@ section#home .container-main{/*height:1136px;*/}
 //General design
 a.cta{
     text-align:center;
-    border-bottom:1px solid $blue;
+    color:black;
     font-size:1.6em;
     text-decoration:none;
     text-transform:uppercase;
-    color:$blue;
+    //color:$blue;
     &:hover,
     &:active,
     &:focus{
-      border-bottom:1px solid transparent;
+      //border-bottom:1px solid transparent;
+      color:$blue;
+      border-bottom:2px solid $blue;
     }
   }
 
@@ -824,15 +826,16 @@ a.cta{
 		font-size:1.8em;
 		font-family:$gothic;
 		text-transform:uppercase;
-		border-bottom:transparent;
-		color:$blue;
-		text-decoration:underline;
+		// border-bottom:transparent;
+		// color:$black;
+		//text-decoration:underline;
 
-		&:hover,
-		&:active,
-		&:focus{
-			text-decoration:none;
-		}
+		// &:hover,
+		// &:active,
+		// &:focus{
+		// 	text-decoration:underline;
+		// 	color:$blue;
+		// }
 	}
 
 }
@@ -1489,7 +1492,7 @@ footer.site-footer{
 		color:$white;
 		//padding:0 1em;
 		.content{
-			background:$yellow;
+			//background:$yellow;
 			padding:1em;
 
 			.sidebar-title{
@@ -1591,6 +1594,11 @@ footer.site-footer{
 		border-bottom:2px solid $blue;
 		width:75%;
 	}
+
+	.blog-entry{
+		position:relative;
+		margin-bottom:3em;
+	}
 }
 
 .people-entry{
@@ -1607,39 +1615,50 @@ footer.site-footer{
 	z-index:200;
 
 	&.one{
-
+		width:50px;
 		top:5%;
 		left:10%;
+		// @media ($bp-smaller-than-mobile){
+		// 	width:30px;
+		// }
 	}
 	&.two{
+		width:75px;
 		top:30%;
 		left:0;
 	}
 	&.three{
+		width:50px;
 		top:60%;
 		left:0;
 	}
 	&.four{
+		width:50px;
 		top:80%;
 		left:15%;
 	}
 	&.five{
+		width:50px;
 		top:95%;
 		left:10%;
 	}
 	&.six{
+		width:50px;
 		top:85%;
 		right:15%;
 	}
 	&.seven{
+		width:50px;
 		top:34%;
 		right:15%;
 	}
 	&.eight{
+		width:75px;
 		top:55%;
 		right:0;
 	}
 	&.nine{
+		width:50px;
 		top:10%;
 		right:10%;
 	}
