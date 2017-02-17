@@ -3634,11 +3634,11 @@ span#back_tip:after {
 .projects-loader {
   position: fixed;
   left: 0px;
-  top: 150px;
+  top: 140px;
   width: calc(100% - 40px);
   height: 100%;
   z-index: 9999;
-  background: url("assets/img/page-loader.gif") 50% 50% no-repeat white;
+  background: url("assets/img/ring.gif") 50% 50% no-repeat white;
 }
 
 /* line 2131, sass/modules/_layout.scss */

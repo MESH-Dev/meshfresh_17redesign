@@ -48,6 +48,7 @@ get_header();
 		 			//var_dump($bg_color);
 
 		 			$award = get_field('award_winning', $post->ID);
+		 			$permalink = get_permalink($post->ID);
 
 
 
@@ -134,7 +135,7 @@ get_header();
 	 						<div class="social-share">
 	 							<ul>
 	 								<li class="fb-share"><span class="sr-only">Share this project on facebook</span>
-	 									<a href="https://www.facebook.com/sharer/sharer.php?u=mesh.com">
+	 									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $permalink; ?> target="_blank"">
 	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/facebook-share.png">
  										</a>
  									</li>
@@ -142,12 +143,12 @@ get_header();
 	 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram-share.png">
  									</li>-->
  									<li class="pin-share"><span class="sr-only">Share this project on Pintrest</span>
-	 									<a href="https://pinterest.com/pin/create/button/?url=http://<?php echo bloginfo('url');?>/<?php echo $tile_image_url; ?>&amp;media=<?php echo $tile_image_url; //image name?>&amp;description=<?php echo the_title(); ?>">
+	 									<a href="https://pinterest.com/pin/create/button/?url=<?php echo $permalink; ?>&amp;media=<?php echo $tile_image_url; //image name?>&amp;description=<?php echo the_title(); ?>" target="_blank">
 	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/pintrest-share.png">
  										</a>
  									</li>
  									<li class="tw-share"><span class="sr-only">Share this project on Twitter</span>
-	 									<a href="https://twitter.com/home?status=<?php echo the_title(); ?><?php echo bloginfo('url');?>">
+	 									<a href="https://twitter.com/home?status=<?php echo the_title(); ?> <?php echo $permalink; ?>" target="_blank">
 	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter-share.png">
  										</a>
  									</li>
