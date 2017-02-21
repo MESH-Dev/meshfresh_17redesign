@@ -68,9 +68,10 @@ jQuery(document).ready(function($){
 
 var sh_ctr = 0;
 
-$('.say-hello').click(function(){
+$('.say-hello').click(function(e){
 sh_ctr ++
-
+e.stopPropagation();
+e.preventDefault();
 	if(sh_ctr == 1){
 		$('#sayHello').slideDown(200);
 	}else{
@@ -78,6 +79,10 @@ sh_ctr ++
 		sh_ctr = 0;
 	}
 	
+});
+
+$(document).click(function(){
+	$('#sayHello').slideUp(200);
 });
 
 //Sidr funcitonality
@@ -257,6 +262,10 @@ $(document).on('click', 'p#explore_text', function () {
 
 	$('#infobar').addClass("open");
 
+	$('header').addClass('fixed');
+
+	$('#sayHello').slideUp(200);
+
 	//loop through project images, put clicked on div at top, move other to bottom
 	$('.project-wrap').each(function() {
 			var div_id = $(this).attr('data-id'); 
@@ -349,6 +358,10 @@ $(document).on('click', '.work-block', function () {
 	$('.detail-side-title p').html(title);
 
 	$('#infobar').addClass("open");
+
+	$('header').removeClass('absolute').addClass('fixed detail-open');
+
+	$('#sayHello').slideUp(200);
 
 	//loop through project images, put clicked on div at top, move other to bottom
 	$('.project-wrap').each(function() {
@@ -467,6 +480,7 @@ $('#fullscreen').click(function(e) {
 $('#detail_exit').click(function(e) {
 	e.preventDefault();
 	infoClose(e);
+	$('header').removeClass('fixed detail-open').addClass('absolute');
 	// $('#infobar').removeClass("open");
 });
 

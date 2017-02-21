@@ -18,12 +18,12 @@
 
 	<!-- Bugherd -->
 	<script type='text/javascript'>
-	// (function (d, t) {
-	//   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-	//   bh.type = 'text/javascript';
-	//   bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=ycsonruxkwu2a38exism0a';
-	//   s.parentNode.insertBefore(bh, s);
-	//   })(document, 'script');
+	(function (d, t) {
+	  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+	  bh.type = 'text/javascript';
+	  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=ycsonruxkwu2a38exism0a';
+	  s.parentNode.insertBefore(bh, s);
+	  })(document, 'script');
 
 	 
 
@@ -78,7 +78,7 @@
 				</div>
 				<div class="columns-4 loc">
 					<div class=""><!-- gutter -->
-						304.45.6374<br>
+						304.405.6374<br>
 						<strong><a href="mailto:hello@meshfresh.com">hello@meshfresh.com</a></strong><br>
 						<a href="<?php echo bloginfo('url'); ?>/say-hello">Get involved with MESH</a>
 					</div>
@@ -89,7 +89,7 @@
 	</div>
 </div> 
 <div id="siteWrap">
-<header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php')){ echo 'class="new"';} elseif (is_page_template('template-work-new.php')||is_page_template('template-people-new.php')){ echo 'class="fixed"';} else{}//remove this when page is live?> >
+<header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php') || is_page_template('template-work-new.php') || is_page_template('template-people-new.php')){ echo 'class="absolute"';} //elseif (is_page_template('template-work-new.php')||is_page_template('template-people-new.php')){ echo 'class=""';} else{}//remove this when page is live?> >
 	<div class="container">
 		<div class="gateway-nav">
 					<div class="say-hello <?php if(is_page(2622) || is_page('say-hello2') || is_page('say-hello')){ echo "active"; } ?>">

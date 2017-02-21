@@ -11,7 +11,7 @@ get_header(); ?>
 		<div class="columns-10 blogroll-grid" id="macy"><!-- id=contentSecondary  -->
 			<!-- <div class=""> --><!-- gutter -->
 				<!-- <div id=""> --><!-- posts-masn -->
-					<?php $posts = blogrollPosts('all','','');
+					<?php $posts = blogrollPosts('all','','50');
 						foreach($posts as $post){
 						if($post->post_source == 'wordpress'){
 							$class="wordpress";

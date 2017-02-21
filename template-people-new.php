@@ -73,7 +73,7 @@ get_header();
 <!-- <section class="josh"> -->
 	<div id="infobar" >
 
-		<p id="explore_text">Explore our Team</p>
+		<p id="explore_text"><span>&#10142;</span> Explore our Team</p>
 		
 		<i id="detail_exit" class="material-icons" >keyboard_backspace</i>
 		<span id="back_tip" class="tooltip">View All People</span>

@@ -65,12 +65,23 @@ header{
 }
 
 /*This declaration needs to be added to the main header when this is made live*/
-header.new{
+header.absolute{
 	position:absolute;
+	z-index:999999;
 }
 
 header.fixed{
 	position:fixed;
+}
+
+header.detail-open{
+	@media ($bp-smaller-than-mobile){
+		// width:initial;
+		// float:right;
+		#logo{
+			display:none;
+		}
+	}
 }
 
 .fixed{
@@ -1794,11 +1805,16 @@ footer.site-footer{
     background-color: $blue;
     height: 100vh;
     width: 33%;
+    //Change this if needed to make things fit
     min-width: 350px;
     //box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.3);
     left: 100%;
     top:0;
     margin-left: -40px;
+
+     @media($bp-smaller-than-mobile){
+     	z-index:200000;
+     }
 
 	&.open{
 		@media($bp-smaller-than-tablet)
@@ -1867,16 +1883,15 @@ footer.site-footer{
     visibility: hidden;
     top: 125px;
     //left: 96%;
-    width: calc(100% - 40px);
+    //width: calc(100% - 40px);
     height: 100%;
     padding: 90px 20px 0 90px;
     max-width: 800px;
     margin: 0 auto;
 
-    // @media($bp-smaller-than-tablet){
-    // 	position:relative;
-    // 	height:auto;
-    // }
+     @media($bp-smaller-than-mobile){
+     	padding: 0px 20px 0 60px;
+     }
 
     h3{
     	font-family: 'Memphis LT W01 Medium', sans-serif;
@@ -1884,6 +1899,11 @@ footer.site-footer{
 	    color: #fff;
 	    line-height: 42px;
 	    margin-bottom: 10px;
+
+	     @media($bp-smaller-than-mobile){
+     		line-height:1.75;
+     		font-size:18px;
+     	}
     }
 
     p{
@@ -1981,6 +2001,11 @@ span#back_tip {
     top: 160px;
     left: 80px;
     cursor: pointer;
+
+     @media($bp-smaller-than-mobile){
+     	top: 60px;
+    	left: 60px;
+     }
  //    transition: all 0.2s ease-in-out;
 	// &:hover{
 	// 	left: 56px;
