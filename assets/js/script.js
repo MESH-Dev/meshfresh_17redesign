@@ -1,6 +1,28 @@
-jQuery(window).load(function() {
-			jQuery(".projects-loader").fadeOut("slow");
-		})
+jQuery(window).load(function($) {
+	jQuery(".projects-loader").fadeOut("slow");
+
+	function imgLoaded(img){
+	    var $img = jQuery(img);
+	 
+	    $img.parent().addClass('loaded');
+	};
+
+	function lazyLoad(){
+	    var $images = jQuery('.lazy-load');
+	 
+	    $images.each(function(){
+	        var $img = jQuery(this),
+	            src = $img.attr('data-src');
+	            console.log(src);
+	 
+	        $img
+	            .on('load',imgLoaded($img[0]))
+	            .attr('src',src);
+	    });
+	};
+
+	lazyLoad();
+});
 
 jQuery(document).ready(function($){
 
@@ -664,4 +686,7 @@ function getQueryVariable(variable)
 
 
 }); //end jquery doc ready
+
+ 
+
 

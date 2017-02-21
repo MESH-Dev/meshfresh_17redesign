@@ -5,7 +5,7 @@ get_header();
  
 
 ?>
-<div class="projects-loader"></div>
+<!-- <div class="projects-loader"></div> -->
 
 
 <section id="grid" class="has-emoticon"><!-- page-content -->
@@ -366,7 +366,7 @@ get_header();
 						 
 						//$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
 
-						$image_str .= "<img id='image-$image[id]' src='$image_url' >";
+						$image_str .= "<img class='lazy-load' id='image-$image[id]'  src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$image_url' >";
 
 					endwhile; 
 					$image_str .="</div>";
