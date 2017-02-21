@@ -40,21 +40,7 @@ jQuery(document).ready(function($){
 	});
  
 
-	$(document).hammer({swipe_velocity:0.3}).on('dragleft dragright swipeleft swiperight',function(ev){
-		ev.gesture.preventDefault();
-		if(ev.type == 'dragleft' || ev.type == 'dragright' || ev.type == 'swiperight') {return;}
-
-		$('#siteWrap').removeClass('active');
-		$('#mobileMenu').removeClass('active');
-		$('body').removeClass('active');
-		$('#siteWrap').width('100%');
-		document.ontouchmove = function(event){
-			return true;
-		}
-	});
-	$('body.noscroll').bind("touchmove", {}, function(event){
-	  event.preventDefault();
-	});
+ 
 
 
 	$('.home-title').hover(function(){
