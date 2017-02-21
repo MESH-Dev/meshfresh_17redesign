@@ -1,5 +1,5 @@
 jQuery(window).load(function($) {
-	jQuery(".projects-loader").fadeOut("slow");
+	//jQuery(".projects-loader").fadeOut("slow");
 
 	function imgLoaded(img){
 	    var $img = jQuery(img);
@@ -13,7 +13,7 @@ jQuery(window).load(function($) {
 	    $images.each(function(){
 	        var $img = jQuery(this),
 	            src = $img.attr('data-src');
-	            console.log(src);
+	           // console.log(src);
 	 
 	        $img
 	            .on('load',imgLoaded($img[0]))
