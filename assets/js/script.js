@@ -262,7 +262,7 @@ $(document).on('click', 'p#explore_text', function () {
 
 	$('#infobar').addClass("open");
 
-	$('header').addClass('fixed');
+	$('header').addClass('hide');
 
 	$('#sayHello').slideUp(200);
 
@@ -359,9 +359,10 @@ $(document).on('click', '.work-block', function () {
 
 	$('#infobar').addClass("open");
 
-	$('header').removeClass('absolute').addClass('fixed detail-open');
+	$('header').removeClass('absolute').addClass('hide');
 
 	$('#sayHello').slideUp(200);
+
 
 	//loop through project images, put clicked on div at top, move other to bottom
 	$('.project-wrap').each(function() {
@@ -470,17 +471,36 @@ $(window).resize(function() {
 $('#fullscreen_exit').click(function(e) {
 	e.preventDefault();
 	fullScreenExitTrigger();
+	$('#detail_close').text('clear');
 });
 
 $('#fullscreen').click(function(e) {
 	e.preventDefault();
 	fullScreenTrigger();
+
+	$('#detail_close').text('add');
+});
+
+var clk_cnt = 0
+$('#detail_close').click(function(e) {
+	clk_cnt ++;
+	e.preventDefault();
+	if (clk_cnt  == 1){
+		fullScreenTrigger();
+		$(this).text('add');
+	}else{
+		fullScreenExitTrigger();
+		$(this).text('clear');
+		clk_cnt=0;
+	}
+	
+	
 });
 
 $('#detail_exit').click(function(e) {
 	e.preventDefault();
 	infoClose(e);
-	$('header').removeClass('fixed detail-open').addClass('absolute');
+	$('header').removeClass('hide').addClass('absolute');
 	// $('#infobar').removeClass("open");
 });
 
@@ -549,6 +569,7 @@ fullscreen_open.add("start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#fullscreen_exit", 0.4, {css:{autoAlpha:1}}, "start")
+    //.to("#detail_close", 0.4, {css:{autoAlpha:1}}, "start")
     .to(".detail-side-title p", 0.4, {css:{autoAlpha:1}}, "start")
     .add("end");
 
@@ -558,6 +579,7 @@ fullscreen_close.add("start")
     .to("#infobar", 0.4, {css:{right:"auto", left:"0",marginRight:"0px"}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:1}}, "start")
     .to("#fullscreen_exit", 0.4, {css:{autoAlpha:0}}, "start")
+    //.to("#detail_close", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:1}}, "start")
     .to(".detail-side-title p", 0.4, {css:{autoAlpha:0}}, "start")
     .add("end");

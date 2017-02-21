@@ -201,6 +201,8 @@ get_header();
 		
 		<i id="detail_exit" class="material-icons" >keyboard_backspace</i>
 		<span id="back_tip" class="tooltip">View All Projects</span>
+
+		<i id="detail_close" class="material-icons" >clear</i>
  
 		<div id="sidebar-content" class=" ">
 

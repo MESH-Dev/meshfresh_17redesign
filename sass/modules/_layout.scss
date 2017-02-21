@@ -74,6 +74,10 @@ header.fixed{
 	position:fixed;
 }
 
+header.hide{
+	display:none;
+}
+
 header.detail-open{
 	@media ($bp-smaller-than-mobile){
 		// width:initial;
@@ -1806,7 +1810,7 @@ footer.site-footer{
     height: 100vh;
     width: 33%;
     //Change this if needed to make things fit
-    min-width: 350px;
+    min-width: 320px;
     //box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.3);
     left: 100%;
     top:0;
@@ -1926,6 +1930,12 @@ footer.site-footer{
 	}
 }
 
+.tooltip{
+	@media ($bp-smaller-than-mobile){
+			display:none;
+		}
+}
+
 span#back_tip {
 		font-family: 'Gothic';
 		font-size: 14px;
@@ -1940,6 +1950,8 @@ span#back_tip {
 		line-height: 32px;
 		text-align: center;
 		visibility: hidden;
+
+
  
  
 	&:after {
@@ -2011,6 +2023,24 @@ span#back_tip {
 	// &:hover{
 	// 	left: 56px;
 	// }     
+}
+
+#detail_close{
+	display:none;
+	 @media($bp-smaller-than-mobile){
+	 	    position: absolute;
+	 	    display:block;
+		    z-index: 3;
+		    font-size: 42px;
+		    font-weight: 100;
+		    color: #fff;
+		    /* visibility: hidden; */
+		    position: absolute;
+		    top: 20px;
+		    /* right: 0; */
+		    right:-2px;
+		    cursor: pointer;
+	 }
 }
  
 #detail_scrollarea{
