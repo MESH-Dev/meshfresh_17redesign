@@ -262,7 +262,7 @@ $(document).on('click', 'p#explore_text', function () {
 
 	$('#infobar').addClass("open");
 
-	$('header').addClass('hide');
+	$('header').addClass('detail-open');
 
 	$('#sayHello').slideUp(200);
 
@@ -359,7 +359,7 @@ $(document).on('click', '.work-block', function () {
 
 	$('#infobar').addClass("open");
 
-	$('header').removeClass('absolute').addClass('hide');
+	$('header').removeClass('absolute').addClass('detail-open');
 
 	$('#sayHello').slideUp(200);
 
@@ -471,28 +471,22 @@ $(window).resize(function() {
 $('#fullscreen_exit').click(function(e) {
 	e.preventDefault();
 	fullScreenExitTrigger();
-	$('#detail_close').text('clear');
+	//$('#detail_close').text('clear');
 });
 
 $('#fullscreen').click(function(e) {
 	e.preventDefault();
 	fullScreenTrigger();
 
-	$('#detail_close').text('add');
+	//$('#detail_close').text('add');
 });
 
-var clk_cnt = 0
+//var clk_cnt = 0;
 $('#detail_close').click(function(e) {
-	clk_cnt ++;
-	e.preventDefault();
-	if (clk_cnt  == 1){
+	
 		fullScreenTrigger();
-		$(this).text('add');
-	}else{
-		fullScreenExitTrigger();
-		$(this).text('clear');
-		clk_cnt=0;
-	}
+		//$(this).text('add');
+	
 	
 	
 });
@@ -500,7 +494,7 @@ $('#detail_close').click(function(e) {
 $('#detail_exit').click(function(e) {
 	e.preventDefault();
 	infoClose(e);
-	$('header').removeClass('hide').addClass('absolute');
+	$('header').removeClass('detail-open').addClass('absolute');
 	// $('#infobar').removeClass("open");
 });
 
@@ -568,6 +562,7 @@ fullscreen_open.add("start")
     .to("#infobar", 0.4, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "start")
+    .to("#detail_close", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#fullscreen_exit", 0.4, {css:{autoAlpha:1}}, "start")
     //.to("#detail_close", 0.4, {css:{autoAlpha:1}}, "start")
     .to(".detail-side-title p", 0.4, {css:{autoAlpha:1}}, "start")
@@ -578,6 +573,7 @@ fullscreen_close.add("start")
     .to("#detail_scrollarea", 0.4, {css:{width:"67%"}}, "start")
     .to("#infobar", 0.4, {css:{right:"auto", left:"0",marginRight:"0px"}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:1}}, "start")
+    .to(".detail_close", 0.4, {css:{autoAlpha:1}}, "start")
     .to("#fullscreen_exit", 0.4, {css:{autoAlpha:0}}, "start")
     //.to("#detail_close", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:1}}, "start")

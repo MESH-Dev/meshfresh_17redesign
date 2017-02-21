@@ -79,13 +79,19 @@ header.hide{
 }
 
 header.detail-open{
-	@media ($bp-smaller-than-mobile){
+	
 		// width:initial;
 		// float:right;
-		#logo{
+		position:fixed;
+		@media ($bp-smaller-than-mobile){
 			display:none;
 		}
-	}
+
+		#logo{
+			@media ($bp-smaller-than-mobile){
+			display:none;
+			}
+		}
 }
 
 .fixed{
