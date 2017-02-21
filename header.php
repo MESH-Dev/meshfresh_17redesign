@@ -18,12 +18,12 @@
 
 	<!-- Bugherd -->
 	<script type='text/javascript'>
-	(function (d, t) {
-	  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-	  bh.type = 'text/javascript';
-	  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=ycsonruxkwu2a38exism0a';
-	  s.parentNode.insertBefore(bh, s);
-	  })(document, 'script');
+	// (function (d, t) {
+	//   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+	//   bh.type = 'text/javascript';
+	//   bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=ycsonruxkwu2a38exism0a';
+	//   s.parentNode.insertBefore(bh, s);
+	//   })(document, 'script');
 
 	 
 
