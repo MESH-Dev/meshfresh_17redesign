@@ -48,7 +48,13 @@ get_header();
 		 			//var_dump($bg_color);
 
 		 			$award = get_field('award_winning', $post->ID);
-		 			$permalink = get_permalink($post->ID);
+		 			//$permalink = get_permalink($post->ID);
+		 			$slug = get_post_field( 'post_name', $post->ID);
+
+
+
+
+		 			$permalink = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" . "?p=" . $slug;
 
 
 
@@ -102,7 +108,7 @@ get_header();
 				$color = $setColor;
 				$rgb = hex2rgba($color);
 				$rgba = hex2rgba($color, 0.9);
-				$slug = get_post_field( 'post_name', $post->ID);
+				
 			
 				?>
 		 <div class="work-block columns-4" data-id="<?php echo $slug;?>" data-post-id="<?php echo $post->ID;?>" data-color="<?php echo $color;?>"><!-- columns-4 -->
@@ -365,6 +371,12 @@ get_header();
 						$image=get_sub_field('image', $post_id);
 			 
 						$image_url=$image['sizes']['background-fullscreen-sq'];
+
+						$image_type =  substr($image_url, -3);
+
+						if($image_type == "gif"){
+							$image_url = $image['url'];
+						}
 						 
 						//$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
 

@@ -3406,8 +3406,15 @@ footer.site-footer p {
 .detail-side-title:hover {
   cursor: pointer;
 }
+/* line 1887, sass/modules/_layout.scss */
+.detail-side-title span {
+  font-weight: bold;
+  -webkit-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
+  font-size: 20px;
+}
 
-/* line 1891, sass/modules/_layout.scss */
+/* line 1898, sass/modules/_layout.scss */
 .detail_copy {
   position: absolute;
   visibility: hidden;
@@ -3418,13 +3425,13 @@ footer.site-footer p {
   margin: 0 auto;
 }
 @media (max-width: 480px) {
-  /* line 1891, sass/modules/_layout.scss */
+  /* line 1898, sass/modules/_layout.scss */
   .detail_copy {
     padding: 0px 20px 0 60px;
     top: 80px;
   }
 }
-/* line 1907, sass/modules/_layout.scss */
+/* line 1914, sass/modules/_layout.scss */
 .detail_copy h3 {
   font-family: 'Memphis LT W01 Medium', sans-serif;
   font-size: 24px;
@@ -3433,13 +3440,13 @@ footer.site-footer p {
   margin-bottom: 10px;
 }
 @media (max-width: 480px) {
-  /* line 1907, sass/modules/_layout.scss */
+  /* line 1914, sass/modules/_layout.scss */
   .detail_copy h3 {
     line-height: 1.75;
     font-size: 18px;
   }
 }
-/* line 1920, sass/modules/_layout.scss */
+/* line 1927, sass/modules/_layout.scss */
 .detail_copy p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3447,24 +3454,24 @@ footer.site-footer p {
   font-size: 14px;
   margin-bottom: 12px;
 }
-/* line 1928, sass/modules/_layout.scss */
+/* line 1935, sass/modules/_layout.scss */
 .detail_copy a {
   color: white;
   text-decoration: underline;
 }
-/* line 1931, sass/modules/_layout.scss */
+/* line 1938, sass/modules/_layout.scss */
 .detail_copy a:hover {
   text-decoration: none;
 }
 
 @media (max-width: 480px) {
-  /* line 1939, sass/modules/_layout.scss */
+  /* line 1946, sass/modules/_layout.scss */
   .tooltip {
     display: none;
   }
 }
 
-/* line 1945, sass/modules/_layout.scss */
+/* line 1952, sass/modules/_layout.scss */
 span#back_tip {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3480,7 +3487,7 @@ span#back_tip {
   text-align: center;
   visibility: hidden;
 }
-/* line 1963, sass/modules/_layout.scss */
+/* line 1970, sass/modules/_layout.scss */
 span#back_tip:after {
   content: '';
   position: absolute;
@@ -3494,13 +3501,13 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 1976, sass/modules/_layout.scss */
+/* line 1983, sass/modules/_layout.scss */
 .underline {
   padding-bottom: 2px;
   border-bottom: 2px solid #fff;
 }
 
-/* line 1981, sass/modules/_layout.scss */
+/* line 1988, sass/modules/_layout.scss */
 #explore_text {
   color: #fff;
   font-family: "Memphis LT W01 Medium";
@@ -3511,7 +3518,7 @@ span#back_tip:after {
   position: relative;
   z-index: 1000;
 }
-/* line 1992, sass/modules/_layout.scss */
+/* line 1999, sass/modules/_layout.scss */
 #explore_text span {
   font-weight: bold;
   -webkit-writing-mode: horizontal-tb;
@@ -3519,7 +3526,7 @@ span#back_tip:after {
   font-size: 20px;
 }
 
-/* line 2000, sass/modules/_layout.scss */
+/* line 2007, sass/modules/_layout.scss */
 #fs_title1 {
   color: #fff;
   font-family: "Memphis LT W01 Light";
@@ -3533,7 +3540,7 @@ span#back_tip:after {
   visibility: hidden;
 }
 
-/* line 2013, sass/modules/_layout.scss */
+/* line 2020, sass/modules/_layout.scss */
 #detail_exit {
   z-index: 3;
   font-size: 42px;
@@ -3546,19 +3553,19 @@ span#back_tip:after {
   cursor: pointer;
 }
 @media (max-width: 480px) {
-  /* line 2013, sass/modules/_layout.scss */
+  /* line 2020, sass/modules/_layout.scss */
   #detail_exit {
     top: 20px;
     left: 60px;
   }
 }
 
-/* line 2034, sass/modules/_layout.scss */
+/* line 2041, sass/modules/_layout.scss */
 #detail_close {
   display: none;
 }
 @media (max-width: 480px) {
-  /* line 2034, sass/modules/_layout.scss */
+  /* line 2041, sass/modules/_layout.scss */
   #detail_close {
     position: absolute;
     display: block;
@@ -3575,7 +3582,7 @@ span#back_tip:after {
   }
 }
 
-/* line 2052, sass/modules/_layout.scss */
+/* line 2059, sass/modules/_layout.scss */
 #detail_scrollarea {
   visibility: hidden;
   position: fixed;
@@ -3586,7 +3593,7 @@ span#back_tip:after {
   right: 0;
   z-index: 2;
 }
-/* line 2062, sass/modules/_layout.scss */
+/* line 2069, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen {
   z-index: 15;
   color: #000;
@@ -3597,7 +3604,7 @@ span#back_tip:after {
   right: 50px;
   cursor: pointer;
 }
-/* line 2076, sass/modules/_layout.scss */
+/* line 2083, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen_exit {
   z-index: 5;
   color: #000;
@@ -3609,14 +3616,14 @@ span#back_tip:after {
   cursor: pointer;
   visibility: hidden;
 }
-/* line 2092, sass/modules/_layout.scss */
+/* line 2099, sass/modules/_layout.scss */
 #detail_scrollarea img {
   display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 2098, sass/modules/_layout.scss */
+/* line 2105, sass/modules/_layout.scss */
 #detail_scrollarea span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3633,7 +3640,7 @@ span#back_tip:after {
   visibility: hidden;
   text-transform: uppercase;
 }
-/* line 2116, sass/modules/_layout.scss */
+/* line 2123, sass/modules/_layout.scss */
 #detail_scrollarea span:after {
   content: '';
   position: absolute;
@@ -3647,13 +3654,13 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 @media (max-width: 750px) {
-  /* line 2052, sass/modules/_layout.scss */
+  /* line 2059, sass/modules/_layout.scss */
   #detail_scrollarea {
     width: 98vw !important;
   }
 }
 
-/* line 2135, sass/modules/_layout.scss */
+/* line 2142, sass/modules/_layout.scss */
 .detail_nav {
   position: absolute;
   width: 50px;
@@ -3661,14 +3668,14 @@ span#back_tip:after {
   left: 88%;
   visibility: hidden;
 }
-/* line 2141, sass/modules/_layout.scss */
+/* line 2148, sass/modules/_layout.scss */
 .detail_nav i {
   color: #fff;
   font-size: 42px;
   text-align: left;
   letter-spacing: 10px;
 }
-/* line 2147, sass/modules/_layout.scss */
+/* line 2154, sass/modules/_layout.scss */
 .detail_nav p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3678,17 +3685,17 @@ span#back_tip:after {
   padding: 0;
 }
 
-/* line 2161, sass/modules/_layout.scss */
+/* line 2168, sass/modules/_layout.scss */
 .detail_switch {
   padding: 14px 0;
   position: relative;
 }
-/* line 2164, sass/modules/_layout.scss */
+/* line 2171, sass/modules/_layout.scss */
 .detail_switch svg {
   width: 24px;
   cursor: pointer;
 }
-/* line 2168, sass/modules/_layout.scss */
+/* line 2175, sass/modules/_layout.scss */
 .detail_switch span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3704,7 +3711,7 @@ span#back_tip:after {
   text-align: center;
   visibility: hidden;
 }
-/* line 2184, sass/modules/_layout.scss */
+/* line 2191, sass/modules/_layout.scss */
 .detail_switch span:after {
   content: '';
   position: absolute;
@@ -3718,12 +3725,12 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 2202, sass/modules/_layout.scss */
+/* line 2209, sass/modules/_layout.scss */
 .active-project {
   visibility: visible;
 }
 
-/* line 2206, sass/modules/_layout.scss */
+/* line 2213, sass/modules/_layout.scss */
 .projects-loader {
   position: fixed;
   left: 0px;
@@ -3734,7 +3741,7 @@ span#back_tip:after {
   background: url("assets/img/ring.gif") 50% 50% no-repeat white;
 }
 
-/* line 2221, sass/modules/_layout.scss */
+/* line 2228, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;

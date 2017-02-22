@@ -1884,6 +1884,13 @@ footer.site-footer{
     	cursor: pointer;
     }
 
+	span{
+		font-weight: bold; 
+		-webkit-writing-mode: horizontal-tb;
+    	writing-mode: horizontal-tb;
+    	font-size: 20px;
+    }
+
 
 
 }
