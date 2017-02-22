@@ -3369,7 +3369,7 @@ footer.site-footer p {
 @media (min-width: 480px) and (max-width: 1060px) {
   /* line 1822, sass/modules/_layout.scss */
   #infobar {
-    width: 40%;
+    width: 50%;
   }
 }
 @media (max-width: 480px) {
