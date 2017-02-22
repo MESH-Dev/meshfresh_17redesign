@@ -142,7 +142,7 @@ Macy.onImageLoad(function () {
 	$('#macy .work-block').removeClass('columns-4');
 	$('#macy.blogroll-grid .blog-entry').addClass('macy-box');
 	$('#macy.people-grid .people-entry').addClass('macy-box');
-  // console.log('Every time an image loads I get fired');
+ 
   // Macy.recalculate();
 });
 
@@ -247,123 +247,19 @@ $(document).on('click', '#prev_proj', function (e) {
 var run_once = 0;
  
 
+function GoToProject(project_id, reorder){
 
-$(document).on('click', 'p#explore_text', function () {
- 
-
-	first_proj = $('#macy .work-block:first-child');
-	var project_id = first_proj.attr('data-id');
 	project_id  = project_id.trim();
-	var project_color = first_proj.attr('data-color');
-	var photos_id = '#'+project_id+'-panels';
-	var proj_id = first_proj.attr('data-post-id');
-
-	var title = first_proj.find('span').html();
-
-	if (window.history && window.history.pushState) {
-		history.pushState(null, null, '?p='+project_id );
-	}
  
-	$('.detail-side-title p').html('<span>&#10142;</span>' + title);
-
-	$('#infobar').addClass("open");
-
-	$('header').addClass('detail-open');
-
-	$('#sayHello').slideUp(200);
-
-	//loop through project images, put clicked on div at top, move other to bottom
-	$('.project-wrap').each(function() {
-			var div_id = $(this).attr('data-id');
-			if(div_id ==  proj_id){
-				//$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
-				return false;
-			}
-			else{
-				$(this).insertAfter($('.project-wrap').last());
-			}
-	});
-
 	var pid = '#'+project_id;
-
-
- 
-	$('#infobar').css('background-color',project_color);
-
-	infoOpen();
-
-
- 
-
-	$('.project-wrap').each(function () {
- 
-		var current = $(this);
-		var current_id = $(this).attr('id');
-		var elem = '#'+current_id;
-		var text_elem = elem.substring(0,elem.length - 7);
-		var refElement = $(elem);
-		text_elem = $(text_elem);
-		var project_color = text_elem.attr('data-color');
-
-		function updateContent(e) {
-
-			if (e.type == "enter") {
-				 
-				project_color = text_elem.attr('data-color');
-				$('.detail_copy').removeClass("active-project");
-				text_elem.addClass("active-project");
-				$('#infobar').css('background-color',project_color);
-				active_project = refElement;
-
-				var new_title = $(text_elem).find('span').html();
-				$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
-			}
-			else{
-				console.log("leave" +  elem + " / " + project_color);
-				$('.detail_copy').removeClass("active-project");
-				project_color = text_elem.prev('.detail_copy').attr('data-color');
-				text_elem.prev('.detail_copy').addClass("active-project");
-				$('#infobar').css('background-color',project_color );
-
-				console.log("leave" +  elem + " / " + project_color);
-				 
-
-				var new_title = $(text_elem).prev('.detail_copy').find('span').html();
-				$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
-				}
-		}
-
-		// build scenes
-		new ScrollMagic.Scene({
-			triggerElement: elem,
-			duration: 0,
-			offset: 100
-		})
-		.on("enter leave", updateContent)
-		.addTo(controller);
-	});
-
-	$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
-	$('.detail_copy').removeClass('active-project');
-	$(pid).addClass('active-project');
-
-
-
- 
-
-
-});
-
-
- 
-$(document).on('click', '.work-block', function () {
-	var project_id = $(this).attr('data-id');
-	project_id  = project_id.trim();
-	var project_color = $(this).attr('data-color');
 	var photos_id = '#'+project_id+'-panels';
-	var proj_id = $(this).attr('data-post-id');
 
-	var title = $(this).find('span').html();
+	var project_color = $(pid).attr('data-color');
+	
+	var proj_id = $(photos_id).attr('data-id');
+ 
+
+	var title = $(pid).find('span').html();
  
 	$('.detail-side-title p').html('<span>&#10142;</span>' + title);
 
@@ -373,101 +269,117 @@ $(document).on('click', '.work-block', function () {
 
 	$('#sayHello').slideUp(200);
 
+	//browser back button here?
 	if (window.history && window.history.pushState) {
-		history.pushState(null, null, '?p='+project_id );
+		//history.pushState(null, null, '?p='+project_id );
 	}
-
-
-
-	//loop through project images, put clicked on div at top, move other to bottom
-	$('.project-wrap').each(function() {
-			var div_id = $(this).attr('data-id');
-			if(div_id ==  proj_id){
-				$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
-				return false;
-			}
-			else{
-				$(this).insertAfter($('.project-wrap').last());
-			}
-	});
-
-	var pid = '#'+project_id;
-
-
  
-	$('#infobar').css('background-color',project_color);
 	$('.detail_copy').removeClass('active-project');
 	$(pid).addClass('active-project');
+	$('#infobar').css('background-color',project_color);
+
+
+	if(reorder){
+		//loop through project images, put clicked on div at top, move other to bottom
+		$('.project-wrap').each(function() {
+
+				var div_id = $(this).attr('data-id');
+				//console.log(div_id);
+				if(div_id ==  proj_id){
+					//$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
+					return false;
+				}
+				else{
+					$(this).insertAfter($('.project-wrap').last());
+				}
+		});
+	}
+	else{
+		controller.scrollTo(photos_id);
+	}
  
 
 	infoOpen();
- 
- 
 
-	$('.project-wrap').each(function () {
+
+
+
+	
  
-		var current = $(this);
-		var current_id = $(this).attr('id');
-		var elem = '#'+current_id;
-		var text_elem = elem.substring(0,elem.length - 7);
-		var refElement = $(elem);
-		text_elem = $(text_elem);
-		var project_color = text_elem.attr('data-color');
+	if(run_once === 0){
+ 
+		$('.project-wrap').each(function () {
+	 
+			var current = $(this);
+			var current_id = $(this).attr('id');
+			var elem = '#'+current_id;
+			var text_elem = elem.substring(0,elem.length - 7);
+			var refElement = $(elem);
+			text_elem = $(text_elem);
+			var project_color = text_elem.attr('data-color');
 
-		function updateContent(e) {
-		 
-			if (e.type == "enter") {
-				 
-				project_color = text_elem.attr('data-color');
-				$('.detail_copy').removeClass("active-project");
-				text_elem.addClass("active-project");
-				$('#infobar').css('background-color',project_color);
-				active_project = refElement;
+			function updateContent(e) {
+			 
+				if (e.type == "enter") {
+					 
+					project_color = text_elem.attr('data-color');
+					$('.detail_copy').removeClass("active-project");
+					text_elem.addClass("active-project");
+					$('#infobar').css('background-color',project_color);
+					active_project = refElement;
 
-				var new_title = $(text_elem).find('span').html();
-				$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
+					var new_title = $(text_elem).find('span').html();
+					$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
+				}
+				else{
+					//console.log("leave" +  elem + " / " + project_color);
+					$('.detail_copy').removeClass("active-project");
+					project_color = text_elem.prev('.detail_copy').attr('data-color');
+					text_elem.prev('.detail_copy').addClass("active-project");
+					$('#infobar').css('background-color',project_color );
+
+					 
+					 
+
+					var new_title = $(text_elem).prev('.detail_copy').find('span').html();
+					$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
+				}
 			}
-			else{
-				console.log("leave" +  elem + " / " + project_color);
-				$('.detail_copy').removeClass("active-project");
-				project_color = text_elem.prev('.detail_copy').attr('data-color');
-				text_elem.prev('.detail_copy').addClass("active-project");
-				$('#infobar').css('background-color',project_color );
 
-				console.log("leave" +  elem + " / " + project_color);
-				 
-
-				var new_title = $(text_elem).prev('.detail_copy').find('span').html();
-				$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
-			}
-		}
-
-		// build scenes
-		var scene = new ScrollMagic.Scene({
-			triggerElement: elem,
-			duration: 0,
-			offset: 100
-		})
-		.on("enter leave", updateContent)
-		.addIndicators()
-		.addTo(controller);
+			// build scenes
+			var scene = new ScrollMagic.Scene({
+				triggerElement: elem,
+				duration: 0,
+				offset: 100
+			})
+			.on("enter leave", updateContent)
+			.addIndicators()
+			.addTo(controller);
+	 
+		});
+		run_once = 1;
+	}
  
-	});
+}
+
+
  
-	$('#detail_scrollarea').animate({ scrollTop: 0 }, "fast");
-	$('.detail_copy').removeClass('active-project');
-	$(pid).addClass('active-project');
-
-
-
-
-
-
+$(document).on('click', '.work-block', function () {
+	var project_id = $(this).attr('data-id');
+	GoToProject(project_id,false);
 });
+
+$(document).on('click', 'p#explore_text', function () {
+	first_proj = $('#macy .work-block:first-child');
+	var project_id = first_proj.attr('data-id');
+	GoToProject(project_id,false);
+});
+
+
 
 	$('.detail-side-title p').click(function(e) {
 		e.preventDefault();
- 		fullScreenExitTrigger();
+		fullScreenExitTrigger();
 	});
 
 if (windowsize < 751) {
@@ -707,13 +619,15 @@ function hideTooltipBack(){
 
 var go_to = getQueryVariable('p');
  
-if(go_to != ''){
-	var go_to_str = ".work-block[data-id='"+go_to+"']";
-	$(go_to_str).trigger('click');
+if(go_to !== ''){
+ 
+	//var project_id = "#" + go_to;
+	GoToProject(go_to, true);
+
 }
 
-
-
+ 
+ 
 
 
 function getQueryVariable(variable)
