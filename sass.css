@@ -1362,7 +1362,7 @@ header.detail-open {
     display: none;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 480px) {
   /* line 91, sass/modules/_layout.scss */
   header.detail-open #logo {
     display: none;
@@ -3366,10 +3366,10 @@ footer.site-footer p {
   top: 0;
   margin-left: -40px;
 }
-@media only screen and (min-width: 500px) and (max-width: 750px) {
+@media (min-width: 480px) and (max-width: 1060px) {
   /* line 1822, sass/modules/_layout.scss */
   #infobar {
-    width: 50vh;
+    width: 40%;
   }
 }
 @media (max-width: 480px) {

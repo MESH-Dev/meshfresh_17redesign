@@ -67,9 +67,11 @@ jQuery(document).ready(function($){
  
 
 var sh_ctr = 0;
-var de_top= $('#detail_exit').top;
-var dc_top= $('.detail_copy').top;
-var bt_top=$('#back_tip').top;
+//$('#detail_exit').data('orig-top', $('#detail_exit').css('top'));
+//console.log(de_top);
+var dc_top= $('.detail_copy').css('top');
+console.log(dc_top);
+var bt_top= $('#back_tip').top;
 
 $('.say-hello').click(function(e){
 sh_ctr ++
@@ -81,14 +83,14 @@ e.preventDefault();
 	}else{
 		$('#sayHello').slideUp(200);
 		$('#detail_exit').animate({
-			top:de_top
+			top:160
 		},200);
 		$('.detail_copy').animate({
-			top:dc_top
+			top:125
 		},200);
 		//This element should really relate more to the content
 		$('#back_tip').animate({
-			top:bt_top
+			top:168
 		},200);
 		sh_ctr = 0;
 	}
@@ -98,14 +100,14 @@ e.preventDefault();
 $(document).click(function(){
 	$('#sayHello').slideUp(200);
 	$('#detail_exit').animate({
-		top:de_top
-	},200);
-	$('.detail_copy').animate({
-		top:dc_top
-	},200);
-	//This element should really relate more to the content
-	$('#back_tip').animate({
-			top:bt_top
+			top:160
+		},200);
+		$('.detail_copy').animate({
+			top:125
+		},200);
+		//This element should really relate more to the content
+		$('#back_tip').animate({
+			top:168
 		},200);
 	//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
 });
@@ -551,14 +553,14 @@ $('#detail_exit').click(function(e) {
 	$('header').removeClass('detail-open').addClass('absolute');
 	$('#sayHello').slideUp(200);
 	$('#detail_exit').animate({
-		top:de_top
-	},200);
-	$('.detail_copy').animate({
-		top:dc_top
-	},200);
-	//This element should really relate more to the content
-	$('#back_tip').animate({
-			top:bt_top
+			top:160
+		},200);
+		$('.detail_copy').animate({
+			top:125
+		},200);
+		//This element should really relate more to the content
+		$('#back_tip').animate({
+			top:168
 		},200);
 
 	// $('#infobar').removeClass("open");

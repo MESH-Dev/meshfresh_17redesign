@@ -89,7 +89,7 @@ header.detail-open{
 		}
 
 		#logo{
-			@media ($bp-smaller-than-tablet){
+			@media ($bp-smaller-than-mobile){
 			display:none;
 			}
 		}
@@ -1834,8 +1834,8 @@ footer.site-footer{
     top:0;
     margin-left: -40px;
 
-    @media only screen and (min-width:500px) and (max-width:750px){
-    	width:50vh;
+    @media ($bp-larger-than-mobile) and ($bp-smaller-than-desktop){
+    	width:40%;
     }
 
      @media($bp-smaller-than-mobile){
