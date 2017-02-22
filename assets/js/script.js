@@ -67,6 +67,9 @@ jQuery(document).ready(function($){
  
 
 var sh_ctr = 0;
+var de_top= $('#detail_exit').top;
+var dc_top= $('.detail_copy').top;
+var bt_top=$('#back_tip').top;
 
 $('.say-hello').click(function(e){
 sh_ctr ++
@@ -74,8 +77,19 @@ e.stopPropagation();
 e.preventDefault();
 	if(sh_ctr == 1){
 		$('#sayHello').slideDown(200);
+		 $('#detail_exit, .detail_copy, #back_tip').animate({top:"+=100"},200);
 	}else{
 		$('#sayHello').slideUp(200);
+		$('#detail_exit').animate({
+			top:de_top
+		},200);
+		$('.detail_copy').animate({
+			top:dc_top
+		},200);
+		//This element should really relate more to the content
+		$('#back_tip').animate({
+			top:bt_top
+		},200);
 		sh_ctr = 0;
 	}
 	
@@ -83,6 +97,17 @@ e.preventDefault();
 
 $(document).click(function(){
 	$('#sayHello').slideUp(200);
+	$('#detail_exit').animate({
+		top:de_top
+	},200);
+	$('.detail_copy').animate({
+		top:dc_top
+	},200);
+	//This element should really relate more to the content
+	$('#back_tip').animate({
+			top:bt_top
+		},200);
+	//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
 });
 
 //Sidr funcitonality
@@ -272,6 +297,8 @@ $(document).on('click', 'p#explore_text', function () {
 
 	$('#sayHello').slideUp(200);
 
+	//$('body').css({borderTop:''});
+
 	//loop through project images, put clicked on div at top, move other to bottom
 	$('.project-wrap').each(function() {
 			var div_id = $(this).attr('data-id');
@@ -372,6 +399,8 @@ $(document).on('click', '.work-block', function () {
 	$('header').removeClass('absolute').addClass('detail-open');
 
 	$('#sayHello').slideUp(200);
+
+	$('body').css({'border-top':'0 solid transparent'});
 
 	if (window.history && window.history.pushState) {
 		history.pushState(null, null, '?p='+project_id );
@@ -520,6 +549,18 @@ $('#detail_exit').click(function(e) {
 	e.preventDefault();
 	infoClose(e);
 	$('header').removeClass('detail-open').addClass('absolute');
+	$('#sayHello').slideUp(200);
+	$('#detail_exit').animate({
+		top:de_top
+	},200);
+	$('.detail_copy').animate({
+		top:dc_top
+	},200);
+	//This element should really relate more to the content
+	$('#back_tip').animate({
+			top:bt_top
+		},200);
+
 	// $('#infobar').removeClass("open");
 });
 
