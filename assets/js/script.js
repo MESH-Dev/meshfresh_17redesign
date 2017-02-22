@@ -67,6 +67,11 @@ jQuery(document).ready(function($){
  
 
 var sh_ctr = 0;
+//$('#detail_exit').data('orig-top', $('#detail_exit').css('top'));
+//console.log(de_top);
+var dc_top= $('.detail_copy').css('top');
+console.log(dc_top);
+var bt_top= $('#back_tip').top;
 
 $('.say-hello').click(function(e){
 sh_ctr ++
@@ -74,8 +79,19 @@ e.stopPropagation();
 e.preventDefault();
 	if(sh_ctr == 1){
 		$('#sayHello').slideDown(200);
+		 $('#detail_exit, .detail_copy, #back_tip').animate({top:"+=100"},200);
 	}else{
 		$('#sayHello').slideUp(200);
+		$('#detail_exit').animate({
+			top:160
+		},200);
+		$('.detail_copy').animate({
+			top:125
+		},200);
+		//This element should really relate more to the content
+		$('#back_tip').animate({
+			top:168
+		},200);
 		sh_ctr = 0;
 	}
 	
@@ -83,6 +99,17 @@ e.preventDefault();
 
 $(document).click(function(){
 	$('#sayHello').slideUp(200);
+	$('#detail_exit').animate({
+			top:160
+		},200);
+		$('.detail_copy').animate({
+			top:125
+		},200);
+		//This element should really relate more to the content
+		$('#back_tip').animate({
+			top:168
+		},200);
+	//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
 });
 
 //Sidr funcitonality
@@ -250,14 +277,13 @@ var run_once = 0;
 function GoToProject(project_id, reorder){
 
 	project_id  = project_id.trim();
- 
+
 	var pid = '#'+project_id;
 	var photos_id = '#'+project_id+'-panels';
 
 	var project_color = $(pid).attr('data-color');
 	
 	var proj_id = $(photos_id).attr('data-id');
- 
 
 	var title = $(pid).find('span').html();
  
@@ -268,6 +294,9 @@ function GoToProject(project_id, reorder){
 	$('header').removeClass('absolute').addClass('detail-open');
 
 	$('#sayHello').slideUp(200);
+  
+  $('body').css({'border-top':'0 solid transparent'});
+
 
 	//browser back button here?
 	if (window.history && window.history.pushState) {
@@ -432,6 +461,18 @@ $('#detail_exit').click(function(e) {
 	e.preventDefault();
 	infoClose(e);
 	$('header').removeClass('detail-open').addClass('absolute');
+	$('#sayHello').slideUp(200);
+	$('#detail_exit').animate({
+			top:160
+		},200);
+		$('.detail_copy').animate({
+			top:125
+		},200);
+		//This element should really relate more to the content
+		$('#back_tip').animate({
+			top:168
+		},200);
+
 	// $('#infobar').removeClass("open");
 });
 

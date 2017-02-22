@@ -13,7 +13,7 @@
  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/fancy-scroll.js"></script>
  -->
 
- // 	<script>
+  	<script>
 	// 	function init() {
 	// 	var imgDefer = document.getElementsByTagName('img');
 	// 	for (var i=0; i<imgDefer.length; i++) {

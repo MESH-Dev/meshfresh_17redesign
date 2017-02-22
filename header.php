@@ -80,7 +80,7 @@
 					<div class=""><!-- gutter -->
 						304.405.6374<br>
 						<strong><a href="mailto:hello@meshfresh.com">hello@meshfresh.com</a></strong><br>
-						<a href="<?php echo bloginfo('url'); ?>/say-hello">Get involved with MESH</a>
+						<a href="<?php echo bloginfo('url'); ?>/say-hello">Get involved with MESH ></a>
 					</div>
 				</div>
 			</div>
