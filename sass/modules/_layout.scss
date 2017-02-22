@@ -1922,7 +1922,7 @@ footer.site-footer{
     max-width: 800px;
     margin: 0 auto;
 
-     @media($bp-smaller-than-tablet){
+     @media($bp-smaller-than-mobile){
      	padding: 0px 20px 0 60px;
      	top:80px;
      }
@@ -1984,7 +1984,7 @@ span#back_tip {
 		text-align: center;
 		visibility: hidden;
 
-		@media ($bp-smaller-than-tablet){
+		@media ($bp-smaller-than-mobile){
 			top:20px;
 		}
  
@@ -2050,7 +2050,7 @@ span#back_tip {
     left: 80px;
     cursor: pointer;
 
-     @media($bp-smaller-than-tablet){
+     @media($bp-smaller-than-mobile){
      	top: 20px;
     	left: 60px;
      }

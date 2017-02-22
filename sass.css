@@ -3435,7 +3435,7 @@ footer.site-footer p {
   max-width: 800px;
   margin: 0 auto;
 }
-@media (max-width: 750px) {
+@media (max-width: 480px) {
   /* line 1914, sass/modules/_layout.scss */
   .detail_copy {
     padding: 0px 20px 0 60px;
@@ -3504,7 +3504,7 @@ span#back_tip {
   text-align: center;
   visibility: hidden;
 }
-@media (max-width: 750px) {
+@media (max-width: 480px) {
   /* line 1972, sass/modules/_layout.scss */
   span#back_tip {
     top: 20px;
@@ -3575,7 +3575,7 @@ span#back_tip:after {
   left: 80px;
   cursor: pointer;
 }
-@media (max-width: 750px) {
+@media (max-width: 480px) {
   /* line 2042, sass/modules/_layout.scss */
   #detail_exit {
     top: 20px;

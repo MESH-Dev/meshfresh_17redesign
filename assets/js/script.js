@@ -67,11 +67,19 @@ jQuery(document).ready(function($){
  
 
 var sh_ctr = 0;
-//$('#detail_exit').data('orig-top', $('#detail_exit').css('top'));
-//console.log(de_top);
-var dc_top= $('.detail_copy').css('top');
-console.log(dc_top);
-var bt_top= $('#back_tip').top;
+var wWidth = $(window).width();
+
+var dc_top, de_top, bt_top;
+
+if(wWidth > 750){
+	var dc_top = 125;
+	var bt_top = 168;
+	var de_top = 160;
+}else if(wWidth < 480){
+	var dc_top = 80;
+	var bt_top = 20;
+	var de_top = 20;
+}
 
 $('.say-hello').click(function(e){
 sh_ctr ++
@@ -83,14 +91,14 @@ e.preventDefault();
 	}else{
 		$('#sayHello').slideUp(200);
 		$('#detail_exit').animate({
-			top:160
+			top:de_top
 		},200);
 		$('.detail_copy').animate({
-			top:125
+			top:dc_top
 		},200);
 		//This element should really relate more to the content
 		$('#back_tip').animate({
-			top:168
+			top:bt_top
 		},200);
 		sh_ctr = 0;
 	}
@@ -100,14 +108,14 @@ e.preventDefault();
 $(document).click(function(){
 	$('#sayHello').slideUp(200);
 	$('#detail_exit').animate({
-			top:160
+			top:de_top
 		},200);
 		$('.detail_copy').animate({
-			top:125
+			top:dc_top
 		},200);
 		//This element should really relate more to the content
 		$('#back_tip').animate({
-			top:168
+			top:bt_top
 		},200);
 	//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
 });
@@ -294,8 +302,6 @@ function GoToProject(project_id, reorder){
 	$('header').removeClass('absolute').addClass('detail-open');
 
 	$('#sayHello').slideUp(200);
-  
-  $('body').css({'border-top':'0 solid transparent'});
 
 
 	//browser back button here?
@@ -382,7 +388,6 @@ function GoToProject(project_id, reorder){
 				offset: 100
 			})
 			.on("enter leave", updateContent)
-			.addIndicators()
 			.addTo(controller);
 	 
 		});
@@ -463,14 +468,14 @@ $('#detail_exit').click(function(e) {
 	$('header').removeClass('detail-open').addClass('absolute');
 	$('#sayHello').slideUp(200);
 	$('#detail_exit').animate({
-			top:160
+			top:de_top
 		},200);
 		$('.detail_copy').animate({
-			top:125
+			top:dc_top
 		},200);
 		//This element should really relate more to the content
 		$('#back_tip').animate({
-			top:168
+			top:bt_top
 		},200);
 
 	// $('#infobar').removeClass("open");
