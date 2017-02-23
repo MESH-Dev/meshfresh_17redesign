@@ -1,44 +1,3 @@
-(function() {
-  var supportsPassive = eventListenerOptionsSupported();  
-
-  if (supportsPassive) {
-    var addEvent = EventTarget.prototype.addEventListener;
-    overwriteAddEvent(addEvent);
-  }
-
-  function overwriteAddEvent(superMethod) {
-    var defaultOptions = {
-      passive: true,
-      capture: false
-    };
-
-    EventTarget.prototype.addEventListener = function(type, listener, options) {
-      var usesListenerOptions = typeof options === 'object';
-      var useCapture = usesListenerOptions ? options.capture : options;
-
-      options = usesListenerOptions ? options : {};
-      options.passive = options.passive !== undefined ? options.passive : defaultOptions.passive;
-      options.capture = useCapture !== undefined ? useCapture : defaultOptions.capture;
-      
-      superMethod.call(this, type, listener, options);
-    };
-  }
-
-  function eventListenerOptionsSupported() {
-    var sopported = false;
-    try {
-      var opts = Object.defineProperty({}, 'passive', {
-        get: function() {
-          sopported = true;
-        }
-      });
-      window.addEventListener("test", null, opts);
-    } catch (e) {}
-
-    return sopported;
-  }
-})();
-
 jQuery(window).load(function($) {
 	//jQuery(".projects-loader").fadeOut("slow");
 
@@ -590,7 +549,7 @@ function infoClose(event){
 //Fullscreen Definition ------
 fullscreen_open.add("start")
     .paused(true)
-    .to("#detail_scrollarea", 0.4, {css:{width:"98%"}}, "start")
+    //.to("#detail_scrollarea", 0.4, {css:{width:"98%"}}, "start")
     .to("#infobar", 0.4, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "start")
@@ -603,7 +562,7 @@ fullscreen_open.add("start")
 
 fullscreen_close.add("start")
     .paused(true)
-    .to("#detail_scrollarea", 0.4, {css:{width:"67%"}}, "start")
+    //.to("#detail_scrollarea", 0.4, {css:{width:"98%"}}, "start") //67%
     .to("#infobar", 0.4, {css:{right:"auto", left:"0",marginRight:"0px"}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:1}}, "start")
     .to(".detail_close", 0.4, {css:{autoAlpha:1}}, "start")

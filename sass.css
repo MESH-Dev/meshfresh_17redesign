@@ -3665,12 +3665,13 @@ span#back_tip:after {
   top: 0;
   right: 0;
   z-index: 2;
+  width: 98vw !important;
 }
-/* line 2131, sass/modules/_layout.scss */
+/* line 2132, sass/modules/_layout.scss */
 #detail_scrollarea.single-open {
   visibility: visible;
 }
-/* line 2135, sass/modules/_layout.scss */
+/* line 2136, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen {
   z-index: 15;
   color: #000;
@@ -3681,7 +3682,7 @@ span#back_tip:after {
   right: 50px;
   cursor: pointer;
 }
-/* line 2149, sass/modules/_layout.scss */
+/* line 2150, sass/modules/_layout.scss */
 #detail_scrollarea #fullscreen_exit {
   z-index: 5;
   color: #000;
@@ -3693,14 +3694,14 @@ span#back_tip:after {
   cursor: pointer;
   visibility: hidden;
 }
-/* line 2165, sass/modules/_layout.scss */
+/* line 2166, sass/modules/_layout.scss */
 #detail_scrollarea img {
   display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 2171, sass/modules/_layout.scss */
+/* line 2172, sass/modules/_layout.scss */
 #detail_scrollarea span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3717,7 +3718,7 @@ span#back_tip:after {
   visibility: hidden;
   text-transform: uppercase;
 }
-/* line 2189, sass/modules/_layout.scss */
+/* line 2190, sass/modules/_layout.scss */
 #detail_scrollarea span:after {
   content: '';
   position: absolute;
@@ -3737,7 +3738,7 @@ span#back_tip:after {
   }
 }
 
-/* line 2208, sass/modules/_layout.scss */
+/* line 2209, sass/modules/_layout.scss */
 .detail_nav {
   position: absolute;
   width: 50px;
@@ -3746,19 +3747,19 @@ span#back_tip:after {
   visibility: hidden;
 }
 @media (max-width: 1060px) {
-  /* line 2208, sass/modules/_layout.scss */
+  /* line 2209, sass/modules/_layout.scss */
   .detail_nav {
     bottom: 50px;
   }
 }
-/* line 2219, sass/modules/_layout.scss */
+/* line 2220, sass/modules/_layout.scss */
 .detail_nav i {
   color: #fff;
   font-size: 42px;
   text-align: left;
   letter-spacing: 10px;
 }
-/* line 2225, sass/modules/_layout.scss */
+/* line 2226, sass/modules/_layout.scss */
 .detail_nav p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3768,17 +3769,17 @@ span#back_tip:after {
   padding: 0;
 }
 
-/* line 2239, sass/modules/_layout.scss */
+/* line 2240, sass/modules/_layout.scss */
 .detail_switch {
   padding: 14px 0;
   position: relative;
 }
-/* line 2242, sass/modules/_layout.scss */
+/* line 2243, sass/modules/_layout.scss */
 .detail_switch svg {
   width: 24px;
   cursor: pointer;
 }
-/* line 2246, sass/modules/_layout.scss */
+/* line 2247, sass/modules/_layout.scss */
 .detail_switch span {
   font-family: 'Gothic';
   font-size: 1.4em;
@@ -3794,7 +3795,7 @@ span#back_tip:after {
   text-align: center;
   visibility: hidden;
 }
-/* line 2262, sass/modules/_layout.scss */
+/* line 2263, sass/modules/_layout.scss */
 .detail_switch span:after {
   content: '';
   position: absolute;
@@ -3808,12 +3809,12 @@ span#back_tip:after {
   border-bottom: 8px solid transparent;
 }
 
-/* line 2280, sass/modules/_layout.scss */
+/* line 2281, sass/modules/_layout.scss */
 .active-project {
   visibility: visible;
 }
 
-/* line 2284, sass/modules/_layout.scss */
+/* line 2285, sass/modules/_layout.scss */
 .projects-loader {
   position: fixed;
   left: 0px;
@@ -3824,7 +3825,7 @@ span#back_tip:after {
   background: url("assets/img/ring.gif") 50% 50% no-repeat white;
 }
 
-/* line 2299, sass/modules/_layout.scss */
+/* line 2300, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
