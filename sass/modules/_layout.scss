@@ -1099,6 +1099,9 @@ a.cta{
 			.tags{
 				font-family:'Gothic';
 				font-size:1.4em;
+				@media($bp-smaller-than-desktop){
+					font-size:1.2em;
+				}
 				a{
 					color:white;
 					//font-size:1.4em;
@@ -1188,6 +1191,9 @@ a.cta{
 			.tags{
 				font-family:'Gothic';
 				font-size:1.4em;
+					@media($bp-smaller-than-desktop){
+						font-size:1.2em;
+					}
 				a{
 					color:white;
 					//font-size:1.4em;
@@ -1256,6 +1262,14 @@ a.cta{
 				.mediums{
 					float:left;
 					margin-bottom:0;
+					@media($bp-smaller-than-desktop){
+						max-width:70%;
+
+						li{
+							display:inline-block;
+							margin-left:3px;
+						}
+					}
 					li{
 						margin:0;
 						padding:0;
@@ -1281,6 +1295,7 @@ a.cta{
 					position:absolute;
 					bottom:0;
 					right:0;
+
 					ul{
 						padding:0;
 						margin:0;
@@ -1349,6 +1364,10 @@ a.cta{
 	.tags{
 		font-family:'Gothic';
 		font-size:1.4em;
+
+		@media($bp-smaller-than-desktop){
+			font-size:1.2em;
+		}
 		a{
 			color:white;
 			//font-size:1.4em;
@@ -1368,6 +1387,10 @@ a.cta{
 		color:white;
 		text-transform:uppercase;
 		font-size:1.4em;
+
+		@media($bp-smaller-than-desktop){
+			font-size:1.2em;
+		}
 		a{
 			color:white;
 			//font-size:1.4em;
@@ -1414,6 +1437,7 @@ a.cta{
 
 		.tags{
 			font-size:1.4em;
+
 		}
 
 		h1,
@@ -1941,12 +1965,13 @@ footer.site-footer{
 	    line-height: 42px;
 	    margin-bottom: 10px;
 
-	     @media($bp-smaller-than-tablet){
+	     @media($bp-smaller-than-desktop){
 	     line-height:1.5;
+	     letter-spacing:.02em;
 	 	}
 
 	     @media($bp-smaller-than-mobile){
-     		line-height:1.75;
+     		line-height:1.5;
      		font-size:18px;
      	}
     }
@@ -2186,6 +2211,11 @@ span#back_tip {
     bottom: 10px;
     left: 88%;
     visibility: hidden;
+
+    @media ($bp-smaller-than-desktop){
+    	bottom:50px;
+    }
+
     i{
 	    color: #fff;
 	    font-size: 42px;
