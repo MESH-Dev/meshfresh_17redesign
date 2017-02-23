@@ -109,7 +109,7 @@ header.detail-open{
 	position:fixed;
 	top:0;
 	width:100%;
-	display:none;
+	//display:none;
 }
 	
 
@@ -1834,6 +1834,7 @@ footer.site-footer{
     top:0;
     margin-left: -40px;
 
+
     @media ($bp-larger-than-mobile) and ($bp-smaller-than-desktop){
     	width:50%;
     }
@@ -1860,7 +1861,9 @@ footer.site-footer{
     	}	
 	}
 
-
+	&.single-open{
+		 left: 0;
+	}
 
 }
 
@@ -1927,6 +1930,10 @@ footer.site-footer{
      	top:80px;
      }
 
+     &.single-open{
+		 visibility: visible;
+	}
+
     h3{
     	font-family: 'Memphis LT W01 Medium', sans-serif;
 	    font-size: 24px;
@@ -1964,8 +1971,10 @@ footer.site-footer{
 }
 
 .tooltip{
-	@media ($bp-smaller-than-mobile){
-			display:none;
+	@media ($bp-smaller-than-tablet){
+	 
+			display: none;
+			visibility: hidden;
 		}
 }
 
@@ -1985,7 +1994,9 @@ span#back_tip {
 		visibility: hidden;
 
 		@media ($bp-smaller-than-mobile){
-			top:20px;
+			display: none;
+			visibility: hidden;
+
 		}
  
  
@@ -2058,6 +2069,9 @@ span#back_tip {
 	// &:hover{
 	// 	left: 56px;
 	// }     
+	&.single-open{
+		 visibility: visible;
+	}
 }
 
 #detail_close{
@@ -2084,9 +2098,14 @@ span#back_tip {
     width: 71vw;
     height: 100vh;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     top:0;
     right: 0;
     z-index:2;
+
+    &.single-open{
+		 visibility: visible;
+	}
 
     #fullscreen{
 	    z-index: 15;

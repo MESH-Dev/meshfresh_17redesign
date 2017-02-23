@@ -1,153 +1,172 @@
-<?php get_header(); ?>
+<?php /* Template Name: Work Archive NEW */
 
-<!-- <section id="works-filter" class="cf">
-	<div class="container-main cf">
-		<div class="gutter cf">
-			<a id="complete-works" href="<?php echo get_permalink(51); ?>">&laquo; Case Studies</a>
-			<ul id="filters">
-			<?php
-				$categories = get_terms('medium',array(
-				 	'orderby'    => 'id',
-				 	'hide_empty' => 0
-				 ));
-				 foreach($categories as $cat){
-				 	//echo "<li data-filter='".$cat->slug."'>".$cat->name."</li>";
-				 }
-			?>
-			</ul>
-			<a id="other-works" href="<?php echo get_post_type_archive_link('work'); ?>">More Projects &raquo;</a>
-		</div>
-	</div>
-</section> -->
 
-<?php 
-
-	$mediums = get_the_terms($post->ID, 'medium');
-	$industries = get_the_terms($post->ID, 'Industry');
-	//var_dump($mediums);
-	$separator = ', ';
-	$output_industry = '';
-	$output_medium = '';
-
-	$intro_info = get_field('intro_info');
-
-	$project_content = get_field('featured_statement');
-
-	if(!empty($industries)){
-		foreach ($industries as $industry){
-			//var_dump($industry->name);
-			$output_industry .= $industry->name . $separator;
-			//var_dump($output_industry);
-		}
-	}
-
-	if(!empty($mediums)){
-		foreach ($mediums as $medium){
-			//var_dump($industry->name);
-			$output_medium .= '<li>' . $medium->name . $separator . '</li>';
-			//var_dump(rtrim($output_medium, $separator));
-			//var_dump($output_industry);
-		}
-	}
+get_header();
+ 
 
 ?>
+ 
 
-<section class="has-emoticon">
-	<div class="title-bar">
-		<div class="view-all">
-			<p>View all projects</p>
-		</div>
-		<div class="content">
-			<div class="flex-content">
-				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
-				<span class="industries tags">
-					<?php echo rtrim($output_industry, $separator); ?>
-				</span>
-				<p><?php echo $intro_info; ?></p>
-				<footer>
-					<ul class="medium tags">
-						<?php echo $output_medium; ?>
-					</ul>
-				</footer>
-			</div>
-		</div>
-	</div>
 
-	<div class="work-panels">
-
-		<?php if(have_rows('showcase_images')): 
-			while(have_rows('showcase_images')) : the_row();
-				$image=get_sub_field('image');
-				$image_url=$image['sizes']['background-fullscreen'];
-			?>
-			<div class="work-single" style="background-image:url('<?php echo $image_url; ?>');"></div>
-		<?php endwhile; endif; ?>
-	</div>
-
+<section id="grid" class="has-emoticon"><!-- page-content -->
+	<div id="gallery_cover"></div>
+	<div class="work-grid" id="macy"><!-- container -->
+ 
+ 
+</div><!-- end work-grid -->
 </section>
+ <?php 
+			while ( have_posts() ) { the_post();
+			$post_id = $post->ID;
+				$slug = get_post_field( 'post_name', $post_id );
+				$bg_color=get_field('proj_bg_color');
+				 ?>
+
+<!-- <section class="josh"> -->
+	<div id="infobar" class="single-open" style="background-color: <?php echo $bg_color;?>">
+
+		<p id="explore_text"> <span>&#10142;</span>  Explore the Work</p>
+		
+		<i id="detail_exit single-open" class="material-icons" >keyboard_backspace</i>
+		<a href="<?php echo "#" ?>"></a><span id="back_tip" class="tooltip">View All Projects</span></a>
+
+		<i id="detail_close" class="material-icons" >clear</i>
+ 
+		<div id="sidebar-content single-open" class=" ">
+
+ 		
 
 <?php
-// if ( have_posts() ) {
-// 	echo "<section id='works' class='archive'>
-// 			<div class='container-main cf'>
-// 				<div class='gutter cf workcf'>"; ?>
-				<!-- <h1> <?php the_title() ?></h1> -->
-	<?php
-	//while ( have_posts() ) { the_post(); ?>
+				
+				
 
-	<!--<div id="<?php echo( basename(get_permalink()) ); ?>" class="work-post <?php echo cycle('white','grey'); ?>">
+				//$active_class = '';
+				//if($single){$active_class = 'active-project';}
 
 
-		<div class="work-post-showcase">
-			<?php $featured = get_field('showcase_images');
-				foreach($featured as $image){
-					echo wp_get_attachment_image($image['image'],'full');
-				} ?>
-		</div>
+				
 
-		<div class="work-post-intro">
-			<div class="work-entry-data" style="background:<?php the_field('featured_background'); ?>;">
-				<div class="work-entry-data-vis">
-					<div class="gutter cf">
-						<span class="work-entry-title"><?php the_field('featured_title'); ?></span>
-						<span class="work-entry-medium"><?php the_field('featured_medium'); ?></span>
-					</div>
-				</div>
-				<div class="work-entry-data-add">
-					<div class="gutter cf">
-						<span class="work-entry-statement"><?php the_field('featured_statement'); ?></span>
-					</div>
-				</div>
+				//Get content/metadata
+				$mediums = get_the_terms($post_id, 'medium');
+				$industries = get_the_terms($post_id, 'Industry');
+			 
+				$separator = ', ';
+				$output_industry = '';
+				$output_medium = '';
+
+				$intro_info = get_field('intro_info',$post_id);
+
+				$project_content = get_field('featured_statement',$post_id);
+
+				if(!empty($industries)){
+					foreach ($industries as $industry){
+ 
+						$output_industry .= $industry->name . $separator;
+ 
+					}
+				}
+
+				$output_industry = rtrim($output_industry,', '); 
+
+				if(!empty($mediums)){
+					foreach ($mediums as $medium){
+ 
+						$output_medium .=  $medium->name . $separator;
+ 
+					}
+				}
+
+				$output_medium = rtrim($output_medium,', '); 
+
+				$title = get_the_title($post_id);
+				$text_str = '';
+
+
+				$text_str .= '<div id="'. $slug . '" class="detail_copy single-open'.$active_class .'" data-color="'.$bg_color.'">';
+				$text_str .= '	<h3><span class="underline">'.$title.'</span></h3>';
+				$text_str .= '	<span class="industries tags">'.rtrim($output_industry, $separator).'</span>';
+				$text_str .= '	<p> '.$intro_info.'</p>';
+				$text_str .= '	<footer>';
+				$text_str .= '		<ul class="medium tags">'.$output_medium;
+				$text_str .= '		</ul>';
+				$text_str .= '	</footer>';
+				$text_str .= '</div>';
+
+				echo $text_str;
+ 
+			?>
+
+
+
+
+
+			<div class="detail-side-title">
+				<p><?php //echo $title; ?></p>
 			</div>
-
-			<div class="work-post-intro-extra">
-				<div class="gutter cf">
-					<?php the_field('intro_info'); ?>
-				</div>
-			</div>
+	
 		</div>
+ 
+		<div class="detail_nav single-open">
+ 
+	</div>
 
 
-		<div class="work-post-content">
-			<div class="work-process-data">
-				<div class="work-process-data-vis" style="background:<?php the_field('featured_background'); ?>;">
-					<div class="gutter cf">
-						<span class="work-process-title">Process</span>
-					</div>
-				</div>
-				<div class="work-process-intro-extra">
-					<div class="gutter cf">
-						<?php the_field('process_description'); ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>-->
+	<div id="detail_scrollarea" class="single-open">
+	    <i id="fullscreen" class="material-icons"  >fullscreen</i>
+	    <i id="fullscreen_exit" class="material-icons">fullscreen_exit</i>
+	    <span id="fs_tip" class="tooltip">Expand the Images</span>
+	    <span id="fs_close_tip" class="tooltip">Close Fullscreen</span>
 
-<?php 
-// } echo "</div>
-// 				</div>
-// 			</section>"; } 
-?>
+	    <div>
+	    </div>
 
+		<div id="project-panels" class="work-panels">
+			<!-- PROJECTS DYNAMICALLY ADDED HERE -->
+			<?php 
+ 
+
+				$post_id = get_the_ID();
+				$slug = get_post_field( 'post_name', $post_id );
+
+				$image_str = '';
+
+				//get images for project
+				//if(have_rows('showcase_images', $post_id)): 
+
+					$image_str = '<div id="'.$slug.'-panels" class="project-wrap '.$active_class .'" data-id="'.$post_id.'">';
+					while(have_rows('showcase_images', $post_id)) : the_row();
+						$image=get_sub_field('image', $post_id);
+			 
+						$image_url=$image['sizes']['background-fullscreen-sq'];
+
+						$image_type =  substr($image_url, -3);
+
+						if($image_type == "gif"){
+							$image_url = $image['url'];
+						}
+						 
+						//$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
+
+						$image_str .= "<img class='lazy-load' id='image-$image[id]'  src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$image_url' >";
+
+					endwhile; 
+					$image_str .="</div>";
+
+					echo $image_str;
+
+				//endif; 
+
+
+
+
+
+
+			} wp_reset_query(); wp_reset_postdata();
+			?>
+		
+		</div>	
+ 
+	</div>
+
+<!-- </section> -->
 <?php get_footer(); ?>

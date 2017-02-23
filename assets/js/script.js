@@ -1,3 +1,44 @@
+(function() {
+  var supportsPassive = eventListenerOptionsSupported();  
+
+  if (supportsPassive) {
+    var addEvent = EventTarget.prototype.addEventListener;
+    overwriteAddEvent(addEvent);
+  }
+
+  function overwriteAddEvent(superMethod) {
+    var defaultOptions = {
+      passive: true,
+      capture: false
+    };
+
+    EventTarget.prototype.addEventListener = function(type, listener, options) {
+      var usesListenerOptions = typeof options === 'object';
+      var useCapture = usesListenerOptions ? options.capture : options;
+
+      options = usesListenerOptions ? options : {};
+      options.passive = options.passive !== undefined ? options.passive : defaultOptions.passive;
+      options.capture = useCapture !== undefined ? useCapture : defaultOptions.capture;
+      
+      superMethod.call(this, type, listener, options);
+    };
+  }
+
+  function eventListenerOptionsSupported() {
+    var sopported = false;
+    try {
+      var opts = Object.defineProperty({}, 'passive', {
+        get: function() {
+          sopported = true;
+        }
+      });
+      window.addEventListener("test", null, opts);
+    } catch (e) {}
+
+    return sopported;
+  }
+})();
+
 jQuery(window).load(function($) {
 	//jQuery(".projects-loader").fadeOut("slow");
 
@@ -306,7 +347,7 @@ function GoToProject(project_id, reorder){
 
 	//browser back button here?
 	if (window.history && window.history.pushState) {
-		history.pushState(null, null, '?p='+project_id );
+		//history.pushState(null, null, '?p='+project_id );
 	}
  
 	$('.detail_copy').removeClass('active-project');
@@ -367,7 +408,7 @@ function GoToProject(project_id, reorder){
 					var new_title = $(text_elem).find('span').html();
 					$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
 					if (window.history && window.history.pushState) {
-						history.pushState(null, null, '?p='+url_id );
+						//history.pushState(null, null, '?p='+url_id );
 					}
 				}
 				else{
@@ -377,7 +418,7 @@ function GoToProject(project_id, reorder){
 					text_elem.prev('.detail_copy').addClass("active-project");
 					$('#infobar').css('background-color',project_color );
 					if (window.history && window.history.pushState) {
-						history.pushState(null, null, '?p='+url_id );
+						//history.pushState(null, null, '?p='+url_id );
 					}
 
 					 
@@ -679,6 +720,11 @@ if(go_to !== ''){
 	GoToProject(go_to, true);
 
 }
+
+//if user touches screen
+window.addEventListener('touchstart', function() {
+	$('.tooltip').css('display','none');
+});
 
  
  
