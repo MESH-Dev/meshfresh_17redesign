@@ -306,7 +306,7 @@ function GoToProject(project_id, reorder){
 
 	//browser back button here?
 	if (window.history && window.history.pushState) {
-		//history.pushState(null, null, '?p='+project_id );
+		history.pushState(null, null, '?p='+project_id );
 	}
  
 	$('.detail_copy').removeClass('active-project');
@@ -349,6 +349,7 @@ function GoToProject(project_id, reorder){
 			var current_id = $(this).attr('id');
 			var elem = '#'+current_id;
 			var text_elem = elem.substring(0,elem.length - 7);
+			var url_id = current_id.substring(0,current_id.length - 7);
 			var refElement = $(elem);
 			text_elem = $(text_elem);
 			var project_color = text_elem.attr('data-color');
@@ -365,6 +366,9 @@ function GoToProject(project_id, reorder){
 
 					var new_title = $(text_elem).find('span').html();
 					$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
+					if (window.history && window.history.pushState) {
+						history.pushState(null, null, '?p='+url_id );
+					}
 				}
 				else{
 					//console.log("leave" +  elem + " / " + project_color);
@@ -372,6 +376,9 @@ function GoToProject(project_id, reorder){
 					project_color = text_elem.prev('.detail_copy').attr('data-color');
 					text_elem.prev('.detail_copy').addClass("active-project");
 					$('#infobar').css('background-color',project_color );
+					if (window.history && window.history.pushState) {
+						history.pushState(null, null, '?p='+url_id );
+					}
 
 					 
 					 
@@ -380,6 +387,7 @@ function GoToProject(project_id, reorder){
 					$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
 				}
 			}
+			
 
 			// build scenes
 			var scene = new ScrollMagic.Scene({
