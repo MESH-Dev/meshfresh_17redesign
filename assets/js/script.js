@@ -72,14 +72,15 @@ var wWidth = $(window).width();
 var dc_top, de_top, bt_top;
 
 if(wWidth > 750){
-	var dc_top = 125;
+	var dc_top = 160;
 	var bt_top = 168;
 	var de_top = 160;
-}else if(wWidth < 480){
-	var dc_top = 80;
-	var bt_top = 20;
-	var de_top = 20;
 }
+// else if(wWidth < 480){
+// 	var dc_top = 110;
+// 	var bt_top = 20;
+// 	var de_top = 110;
+// }
 
 $('.say-hello').click(function(e){
 sh_ctr ++
@@ -419,7 +420,7 @@ $(document).on('click', 'p#explore_text', function () {
 
 
 
-	$('.detail-side-title p').click(function(e) {
+	$('.detail-side-title').click(function(e) {
 		e.preventDefault();
 		fullScreenExitTrigger();
 	});
@@ -593,10 +594,7 @@ function fullScreenExitTrigger(){
 
 
 //Tooltip Show/Hide Definitions
-tooltip_fs.add("start")
-    .paused(true)
-    .to("#fs_tip", 0.3, {css:{autoAlpha:1, right:"100px"}, ease:Power2.easeInOut}, "start")
-    .add("end");
+ 
 
 tooltip_close.add("start")
     .paused(true)
@@ -620,16 +618,11 @@ tooltip_back.add("start")
 //Tooltip Show/Hide Definitions
 
 //Tooltip Trigger Definitions
-var fs_tip_trigger = document.getElementById('fullscreen'),
-    fs_close_tip_trigger = document.getElementById('fullscreen_exit'),
-    next_tip_trigger = document.getElementById('next_arrow'),
+var next_tip_trigger = document.getElementById('next_arrow'),
     prev_tip_trigger = document.getElementById('prev_arrow'),
     back_tip_trigger = document.getElementById('detail_exit');
 
-fs_tip_trigger.onmouseover = showTooltipLeft;
-fs_tip_trigger.onmouseout = hideTooltipLeft;
-fs_close_tip_trigger.onmouseover = showTooltipClose;
-fs_close_tip_trigger.onmouseout = hideTooltipClose;
+ 
 next_tip_trigger.onmouseover = showTooltipNext;
 next_tip_trigger.onmouseout = hideTooltipNext;
 prev_tip_trigger.onmouseover = showTooltipPrev;

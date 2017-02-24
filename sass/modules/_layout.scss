@@ -56,11 +56,19 @@ header{
 	z-index: 500;
 
 	@media($bp-smaller-than-tablet){
-		margin:2em 0 4.5em 0;
+		margin:0em 0 4.5em 0;
 	}
 
 	.header-wrap{
 		// margin:45px 0;
+	}
+	#logo{
+		@media ($bp-smaller-than-tablet){
+		 	width: 75px;
+		 	height: 75px;
+		 	left: 10%;
+		 	position: absolute;
+		}
 	}
 }
 
@@ -83,17 +91,35 @@ header.detail-open{
 		// width:initial;
 		// float:right;
 		position:fixed;
-		//z-index:3;
+		z-index:10;
+		margin: 0;
+
 		@media ($bp-smaller-than-mobile){
-			display:none;
+			//display:none;
 		}
 
-		#logo{
+		#menuTrigger, #social{
 			@media ($bp-smaller-than-mobile){
-			display:none;
+				    margin: 0em 0 0em 0;
+				    display: none;
+			}
+		}
+
+
+
+
+		#logo{
+			@media ($bp-smaller-than-tablet){
+			 	left: 20%;
+			}
+		}
+		#social{
+			@media ($bp-smaller-than-mobile){
+			 	display: none;
 			}
 		}
 }
+ 
 
 .fixed{
 	position:fixed;
@@ -1850,9 +1876,9 @@ footer.site-footer{
     border: 0px;
     background-color: $blue;
     height: 100vh;
-    width: 33%;
+    width: 38%;
     //Change this if needed to make things fit
-    min-width: 320px;
+    min-width: 350px;
     //box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.3);
     left: 100%;
     top:0;
@@ -1864,7 +1890,7 @@ footer.site-footer{
     }
 
      @media($bp-smaller-than-mobile){
-     	z-index:200000;
+     	z-index:5;
      }
 
 	&.open{
@@ -1942,16 +1968,15 @@ footer.site-footer{
     position: absolute;
     visibility: hidden;
     top: 125px;
-    //left: 96%;
-    //width: calc(100% - 40px);
+ 
     height: 100%;
-    padding: 90px 20px 0 90px;
+    padding: 90px 40px 0 60px;
     max-width: 800px;
     margin: 0 auto;
 
      @media($bp-smaller-than-mobile){
      	padding: 0px 20px 0 60px;
-     	top:80px;
+     	top:110px;
      }
 
      &.single-open{
@@ -2083,12 +2108,12 @@ span#back_tip {
     visibility: hidden;
     position: absolute;
     top: 160px;
-    left: 80px;
+    left: 55px;
     cursor: pointer;
 
      @media($bp-smaller-than-mobile){
-     	top: 20px;
-    	left: 60px;
+		top: 60px;
+ 
      }
  //    transition: all 0.2s ease-in-out;
 	// &:hover{
@@ -2100,21 +2125,29 @@ span#back_tip {
 }
 
 #detail_close{
-	display:none;
-	 @media($bp-smaller-than-mobile){
-	 	    position: absolute;
-	 	    display:block;
-		    z-index: 3;
-		    font-size: 42px;
-		    font-weight: 100;
-		    color: #fff;
-		    /* visibility: hidden; */
-		    position: absolute;
-		    top: 20px;
-		    /* right: 0; */
-		    right:5px;
-		    cursor: pointer;
-	 }
+	 
+    position: absolute;
+    display:block;
+    z-index: 3;
+    font-size: 42px;
+    font-weight: 100;
+    color: #fff;
+    /* visibility: hidden; */
+    position: absolute;
+	top: 160px;
+	right:15px;
+    
+    cursor: pointer;
+
+     @media($bp-smaller-than-mobile){
+ 
+     }
+     @media($bp-smaller-than-mobile){
+		top: 60px;
+ 
+     }
+
+	 
 }
  
 #detail_scrollarea{
