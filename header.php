@@ -134,7 +134,7 @@
 						</a>
 					</div>			
 				<div class="sidr-nav">			
-					<div class="sidr-close">CLOSE</div>
+					<div class="sidr-close"><i  class="material-icons" >clear</i></div>
 				<?php $defaults = array(
 						'theme_location'  => 'main-nav',
 						'menu'            => 'main-nav',

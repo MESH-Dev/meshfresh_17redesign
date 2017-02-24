@@ -3,6 +3,10 @@
 <?php wp_footer(); ?>
 </div><!--What is this div ending? -->
 </div>
+
+<div class="rotate">
+	<h2>ROTATE DEVICE!</h2>
+</div>
 <footer class="site-footer">
 	<div class="wrap">
 		<p>Copyright MESH Design &amp; Development <?php echo date('Y'); ?></p>

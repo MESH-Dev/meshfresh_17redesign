@@ -285,7 +285,7 @@ var run_once = 0;
 
 function GoToProject(project_id, reorder){
 
-	project_id  = project_id.trim();
+	//project_id  = project_id.trim(" ");
 
 	var pid = '#'+project_id;
 	var photos_id = '#'+project_id+'-panels';
@@ -680,6 +680,22 @@ window.addEventListener('touchstart', function() {
 	$('.tooltip').css('display','none');
 });
 
+
+window.onresize = function (event) {
+  applyOrientation();
+}
+
+function applyOrientation() {
+	 	
+	if(window.innerWidth < 500){
+ 
+		if (window.innerHeight > window.innerWidth) {
+			$('.rotate').css('display',' none'); 
+		}else {
+			$('.rotate').css('display',' block');
+			}
+	}
+}
  
  
 
