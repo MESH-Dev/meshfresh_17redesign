@@ -107,7 +107,7 @@ get_header();
 				$setColor =  get_field('proj_bg_color', $post->ID);
 				$color = $setColor;
 				$rgb = hex2rgba($color);
-				$rgba = hex2rgba($color, 0.9);
+				$rgba = hex2rgba($color, 0.85);
 				
 			
 				?>
@@ -241,6 +241,10 @@ get_header();
 				$post_id = get_the_ID();
 				$slug = get_post_field( 'post_name', $post_id );
 				$bg_color=get_field('proj_bg_color');
+				$setColor =  get_field('proj_bg_color', $post->ID);
+				$color = $setColor;
+				$rgb = hex2rgba($color);
+				$rgba = hex2rgba($color, 0.85);
 
 				//$active_class = '';
 				//if($single){$active_class = 'active-project';}
@@ -284,7 +288,7 @@ get_header();
 				$text_str = '';
 
 
-				$text_str .= '<div id="'. $slug . '" class="detail_copy '.$active_class .'" data-color="'.$bg_color.'">';
+				$text_str .= '<div id="'. $slug . '" class="detail_copy '.$active_class .'" data-color="'.$rgba.'">';
 				$text_str .= '	<h3><span class="underline">'.$title.'</span></h3>';
 				$text_str .= '	<span class="industries tags">'.rtrim($output_industry, $separator).'</span>';
 				$text_str .= '	<p> '.$intro_info.'</p>';

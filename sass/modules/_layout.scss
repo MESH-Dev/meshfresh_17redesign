@@ -2120,14 +2120,14 @@ span#back_tip {
 #detail_scrollarea{
     visibility: hidden;
     position: fixed;
-    width: 71vw;
+    width: 100vw;
     height: 100vh;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     top:0;
     right: 0;
     z-index:2;
-    width:98vw !important;
+ 
 
     &.single-open{
 		 visibility: visible;
@@ -2201,7 +2201,7 @@ span#back_tip {
 
 	@media($bp-smaller-than-tablet)
 	{
-		    width: 98vw !important;
+		    width: 100vw !important;
 	}	
 
 }

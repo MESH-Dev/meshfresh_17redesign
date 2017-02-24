@@ -377,7 +377,7 @@ h6 {
   letter-spacing: .05em;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 33, sass/base/_typography.scss */
   h1 {
     font-size: 3em;
@@ -441,7 +441,7 @@ p {
 .the-content.row [class*='columns-']:last-of-type {
   padding-right: 15px;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 78, sass/base/_typography.scss */
   .the-content.row [class*='columns-']:last-of-type {
     padding-right: 0;
@@ -694,7 +694,7 @@ p {
 .row [class*='columns-']:last-of-type {
   padding-right: 0;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 74, sass/base/_grid.scss */
   [class*='columns-'] {
     width: 100%;
@@ -702,7 +702,7 @@ p {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 90, sass/base/_grid.scss */
   [class*='offset-by-'] {
     margin-left: 0;
@@ -987,7 +987,7 @@ header nav#social ul li {
   float: left;
   padding: 0 1px 0 0;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 80, sass/modules/_header.scss */
   header nav#social ul li {
     margin-left: 5px;
@@ -1092,7 +1092,7 @@ header nav#social ul li a {
 .gateway-nav .say-hello.active {
   background-color: #0000f8;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 188, sass/modules/_header.scss */
   .gateway-nav .say-hello {
     display: none;
@@ -1132,7 +1132,7 @@ header nav#social ul li a {
   float: left;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* Header */
   /* line 249, sass/modules/_header.scss */
   header {
@@ -1328,7 +1328,7 @@ header {
   margin: 0 0 4.5em 0;
   z-index: 500;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 51, sass/modules/_layout.scss */
   header {
     margin: 2em 0 4.5em 0;
@@ -2359,7 +2359,7 @@ section#blogroll #contentSecondary address {
   display: table;
   font-family: "Memphis LT W01 Medium";
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 678, sass/modules/_layout.scss */
   .badge {
     display: none;
@@ -2542,7 +2542,7 @@ a.cta:hover, a.cta:active, a.cta:focus {
   height: 100%;
   z-index: 2;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 893, sass/modules/_layout.scss */
   .project-box .hover {
     font-size: 2.3em;
@@ -2612,7 +2612,7 @@ a.cta:hover, a.cta:active, a.cta:focus {
   -webkit-column-gap: 20px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 1020, sass/modules/_layout.scss */
   .in-column {
     -webkit-column-count: 2;
@@ -2631,7 +2631,7 @@ a.cta:hover, a.cta:active, a.cta:focus {
   content: '3 .column.size-1of3';
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 1038, sass/modules/_layout.scss */
   .work-grid[data-columns]::before {
     content: '2 .column.size-1of2';
@@ -3524,7 +3524,7 @@ footer.site-footer p {
   text-decoration: none;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 1998, sass/modules/_layout.scss */
   .tooltip {
     display: none;
@@ -3658,14 +3658,13 @@ span#back_tip:after {
 #detail_scrollarea {
   visibility: hidden;
   position: fixed;
-  width: 71vw;
+  width: 100vw;
   height: 100vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   top: 0;
   right: 0;
   z-index: 2;
-  width: 98vw !important;
 }
 /* line 2132, sass/modules/_layout.scss */
 #detail_scrollarea.single-open {
@@ -3731,10 +3730,10 @@ span#back_tip:after {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   /* line 2120, sass/modules/_layout.scss */
   #detail_scrollarea {
-    width: 98vw !important;
+    width: 100vw !important;
   }
 }
 

@@ -549,7 +549,7 @@ function infoClose(event){
 //Fullscreen Definition ------
 fullscreen_open.add("start")
     .paused(true)
-    //.to("#detail_scrollarea", 0.4, {css:{width:"98%"}}, "start")
+   
     .to("#infobar", 0.4, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
     .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "start")
@@ -562,7 +562,7 @@ fullscreen_open.add("start")
 
 fullscreen_close.add("start")
     .paused(true)
-    //.to("#detail_scrollarea", 0.4, {css:{width:"98%"}}, "start") //67%
+    
     .to("#infobar", 0.4, {css:{right:"auto", left:"0",marginRight:"0px"}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:1}}, "start")
     .to(".detail_close", 0.4, {css:{autoAlpha:1}}, "start")
