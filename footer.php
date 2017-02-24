@@ -5,7 +5,7 @@
 </div>
 
 <div class="rotate">
-	<h2>ROTATE DEVICE!</h2>
+	<h2>Rotate your device for best experience! </h2>
 </div>
 <footer class="site-footer">
 	<div class="wrap">

@@ -51,7 +51,7 @@ jQuery(document).ready(function($){
 
 	function centerGreeting(){
 		var hgH = $('.home_greeting').height();
-		console.log(hgH);
+		//console.log(hgH);
 		var calcH = -(hgH/2);
 
 		$('#home .content').css({"margin-top":calcH});
@@ -72,7 +72,7 @@ var wWidth = $(window).width();
 var dc_top, de_top, bt_top;
 
 if(wWidth > 750){
-	var dc_top = 160;
+	var dc_top = 125;
 	var bt_top = 168;
 	var de_top = 160;
 }
@@ -334,13 +334,12 @@ function GoToProject(project_id, reorder){
 		controller.scrollTo(photos_id);
 	}
  
-
+	$('#detail_scrollarea').css("-webkit-overflow-scrolling","touch");
 	infoOpen();
 
 
-
-
 	
+ 
  
 	if(run_once === 0){
  
@@ -425,7 +424,7 @@ $(document).on('click', 'p#explore_text', function () {
 		fullScreenExitTrigger();
 	});
 
-if (windowsize < 751) {
+if (windowsize < 768) {
 
 
 	$(document).on('click', '.project-wrap img', function (e) {
@@ -436,7 +435,7 @@ if (windowsize < 751) {
 }
 $(window).resize(function() {
   windowsize = $(window).width();
-  if (windowsize < 751) {
+  if (windowsize < 768) {
  
 
 	$(document).on('click', '.project-wrap img', function (e) {
@@ -474,6 +473,7 @@ $('#detail_close').click(function(e) {
 $('#detail_exit').click(function(e) {
 	e.preventDefault();
 	infoClose(e);
+	$('#detail_scrollarea').css("-webkit-overflow-scrolling","auto");
 	$('header').removeClass('detail-open').addClass('absolute');
 	$('#sayHello').slideUp(200);
 	$('#detail_exit').animate({
@@ -529,7 +529,7 @@ detailView.paused(true)
     .to("#detail_exit", 0.25, {autoAlpha:1, delay:0.6}, "closed")
     .to(".detail_nav", 0.25, {autoAlpha:1, delay:0.65}, "closed")
     //.to("#copy_1", 0.25, {css:{left:"0px", autoAlpha:1}, delay:0.7}, "closed")//make this #current_copy (copy in view)
-    .to("#infobar", 0.1, {css:{cursor:"default"}}, "closed")
+    .to("#infobar", 0.1, {css:{cursor:"default"}, onComplete: checkSize}, "closed")
     .add("open");
 //Detail View Expand definition
 
@@ -537,15 +537,26 @@ detailView.paused(true)
 //Detail View Expand function calls
 function infoOpen(){
     detailView.play();
+
 }
 
 function infoClose(event){
+	$('#detail_scrollarea').css("-webkit-overflow-scrolling","auto");
     event.stopPropagation();
     detailView.reverse();
 }
 //Detail View Expand function calls
  
+function checkSize(){
 
+	windowsize = $(window).width();
+	if (windowsize < 768) {
+		setTimeout(function(){ fullScreenTrigger(); }, 1000);	 	
+ 
+
+	}
+ 
+}
  
 //Fullscreen Definition ------
 fullscreen_open.add("start")
@@ -668,9 +679,10 @@ function hideTooltipBack(){
 
 var go_to = getQueryVariable('p');
  
-if(go_to !== ''){
+if(go_to){
  
 	//var project_id = "#" + go_to;
+	//console.log("gt " + go_to);
 	GoToProject(go_to, true);
 
 }

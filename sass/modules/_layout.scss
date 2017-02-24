@@ -1879,7 +1879,7 @@ footer.site-footer{
     cursor: pointer;
     position: fixed;
     border: 0px;
-    background-color: $blue;
+    background-color: rgba(0, 0, 247, 0.85);
     height: 100vh;
     width: 38%;
     //Change this if needed to make things fit
@@ -2163,7 +2163,7 @@ span#back_tip {
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    //-webkit-overflow-scrolling: touch;
     top:0;
     right: 0;
     z-index:2;
