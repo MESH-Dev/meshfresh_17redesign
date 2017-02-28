@@ -377,7 +377,7 @@ h6 {
   letter-spacing: .05em;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 33, sass/base/_typography.scss */
   h1 {
     font-size: 3em;
@@ -441,7 +441,7 @@ p {
 .the-content.row [class*='columns-']:last-of-type {
   padding-right: 15px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 78, sass/base/_typography.scss */
   .the-content.row [class*='columns-']:last-of-type {
     padding-right: 0;
@@ -694,7 +694,7 @@ p {
 .row [class*='columns-']:last-of-type {
   padding-right: 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 74, sass/base/_grid.scss */
   [class*='columns-'] {
     width: 100%;
@@ -702,7 +702,7 @@ p {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 90, sass/base/_grid.scss */
   [class*='offset-by-'] {
     margin-left: 0;
@@ -987,7 +987,7 @@ header nav#social ul li {
   float: left;
   padding: 0 1px 0 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 80, sass/modules/_header.scss */
   header nav#social ul li {
     margin-left: 5px;
@@ -1092,7 +1092,7 @@ header nav#social ul li a {
 .gateway-nav .say-hello.active {
   background-color: #0000f8;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 188, sass/modules/_header.scss */
   .gateway-nav .say-hello {
     display: none;
@@ -1132,7 +1132,7 @@ header nav#social ul li a {
   float: left;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* Header */
   /* line 249, sass/modules/_header.scss */
   header {
@@ -1321,13 +1321,13 @@ header {
   margin: 0 0 4.5em 0;
   z-index: 500;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 51, sass/modules/_layout.scss */
   header {
     margin: 0em 0 4.5em 0;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 65, sass/modules/_layout.scss */
   header #logo {
     width: 75px;
@@ -1367,7 +1367,7 @@ header.detail-open {
     display: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 111, sass/modules/_layout.scss */
   header.detail-open #logo {
     left: 20%;
@@ -2370,7 +2370,7 @@ section#blogroll #contentSecondary address {
   display: table;
   font-family: "Memphis LT W01 Medium";
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 704, sass/modules/_layout.scss */
   .badge {
     display: none;
@@ -2553,7 +2553,7 @@ a.cta:hover, a.cta:active, a.cta:focus {
   height: 100%;
   z-index: 2;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 919, sass/modules/_layout.scss */
   .project-box .hover {
     font-size: 2.3em;
@@ -2623,7 +2623,7 @@ a.cta:hover, a.cta:active, a.cta:focus {
   -webkit-column-gap: 20px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 1046, sass/modules/_layout.scss */
   .in-column {
     -webkit-column-count: 2;
@@ -2642,7 +2642,7 @@ a.cta:hover, a.cta:active, a.cta:focus {
   content: '3 .column.size-1of3';
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 1064, sass/modules/_layout.scss */
   .work-grid[data-columns]::before {
     content: '2 .column.size-1of2';
@@ -3541,7 +3541,7 @@ footer.site-footer p {
   text-decoration: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 2030, sass/modules/_layout.scss */
   .tooltip {
     display: none;
@@ -3744,7 +3744,7 @@ span#back_tip:after {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* line 2160, sass/modules/_layout.scss */
   #detail_scrollarea {
     width: 100vw !important;
