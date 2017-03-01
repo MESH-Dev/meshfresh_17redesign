@@ -169,6 +169,7 @@ get_header();
 		 		<div class="work-img">
 		 		<?php if ($award == true){ ?>
 						<div class="award-winning">
+							<span class="sr-only">This project is award winning</span>
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/award-winning.png">
 						</div>
 						<?php }?>

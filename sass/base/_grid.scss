@@ -80,11 +80,19 @@ $max-width: 1200px;
 	}
 
 	@media($bp-smaller-than-tablet) {
-	    width: 100%;
+	    width: 96%;
 	    padding: 0;
-	  
+	  	float:none;
+	  	margin:0 auto;
 	}
  
+}
+
+@media($bp-smaller-than-tablet) {
+	.columns-12{
+		width:100%;
+		
+	}
 }
 
 [class*='offset-by-'] {

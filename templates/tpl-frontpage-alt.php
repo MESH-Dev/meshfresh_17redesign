@@ -151,6 +151,7 @@ get_header();  ?>
 								<div class="project-img">
 									<?php if ($award == true){ ?>
 									<div class="award-winning">
+										<span class="sr-only">This project is award winning</span>
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/award-winning.png">
 									</div>
 									<?php }?>
@@ -240,7 +241,7 @@ get_header();  ?>
 						<?php endwhile; endif; ?>
 				</div>
 			</div>
-			<?php get_template_part('/partials/emoticons'); ?>
+			<?php //get_template_part('/partials/emoticons'); ?>
 		</div><!-- end container.home  -->
 	</div> <!-- end has-emoticons -->
 	<div class="container">

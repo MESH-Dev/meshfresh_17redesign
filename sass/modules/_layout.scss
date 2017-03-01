@@ -66,7 +66,8 @@ header{
 		@media ($bp-smaller-than-tablet){
 		 	width: 75px;
 		 	height: 75px;
-		 	left: 10%;
+		 	left: 4%;
+		 	top:16px;
 		 	position: absolute;
 		}
 	}
@@ -160,6 +161,10 @@ header.detail-open{
 
 	font-family:$memphis-medium;
 
+	@media only screen and (max-width:830px){
+		font-size:1.4em;
+	}
+
 	// @media($bp-smaller-than-tablet){
 	// 	display:none;
 	// }
@@ -196,6 +201,10 @@ header.detail-open{
 
 	.gutter{
 		// padding:17px 230px 0px 459px;
+	}
+
+	.loc-link{
+		display:block;
 	}
 }
 		 
@@ -1030,7 +1039,7 @@ a.cta{
 
 //Styling for the award-winning badge
 .award-winning{
-	width:100px;
+	width:75px;
 	position:absolute;
 	top:0;
 	left:0;
@@ -1506,6 +1515,10 @@ a.cta{
 }
 
 //Text Pages
+
+.text{
+	position:relative;
+}
 .quote{
 	margin-top:9em;
 
@@ -1543,6 +1556,10 @@ footer.site-footer{
 	.wrap{
 		width:95%;
 		margin:0 auto;
+		@media ($bp-smaller-than-mobile){
+			width:100%;
+			padding:0 1em;
+		}
 	}
 	p{
 		text-align: right;
@@ -1556,6 +1573,11 @@ footer.site-footer{
 		// margin-right:10px;
 		//text-decoration:underline;
 		padding:10px 0;
+
+		@media ($bp-smaller-than-mobile){
+			text-align:left;
+			//font-size:1.2em;
+		}
 	}
 }
 
@@ -1816,9 +1838,20 @@ footer.site-footer{
 			font-family:$memphis-medium;
 			margin-bottom:1em;
 
+			&.columns-4{
+				width:100%;
+			}
+
+			.loc-link{
+				display:block;
+				padding:5px 0;
+			}
+
 			a{
 				color:$blue;
+				font-family:$gothic;
 				text-decoration:none;
+				text-transform:uppercase;
 				border-bottom:2px solid $blue;
 
 				&:hover,

@@ -121,6 +121,20 @@ $(document).click(function(){
 	//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
 });
 
+$(window).on('resize',function(){
+	$('#sayHello').slideUp(200);
+	$('#detail_exit').animate({
+			top:de_top
+		},200);
+		$('.detail_copy').animate({
+			top:dc_top
+		},200);
+		//This element should really relate more to the content
+		$('#back_tip').animate({
+			top:bt_top
+		},200);
+});
+
 //Sidr funcitonality
 $('.sidr-trigger').sidr({
       name: 'sidr-main',
@@ -142,11 +156,13 @@ $('.sidr-trigger').sidr({
        //console.log("Sidr should be closed");
     });
 
-
+$(window).on('resize', function(){
+	$.sidr('close', 'sidr-main');
+});
  //Slick slider for quotes
  var $slider = $(".slider").slick({
     autoplay: true,
-    autoplaySpeed:3000,
+    autoplaySpeed:6000,
     pauseOnFocus:true,
     pauseOnHover:true,
 })			

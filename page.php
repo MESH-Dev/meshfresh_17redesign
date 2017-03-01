@@ -81,7 +81,7 @@
 									//'meta_compare'   => '!=',
 									//'order' => 'ASC',
 									'orderby' => 'rand', //Order by random so that a new quote is rendered each load
-									'posts_per_page' => 4 // -1 for all posts, we only want one, tho
+									'posts_per_page' => -1 // -1 for all posts, we only want one, tho
 								);
 								$query = new WP_Query($args);
 									if ( $query->have_posts() ) { ?>
@@ -107,6 +107,7 @@
 			</div> 
 		<?php endwhile; endif; ?>
 		</div><!-- end the-content -->
+		<?php get_template_part('/partials/emoticons'); ?>
 	</div>
 </section>
 
