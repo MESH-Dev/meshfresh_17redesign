@@ -3665,7 +3665,6 @@ span#back_tip:after {
   top: 0;
   right: 0;
   z-index: 2;
-  width: 98vw !important;
 }
 /* line 2132, sass/modules/_layout.scss */
 #detail_scrollarea.single-open {
