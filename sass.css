@@ -3139,6 +3139,7 @@ footer.site-footer p {
   /* line 1564, sass/modules/_layout.scss */
   footer.site-footer p {
     text-align: left;
+    font-size: 1.4em;
   }
 }
 
