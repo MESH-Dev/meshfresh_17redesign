@@ -2757,7 +2757,7 @@ a.cta:hover, a.cta:active, a.cta:focus {
 
 /* line 1174, sass/modules/_layout.scss */
 .work-block {
-  margin-bottom: 4em;
+  margin-bottom: 40px;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;

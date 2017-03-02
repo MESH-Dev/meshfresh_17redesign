@@ -178,7 +178,7 @@ get_header();
 		 		//var_dump(get_the_post_thumbnail());
 
 		 		if ($tile_image_url != '') { ?>
-		 			<img src="<?php echo $tile_image_url; ?>" >
+		 			<img class="the-work" src="<?php echo $tile_image_url; ?>" >
 		 		<?php }else{ ?>
 
 		 		<?php $rand_img = mt_rand(1, 2); 

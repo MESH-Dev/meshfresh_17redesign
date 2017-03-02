@@ -167,6 +167,23 @@ $(window).on('resize', function(){
     pauseOnHover:true,
 })			
 
+function resize_wb_img(){
+
+$('.work-block').each(function(){
+	var _height = $(this).find('img.the-work').height();
+	//console.log(_height);
+
+	if(_height > 300){
+		//$(this).find('.hover').css({height:_height+5});
+		//console.log('Bigger');
+		$(this).css({height:_height+17});
+	}
+	});
+}
+
+resize_wb_img();
+$(window).resize(resize_wb_img);
+
 Macy.init({
     container: '#macy',
     trueOrder: true,
