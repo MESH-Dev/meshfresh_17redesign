@@ -450,31 +450,22 @@ $(document).on('click', 'p#explore_text', function () {
 	GoToProject(project_id,false);
 });
 
+$(document).on('click', '.project-wrap img', function (e) {
+	e.preventDefault();
+	fullScreenTrigger();
+});
 
 
-	$('.detail-side-title').click(function(e) {
-		e.preventDefault();
-		fullScreenExitTrigger();
-	});
+$('.detail-side-title').click(function(e) {
+	e.preventDefault();
+	fullScreenExitTrigger();
+});
 
-if (windowsize < 768) {
-
-
-	$(document).on('click', '.project-wrap img', function (e) {
-		e.preventDefault();
-		fullScreenTrigger();
-	});
-
-}
+ 
 $(window).resize(function() {
   windowsize = $(window).width();
   if (windowsize < 768) {
  
-
-	$(document).on('click', '.project-wrap img', function (e) {
-		e.preventDefault();
-		fullScreenTrigger();
-	});
   }
 });
 
@@ -542,6 +533,7 @@ var detailView = new TimelineMax(),
     tooltip_prev = new TimelineMax(),
     tooltip_close = new TimelineMax(),
     tooltip_back = new TimelineMax(),
+	tooltip_project = new TimelineMax(),
     tooltip_fs = new TimelineMax();
 
 
@@ -657,7 +649,12 @@ tooltip_prev.add("start")
 
 tooltip_back.add("start")
     .paused(true)
-    .to("#back_tip", 0.3, {css:{autoAlpha:1, left:"130px"}, ease:Power2.easeInOut}, "start")
+    .to("#back_tip", 0.3, {css:{autoAlpha:1, left:"110px"}, ease:Power2.easeInOut}, "start")
+    .add("end");
+
+tooltip_project.add("start")
+    .paused(true)
+    .to("#project_tip", 0.3, {css:{autoAlpha:1, left:"99%"}, ease:Power2.easeInOut}, "start")
     .add("end");
 //Tooltip Show/Hide Definitions
 
@@ -665,6 +662,7 @@ tooltip_back.add("start")
 var next_tip_trigger = document.getElementById('next_arrow'),
     prev_tip_trigger = document.getElementById('prev_arrow'),
     back_tip_trigger = document.getElementById('detail_exit');
+    project_tip_trigger = document.getElementById('detail_close');
 
  
 next_tip_trigger.onmouseover = showTooltipNext;
@@ -674,6 +672,9 @@ prev_tip_trigger.onmouseout = hideTooltipPrev;
 
 back_tip_trigger.onmouseover = showTooltipBack;
 back_tip_trigger.onmouseout = hideTooltipBack;
+
+project_tip_trigger.onmouseover = showTooltipProject;
+project_tip_trigger.onmouseout = hideTooltipProject;
 
 function showTooltipLeft(){
     tooltip_fs.play()
@@ -704,6 +705,12 @@ function showTooltipBack(){
 }
 function hideTooltipBack(){
     tooltip_back.reverse()
+}
+function showTooltipProject(){
+    tooltip_project.play()
+}
+function hideTooltipProject(){
+    tooltip_project.reverse()
 }
 //Tooltip Trigger Definitions
 //});

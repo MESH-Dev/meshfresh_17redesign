@@ -25,7 +25,6 @@ img{
 	max-width:100%;
 	height:auto;
 }
-
 .onethird{
 	width:33%;
 }
@@ -70,6 +69,7 @@ header{
 		 	top:16px;
 		 	position: absolute;
 		}
+
 	}
 }
 
@@ -112,6 +112,13 @@ header.detail-open{
 		#logo{
 			@media ($bp-smaller-than-tablet){
 			 	left: 20%;
+			}
+			@media ($bp-smaller-than-mobile ){
+				width: 50px;
+			    height: 50px;
+			    left: 13px !important;
+			    top: 4px;
+			    position: fixed;
 			}
 		}
 		#social{
@@ -1914,7 +1921,7 @@ footer.site-footer{
     border: 0px;
     background-color: rgba(0, 0, 247, 0.85);
     height: 100vh;
-    width: 38%;
+    width: 40%;
     //Change this if needed to make things fit
     min-width: 350px;
     //box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.3);
@@ -1923,7 +1930,7 @@ footer.site-footer{
     margin-left: -40px;
 
 
-    @media ($bp-larger-than-mobile) and ($bp-smaller-than-desktop){
+    @media ( $bp-smaller-than-desktop){
     	width:50%;
     }
 
@@ -2061,46 +2068,45 @@ footer.site-footer{
 }
 
 .tooltip{
+	font-family: 'Gothic';
+	font-size: 1.4em;
+	text-transform: uppercase;
+	color: #fff;
+	background: rgba(0,0,0,0.8);
+	height: 25px;
+	line-height: 28px;
+	text-align: center;
+	visibility: hidden;
+	position: absolute;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		margin-top: -8px;
+		width: 0; height: 0;
+		border-right: 8px solid rgba(0,0,0,0.8);
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+	}
+ 
 	@media ($bp-smaller-than-tablet){
-	 
-			display: none;
-			visibility: hidden;
-		}
+		display: none;
+		visibility: hidden;
+	}
 }
 
-span#back_tip {
-		font-family: 'Gothic';
-		font-size: 1.4em;
-		position: absolute;
-		text-transform: uppercase;
-		left: 170px;
-		top: 168px;
-		width:130px;
-		color: #fff;
-		background: rgba(0,0,0,0.8);
-		height: 25px;
-		line-height: 28px;
-		text-align: center;
-		visibility: hidden;
+span#back_tip{
+	left: 170px;
+	top: 168px;
+	width:130px;
+}
 
-		@media ($bp-smaller-than-mobile){
-			display: none;
-			visibility: hidden;
-
-		}
- 
- 
-	&:after {
-	  content: '';
-	  position: absolute;
-	  top: 50%;
-	  right: 100%;
-	  margin-top: -8px;
-	  width: 0; height: 0;
-	  border-right: 8px solid rgba(0,0,0,0.8);
-	  border-top: 8px solid transparent;
-	  border-bottom: 8px solid transparent;
-	}
+span#project_tip{
+	left: 105%;
+	top: 168px;
+	width:155px;
 }
 
 .underline{

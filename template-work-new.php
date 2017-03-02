@@ -210,6 +210,7 @@ get_header();
 		<span id="back_tip" class="tooltip">View All Projects</span>
 
 		<i id="detail_close" class="material-icons" >clear</i>
+		<span id="project_tip" class="tooltip">Close Project Details</span>
  
 		<div id="sidebar-content" class=" ">
 
