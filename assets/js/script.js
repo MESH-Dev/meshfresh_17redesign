@@ -72,9 +72,9 @@ var wWidth = $(window).width();
 var dc_top, de_top, bt_top;
 
 if(wWidth > 750){
-	var dc_top = 125;
+	var dc_top = 70;
 	var bt_top = 168;
-	var de_top = 160;
+	var de_top = 100;
 }
 // else if(wWidth < 480){
 // 	var dc_top = 110;
