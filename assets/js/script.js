@@ -329,7 +329,7 @@ function GoToProject(project_id, reorder){
 
 	var title = $(pid).find('span').html();
  
-	$('.detail-side-title p').html('<span>&#10142;</span>' + title);
+	$('.detail-side-text p').html(title);
 
 	$('#infobar').addClass("open");
 
@@ -368,6 +368,9 @@ function GoToProject(project_id, reorder){
 	}
  
 	$('#detail_scrollarea').css("-webkit-overflow-scrolling","touch");
+
+
+	//checkSize();
 	infoOpen();
 
 
@@ -398,7 +401,7 @@ function GoToProject(project_id, reorder){
 					active_project = refElement;
 
 					var new_title = $(text_elem).find('span').html();
-					$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
+					$('.detail-side-text p').html(new_title);
 					if (window.history && window.history.pushState) {
 						//history.pushState(null, null, '?p='+url_id );
 					}
@@ -417,7 +420,7 @@ function GoToProject(project_id, reorder){
 					 
 
 					var new_title = $(text_elem).prev('.detail_copy').find('span').html();
-					$('.detail-side-title p').html('<span>&#10142;</span>' + new_title);
+					$('.detail-side-text p').html(new_title);
 				}
 			}
 			
@@ -456,8 +459,9 @@ $(document).on('click', '.project-wrap img', function (e) {
 });
 
 
-$('.detail-side-title').click(function(e) {
+$('.detail-side-text').click(function(e) {
 	e.preventDefault();
+	
 	fullScreenExitTrigger();
 });
 
@@ -469,33 +473,20 @@ $(window).resize(function() {
   }
 });
 
-	
-
-$('#fullscreen_exit').click(function(e) {
-	e.preventDefault();
-	fullScreenExitTrigger();
-	//$('#detail_close').text('clear');
-});
-
-$('#fullscreen').click(function(e) {
-	e.preventDefault();
-	fullScreenTrigger();
-
-	//$('#detail_close').text('add');
-});
+ 
 
 //var clk_cnt = 0;
 $('#detail_close').click(function(e) {
 	
 		fullScreenTrigger();
 		//$(this).text('add');
-	
-	
+ 
 	
 });
 
 $('#detail_exit').click(function(e) {
 	e.preventDefault();
+	fullScreenExitTrigger();
 	infoClose(e);
 	$('#detail_scrollarea').css("-webkit-overflow-scrolling","auto");
 	$('header').removeClass('detail-open').addClass('absolute');
@@ -521,8 +512,8 @@ $('#detail_exit').click(function(e) {
 
   
 
-//Variable definitions
-var detailView = new TimelineMax(),
+//Variable definitions //{onComplete:checkSize}
+var detailView = new TimelineMax({onComplete:checkSize}),
 	mobileDetailView = new TimelineMax(),
     //project_2_transition = new TimelineMax(),
     //project_3_transition = new TimelineMax(),
@@ -554,7 +545,29 @@ detailView.paused(true)
     .to("#detail_exit", 0.25, {autoAlpha:1, delay:0.6}, "closed")
     .to(".detail_nav", 0.25, {autoAlpha:1, delay:0.65}, "closed")
     //.to("#copy_1", 0.25, {css:{left:"0px", autoAlpha:1}, delay:0.7}, "closed")//make this #current_copy (copy in view)
-    .to("#infobar", 0.1, {css:{cursor:"default"}, onComplete: checkSize}, "closed")
+    .to("#infobar", 0.1, {css:{cursor:"default"}},  "closed")
+    .add("open");
+//Detail View Expand definition
+
+
+//Detail View Expand definition: defines GSAP timeline for detail view expansion animation
+mobileDetailView.paused(true)
+    .add("closed")
+    .to("#infobar", 0.4, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "closed")
+    .to("#explore_text", 0.5, {autoAlpha:0}, "closed")
+    .to("#gallery_cover", 0.4, {autoAlpha:1}, "closed")
+    .to("body", 0.1, {css:{overflow:"hidden"}}, "closed")
+    .to("#detail_scrollarea", 0.4, {autoAlpha:1})
+    .to("#detail_exit", 0.25, {autoAlpha:1, delay:0.6}, "closed")
+ 
+    //.to("#copy_1", 0.25, {css:{left:"0px", autoAlpha:1}, delay:0.7}, "closed")//make this #current_copy (copy in view)
+    .to("#infobar", 0.1, {css:{cursor:"default"}},  "closed")
+	.to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "closed")
+    .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "closed")
+    .to("#detail_close", 0.4, {css:{autoAlpha:0}}, "closed")
+    .to(".detail_copy.active-project", 0.4, {css:{autoAlpha:0}}, "closed")
+    //.to("#detail_close", 0.4, {css:{autoAlpha:1}}, "closed")
+    .to(".detail-side-text p", 0.4, {css:{autoAlpha:1}}, "closed")
     .add("open");
 //Detail View Expand definition
 
@@ -569,17 +582,23 @@ function infoClose(event){
 	$('#detail_scrollarea').css("-webkit-overflow-scrolling","auto");
     event.stopPropagation();
     detailView.reverse();
+ 
 }
 //Detail View Expand function calls
  
 function checkSize(){
 
+	//infoOpen();
+
 	windowsize = $(window).width();
 	if (windowsize < 768) {
-		setTimeout(function(){ fullScreenTrigger(); }, 1000);	 	
- 
-
+		//mobileDetailView.play();
+		fullScreenTrigger();
 	}
+	else{
+		//detailView.play();
+	}
+ 
  
 }
  
@@ -587,39 +606,30 @@ function checkSize(){
 fullscreen_open.add("start")
     .paused(true)
    
-    .to("#infobar", 0.4, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
-    .to("#fullscreen", 0.4, {css:{autoAlpha:0}}, "start")
+    .to("#infobar", 0.3, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#detail_close", 0.4, {css:{autoAlpha:0}}, "start")
     .to(".detail_copy.active-project", 0.4, {css:{autoAlpha:0}}, "start")
-    .to("#fullscreen_exit", 0.4, {css:{autoAlpha:1}}, "start")
-    //.to("#detail_close", 0.4, {css:{autoAlpha:1}}, "start")
-    .to(".detail-side-title p", 0.4, {css:{autoAlpha:1}}, "start")
+    .to(".detail-side-text p", 0.4, {css:{autoAlpha:1}}, "start")
     .add("end");
 
-fullscreen_close.add("start")
-    .paused(true)
-    
-    .to("#infobar", 0.4, {css:{right:"auto", left:"0",marginRight:"0px"}}, "start")
-    .to(".detail_nav", 0.4, {css:{autoAlpha:1}}, "start")
-    .to(".detail_close", 0.4, {css:{autoAlpha:1}}, "start")
-    .to(".detail_copy.active-project", 0.4, {css:{autoAlpha:1}}, "start")
-    .to("#fullscreen_exit", 0.4, {css:{autoAlpha:0}}, "start")
-    //.to("#detail_close", 0.4, {css:{autoAlpha:0}}, "start")
-    .to("#fullscreen", 0.4, {css:{autoAlpha:1}}, "start")
-    .to(".detail-side-title p", 0.4, {css:{autoAlpha:0}}, "start")
-    .add("end");
+ 
 //Fullscreen Definition
 
 //Fullscreen Trigger Definitions
 function fullScreenTrigger(){
     fullscreen_open.play();
-	//$('.detail-side-title p' ).fadeIn();
+	//$('.detail-side-text p' ).fadeIn();
 }
 
 function fullScreenExitTrigger(){
-    fullscreen_open.reverse();
-    //$('.detail-side-title p' ).fadeOut();
+ 
+	//detailView.play();
+	fullscreen_open.reverse();
+
+
+    
+    //$('.detail-side-text p' ).fadeOut();
 }
 	//Fullscreen Trigger
 
@@ -649,7 +659,7 @@ tooltip_prev.add("start")
 
 tooltip_back.add("start")
     .paused(true)
-    .to("#back_tip", 0.3, {css:{autoAlpha:1, left:"110px"}, ease:Power2.easeInOut}, "start")
+    .to("#back_tip", 0.3, {css:{autoAlpha:1, left:"60px"}, ease:Power2.easeInOut}, "start")
     .add("end");
 
 tooltip_project.add("start")

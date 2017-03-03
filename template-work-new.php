@@ -203,8 +203,8 @@ get_header();
 
 <!-- <section class="josh"> -->
 	<div id="infobar" >
-
-		<p id="explore_text"> <span>&#10142;</span>  Explore the Work</p>
+		
+		<p id="explore_text"><i class="explore_arrow material-icons" >keyboard_backspace</i>  Explore the Work</p>
 		
 		<i id="detail_exit" class="material-icons" >keyboard_backspace</i>
 		<span id="back_tip" class="tooltip">View All Projects</span>
@@ -221,7 +221,7 @@ get_header();
 							'post_type'      => 'work',
 							//'meta_key'       => 'featured',
 							//'meta_value'     => true,
-							//'meta_compare'   => '!=',
+							//'meta_compare'   => '!=', 
 							'order' => 'DESC',
 							'order_by' => 'date',
 							'posts_per_page' => -1,
@@ -313,7 +313,10 @@ get_header();
 
 
 			<div class="detail-side-title">
-				<p>Project Title Here</p>
+				<div class="detail-side-text">
+					<p>Project Title Here</p>
+				</div>
+				
 			</div>
 	
 		</div>
