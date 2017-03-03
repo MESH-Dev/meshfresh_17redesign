@@ -706,18 +706,37 @@ p {
 
 @media (max-width: 768px) {
   /* line 92, sass/base/_grid.scss */
+  .columns-4 {
+    width: calc(50% - 7.5px);
+    padding: 0;
+    float: left;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  /* line 92, sass/base/_grid.scss */
+  .columns-4 {
+    width: 96%;
+    padding: 0;
+    float: left;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* line 110, sass/base/_grid.scss */
   .columns-12 {
     width: 100%;
   }
 }
 @media (max-width: 768px) {
-  /* line 98, sass/base/_grid.scss */
+  /* line 116, sass/base/_grid.scss */
   [class*='offset-by-'] {
     margin-left: 0;
   }
 }
 
-/* line 107, sass/base/_grid.scss */
+/* line 125, sass/base/_grid.scss */
 .no-padding {
   padding-right: 0;
 }
@@ -3361,13 +3380,13 @@ footer.site-footer p {
   top: 10%;
   right: 10%;
 }
-
-@media (max-width: 480px) {
-  /* line 1803, sass/modules/_layout.scss */
+@media (max-width: 768px) {
+  /* line 1748, sass/modules/_layout.scss */
   .emoticon {
-    width: 50px;
+    display: none;
   }
 }
+
 /* line 1810, sass/modules/_layout.scss */
 .sidr-close {
   display: none;

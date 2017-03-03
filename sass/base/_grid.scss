@@ -88,6 +88,24 @@ $max-width: 1200px;
  
 }
 
+//hack to fix macy load.....
+.columns-4{
+	@media($bp-smaller-than-tablet) {
+	    width: calc(50% - 7.5px);
+	    padding: 0;
+	  	float:left;
+	  	margin:0 auto;
+	}
+		@media($bp-smaller-than-mobile) {
+	    width: 96%;
+	    padding: 0;
+	  	float:left;
+	  	margin:0 auto;
+	}
+}
+//......
+
+
 @media($bp-smaller-than-tablet) {
 	.columns-12{
 		width:100%;

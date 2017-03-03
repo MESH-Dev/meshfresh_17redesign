@@ -167,22 +167,21 @@ $(window).on('resize', function(){
     pauseOnHover:true,
 })			
 
-function resize_wb_img(){
+// function resize_wb_img(){
 
-$('.work-block').each(function(){
-	var _height = $(this).find('img.the-work').height();
-	//console.log(_height);
+// $('.work-block').each(function(){
+// 	var _height = $(this).find('img.the-work').height();
+ 
 
-	if(_height > 300){
-		//$(this).find('.hover').css({height:_height+5});
-		//console.log('Bigger');
-		$(this).css({height:_height+17});
-	}
-	});
-}
+// 	if(_height > 300){
+ 
+// 		$(this).css({height:_height+17});
+// 	}
+// 	});
+// }
 
-resize_wb_img();
-$(window).resize(resize_wb_img);
+// resize_wb_img();
+// $(window).resize(resize_wb_img);
 
 Macy.init({
     container: '#macy',
@@ -193,7 +192,7 @@ Macy.init({
     breakAt: {
         //1200: ,
         950: 2,
-        520: 1,
+        480: 1,
         //400: 1
     }
  //    function(){
@@ -591,7 +590,7 @@ function checkSize(){
 	//infoOpen();
 
 	windowsize = $(window).width();
-	if (windowsize < 768) {
+	if (windowsize < 769) {
 		//mobileDetailView.play();
 		fullScreenTrigger();
 	}

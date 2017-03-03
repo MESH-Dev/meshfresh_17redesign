@@ -1797,13 +1797,13 @@ footer.site-footer{
 		top:10%;
 		right:10%;
 	}
-}
-
-@media ($bp-smaller-than-mobile){
-	.emoticon{
-		width:50px;
+	@media ($bp-smaller-than-tablet){
+	 
+		display: none;
 	}
-}
+ }
+
+
 
 //Sidr
 
