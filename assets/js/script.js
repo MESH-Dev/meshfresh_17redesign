@@ -71,10 +71,10 @@ var wWidth = $(window).width();
 
 var dc_top, de_top, bt_top;
 
-if(wWidth > 750){
-	var dc_top = 70;
+if(wWidth > 768){
+	var dc_top = 125;
 	var bt_top = 168;
-	var de_top = 100;
+	var de_top = 160;
 }
 // else if(wWidth < 480){
 // 	var dc_top = 110;
@@ -281,11 +281,7 @@ $(document).on('click', '#next_proj', function (e) {
 
 			// trigger scroll
 			controller.scrollTo(next_id);
-
-			// if supported by the browser we can even update the URL.
-			// if (window.history && window.history.pushState) {
-			// 	history.pushState("", document.title, next_id);
-			// }
+ 
 		}
 });
 
@@ -299,11 +295,7 @@ $(document).on('click', '#prev_proj', function (e) {
 
 		// trigger scroll
 		controller.scrollTo(prev_id);
-
-			// if supported by the browser we can even update the URL.
-		// if (window.history && window.history.pushState) {
-		// 	history.pushState("", document.title, prev_id);
-		// }
+ 
 	}
  
 
@@ -316,9 +308,7 @@ var run_once = 0;
  
 
 function GoToProject(project_id, reorder){
-
-	//project_id  = project_id.trim(" ");
-
+ 
 	var pid = '#'+project_id;
 	var photos_id = '#'+project_id+'-panels';
 
@@ -328,7 +318,7 @@ function GoToProject(project_id, reorder){
 
 	var title = $(pid).find('span').html();
  
-	$('.detail-side-text p').html(title);
+	$('.detail-side-text p').html("&#8226; &#8226; &#8226; &nbsp; "+title);
 
 	$('#infobar').addClass("open");
 
@@ -338,9 +328,9 @@ function GoToProject(project_id, reorder){
 
 
 	//browser back button here?
-	if (window.history && window.history.pushState) {
+	// if (window.history && window.history.pushState) {
 		//history.pushState(null, null, '?p='+project_id );
-	}
+	// }
  
 	$('.detail_copy').removeClass('active-project');
 	$(pid).addClass('active-project');
@@ -371,10 +361,6 @@ function GoToProject(project_id, reorder){
 
 	//checkSize();
 	infoOpen();
-
-
-	
- 
  
 	if(run_once === 0){
  
@@ -400,26 +386,23 @@ function GoToProject(project_id, reorder){
 					active_project = refElement;
 
 					var new_title = $(text_elem).find('span').html();
-					$('.detail-side-text p').html(new_title);
-					if (window.history && window.history.pushState) {
-						//history.pushState(null, null, '?p='+url_id );
-					}
+					$('.detail-side-text p').html("&#8226; &#8226; &#8226; &nbsp; "+new_title);
+					// if (window.history && window.history.pushState) {
+					// 	//history.pushState(null, null, '?p='+url_id );
+					// }
 				}
 				else{
-					//console.log("leave" +  elem + " / " + project_color);
+					 
 					$('.detail_copy').removeClass("active-project");
 					project_color = text_elem.prev('.detail_copy').attr('data-color');
 					text_elem.prev('.detail_copy').addClass("active-project");
 					$('#infobar').css('background-color',project_color );
-					if (window.history && window.history.pushState) {
-						//history.pushState(null, null, '?p='+url_id );
-					}
-
-					 
-					 
+					// if (window.history && window.history.pushState) {
+					// 	//history.pushState(null, null, '?p='+url_id );
+					// }
 
 					var new_title = $(text_elem).prev('.detail_copy').find('span').html();
-					$('.detail-side-text p').html(new_title);
+					$('.detail-side-text p').html("&#8226; &#8226; &#8226; &nbsp; "+new_title);
 				}
 			}
 			
@@ -612,6 +595,18 @@ fullscreen_open.add("start")
     .to(".detail-side-text p", 0.4, {css:{autoAlpha:1}}, "start")
     .add("end");
 
+
+//currently not used
+fullscreen_close.add("start")
+    .paused(true)
+   
+    .to("#infobar", 0.3, {css:{left: "0px"}}, "start")
+    .to(".detail_nav", 0.4, {css:{autoAlpha:1}}, "start")
+    .to("#detail_close", 0.4, {css:{autoAlpha:1}}, "start")
+    .to(".detail_copy.active-project", 0.4, {css:{autoAlpha:1}}, "start")
+    .to(".detail-side-text p", 0.4, {css:{autoAlpha:1}}, "start")
+    .add("end");
+
  
 //Fullscreen Definition
 
@@ -623,14 +618,13 @@ function fullScreenTrigger(){
 
 function fullScreenExitTrigger(){
  
-	//detailView.play();
-	fullscreen_open.reverse();
+	 
+    fullscreen_open.reverse();
 
-
-    
-    //$('.detail-side-text p' ).fadeOut();
+	//fullscreen_close.play();
+ 
 }
-	//Fullscreen Trigger
+ 
 
 
 

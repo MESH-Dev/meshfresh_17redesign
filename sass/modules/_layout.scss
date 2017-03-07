@@ -1581,6 +1581,7 @@ footer.site-footer{
 	border-bottom:10px solid $blue;
 	margin-top:5em;
 	clear: both;
+	margin-right: 30px;
 
 	.wrap{
 		width:95%;
@@ -2045,6 +2046,10 @@ footer.site-footer{
     padding: 90px 40px 0 60px;
     max-width: 800px;
     margin: 0 auto;
+
+     @media($bp-smaller-than-tablet){
+     	top:75px;
+     }
 
      @media($bp-smaller-than-mobile){
      	padding: 0px 40px 0 60px;
