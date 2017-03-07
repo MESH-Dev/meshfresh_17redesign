@@ -236,19 +236,7 @@ header.detail-open{
 		display:block;
 	}
 }
-		 
-//#sayHello-caret{height: 16px;width: 16px;background: url(../img/sayHello.png) no-repeat;position: absolute;right: 483px;bottom:0px;display: block;transition:0.2s all;-webkit-transition:0.2s all;-moz-transition:0.2s all;-ms-transition:0.2s all;-o-transition:0.2s all;}
-			
-//.active #sayHello-caret{bottom:-30px;}
-
-// #sayHello .onethird{}
-// 	#sayHello .onethird .gutter{padding:0 0;}
-// #sayHello .onethird.first{}
-// 	#sayHello .onethird.first .gutter{padding:0 0;}
-// #sayHello .onethird .last{}
-// 	#sayHello .onethird.last .gutter{padding:21px 0 0 0;}
-// #sayHello a{color:#fff;font-family:'MemphisLTW01-BoldItalic';transition:0.2s all;-webkit-transition:0.2s all;-moz-transition:0.2s all;-ms-transition:0.2s all;-o-transition:0.2s all;}
-// 	#sayHello a:hover{opacity:0.5;}
+ 
 
 
 /* =========
@@ -2006,12 +1994,14 @@ footer.site-footer{
     width: 40px;
 	position: absolute;
     left: calc(100% - 40px);
+    top: 0;
 
 
 	.detail-side-text{
 		width: 100%;
 		margin: 160px 0 0 0;
 		height: calc(100vh - 160px);
+		display: block;
 
 		p{
     		color: #fff;
@@ -2214,11 +2204,7 @@ span#project_tip{
 		font-size: 35px;
 		left: 1px;
      }
-
- //    transition: all 0.2s ease-in-out;
-	// &:hover{
-	// 	left: 56px;
-	// }     
+    
 	&.single-open{
 		 visibility: visible;
 	}

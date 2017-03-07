@@ -2,9 +2,8 @@ jQuery(window).load(function($) {
 	//jQuery(".projects-loader").fadeOut("slow");
 
 	function imgLoaded(img){
-	    var $img = jQuery(img);
-	 
-	    $img.parent().addClass('loaded');
+		var $img = jQuery(img);
+		$img.parent().addClass('loaded');
 	};
 
 	function lazyLoad(){
@@ -88,15 +87,14 @@ e.stopPropagation();
 e.preventDefault();
 	if(sh_ctr == 1){
 		$('#sayHello').slideDown(200);
-		 $('#detail_exit, .detail_copy, #back_tip').animate({top:"+=100"},200);
+		$('#detail_exit, #back_tip').animate({top:"+=100"},200);
+		$('.detail_copy').css("top",dc_top);
 	}else{
 		$('#sayHello').slideUp(200);
 		$('#detail_exit').animate({
 			top:de_top
 		},200);
-		$('.detail_copy').animate({
-			top:dc_top
-		},200);
+		$('.detail_copy').css("top",dc_top);
 		//This element should really relate more to the content
 		$('#back_tip').animate({
 			top:bt_top
@@ -111,9 +109,7 @@ $(document).click(function(){
 	$('#detail_exit').animate({
 			top:de_top
 		},200);
-		$('.detail_copy').animate({
-			top:dc_top
-		},200);
+		$('.detail_copy').css("top",dc_top);
 		//This element should really relate more to the content
 		$('#back_tip').animate({
 			top:bt_top
@@ -121,19 +117,7 @@ $(document).click(function(){
 	//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
 });
 
-$(window).on('resize',function(){
-	$('#sayHello').slideUp(200);
-	$('#detail_exit').animate({
-			top:de_top
-		},200);
-		$('.detail_copy').animate({
-			top:dc_top
-		},200);
-		//This element should really relate more to the content
-		$('#back_tip').animate({
-			top:bt_top
-		},200);
-});
+
 
 //Sidr funcitonality
 $('.sidr-trigger').sidr({
@@ -470,17 +454,19 @@ $('#detail_exit').click(function(e) {
 	e.preventDefault();
 	fullScreenExitTrigger();
 	infoClose(e);
+
 	$('#detail_scrollarea').css("-webkit-overflow-scrolling","auto");
+	
 	$('header').removeClass('detail-open').addClass('absolute');
+	
 	$('#sayHello').slideUp(200);
+
 	$('#detail_exit').animate({
 			top:de_top
 		},200);
-		$('.detail_copy').animate({
-			top:dc_top
-		},200);
+	$('.detail_copy').css("top",dc_top);
 		//This element should really relate more to the content
-		$('#back_tip').animate({
+	$('#back_tip').animate({
 			top:bt_top
 		},200);
 
@@ -588,7 +574,8 @@ function checkSize(){
 fullscreen_open.add("start")
     .paused(true)
    
-    .to("#infobar", 0.3, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
+	.to("#infobar", 0.3, {css:{left: "auto", right:"100%", marginRight:"-40px"}}, "start")
+    //.to("#infobar", 0.3, {css:{transform: "translate(calc(-100% + 40px), auto)"}}, "start")
     .to(".detail_nav", 0.4, {css:{autoAlpha:0}}, "start")
     .to("#detail_close", 0.4, {css:{autoAlpha:0}}, "start")
     .to(".detail_copy.active-project", 0.4, {css:{autoAlpha:0}}, "start")
