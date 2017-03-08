@@ -3581,6 +3581,9 @@ footer.site-footer p {
   padding: 90px 40px 0 60px;
   max-width: 800px;
   margin: 0 auto;
+  -webkit-transition: all .3s;
+  /* Safari */
+  transition: all .3s;
 }
 @media (max-width: 768px) {
   /* line 2030, sass/modules/_layout.scss */
@@ -3596,11 +3599,11 @@ footer.site-footer p {
     top: 110px;
   }
 }
-/* line 2050, sass/modules/_layout.scss */
+/* line 2052, sass/modules/_layout.scss */
 .detail_copy.single-open {
   visibility: visible;
 }
-/* line 2054, sass/modules/_layout.scss */
+/* line 2056, sass/modules/_layout.scss */
 .detail_copy h3 {
   font-family: 'Memphis LT W01 Medium', sans-serif;
   font-size: 24px;
@@ -3609,20 +3612,20 @@ footer.site-footer p {
   margin-bottom: 10px;
 }
 @media (max-width: 1060px) {
-  /* line 2054, sass/modules/_layout.scss */
+  /* line 2056, sass/modules/_layout.scss */
   .detail_copy h3 {
     line-height: 1.5;
     letter-spacing: .02em;
   }
 }
 @media (max-width: 480px) {
-  /* line 2054, sass/modules/_layout.scss */
+  /* line 2056, sass/modules/_layout.scss */
   .detail_copy h3 {
     line-height: 1.5;
     font-size: 18px;
   }
 }
-/* line 2072, sass/modules/_layout.scss */
+/* line 2074, sass/modules/_layout.scss */
 .detail_copy p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3630,17 +3633,17 @@ footer.site-footer p {
   font-size: 14px;
   margin-bottom: 12px;
 }
-/* line 2080, sass/modules/_layout.scss */
+/* line 2082, sass/modules/_layout.scss */
 .detail_copy a {
   color: white;
   text-decoration: underline;
 }
-/* line 2083, sass/modules/_layout.scss */
+/* line 2085, sass/modules/_layout.scss */
 .detail_copy a:hover {
   text-decoration: none;
 }
 
-/* line 2091, sass/modules/_layout.scss */
+/* line 2093, sass/modules/_layout.scss */
 .tooltip {
   font-family: 'Gothic';
   font-size: 1.4em;
@@ -3653,7 +3656,7 @@ footer.site-footer p {
   visibility: hidden;
   position: absolute;
 }
-/* line 2103, sass/modules/_layout.scss */
+/* line 2105, sass/modules/_layout.scss */
 .tooltip:after {
   content: '';
   position: absolute;
@@ -3667,35 +3670,38 @@ footer.site-footer p {
   border-bottom: 8px solid transparent;
 }
 @media (max-width: 768px) {
-  /* line 2091, sass/modules/_layout.scss */
+  /* line 2093, sass/modules/_layout.scss */
   .tooltip {
     display: none;
     visibility: hidden;
   }
 }
 
-/* line 2121, sass/modules/_layout.scss */
+/* line 2123, sass/modules/_layout.scss */
 span#back_tip {
   left: 120px;
   top: 168px;
   width: 130px;
   position: fixed;
+  -webkit-transition: all .3s;
+  /* Safari */
+  transition: all .3s;
 }
 
-/* line 2128, sass/modules/_layout.scss */
+/* line 2132, sass/modules/_layout.scss */
 span#project_tip {
   left: 105%;
   top: 168px;
   width: 155px;
 }
 
-/* line 2134, sass/modules/_layout.scss */
+/* line 2138, sass/modules/_layout.scss */
 .underline {
   padding-bottom: 2px;
   border-bottom: 2px solid #fff;
 }
 
-/* line 2141, sass/modules/_layout.scss */
+/* line 2145, sass/modules/_layout.scss */
 #explore_text {
   color: #fff;
   font-family: "Memphis LT W01 Medium";
@@ -3706,20 +3712,20 @@ span#project_tip {
   position: relative;
   z-index: 1000;
 }
-/* line 2153, sass/modules/_layout.scss */
+/* line 2157, sass/modules/_layout.scss */
 #explore_text span {
   font-weight: bold;
   -webkit-writing-mode: horizontal-tb;
   writing-mode: horizontal-tb;
   font-size: 20px;
 }
-/* line 2159, sass/modules/_layout.scss */
+/* line 2163, sass/modules/_layout.scss */
 #explore_text i.explore_arrow {
   font-size: 30px;
   transform: rotate(90deg);
 }
 
-/* line 2165, sass/modules/_layout.scss */
+/* line 2169, sass/modules/_layout.scss */
 #fs_title1 {
   color: #fff;
   font-family: "Memphis LT W01 Light";
@@ -3733,7 +3739,7 @@ span#project_tip {
   visibility: hidden;
 }
 
-/* line 2181, sass/modules/_layout.scss */
+/* line 2185, sass/modules/_layout.scss */
 #detail_exit {
   z-index: 3;
   font-size: 35px;
@@ -3749,7 +3755,7 @@ span#project_tip {
   transition: all .3s;
 }
 @media (max-width: 768px) {
-  /* line 2181, sass/modules/_layout.scss */
+  /* line 2185, sass/modules/_layout.scss */
   #detail_exit {
     position: fixed;
     font-size: 35px;
@@ -3758,19 +3764,19 @@ span#project_tip {
   }
 }
 @media (max-width: 480px) {
-  /* line 2181, sass/modules/_layout.scss */
+  /* line 2185, sass/modules/_layout.scss */
   #detail_exit {
     top: 70px;
     font-size: 35px;
     left: 1px;
   }
 }
-/* line 2208, sass/modules/_layout.scss */
+/* line 2212, sass/modules/_layout.scss */
 #detail_exit.single-open {
   visibility: visible;
 }
 
-/* line 2213, sass/modules/_layout.scss */
+/* line 2217, sass/modules/_layout.scss */
 #detail_close {
   position: absolute;
   display: block;
@@ -3783,23 +3789,26 @@ span#project_tip {
   top: 160px;
   right: 15px;
   cursor: pointer;
+  -webkit-transition: all .3s;
+  /* Safari */
+  transition: all .3s;
 }
 @media (max-width: 768px) {
-  /* line 2213, sass/modules/_layout.scss */
+  /* line 2217, sass/modules/_layout.scss */
   #detail_close {
     font-size: 35px;
     top: 100px;
   }
 }
 @media (max-width: 480px) {
-  /* line 2213, sass/modules/_layout.scss */
+  /* line 2217, sass/modules/_layout.scss */
   #detail_close {
     font-size: 35px;
     top: 70px;
   }
 }
 
-/* line 2243, sass/modules/_layout.scss */
+/* line 2249, sass/modules/_layout.scss */
 #detail_scrollarea {
   visibility: hidden;
   position: fixed;
@@ -3810,18 +3819,18 @@ span#project_tip {
   right: 0;
   z-index: 2;
 }
-/* line 2255, sass/modules/_layout.scss */
+/* line 2261, sass/modules/_layout.scss */
 #detail_scrollarea.single-open {
   visibility: visible;
 }
-/* line 2260, sass/modules/_layout.scss */
+/* line 2266, sass/modules/_layout.scss */
 #detail_scrollarea img {
   display: block;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 2266, sass/modules/_layout.scss */
+/* line 2272, sass/modules/_layout.scss */
 #detail_scrollarea span {
   font-family: 'Gothic';
   font-size: 14px;
@@ -3838,7 +3847,7 @@ span#project_tip {
   visibility: hidden;
   text-transform: uppercase;
 }
-/* line 2284, sass/modules/_layout.scss */
+/* line 2290, sass/modules/_layout.scss */
 #detail_scrollarea span:after {
   content: '';
   position: absolute;
@@ -3852,13 +3861,13 @@ span#project_tip {
   border-bottom: 8px solid transparent;
 }
 @media (max-width: 768px) {
-  /* line 2243, sass/modules/_layout.scss */
+  /* line 2249, sass/modules/_layout.scss */
   #detail_scrollarea {
     width: 100vw !important;
   }
 }
 
-/* line 2303, sass/modules/_layout.scss */
+/* line 2309, sass/modules/_layout.scss */
 .detail_nav {
   position: absolute;
   width: 50px;
@@ -3867,19 +3876,19 @@ span#project_tip {
   visibility: hidden;
 }
 @media (max-width: 1060px) {
-  /* line 2303, sass/modules/_layout.scss */
+  /* line 2309, sass/modules/_layout.scss */
   .detail_nav {
     bottom: 50px;
   }
 }
-/* line 2314, sass/modules/_layout.scss */
+/* line 2320, sass/modules/_layout.scss */
 .detail_nav i {
   color: #fff;
   font-size: 42px;
   text-align: left;
   letter-spacing: 10px;
 }
-/* line 2320, sass/modules/_layout.scss */
+/* line 2326, sass/modules/_layout.scss */
 .detail_nav p {
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -3889,18 +3898,18 @@ span#project_tip {
   padding: 0;
 }
 
-/* line 2334, sass/modules/_layout.scss */
+/* line 2340, sass/modules/_layout.scss */
 .detail_switch {
   padding: 14px 0;
   position: relative;
   margin-left: 5px;
 }
-/* line 2338, sass/modules/_layout.scss */
+/* line 2344, sass/modules/_layout.scss */
 .detail_switch svg {
   width: 24px;
   cursor: pointer;
 }
-/* line 2342, sass/modules/_layout.scss */
+/* line 2348, sass/modules/_layout.scss */
 .detail_switch span {
   font-family: 'Gothic';
   font-size: 1.4em;
@@ -3916,7 +3925,7 @@ span#project_tip {
   text-align: center;
   visibility: hidden;
 }
-/* line 2358, sass/modules/_layout.scss */
+/* line 2364, sass/modules/_layout.scss */
 .detail_switch span:after {
   content: '';
   position: absolute;
@@ -3930,12 +3939,12 @@ span#project_tip {
   border-bottom: 8px solid transparent;
 }
 
-/* line 2376, sass/modules/_layout.scss */
+/* line 2382, sass/modules/_layout.scss */
 .active-project {
   visibility: visible;
 }
 
-/* line 2380, sass/modules/_layout.scss */
+/* line 2386, sass/modules/_layout.scss */
 .projects-loader {
   position: fixed;
   left: 0px;
@@ -3946,12 +3955,12 @@ span#project_tip {
   background: url("assets/img/ring.gif") 50% 50% no-repeat white;
 }
 
-/* line 2392, sass/modules/_layout.scss */
+/* line 2398, sass/modules/_layout.scss */
 .rotate {
   display: none;
 }
 @media (max-width: 480px) {
-  /* line 2392, sass/modules/_layout.scss */
+  /* line 2398, sass/modules/_layout.scss */
   .rotate {
     display: none;
     width: 100vw;
@@ -3962,7 +3971,7 @@ span#project_tip {
     top: 0;
     z-index: 9999999999999;
   }
-  /* line 2404, sass/modules/_layout.scss */
+  /* line 2410, sass/modules/_layout.scss */
   .rotate h2 {
     color: white;
     font-size: 42px;
@@ -3970,7 +3979,7 @@ span#project_tip {
   }
 }
 
-/* line 2413, sass/modules/_layout.scss */
+/* line 2419, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;

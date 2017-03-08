@@ -121,7 +121,10 @@ get_header();
 			?>
 
 				<div class="detail-side-title">
-				<p>Project Title Here</p>
+					<div class="detail-side-text">
+						<p>Project Title Here</p>
+					</div>
+				</div>
 			</div>
 
 

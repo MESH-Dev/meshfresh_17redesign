@@ -56,7 +56,10 @@
 	</div>
 </div> -->
 
-<div id="sayHello" class="cf">
+
+<div id="siteWrap">
+<header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php') || is_page_template('template-work-new.php') || is_page_template('template-people-new.php')){ echo 'class="absolute"';} //elseif (is_page_template('template-work-new.php')||is_page_template('template-people-new.php')){ echo 'class=""';} else{}//remove this when page is live?> >
+	<div id="sayHello" class="cf">
 	<div class="container">
 		<div class="row">
 			<div class="sh">
@@ -89,8 +92,6 @@
 		<div id="sayHello-caret"></div>
 	</div>
 </div> 
-<div id="siteWrap">
-<header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php') || is_page_template('template-work-new.php') || is_page_template('template-people-new.php')){ echo 'class="absolute"';} //elseif (is_page_template('template-work-new.php')||is_page_template('template-people-new.php')){ echo 'class=""';} else{}//remove this when page is live?> >
 	<div class="container">
 		<div class="gateway-nav">
 					<div class="say-hello <?php if(is_page(2622) || is_page('say-hello2') || is_page('say-hello')){ echo "active"; } ?>">
