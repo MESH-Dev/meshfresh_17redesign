@@ -313,9 +313,9 @@ function GoToProject(project_id, reorder){
 
 
 	//browser back button here?
-	// if (window.history && window.history.pushState) {
-	// 	history.pushState(null, null, '?p='+project_id );
-	// }
+	if (window.history && window.history.pushState) {
+		history.pushState(null, null, '?p='+project_id );
+	}
  
 	$('.detail_copy').removeClass('active-project');
 	$(pid).addClass('active-project');
