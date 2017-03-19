@@ -360,6 +360,8 @@ function GoToProject(project_id, reorder){
 			text_elem = $(text_elem);
 			var project_color = text_elem.attr('data-color');
 
+
+
 			function updateContent(e) {
 			 
 				if (e.type == "enter") {
@@ -372,9 +374,7 @@ function GoToProject(project_id, reorder){
 
 					var new_title = $(text_elem).find('span').html();
 					$('.detail-side-text p').html("&#8226; &#8226; &#8226; &nbsp; "+new_title);
-					if (window.history && window.history.pushState) {
-						history.pushState(null, null, '?p='+url_id );
-					}
+					
 				}
 				else{
 					 
@@ -382,13 +382,13 @@ function GoToProject(project_id, reorder){
 					project_color = text_elem.prev('.detail_copy').attr('data-color');
 					text_elem.prev('.detail_copy').addClass("active-project");
 					$('#infobar').css('background-color',project_color );
-					if (window.history && window.history.pushState) {
-						history.pushState(null, null, '?p='+url_id );
-					}
+					
 
 					var new_title = $(text_elem).prev('.detail_copy').find('span').html();
 					$('.detail-side-text p').html("&#8226; &#8226; &#8226; &nbsp; "+new_title);
 				}
+
+				
 			}
 			
 
@@ -406,6 +406,21 @@ function GoToProject(project_id, reorder){
 	}
  
 }
+
+//check when scrolling - only replace url when scrolling stops for 500ms (fix performance delay)
+$("#detail_scrollarea").scroll(function() {
+ 
+	clearTimeout( $.data( this, "scrollCheck" ) );
+	$.data( this, "scrollCheck", setTimeout(function() {
+ 
+		var url_id = $("#sidebar-content .active-project").attr('id');
+		if (window.history && window.history.pushState) {
+			history.pushState(null, null, '?p='+url_id );
+		}
+
+	}, 500) );
+
+});
 
 
  
