@@ -188,15 +188,7 @@ Macy.init({
         480: 1,
         //400: 1
     }
- //    function(){
-	// 	$('#macy .work-block').removeClass('columns-4');
-	// 	alert('Macy Running');
-	// }
-
-	// Macy.onImageLoad(function () {
-	// 	$('#macy .work-block').removeClass('columns-4');
-	// 	alert('Macy Running');
-	// }
+ 
 });
 
 Macy.onImageLoad(function () {
@@ -241,7 +233,7 @@ $(function(){
     });
 });
 
-/*PROJECTS PAGE AJAX FUNCTIONS--------------------------------------------------------
+/*PROJECTS PAGE FUNCTIONS--------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------	
 --------------------------------------------------------------------------------------------------------------
 */
@@ -322,7 +314,7 @@ function GoToProject(project_id, reorder){
 
 	//browser back button here?
 	// if (window.history && window.history.pushState) {
-		//history.pushState(null, null, '?p='+project_id );
+	// 	history.pushState(null, null, '?p='+project_id );
 	// }
  
 	$('.detail_copy').removeClass('active-project');
@@ -380,9 +372,9 @@ function GoToProject(project_id, reorder){
 
 					var new_title = $(text_elem).find('span').html();
 					$('.detail-side-text p').html("&#8226; &#8226; &#8226; &nbsp; "+new_title);
-					// if (window.history && window.history.pushState) {
-					// 	//history.pushState(null, null, '?p='+url_id );
-					// }
+					if (window.history && window.history.pushState) {
+						history.pushState(null, null, '?p='+url_id );
+					}
 				}
 				else{
 					 
@@ -390,9 +382,9 @@ function GoToProject(project_id, reorder){
 					project_color = text_elem.prev('.detail_copy').attr('data-color');
 					text_elem.prev('.detail_copy').addClass("active-project");
 					$('#infobar').css('background-color',project_color );
-					// if (window.history && window.history.pushState) {
-					// 	//history.pushState(null, null, '?p='+url_id );
-					// }
+					if (window.history && window.history.pushState) {
+						history.pushState(null, null, '?p='+url_id );
+					}
 
 					var new_title = $(text_elem).prev('.detail_copy').find('span').html();
 					$('.detail-side-text p').html("&#8226; &#8226; &#8226; &nbsp; "+new_title);

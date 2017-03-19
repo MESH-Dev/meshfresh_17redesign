@@ -2,38 +2,144 @@
 
 <?php get_header(); ?>
 
-<?php 
 
-	$mediums = get_the_terms($post->ID, 'medium');
-	$industries = get_the_terms($post->ID, 'Industry');
-	//var_dump($mediums);
+<?php 
+ 
+
+	$post_id = $post->ID;
+	$slug = get_post_field( 'post_name', $post_id );
+	$bg_color=get_field('proj_bg_color');
+	$setColor =  get_field('proj_bg_color', $post->ID);
+	$color = $setColor;
+	$rgb = hex2rgba($color);
+	$rgba = hex2rgba($color, 0.85);
+
+	//$active_class = '';
+	//if($single){$active_class = 'active-project';}
+
+
+	
+
+	//Get content/metadata
+	$mediums = get_the_terms($post_id, 'medium');
+	$industries = get_the_terms($post_id, 'Industry');
+ 
 	$separator = ', ';
 	$output_industry = '';
 	$output_medium = '';
 
-	$intro_info = get_field('intro_info');
+	$intro_info = get_field('intro_info',$post_id);
 
-	$project_content = get_field('featured_statement');
+	$project_content = get_field('featured_statement',$post_id);
 
 	if(!empty($industries)){
 		foreach ($industries as $industry){
-			//var_dump($industry->name);
+
 			$output_industry .= $industry->name . $separator;
-			//var_dump($output_industry);
+
 		}
 	}
+
+	$output_industry = rtrim($output_industry,', '); 
 
 	if(!empty($mediums)){
 		foreach ($mediums as $medium){
-			//var_dump($industry->name);
-			$output_medium .= '<li>' . $medium->name . $separator . '</li>';
-			//var_dump(rtrim($output_medium, $separator));
-			//var_dump($output_industry);
+
+			$output_medium .=  $medium->name . $separator;
+
 		}
 	}
 
+	$output_medium = rtrim($output_medium,', '); 
+
+	$title = get_the_title($post_id);
+	$text_str = '';
+
+
+	$text_str .= '<div id="'. $slug . '" class="detail_copy '.$active_class .'" data-color="'.$rgba.'">';
+	$text_str .= '	<h3><span class="underline">'.$title.'</span></h3>';
+	$text_str .= '	<span class="industries tags">'.rtrim($output_industry, $separator).'</span>';
+	$text_str .= '	<p> '.$intro_info.'</p>';
+	$text_str .= '	<footer>';
+	$text_str .= '		<ul class="medium tags">'.$output_medium;
+	$text_str .= '		</ul>';
+	$text_str .= '	</footer>';
+	$text_str .= '</div>';
+
 ?>
 
+	<div id="infobar" >
+		
+		<p id="explore_text"><i class="explore_arrow material-icons" >keyboard_backspace</i>  Explore the Work</p>
+		
+		<i id="detail_exit" class="material-icons" >keyboard_backspace</i>
+		<span id="back_tip" class="tooltip">View All Projects</span>
+
+		<i id="detail_close" class="material-icons" >clear</i>
+		<span id="project_tip" class="tooltip">Close Project Details</span>
+ 
+		<div id="sidebar-content" class=" ">
+
+			<?php 
+ 
+				echo $text_str;
+			?>
+
+			<div class="detail-side-title">
+				<div class="detail-side-text">
+					<p>Project Title Here</p>
+				</div>
+					
+			</div>
+	
+		</div>
+ 
+		<div class="detail_nav">
+			 
+		</div>
+	</div>	
+
+	<div id="detail_scrollarea">
+		<div id="project-panels" class="work-panels">
+
+			<?php 
+			$slug = get_post_field( 'post_name', $post_id );
+
+				$image_str = '';
+
+				//get images for project
+				//if(have_rows('showcase_images', $post_id)): 
+
+					$image_str = '<div id="'.$slug.'-panels" class="project-wrap '.$active_class .'" data-id="'.$post_id.'">';
+					while(have_rows('showcase_images', $post_id)) : the_row();
+						$image=get_sub_field('image', $post_id);
+			 
+						$image_url=$image['sizes']['background-fullscreen-sq'];
+
+						$image_type =  substr($image_url, -3);
+
+						if($image_type == "gif"){
+							$image_url = $image['url'];
+						}
+						 
+						//$image_str .= "<img id='image-$image[id]' src='". get_template_directory_uri()."/assets/img/blank.png' data-src='$image_url'>";
+
+						$image_str .= "<img class='lazy-load' id='image-$image[id]'  src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' data-src='$image_url' >";
+
+					endwhile; 
+					$image_str .="</div>";
+
+					echo $image_str;
+			?>
+		</div>	
+	</div>
+
+
+
+
+
+
+<!-- 
 <section class="has-emoticon">
 	<div class="title-bar">
 		<div class="view-all">
@@ -66,7 +172,7 @@
 		<?php endwhile; endif; ?>
 	</div>
 
-</section>
+</section> -->
 
 
 

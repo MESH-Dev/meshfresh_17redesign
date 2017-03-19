@@ -48,7 +48,7 @@ get_header();
 		 			//var_dump($bg_color);
 
 		 			$award = get_field('award_winning', $post->ID);
-		 			//$permalink = get_permalink($post->ID);
+		 			$single_permalink = get_permalink($post->ID);
 		 			$slug = get_post_field( 'post_name', $post->ID);
 
 
@@ -141,7 +141,7 @@ get_header();
 	 						<div class="social-share">
 	 							<ul>
 	 								<li class="fb-share"><span class="sr-only">Share this project on facebook</span>
-	 									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $permalink; ?> target="_blank"">
+	 									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $single_permalink; ?>" target="_blank">
 	 										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/facebook-share.png">
  										</a>
  									</li>
