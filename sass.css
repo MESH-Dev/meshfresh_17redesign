@@ -977,12 +977,14 @@ label > .label-body {
 .mc4wp-success p {
   color: #ffffff;
   font-size: .9em;
-  margin: .5em 0 0 0;
+  margin: 1em 0 0 0;
   position: relative;
   font-weight: bold;
+  display: inline;
+  padding: .5em;
 }
 
-/* line 177, sass/modules/_forms.scss */
+/* line 179, sass/modules/_forms.scss */
 .mc4wp-error p,
 .mc4wp-notice p {
   color: #ffffff;
@@ -990,16 +992,16 @@ label > .label-body {
   clear: both;
 }
 
-/* line 184, sass/modules/_forms.scss */
+/* line 186, sass/modules/_forms.scss */
 .pulse-color {
-  animation: color 2s ease-in-out;
+  animation: color 3s ease-in-out;
 }
 
-/* line 189, sass/modules/_forms.scss */
+/* line 191, sass/modules/_forms.scss */
 .pulse-single {
   position: relative;
 }
-/* line 192, sass/modules/_forms.scss */
+/* line 194, sass/modules/_forms.scss */
 .pulse-single:after {
   position: absolute;
   content: '';
@@ -1011,7 +1013,7 @@ label > .label-body {
   animation: pulse-me 1s linear infinite;
   z-index: -2;
 }
-/* line 203, sass/modules/_forms.scss */
+/* line 205, sass/modules/_forms.scss */
 .pulse-single:before {
   position: absolute;
   content: '';
@@ -1049,13 +1051,8 @@ label > .label-body {
 }
 @keyframes color {
   0% {
-    color: white;
-  }
-  30% {
-    color: red;
-  }
-  100% {
-    color: white;
+    color: #0000ff;
+    background-color: #fedf00;
   }
 }
 @keyframes spin {
@@ -1066,7 +1063,7 @@ label > .label-body {
     transform: rotate(360deg);
   }
 }
-/* line 281, sass/modules/_forms.scss */
+/* line 290, sass/modules/_forms.scss */
 .please-wait {
   position: absolute;
   top: 0;
@@ -1075,7 +1072,7 @@ label > .label-body {
   display: none;
   transition: all .2s ease-in-out;
 }
-/* line 288, sass/modules/_forms.scss */
+/* line 297, sass/modules/_forms.scss */
 .please-wait p {
   font-size: 2em;
   display: inline-block;
@@ -1085,7 +1082,7 @@ label > .label-body {
   color: white;
   background-color: #0000ff;
 }
-/* line 296, sass/modules/_forms.scss */
+/* line 305, sass/modules/_forms.scss */
 .please-wait p .reload {
   font-size: 30px;
   display: inline-block;

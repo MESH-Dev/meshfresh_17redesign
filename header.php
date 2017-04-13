@@ -92,7 +92,7 @@
 				</div>
 
 				<div class="columns-8 loc">
-					<span>We're interested in your interest in MESH + Makeshop</span>
+					<!-- <span>We're interested in your interest in MESH + Makeshop</span> -->
 					<?php 
 						$mailchimp = get_field('mailchimp_shortcode','options');
 						//var_dump($mailchimp);
