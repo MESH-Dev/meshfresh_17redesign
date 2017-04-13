@@ -79,3 +79,225 @@ label > .label-body {
   margin-left: .5rem;
   font-weight: normal;
 }
+
+//Signup form
+.signup-form{
+  .input-vertical{
+    // display:inline-block;
+    // float:left;
+  }
+  input{
+    display:inline-block;
+    float:left;
+    font-family:$gothic;
+    //font-size:3.6em;
+  }
+  input[type="email"]{
+    background-color:transparent;
+    border:none;
+    border-bottom:2px solid $white;
+    width:80%;
+    //padding-left:0;
+
+  }
+  input[type="submit"]{
+    appearance:none;
+    -webkit-appearance:none;
+    border:none;
+    box-shadow: none;
+    background-color:transparent;
+    width:5%;
+    border-bottom:2px solid $white;
+    //font-size:3.6em;
+    background-image:url('assets/img/arrow-landing.png');
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: 40%;
+    padding:0;
+    margin:0;
+    
+    text-indent: -999999px;
+  }
+
+  input[type="email"]:focus{
+    background-color:$white;
+    color:$blue;
+
+    ~ input[type="submit"]{
+      background-color:$white;
+      color:$blue;
+      background-image:url('assets/img/arrow-hover.png');
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size: 40%;
+      transition:all .2s ease-in-out;
+
+      &:hover,
+      &:active,
+      &:focus{
+        background-color:rgba(255,255,255,.7);
+        //background-image:url('assets/img/arrow-landing.png');
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-size: 40%;
+        border-bottom:2px solid rgba(255,255,255,.1);
+      }
+    }
+
+  }
+
+  input::-webkit-input-placeholder{
+    color:$white;
+    text-transform:uppercase;
+  }
+
+
+input::-moz-placeholder{
+  color:$white;
+}
+
+input:-ms-input-placeholder{ 
+    color:$white;
+  }
+
+}
+
+.mc4wp-success{
+  p{
+    color:$white;
+    font-size:.9em;
+    margin:.5em 0 0 0;
+    position:relative;
+    font-weight:bold;
+    }
+}
+
+.mc4wp-error,
+.mc4wp-notice{
+  p{
+    color:$white;
+    font-size:.75em;
+    clear:both;
+  }
+}
+
+.pulse-color{
+  animation: color 2s ease-in-out;
+
+}
+
+.pulse-single {
+  //animation: pulse 1s 1 ease-out;
+  position:relative;
+  &:after{
+      position:absolute;
+      content:'';
+      background:rgba(255,255,255,.9);
+      top:0;
+      bottom:0;
+      right:0;
+      left:0;
+      animation: pulse-me 1s linear infinite;
+      z-index:-2;
+    }
+  &:before{
+    position:absolute;
+      content:'';
+      background:$blue;
+      top:0;
+      bottom:0;
+      right:0;
+      left:0;
+      z-index: -1;
+  }
+}
+
+// @mixin keyframes($pulse){
+//   @-webkit-keyframes{
+//     @content;
+//   }
+//    @-moz-keyframes{
+//     @content;
+//   }
+//    @-ms-keyframes{
+//     @content;
+//   }
+//    @-o-keyframes{
+//     @content;
+//   }
+//    @keyframes{
+//     @content;
+//   }
+// }
+
+
+@keyframes pulse {
+  0% {
+    box-shadow:  0 0 0 0 rgba(255,255,255,1),
+                 0 0 0 0 rgba(51,51,51,1);
+  }
+  100% {
+    box-shadow:  0 0 0 0.1em rgba(255,255,255,1),
+                 0 0 0 1em rgba(51,51,51,0);
+  }
+}
+
+@keyframes pulse-me{
+  0%{
+    transform: scaleY(0.5) scaleX(0.5);
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.1;
+  }
+  70%{
+    opacity: 0.09;
+  }
+  100%{
+    transform: scaleY(2) scaleX(1.02);
+    opacity: 0;
+  }
+}
+
+//
+@keyframes color{
+  0%{
+    color:white;
+  }
+  30%{
+    color:red;
+  }
+  100%{
+    color:white;
+  }
+}
+
+//
+@keyframes spin {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
+.please-wait{
+  position:absolute;
+  top:0;
+  width:100%;
+  text-align:center;
+  display:none;
+  transition:all .2s ease-in-out;
+  p{
+    font-size:2em;
+    display:inline-block;
+    padding:1em;
+    font-family: 'Gothic';
+    margin:0 auto;
+    color:white;
+    background-color:#0000ff;
+    .reload{
+      font-size: 30px;
+      display: inline-block;
+      animation: spin 1s linear infinite;
+      vertical-align: -6px;
+    }
+  }
+}

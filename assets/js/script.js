@@ -116,17 +116,64 @@ e.preventDefault();
 	
 });
 
-$(document).click(function(){
-	$('#sayHello').slideUp(200);
-	$('#detail_exit').css({top:de_top});
-	$('.detail_copy').css("top",dc_top);
-		//This element should really relate more to the content
-	$('#back_tip').css({top:bt_top});
-	$('#detail_close').css({top:dclose_top});
-	//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
+// $('.signup-form input[type="email"]').on("focus", function(){
+// 	$('#sayHello').slideDown(200);
+// 	//console.log("Input has")
+// });
+
+// //This can be reactivated if we can move the email signup form to the footer
+function closeSH(){
+	$(document).click(function(){
+		$('#sayHello').slideUp(200);
+		$('#detail_exit').css({top:de_top});
+		$('.detail_copy').css("top",dc_top);
+			//This element should really relate more to the content
+		$('#back_tip').css({top:bt_top});
+		$('#detail_close').css({top:dclose_top});
+		$('.mc4wp-alert p').removeClass('pulse-color');
+
+		//$('#detail_exit, .detail_copy').animate({top:"-=100"},200);
+	});
+}
+
+closeSH();
+
+$('.signup-form input[type="email"]').click(function(e){
+	e.stopPropagation();
+})
+
+$('.signup-form input[type="submit"]').click(function(e){
+	e.stopPropagation();
+	$('.please-wait').slideDown(200);
+	setTimeout(function(){
+		$('#sayHello').slideUp(200);
+	},2000);
 });
 
+//Did we get a response from mailchimp?
+if($('.mc4wp-alert p').length > 0){
+	
+	//$('.mc4wp-alert p').addClass('pulse-color');
+	if($('.mc4wp-alert').hasClass('mc4wp-error')){
+		$('#sayHello').slideDown(50);
+		$('.mc4wp-alert p').addClass('pulse-color');
+	}else{
+		$('#sayHello').slideDown(50);
+		$('.mc4wp-alert p').addClass('pulse-color');
+		setTimeout(function(){
+			// $('#sayHello').slideDown(200, function(){
+				$('.mc4wp-alert p').removeClass('pulse-color');
+			// });
+		},2000);
 
+		setTimeout(function(){
+			// $('#sayHello').slideDown(200, function(){
+				$('#sayHello').slideUp(200);
+			// });
+		},6000);
+	}
+}
+//mc4wp-error
 
 //Sidr funcitonality
 $('.sidr-trigger').sidr({
@@ -200,38 +247,38 @@ Macy.onImageLoad(function () {
 });
 
 //Potential header functionality on grid landing pages
-$(function(){
-    var lastScrollTop = 0, delta = 5;
-    $(window).scroll(function(event){
+// $(function(){
+//     var lastScrollTop = 0, delta = 5;
+//     $(window).scroll(function(event){
 
-       var st = $(this).scrollTop();
-       var page_top = $('.fullwidth').offset().top;
-	    var fullwidth_top = $('.fullwidth').scrollTop();
-	    var window_top = $(window).scrollTop();
+//        var st = $(this).scrollTop();
+//        var page_top = $('.fullwidth').offset().top;
+// 	    var fullwidth_top = $('.fullwidth').scrollTop();
+// 	    var window_top = $(window).scrollTop();
        
-       if(Math.abs(lastScrollTop - st) <= delta)
-          return;
+//        if(Math.abs(lastScrollTop - st) <= delta)
+//           return;
        
-		if(window_top > page_top-50) {
-			$('.nav-wrap').css({
-				'position':'fixed'
-			});
+// 		if(window_top > page_top-50) {
+// 			$('.nav-wrap').css({
+// 				'position':'fixed'
+// 			});
 
-			if (st > lastScrollTop ){
-			   $('.nav-bg').stop().slideUp(50);
-			} else {
+// 			if (st > lastScrollTop ){
+// 			   $('.nav-bg').stop().slideUp(50);
+// 			} else {
  
-			  $('.nav-bg').slideDown(50);
-			}
-		}else{
-			$('.nav-wrap').css({
-				"position":'absolute'
-			});
-			$('.nav-bg').stop().slideUp(0);
-		}	
-       lastScrollTop = st;
-    });
-});
+// 			  $('.nav-bg').slideDown(50);
+// 			}
+// 		}else{
+// 			$('.nav-wrap').css({
+// 				"position":'absolute'
+// 			});
+// 			$('.nav-bg').stop().slideUp(0);
+// 		}	
+//        lastScrollTop = st;
+//     });
+// });
 
 /*PROJECTS PAGE FUNCTIONS--------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------	

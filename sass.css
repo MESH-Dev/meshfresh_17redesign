@@ -906,6 +906,193 @@ label > .label-body {
   font-weight: normal;
 }
 
+/* line 89, sass/modules/_forms.scss */
+.signup-form input {
+  display: inline-block;
+  float: left;
+  font-family: "Gothic";
+}
+/* line 95, sass/modules/_forms.scss */
+.signup-form input[type="email"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  width: 80%;
+}
+/* line 103, sass/modules/_forms.scss */
+.signup-form input[type="submit"] {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  width: 5%;
+  border-bottom: 2px solid #ffffff;
+  background-image: url("assets/img/arrow-landing.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40%;
+  padding: 0;
+  margin: 0;
+  text-indent: -999999px;
+}
+/* line 122, sass/modules/_forms.scss */
+.signup-form input[type="email"]:focus {
+  background-color: #ffffff;
+  color: #0000f8;
+}
+/* line 126, sass/modules/_forms.scss */
+.signup-form input[type="email"]:focus ~ input[type="submit"] {
+  background-color: #ffffff;
+  color: #0000f8;
+  background-image: url("assets/img/arrow-hover.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40%;
+  transition: all .2s ease-in-out;
+}
+/* line 135, sass/modules/_forms.scss */
+.signup-form input[type="email"]:focus ~ input[type="submit"]:hover, .signup-form input[type="email"]:focus ~ input[type="submit"]:active, .signup-form input[type="email"]:focus ~ input[type="submit"]:focus {
+  background-color: rgba(255, 255, 255, 0.7);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+/* line 149, sass/modules/_forms.scss */
+.signup-form input::-webkit-input-placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+/* line 155, sass/modules/_forms.scss */
+.signup-form input::-moz-placeholder {
+  color: #ffffff;
+}
+/* line 159, sass/modules/_forms.scss */
+.signup-form input:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+/* line 166, sass/modules/_forms.scss */
+.mc4wp-success p {
+  color: #ffffff;
+  font-size: .9em;
+  margin: .5em 0 0 0;
+  position: relative;
+  font-weight: bold;
+}
+
+/* line 177, sass/modules/_forms.scss */
+.mc4wp-error p,
+.mc4wp-notice p {
+  color: #ffffff;
+  font-size: .75em;
+  clear: both;
+}
+
+/* line 184, sass/modules/_forms.scss */
+.pulse-color {
+  animation: color 2s ease-in-out;
+}
+
+/* line 189, sass/modules/_forms.scss */
+.pulse-single {
+  position: relative;
+}
+/* line 192, sass/modules/_forms.scss */
+.pulse-single:after {
+  position: absolute;
+  content: '';
+  background: rgba(255, 255, 255, 0.9);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  animation: pulse-me 1s linear infinite;
+  z-index: -2;
+}
+/* line 203, sass/modules/_forms.scss */
+.pulse-single:before {
+  position: absolute;
+  content: '';
+  background: #0000f8;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 white, 0 0 0 0 #333333;
+  }
+  100% {
+    box-shadow: 0 0 0 0.1em white, 0 0 0 1em rgba(51, 51, 51, 0);
+  }
+}
+@keyframes pulse-me {
+  0% {
+    transform: scaleY(0.5) scaleX(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  70% {
+    opacity: 0.09;
+  }
+  100% {
+    transform: scaleY(2) scaleX(1.02);
+    opacity: 0;
+  }
+}
+@keyframes color {
+  0% {
+    color: white;
+  }
+  30% {
+    color: red;
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 281, sass/modules/_forms.scss */
+.please-wait {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  display: none;
+  transition: all .2s ease-in-out;
+}
+/* line 288, sass/modules/_forms.scss */
+.please-wait p {
+  font-size: 2em;
+  display: inline-block;
+  padding: 1em;
+  font-family: 'Gothic';
+  margin: 0 auto;
+  color: white;
+  background-color: #0000ff;
+}
+/* line 296, sass/modules/_forms.scss */
+.please-wait p .reload {
+  font-size: 30px;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  vertical-align: -6px;
+}
+
 /* line 8, sass/modules/_lists.scss */
 ol {
   list-style: decimal inside;
@@ -1456,7 +1643,7 @@ header.detail-open {
   z-index: 3000;
   padding: 1em 0;
   display: none;
-  height: 100px;
+  height: 110px;
   font-size: 1.6em;
   font-family: "Memphis LT W01 Medium";
 }

@@ -59,33 +59,41 @@
 
 <div id="siteWrap">
 <header <?php if (is_page_template('templates/tpl-frontpage-alt.php') || is_page_template('page-work-macy.php') || is_page_template('template-work-new.php') || is_page_template('template-people-new.php')){ echo 'class="absolute"';} //elseif (is_page_template('template-work-new.php')||is_page_template('template-people-new.php')){ echo 'class=""';} else{}//remove this when page is live?> >
+	<div class="please-wait">
+		<p>Adding you to our list... <i class="material-icons reload spin">refresh</i></p>
+	</div>	
 	<div id="sayHello" class="cf">
 	<div class="container">
 		<div class="row">
 			<div class="sh">
 				<div class="title">Say Hello!</div>
-				<div class="columns-4 loc">
-					<div class=""><!-- gutter -->
+				<!-- <div class="columns-4 loc">
+					<div class="">
 						<strong>Brooklyn Studio</strong><br>
 						67 West Street, Suite 403<br>
 						Brooklyn, New York 11222<br>
 					</div>
 				</div>
 				<div class="columns-4 loc">
-					<div class=""><!-- gutter -->
+					<div class="">
 						<strong>Charleston Studio</strong><br>
 						609 Tennessee Ave.<br>
 						Charleston, West Virginia 25302<br>
 			 
 					</div>
-				</div>
-				<div class="columns-4 loc">
-					<div class=""><!-- gutter -->
+				</div> -->
+				<div class="columns-3 loc">
+					<div class="">
 						304.405.6374<br>
 
 						<span class="loc-link"><strong><a href="mailto:hello@meshfresh.com">hello@meshfresh.com</a></strong></span>
 						<span class="loc-link"><a href="<?php echo bloginfo('url'); ?>/say-hello">Get involved with MESH ></a></span>
 					</div>
+				</div>
+
+				<div class="columns-8 loc">
+					<span>We're interested in your interest in MESH + Makeshop</span>
+					<?php echo do_shortcode('[mc4wp_form id="2789"]'); ?>
 				</div>
 			</div>
 		</div>
