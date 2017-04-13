@@ -446,4 +446,10 @@ function filter_ptags_on_images($content){
 }
 add_filter('acf_the_content', 'filter_ptags_on_images', 30);
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
+
 //remove_filter ('acf_the_content', 'wpautop');

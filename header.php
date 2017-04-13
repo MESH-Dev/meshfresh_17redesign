@@ -93,7 +93,10 @@
 
 				<div class="columns-8 loc">
 					<span>We're interested in your interest in MESH + Makeshop</span>
-					<?php echo do_shortcode('[mc4wp_form id="2789"]'); ?>
+					<?php 
+						$mailchimp = get_field('mailchimp_shortcode','options');
+						//var_dump($mailchimp);
+						echo do_shortcode(''.$mailchimp.''); ?>
 				</div>
 			</div>
 		</div>
