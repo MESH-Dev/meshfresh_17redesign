@@ -60,6 +60,9 @@ header {
 						text-decoration:none;
 						border-bottom:5px solid transparent;
 						//padding:4px 0px 0px 6px;
+						@media(max-width:850px){
+							font:24px/1.25 'Memphis LT W01 Medium';
+						}
 					}
 				}
 			}

@@ -1182,12 +1182,18 @@ header nav#mainNav ul li a {
   text-decoration: none;
   border-bottom: 5px solid transparent;
 }
-/* line 75, sass/modules/_header.scss */
+@media (max-width: 850px) {
+  /* line 53, sass/modules/_header.scss */
+  header nav#mainNav ul li a {
+    font: 24px/1.25 'Memphis LT W01 Medium';
+  }
+}
+/* line 78, sass/modules/_header.scss */
 header nav#social ul {
   margin: 0;
   list-style: none;
 }
-/* line 80, sass/modules/_header.scss */
+/* line 83, sass/modules/_header.scss */
 header nav#social ul li {
   display: inline-block;
   height: 23px;
@@ -1198,28 +1204,28 @@ header nav#social ul li {
   padding: 0 1px 0 0;
 }
 @media (max-width: 768px) {
-  /* line 80, sass/modules/_header.scss */
+  /* line 83, sass/modules/_header.scss */
   header nav#social ul li {
     margin-left: 5px;
   }
 }
-/* line 93, sass/modules/_header.scss */
+/* line 96, sass/modules/_header.scss */
 header nav#social ul li.facebook a {
   background-position: 0 0;
 }
-/* line 97, sass/modules/_header.scss */
+/* line 100, sass/modules/_header.scss */
 header nav#social ul li.tumblr a {
   background-position: -22px 0;
 }
-/* line 101, sass/modules/_header.scss */
+/* line 104, sass/modules/_header.scss */
 header nav#social ul li.twitter a {
   background-position: -64px 0;
 }
-/* line 105, sass/modules/_header.scss */
+/* line 108, sass/modules/_header.scss */
 header nav#social ul li.google a {
   background-position: -85px 0;
 }
-/* line 110, sass/modules/_header.scss */
+/* line 113, sass/modules/_header.scss */
 header nav#social ul li a {
   background: url(assets/img/socialIcons.png) 0 0 no-repeat;
   height: 100%;
@@ -1227,13 +1233,13 @@ header nav#social ul li a {
   display: block;
 }
 
-/* line 128, sass/modules/_header.scss */
+/* line 131, sass/modules/_header.scss */
 #social ul {
   float: right;
   margin: 0;
   list-style: none;
 }
-/* line 133, sass/modules/_header.scss */
+/* line 136, sass/modules/_header.scss */
 #social ul li {
   display: block;
   height: 23px;
@@ -1243,27 +1249,27 @@ header nav#social ul li a {
   float: left;
   padding: 0 1px 0 0;
 }
-/* line 142, sass/modules/_header.scss */
+/* line 145, sass/modules/_header.scss */
 #social ul li.facebook a {
   background-position: 0 0;
 }
-/* line 146, sass/modules/_header.scss */
+/* line 149, sass/modules/_header.scss */
 #social ul li.tumblr a {
   background-position: -22px 0;
 }
-/* line 150, sass/modules/_header.scss */
+/* line 153, sass/modules/_header.scss */
 #social ul li.instagram a {
   background-position: -43px 0;
 }
-/* line 154, sass/modules/_header.scss */
+/* line 157, sass/modules/_header.scss */
 #social ul li.twitter a {
   background-position: -64px 0;
 }
-/* line 158, sass/modules/_header.scss */
+/* line 161, sass/modules/_header.scss */
 #social ul li.google a {
   background-position: -85px 0;
 }
-/* line 163, sass/modules/_header.scss */
+/* line 166, sass/modules/_header.scss */
 #social ul li a {
   background: url(assets/img/socialIcons.png) 0 0 no-repeat;
   height: 100%;
@@ -1271,16 +1277,16 @@ header nav#social ul li a {
   display: block;
 }
 
-/* line 174, sass/modules/_header.scss */
+/* line 177, sass/modules/_header.scss */
 .gateway-nav {
   text-align: right;
   margin-top: 5px;
 }
-/* line 183, sass/modules/_header.scss */
+/* line 186, sass/modules/_header.scss */
 .gateway-nav nav {
   display: inline;
 }
-/* line 188, sass/modules/_header.scss */
+/* line 191, sass/modules/_header.scss */
 .gateway-nav .say-hello {
   background-color: #000000;
   color: #ffffff;
@@ -1294,27 +1300,27 @@ header nav#social ul li a {
   cursor: pointer;
   line-height: 1;
 }
-/* line 202, sass/modules/_header.scss */
+/* line 205, sass/modules/_header.scss */
 .gateway-nav .say-hello:hover, .gateway-nav .say-hello:active, .gateway-nav .say-hello:focus {
   background-color: #0000f8;
 }
-/* line 208, sass/modules/_header.scss */
+/* line 211, sass/modules/_header.scss */
 .gateway-nav .say-hello.active {
   background-color: #0000f8;
 }
 @media (max-width: 768px) {
-  /* line 188, sass/modules/_header.scss */
+  /* line 191, sass/modules/_header.scss */
   .gateway-nav .say-hello {
     display: none;
   }
 }
 
-/* line 217, sass/modules/_header.scss */
+/* line 220, sass/modules/_header.scss */
 #menuTrigger {
   cursor: pointer;
 }
 
-/* line 221, sass/modules/_header.scss */
+/* line 224, sass/modules/_header.scss */
 #mobileMenu.active {
   position: fixed;
   -webkit-transform: translateX(0);
@@ -1325,12 +1331,12 @@ header nav#social ul li a {
   display: block;
 }
 
-/* line 231, sass/modules/_header.scss */
+/* line 234, sass/modules/_header.scss */
 #siteWrap {
   transition: all .2s ease-in-out;
 }
 
-/* line 235, sass/modules/_header.scss */
+/* line 238, sass/modules/_header.scss */
 #siteWrap.active {
   position: fixed;
   -webkit-transform: translateX(60%);
@@ -1344,22 +1350,22 @@ header nav#social ul li a {
 
 @media (max-width: 768px) {
   /* Header */
-  /* line 249, sass/modules/_header.scss */
+  /* line 252, sass/modules/_header.scss */
   header {
     margin: 20px;
   }
 
-  /* line 252, sass/modules/_header.scss */
+  /* line 255, sass/modules/_header.scss */
   header .gutter {
     padding: 20px;
   }
 
-  /* line 254, sass/modules/_header.scss */
+  /* line 257, sass/modules/_header.scss */
   header #mainNav {
     display: none;
   }
 
-  /* line 259, sass/modules/_header.scss */
+  /* line 262, sass/modules/_header.scss */
   #menuTrigger {
     float: right;
     margin: 30px 0 0 0;
@@ -1372,12 +1378,12 @@ header nav#social ul li a {
     display: block;
     clear: both;
   }
-  /* line 271, sass/modules/_header.scss */
+  /* line 274, sass/modules/_header.scss */
   #menuTrigger:hover, #menuTrigger:active, #menuTrigger:focus {
     background: blue;
   }
 
-  /* line 282, sass/modules/_header.scss */
+  /* line 285, sass/modules/_header.scss */
   #mobileMenu .close {
     color: #fff;
     background: #fff;
@@ -1386,52 +1392,52 @@ header nav#social ul li a {
     font-weight: bold;
     display: inline;
   }
-  /* line 290, sass/modules/_header.scss */
+  /* line 293, sass/modules/_header.scss */
   #mobileMenu .close:hover, #mobileMenu .close:active, #mobileMenu .close:focus {
     background: #0000f8;
   }
-  /* line 298, sass/modules/_header.scss */
+  /* line 301, sass/modules/_header.scss */
   #mobileMenu nav#mainNav {
     float: left;
   }
-  /* line 301, sass/modules/_header.scss */
+  /* line 304, sass/modules/_header.scss */
   #mobileMenu nav#mainNav ul {
     list-style: none;
     margin: 18px 0px 0px 77px;
     width: 100%;
   }
-  /* line 306, sass/modules/_header.scss */
+  /* line 309, sass/modules/_header.scss */
   #mobileMenu nav#mainNav ul li {
     float: left;
     width: 138px;
     margin: 0 104px 9px 0px;
   }
-  /* line 311, sass/modules/_header.scss */
+  /* line 314, sass/modules/_header.scss */
   #mobileMenu nav#mainNav ul li a {
     display: block;
     font: 16px/16px 'Memphis LT W01 Medium';
     color: #000;
     text-decoration: none;
   }
-  /* line 326, sass/modules/_header.scss */
+  /* line 329, sass/modules/_header.scss */
   #mobileMenu nav#mainNav ul li.current-menu-item a, #mobileMenu nav#mainNav ul li:hover a, #mobileMenu nav#mainNav ul li:active a, #mobileMenu nav#mainNav ul li:focus a {
     border-bottom: 2px solid #0000f8;
     color: #0000f8;
   }
-  /* line 335, sass/modules/_header.scss */
+  /* line 338, sass/modules/_header.scss */
   #mobileMenu nav#social {
     float: left;
     margin: 10px 0 0 0;
     width: 100%;
   }
-  /* line 340, sass/modules/_header.scss */
+  /* line 343, sass/modules/_header.scss */
   #mobileMenu nav#social ul {
     float: none;
     margin: 0 auto;
     list-style: none;
     width: 125px;
   }
-  /* line 346, sass/modules/_header.scss */
+  /* line 349, sass/modules/_header.scss */
   #mobileMenu nav#social ul li {
     display: block;
     height: 23px;
@@ -1441,30 +1447,30 @@ header nav#social ul li a {
     float: left;
     padding: 0 1px 0 0;
   }
-  /* line 355, sass/modules/_header.scss */
+  /* line 358, sass/modules/_header.scss */
   #mobileMenu nav#social ul li a {
     background: url(assets/img/socialIcons.png) 0 0 no-repeat;
     height: 100%;
     width: 100%;
     display: block;
   }
-  /* line 362, sass/modules/_header.scss */
+  /* line 365, sass/modules/_header.scss */
   #mobileMenu nav#social ul li.facebook a {
     background-position: 0 0;
   }
-  /* line 363, sass/modules/_header.scss */
+  /* line 366, sass/modules/_header.scss */
   #mobileMenu nav#social ul li.tumblr a {
     background-position: -22px 0;
   }
-  /* line 364, sass/modules/_header.scss */
+  /* line 367, sass/modules/_header.scss */
   #mobileMenu nav#social ul li.instagram a {
     background-position: -43px 0;
   }
-  /* line 365, sass/modules/_header.scss */
+  /* line 368, sass/modules/_header.scss */
   #mobileMenu nav#social ul li.twitter a {
     background-position: -64px 0;
   }
-  /* line 366, sass/modules/_header.scss */
+  /* line 369, sass/modules/_header.scss */
   #mobileMenu nav#social ul li.google a {
     background-position: -85px 0;
   }
